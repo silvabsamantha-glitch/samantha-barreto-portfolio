@@ -25,7 +25,7 @@
 .disc{background:rgba(255,255,255,.05);border-left:2px solid rgba(255,255,255,.15);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6}
 
 /* ── Body ──────────────────────────────────────────────────────── */
-.cbody{max-width:1100px;margin:0 auto;padding:5rem 4rem 5rem}
+.cbody{max-width:800px;margin:0 auto;padding:5rem 4rem 5rem}
 .sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
 .sec.visible{opacity:1;transform:none}
 .slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
@@ -110,30 +110,14 @@
 .cni:focus-visible .cnt{opacity:1}
 }
 
-/* ── Responsividade dos cases ─────────────────────────────── */
-@media (min-width: 1200px) {
-  .cbody, .body { max-width: 1100px !important; padding: 5rem 5rem 5rem !important; }
-}
-@media (min-width: 900px) and (max-width: 1199px) {
-  .cbody, .body { max-width: 900px !important; padding: 5rem 4rem 5rem !important; }
-}
-@media (max-width: 899px) {
-  .cbody, .body { padding: 3rem 2rem 4rem !important; }
-  .case-hero { padding-left: 2rem !important; padding-right: 2rem !important; }
-}
-@media (max-width: 600px) {
-  .cbody, .body { padding: 2rem 1.25rem 3rem !important; }
-  .case-hero { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-}
-.case-img-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-img { width: 100%; height: auto; display: block; }
-.case-img-caption { font-size: .75rem; color: var(--gray); text-align: center; padding: .6rem 1rem; background: var(--gray-light); border-top: 1px solid var(--gray-line); margin: 0; }
-.case-anim-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-anim-block iframe { display: block; width: 100%; border: none; transition: height 0.2s ease; }
 
+
+
+
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 </style>
 </head>
-<body data-page="case05">
+<body>
 
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
 
@@ -141,7 +125,7 @@
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
@@ -158,7 +142,7 @@
     <div class="cpill">Case 05 · Design Conversacional · Alta pressão</div>
     <div class="cco">Banco Nacional · UX Writer · 2020–2022</div>
     <h1 data-pt="Assistente de Gerentes PF: do zero ao segundo começo" data-en="Branch Manager Assistant: from scratch to a second start">Assistente de Gerentes PF: do zero ao segundo começo</h1>
-    <p class="hsub" data-pt="Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na sua frente." data-en="How to design a chatbot for branch managers who need answers in seconds, with the customer sitting right in front of them.">Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na sua frente.</p>
+    <p class="hsub" data-pt="Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na frente." data-en="How to design a chatbot for branch managers who need answers in seconds, with the customer sitting right in front of them.">Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na frente.</p>
     <div class="ctags">
       <span class="tag">Design Conversacional</span>
       <span class="tag">Alta pressão</span>
@@ -391,10 +375,6 @@
 
   <div class="sec">
     <div class="slabel">06 — Como construímos</div>
-  <div class="case-img-block">
-    <img src="../assets/images/case-05-chat.svg" alt="Simulação do assistente de gerentes PF" class="case-img" loading="lazy"/>
-    <p class="case-img-caption">O assistente de gerentes — resposta rápida quando mais importa</p>
-  </div>
     <div class="steps">
       <div class="step"><span class="sn">01</span><div><div class="st">Imersão no contexto real</div><div class="sd">Entendimento profundo do dia a dia do gerente: quais situações geravam a necessidade do assistente, qual era o estado mental no momento de uso e o que afastava a adoção do sistema anterior.</div></div></div>
       <div class="step"><span class="sn">02</span><div><div class="st">Mapeamento de macro e micro assuntos</div><div class="sd">Estruturação da árvore conversacional a partir dos temas mais acessados. Identificação dos caminhos principais, variações e situações de exceção que precisavam de jornada própria.</div></div></div>
@@ -407,7 +387,7 @@
     <div class="slabel">07 — Decisões de design</div>
     <div class="qas">
       <div class="qa"><div class="qq">Por que recomeçar do zero em vez de corrigir o existente?</div><div class="qa-a">Quando a confiança num canal digital se perde, é muito difícil recuperá-la com ajustes incrementais. O gerente já havia aprendido a não usar o assistente. Recomeçar com uma experiência visivelmente diferente era o único caminho para reconquistar a adoção.</div></div>
-      <div class="qa"><div class="qq">O que é o caminho difícil e por que ele importa tanto?</div><div class="qa-a">O caminho feliz é quando o gerente encontra exatamente o que procurava. O caminho difícil é quando não encontra e precisa de uma saída digna. A maioria dos chatbots é projetada para o caminho feliz. Os melhores são projetados para quando o usuário se perde.</div></div>
+      <div class="qa"><div class="qq">O que é o caminho difícil e por que ele importa tanto?</div><div class="qa-a">O caminho feliz é quando o gerente encontra exatamente o que procurava. O caminho difícil é quando não encontra e precisa de uma saída digna. A maioria dos chatbots é projetada para o caminho feliz. Os melhores são projetados para os dois.etados para quando o usuário se perde.</div></div>
       <div class="qa"><div class="qq">Por que o contexto de uso muda tudo no design conversacional?</div><div class="qa-a">Estado mental, tempo disponível e consequências de um erro são radicalmente distintos entre contextos. Ignorar isso foi o que fez o primeiro rollout falhar. Entender o contexto antes de escrever a primeira resposta é o que diferencia um chatbot que as pessoas usam de um que as pessoas evitam.</div></div>
     </div>
   </div>
@@ -429,10 +409,9 @@
 
 <footer>
   <p>© 2025 Samantha Silva</p>
-  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+  <p><a href="../index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
 
-<script src="../assets/textos.js"></script>
 <script src="../assets/shared.js"></script>
 <script>
 // Animação de entrada das seções
@@ -442,20 +421,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-(function(){
-  window.addEventListener('message', function(e) {
-    if (e.data && typeof e.data.iframeHeight === 'number') {
-      var iframes = document.querySelectorAll('iframe');
-      iframes.forEach(function(f) {
-        try {
-          if (f.contentWindow === e.source) {
-            f.style.height = Math.max(e.data.iframeHeight, 200) + 'px';
-          }
-        } catch(x) {}
-      });
-    }
-  });
-})();
+window.addEventListener('message',function(e){if(e.data&&typeof e.data.iframeHeight==='number'){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=Math.max(e.data.iframeHeight,200)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>

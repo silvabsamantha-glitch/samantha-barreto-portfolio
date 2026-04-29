@@ -29,7 +29,7 @@
 .pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
 .pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.cbody{max-width:1100px;margin:0 auto;padding:5rem 4rem 5rem}
+.cbody{max-width:800px;margin:0 auto;padding:5rem 4rem 5rem}
 .sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
 .slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
 .sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
@@ -172,36 +172,20 @@
 .cni:hover .cnt{opacity:1}
 .cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
 
-/* ── Responsividade dos cases ─────────────────────────────── */
-@media (min-width: 1200px) {
-  .cbody, .body { max-width: 1100px !important; padding: 5rem 5rem 5rem !important; }
-}
-@media (min-width: 900px) and (max-width: 1199px) {
-  .cbody, .body { max-width: 900px !important; padding: 5rem 4rem 5rem !important; }
-}
-@media (max-width: 899px) {
-  .cbody, .body { padding: 3rem 2rem 4rem !important; }
-  .case-hero { padding-left: 2rem !important; padding-right: 2rem !important; }
-}
-@media (max-width: 600px) {
-  .cbody, .body { padding: 2rem 1.25rem 3rem !important; }
-  .case-hero { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-}
-.case-img-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-img { width: 100%; height: auto; display: block; }
-.case-img-caption { font-size: .75rem; color: var(--gray); text-align: center; padding: .6rem 1rem; background: var(--gray-light); border-top: 1px solid var(--gray-line); margin: 0; }
-.case-anim-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-anim-block iframe { display: block; width: 100%; border: none; transition: height 0.2s ease; }
 
+
+
+
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 </style>
 </head>
-<body data-page="case06">
+<body>
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
@@ -225,10 +209,7 @@
 <main id="case-content" class="cbody">
   <div class="sec fade">
     <div class="slabel">01 — O contexto</div>
-  <div class="case-img-block">
-    <img src="../assets/images/case-06.svg" alt="Diagrama das cinco etapas do processo Content First" class="case-img" loading="lazy"/>
-    <p class="case-img-caption">O processo Content First — do zero ao fluxo certo</p>
-  </div>
+  <div class="case-img-block"><img src="../assets/images/case-06.svg" alt="Diagrama do processo Content First" class="case-img" loading="lazy"/><p class="case-img-caption">O processo Content First</p></div>
     <p>O Banco Nacional estava lançando seu primeiro assistente virtual de seguros. Sem histórico, sem fluxos herdados, sem legado para respeitar. Uma folha em branco e uma oportunidade para fazer do jeito certo desde o começo.</p>
     <div class="pq">
       <p>O objetivo era entregar um atendimento completo: da contratação até a ativação do sinistro. E ser melhor que os concorrentes já no lançamento.</p>
@@ -253,10 +234,7 @@
   </div>
   <div class="sec fade">
     <div class="slabel">04 — Da encenação à jornada</div>
-  <div class="case-img-block">
-    <img src="../assets/images/case-06-arvore.svg" alt="Árvore de decisão do assistente de seguros" class="case-img" loading="lazy"/>
-    <p class="case-img-caption">A intenção define o caminho · o conteúdo define as perguntas · a estrutura vem por último</p>
-  </div>
+  <div class="case-img-block"><img src="../assets/images/case-06-arvore.svg" alt="Árvore de decisão do assistente de seguros" class="case-img" loading="lazy"/><p class="case-img-caption">A intenção define o caminho</p></div>
     <p>Antes de escrever o fluxo formal, encenamos a conversa como se fosse real. Essa etapa revelou lacunas que o fluxo formal não teria mostrado: perguntas que o segurado faz fora de ordem, informações que ele assume que o assistente já sabe.</p>
     <p>Com a encenação validada, transformamos os passos em uma jornada estruturada. Sempre partindo da intenção do usuário e garantindo que cada etapa tinha uma razão clara de existir.</p>
     <div class="journey">
@@ -271,7 +249,7 @@
   <div class="sec fade">
     <div class="slabel">05 — Decisões de design</div>
     <div class="qas">
-      <div class="qa"><div class="qq">Por que começar pela intenção e não pelo fluxo?</div><div class="qa-a">Fluxos projetados sem intenção clara tendem a ser completos para quem os criou e confusos para quem usa. Quando você começa pela pergunta "o que essa pessoa quer?" e pela resposta "o que significa termos entregado bem?", o fluxo se torna uma consequência, não um ponto de partida.</div></div>
+      <div class="qa"><div class="qq">Por que começar pela intenção e não pelo fluxo?</div><div class="qa-a">Fluxos projetados sem intenção clara tendem a ser completos para quem os criou e confusos para quem usa. Quando você começa pela pergunta sobre o que a pessoa quer e o que significa ter entregado bem, o fluxo se torna uma consequência, não um ponto de partida.</div></div>
       <div class="qa"><div class="qq">Para que serve a encenação antes do fluxo?</div><div class="qa-a">A encenação simula o caos real de uma conversa: perguntas fora de ordem, informações assumidas, contextos não previstos. Um fluxo formal esconde esses problemas porque está organizado demais. A encenação os expõe antes que o usuário real os encontre.</div></div>
     </div>
   </div>
@@ -289,9 +267,8 @@
 </nav>
 <footer>
   <p>© 2025 Samantha Silva</p>
-  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+  <p><a href="../index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
-<script src="../assets/textos.js"></script>
 <script src="../assets/shared.js"></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
@@ -300,20 +277,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-(function(){
-  window.addEventListener('message', function(e) {
-    if (e.data && typeof e.data.iframeHeight === 'number') {
-      var iframes = document.querySelectorAll('iframe');
-      iframes.forEach(function(f) {
-        try {
-          if (f.contentWindow === e.source) {
-            f.style.height = Math.max(e.data.iframeHeight, 200) + 'px';
-          }
-        } catch(x) {}
-      });
-    }
-  });
-})();
+window.addEventListener('message',function(e){if(e.data&&typeof e.data.iframeHeight==='number'){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=Math.max(e.data.iframeHeight,200)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>

@@ -29,7 +29,7 @@
 .pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
 .pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.cbody{max-width:1100px;margin:0 auto;padding:5rem 4rem 5rem}
+.cbody{max-width:800px;margin:0 auto;padding:5rem 4rem 5rem}
 .sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
 .slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
 .sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
@@ -172,36 +172,20 @@
 .cni:hover .cnt{opacity:1}
 .cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
 
-/* ── Responsividade dos cases ─────────────────────────────── */
-@media (min-width: 1200px) {
-  .cbody, .body { max-width: 1100px !important; padding: 5rem 5rem 5rem !important; }
-}
-@media (min-width: 900px) and (max-width: 1199px) {
-  .cbody, .body { max-width: 900px !important; padding: 5rem 4rem 5rem !important; }
-}
-@media (max-width: 899px) {
-  .cbody, .body { padding: 3rem 2rem 4rem !important; }
-  .case-hero { padding-left: 2rem !important; padding-right: 2rem !important; }
-}
-@media (max-width: 600px) {
-  .cbody, .body { padding: 2rem 1.25rem 3rem !important; }
-  .case-hero { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-}
-.case-img-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-img { width: 100%; height: auto; display: block; }
-.case-img-caption { font-size: .75rem; color: var(--gray); text-align: center; padding: .6rem 1rem; background: var(--gray-light); border-top: 1px solid var(--gray-line); margin: 0; }
-.case-anim-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-anim-block iframe { display: block; width: 100%; border: none; transition: height 0.2s ease; }
 
+
+
+
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 </style>
 </head>
-<body data-page="case01">
+<body>
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
@@ -217,7 +201,7 @@
     <div class="cpill">Case 01 · IA Generativa · Governança de Conteúdo</div>
     <div class="cco">Meridian Investimentos · Content Designer II · 2025</div>
     <h1 data-pt="Assistente de Voz da Marca" data-en="Brand Voice Assistant">Assistente de Voz da Marca</h1>
-    <p class="hsub" data-pt="Como criamos um copiloto com IA para garantir que qualquer time pudesse escrever com a voz da Meridian, no canal certo, para o cliente certo, no momento certo." data-en="How we built an AI copilot to ensure any team could write in Meridian's voice, in the right channel, for the right customer, at the right moment.">Como criamos um copiloto com IA para garantir que qualquer time pudesse escrever com a voz da Meridian, no canal certo, para o cliente certo, no momento certo.</p>
+    <p class="hsub" data-pt="Como criamos um copiloto com IA para que qualquer time conseguisse escrever com a voz da Meridian, no canal certo, para o cliente certo, no momento certo." data-en="How we built an AI copilot to ensure any team could write in Meridian's voice, in the right channel, for the right customer, at the right moment.">Como criamos um copiloto com IA para que qualquer time conseguisse escrever com a voz da Meridian, no canal certo, para o cliente certo, no momento certo.</p>
     <div class="ctags"><span class="tag">IA Generativa</span><span class="tag">Governança de Conteúdo</span><span class="tag">Tom de Voz</span><span class="tag">Content Strategy</span></div>
     <div class="disc" data-pt="Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos), nomes de segmentos e registros de comunicação. O processo, as decisões e os resultados são reais." data-en="Fictionalized elements to protect confidentiality: company name (Meridian Investimentos), segment names and communication registers. The process, decisions, and results are real.">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos), nomes de segmentos e registros de comunicação. O processo, as decisões e os resultados são reais.</div>
     <div class="pbadge"><span class="pdot"></span><span data-pt="Em piloto" data-en="In pilot">Em piloto</span></div>
@@ -226,16 +210,16 @@
 <main id="case-content" class="cbody">
   <div class="sec fade">
     <div class="slabel">01 — O contexto</div>
-    <p data-pt="A Meridian atende três segmentos de clientes com perfis, vocabulários e estados mentais muito diferentes. Todos os times de produto escreviam copy para esses segmentos sem uma referência consolidada de voz. O resultado eram inconsistências entre canais, entre segmentos e entre times." data-en="Meridian serves three customer segments with very different profiles, vocabularies, and mental states. All product teams were writing copy for these segments without a consolidated voice reference. The result was inconsistency across channels, segments, and teams.">A Meridian atende três segmentos de clientes com perfis, vocabulários e estados mentais muito diferentes. Todos os times de produto escreviam copy para esses segmentos sem uma referência consolidada de voz. O resultado eram inconsistências entre canais, entre segmentos e entre times.</p>
-    <p data-pt="Um mesmo estado de erro podia soar protocolar em um canal e informal em outro. O time de Content não conseguia revisar tudo." data-en="The same error state could sound formal in one channel and informal in another. The Content team couldn't review everything.">Um mesmo estado de erro podia soar protocolar em um canal e informal em outro. O time de Content não conseguia revisar tudo.</p>
+    <p data-pt="A Meridian atende três segmentos de clientes com perfis, vocabulários e estados mentais muito diferentes. Todos os times escreviam para esses segmentos sem uma referência consolidada de voz. O resultado eram inconsistências entre canais, segmentos e times." data-en="Meridian serves three customer segments with very different profiles, vocabularies, and mental states. All product teams were writing copy for these segments without a consolidated voice reference. The result was inconsistency across channels, segments, and teams.">A Meridian atende três segmentos de clientes com perfis, vocabulários e estados mentais muito diferentes. Todos os times escreviam para esses segmentos sem uma referência consolidada de voz. O resultado eram inconsistências entre canais, segmentos e times.</p>
+    <p data-pt="Um mesmo estado de erro soava protocolar em um canal e informal em outro. O time de Content não conseguia revisar tudo." data-en="The same error state could sound formal in one channel and informal in another. The Content team couldn't review everything.">Um mesmo estado de erro soava protocolar em um canal e informal em outro. O time de Content não conseguia revisar tudo.</p>
   </div>
   <div class="sec fade">
     <div class="slabel">02 — O problema raiz</div>
     <div class="sgrid">
-      <div class="scard"><div class="intl" data-pt="Sintoma visível" data-en="Visible symptom">Sintoma visível</div><p style="margin:0;font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300" data-pt="Designers e PMs escreviam copy sem referência consolidada. O mesmo erro soava protocolar em um canal e informal em outro." data-en="Designers and PMs wrote copy without a consolidated reference. The same error sounded formal in one channel and informal in another.">Designers e PMs escreviam copy sem referência consolidada. O mesmo erro soava protocolar em um canal e informal em outro.</p></div>
-      <div class="scard"><div class="intl" data-pt="Raiz do problema" data-en="Root cause">Raiz do problema</div><p style="margin:0;font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300" data-pt="Não existia uma arquitetura de voz operacionalizável. Algo que um Designer sem especialização em conteúdo pudesse consultar e aplicar sozinho." data-en="There was no operationalizable voice architecture. Something a Designer without content expertise could consult and apply on their own.">Não existia uma arquitetura de voz operacionalizável. Algo que um Designer sem especialização em conteúdo pudesse consultar e aplicar sozinho.</p></div>
+      <div class="scard"><div class="intl" data-pt="Sintoma visível" data-en="Visible symptom">Sintoma visível</div><p style="margin:0;font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300" data-pt="Designers e PMs escreviam sem referência consolidada de voz. O mesmo erro soava diferente dependendo do canal." data-en="Designers and PMs wrote copy without a consolidated reference. The same error sounded formal in one channel and informal in another.">Designers e PMs escreviam sem referência consolidada de voz. O mesmo erro soava diferente dependendo do canal.</p></div>
+      <div class="scard"><div class="intl" data-pt="Raiz do problema" data-en="Root cause">Raiz do problema</div><p style="margin:0;font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300" data-pt="Não existia uma arquitetura de voz que qualquer designer pudesse consultar e aplicar sem depender do time de Content." data-en="There was no operationalizable voice architecture. Something a Designer without content expertise could consult and apply on their own.">Não existia uma arquitetura de voz que qualquer designer pudesse consultar e aplicar sem depender do time de Content.</p></div>
     </div>
-    <p data-pt="A solução não era só um guia de tom de voz. Guias existem e ficam guardados sem ninguém ler. A solução era um assistente que incorporasse a voz e devolvesse respostas, não documentos." data-en="The solution wasn't just a tone of voice guide. Guides exist and sit around unread. The solution was an assistant that embodied the voice and returned answers, not documents.">A solução não era só um guia de tom de voz. Guias existem e ficam guardados sem ninguém ler. A solução era um assistente que incorporasse a voz e devolvesse respostas, não documentos.</p>
+    <p data-pt="A solução não era mais um guia de tom de voz. Guias existem e ficam guardados sem ninguém ler. A solução era um assistente que incorporasse a voz e devolvesse respostas, não documentos." data-en="The solution wasn't just a tone of voice guide. Guides exist and sit around unread. The solution was an assistant that embodied the voice and returned answers, not documents.">A solução não era mais um guia de tom de voz. Guias existem e ficam guardados sem ninguém ler. A solução era um assistente que incorporasse a voz e devolvesse respostas, não documentos.</p>
   </div>
   <div class="sec fade">
     <div class="slabel">03 — A arquitetura de voz</div>
@@ -255,10 +239,7 @@
   </div>
   <div class="sec fade">
     <div class="slabel">04 — Como construímos</div>
-  <div class="case-anim-block">
-    <iframe src="../assets/images/case-01-slack-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Animação do VozBot no Slack: três versões de push calibradas por segmento" style="display:block;width:100%;border:none;min-height:200px"></iframe></iframe>
-    <p class="case-img-caption">O VozBot em ação — três versões de push calibradas por segmento</p>
-  </div>
+  <div class="case-anim-block"><iframe src="../assets/images/case-01-slack-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="VozBot no Slack: três versões calibradas por segmento" style="display:block;width:100%;border:none;min-height:200px"></iframe><p class="case-img-caption">O VozBot em acao</p></div>
     <div class="steps">
       <div class="step"><span class="sn">01</span><div><div class="st">Diagnóstico de inconsistências</div><div class="sd">Auditoria de textos por canal, mapeando os padrões de erro mais frequentes: urgência fabricada, jargão técnico fora de contexto, tom de varejo em produto financeiro sofisticado.</div></div></div>
       <div class="step"><span class="sn">02</span><div><div class="st">Arquitetura de voz</div><div class="sd">Definição dos 3 registros de comunicação e dos 4 pilares de voz permanentes, que não mudam por canal ou contexto. Com exemplos reais de antes e depois por situação.</div></div></div>
@@ -278,19 +259,18 @@
     <div class="slabel">06 — Status atual</div>
     <div class="ps-status">
       <div class="ps-title" data-pt="Em piloto com times de Design" data-en="In pilot with Design teams">Em piloto com times de Design</div>
-      <p class="ps-text" data-pt="O assistente está sendo testado com Designers que não têm Content dedicado no squad. Estamos medindo: adoção pelos times, qualidade de copy antes e depois, redução de ciclos de revisão. Próximos passos: expansão para novos canais e jornadas de produto." data-en="The assistant is being tested with Designers who don't have dedicated Content in their squad. We're measuring: team adoption, copy quality before and after, reduction in review cycles. Next steps: expansion to new channels and product journeys.">O assistente está sendo testado com Designers que não têm Content dedicado no squad. Estamos medindo: adoção pelos times, qualidade de copy antes e depois, redução de ciclos de revisão. Próximos passos: expansão para novos canais e jornadas de produto.</p>
+      <p class="ps-text" data-pt="O assistente está em piloto com designers que não têm Content dedicado no squad. Estamos medindo adoção pelos times, qualidade do copy e redução de ciclos de revisão. Próximos passos: expansão para novos canais e jornadas de produto." data-en="The assistant is being tested with Designers who don't have dedicated Content in their squad. We're measuring: team adoption, copy quality before and after, reduction in review cycles. Next steps: expansion to new channels and product journeys.">O assistente está em piloto com designers que não têm Content dedicado no squad. Estamos medindo adoção pelos times, qualidade do copy e redução de ciclos de revisão. Próximos passos: expansão para novos canais e jornadas de produto.</p>
     </div>
   </div>
 </main>
 <nav class="cnav" aria-label="Navegação entre cases">
-  <a href="index.html" class="cni"><div class="cnd">← Todos os cases</div><div class="cnt">← Todos os cases</div></a>
+  <a href="../index.html" class="cni"><div class="cnd">← Todos os cases</div><div class="cnt">← Todos os cases</div></a>
   <a href="case-02.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Bot de Content First</div></a>
 </nav>
 <footer>
   <p>© 2025 Samantha Silva</p>
-  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+  <p><a href="../index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
-<script src="../assets/textos.js"></script>
 <script src="../assets/shared.js"></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
@@ -299,20 +279,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-(function(){
-  window.addEventListener('message', function(e) {
-    if (e.data && typeof e.data.iframeHeight === 'number') {
-      var iframes = document.querySelectorAll('iframe');
-      iframes.forEach(function(f) {
-        try {
-          if (f.contentWindow === e.source) {
-            f.style.height = Math.max(e.data.iframeHeight, 200) + 'px';
-          }
-        } catch(x) {}
-      });
-    }
-  });
-})();
+window.addEventListener('message',function(e){if(e.data&&typeof e.data.iframeHeight==='number'){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=Math.max(e.data.iframeHeight,200)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>

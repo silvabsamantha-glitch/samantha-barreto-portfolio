@@ -29,7 +29,7 @@
 .pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
 .pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.cbody{max-width:1100px;margin:0 auto;padding:5rem 4rem 5rem}
+.cbody{max-width:800px;margin:0 auto;padding:5rem 4rem 5rem}
 .sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
 .slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
 .sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
@@ -172,36 +172,20 @@
 .cni:hover .cnt{opacity:1}
 .cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
 
-/* ── Responsividade dos cases ─────────────────────────────── */
-@media (min-width: 1200px) {
-  .cbody, .body { max-width: 1100px !important; padding: 5rem 5rem 5rem !important; }
-}
-@media (min-width: 900px) and (max-width: 1199px) {
-  .cbody, .body { max-width: 900px !important; padding: 5rem 4rem 5rem !important; }
-}
-@media (max-width: 899px) {
-  .cbody, .body { padding: 3rem 2rem 4rem !important; }
-  .case-hero { padding-left: 2rem !important; padding-right: 2rem !important; }
-}
-@media (max-width: 600px) {
-  .cbody, .body { padding: 2rem 1.25rem 3rem !important; }
-  .case-hero { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-}
-.case-img-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-img { width: 100%; height: auto; display: block; }
-.case-img-caption { font-size: .75rem; color: var(--gray); text-align: center; padding: .6rem 1rem; background: var(--gray-light); border-top: 1px solid var(--gray-line); margin: 0; }
-.case-anim-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-anim-block iframe { display: block; width: 100%; border: none; transition: height 0.2s ease; }
 
+
+
+
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 </style>
 </head>
-<body data-page="case07">
+<body>
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
@@ -217,12 +201,12 @@
     <div class="cpill purple">Case 07 · Estudo de Caso · UX Writing · API</div>
     <div class="cco">Banco Nacional · UX Writer · 2020–2022</div>
     <h1 data-pt="Cartão de Crédito: a pergunta que não foi respondida" data-en="Credit Card: the question that wasn't answered">Cartão de Crédito: a pergunta que não foi respondida</h1>
-    <p class="hsub" data-pt="Uma análise de como um chatbot bem-intencionado falhou em responder à pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API." data-en="An analysis of how a well-intentioned chatbot failed to answer the customer's simplest question — and three possible paths to fix it, with and without API integration.">Uma análise de como um chatbot bem-intencionado falhou em responder à pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API.</p>
+    <p class="hsub" data-pt="Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API." data-en="An analysis of how a well-intentioned chatbot failed to answer the customer's simplest question — and three possible paths to fix it, with and without API integration.">Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API.</p>
     <div class="ctags"><span class="tag">Estudo de caso</span><span class="tag">UX Writing</span><span class="tag">Cenários</span><span class="tag">API</span><span class="tag">Jornada</span></div>
     <div class="disc">Este é um estudo de caso: análise e proposta de melhoria, não uma implementação. Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Banco Nacional). A análise e os cenários propostos são reais.</div>
     <div class="badge-study">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      <span data-pt="Estudo de caso — análise e proposta, não implementação" data-en="Case study — analysis and proposal, not implementation">Estudo de caso — análise e proposta, não implementação</span>
+      <span data-pt="Estudo de caso: análise e proposta, não implementação" data-en="Case study — analysis and proposal, not implementation">Estudo de caso: análise e proposta, não implementação</span>
     </div>
   </div>
 </section>
@@ -242,10 +226,7 @@
   </div>
   <div class="sec fade">
     <div class="slabel">03 — Os três cenários propostos</div>
-  <div class="case-anim-block">
-    <iframe src="../assets/images/case-07-cartao-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Animação antes e depois do chatbot de cartão de crédito" style="display:block;width:100%;border:none;min-height:200px"></iframe></iframe>
-    <p class="case-img-caption">Antes e depois — a pergunta que o chatbot não respondeu</p>
-  </div>
+  <div class="case-anim-block"><iframe src="../assets/images/case-07-cartao-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Antes e depois: chatbot de cartão de crédito" style="display:block;width:100%;border:none;min-height:200px"></iframe><p class="case-img-caption">Antes e depois</p></div>
     <div class="scen">
       <div class="scheader api"><span class="scn">Cenário 1</span><span class="sct">Com API completa</span><span class="scbadge">Melhor experiência</span></div>
       <div class="scbody">
@@ -277,9 +258,9 @@
   <div class="sec fade">
     <div class="slabel">04 — O que esse estudo revela</div>
     <div class="qas">
-      <div class="qa"><div class="qq">Por que responder a pergunta certa importa mais que responder corretamente?</div><div class="qa-a">A resposta atual estava tecnicamente correta. O prazo é de 7 a 10 dias úteis. Mas não respondeu à pergunta do cliente. Ele perguntou "quando chega o meu cartão", não "qual é o prazo padrão". Essa diferença, ignorada no design, gerou uma ligação desnecessária e uma experiência de baixa qualidade.</div></div>
+      <div class="qa"><div class="qq">Por que responder a pergunta certa importa mais que responder corretamente?</div><div class="qa-a">A resposta estava tecnicamente correta. O prazo é de 7 a 10 dias úteis. Mas não respondeu a pergunta do cliente. Ele perguntou quando chega o cartão dele, não qual é o prazo padrão. Essa diferença, ignorada no design, gerou uma ligação desnecessária e uma experiência de baixa qualidade.</div></div>
       <div class="qa"><div class="qq">Por que propor três cenários e não só o ideal?</div><div class="qa-a">A melhor experiência possível nem sempre é a mais viável agora. Propor três caminhos permite que o time de produto escolha o que é executável no ciclo atual sem deixar a experiência no estado ruim que estava. Mesmo sem API, dá para entregar algo muito melhor.</div></div>
-      <div class="qa"><div class="qq">O que diferencia esse estudo de uma sugestão comum de melhoria?</div><div class="qa-a">O estudo parte de uma análise de gap: o que o atendimento humano fazia que o chatbot não fazia. E propõe soluções graduadas por esforço técnico. Não é "a resposta deveria ser melhor". É "aqui estão três formas de melhorar, com diferentes níveis de integração, e aqui está o impacto de cada uma".</div></div>
+      <div class="qa"><div class="qq">O que diferencia esse estudo de uma sugestão comum de melhoria?</div><div class="qa-a">O estudo parte de uma análise de gap: o que o atendimento humano fazia que o chatbot não fazia. E propõe soluções graduadas por esforço técnico. Não é só dizer que a resposta deveria ser melhor. É apresentar três formas de melhorar, com diferentes níveis de integração e o impacto de cada uma.</div></div>
     </div>
   </div>
   <div class="sec fade">
@@ -292,13 +273,12 @@
 </main>
 <nav class="cnav" aria-label="Navegação entre cases">
   <a href="case-06.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">Seguros: Content First do zero</div></a>
-  <a href="index.html" class="cni cni-right"><div class="cnd">Todos os cases →</div><div class="cnt">Todos os cases</div></a>
+  <a href="../index.html" class="cni cni-right"><div class="cnd">Todos os cases →</div><div class="cnt">Todos os cases</div></a>
 </nav>
 <footer>
   <p>© 2025 Samantha Silva</p>
-  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+  <p><a href="../index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
-<script src="../assets/textos.js"></script>
 <script src="../assets/shared.js"></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
@@ -307,20 +287,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-(function(){
-  window.addEventListener('message', function(e) {
-    if (e.data && typeof e.data.iframeHeight === 'number') {
-      var iframes = document.querySelectorAll('iframe');
-      iframes.forEach(function(f) {
-        try {
-          if (f.contentWindow === e.source) {
-            f.style.height = Math.max(e.data.iframeHeight, 200) + 'px';
-          }
-        } catch(x) {}
-      });
-    }
-  });
-})();
+window.addEventListener('message',function(e){if(e.data&&typeof e.data.iframeHeight==='number'){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=Math.max(e.data.iframeHeight,200)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 .metric:last-child{border-right:none;margin-right:0}
 .mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
 .ml{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.4}
-.body{max-width:1100px;margin:0 auto;padding:5rem 4rem 5rem}
+.body{max-width:800px;margin:0 auto;padding:4rem 4rem 5rem}
 .sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
 .sec-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
 .sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
@@ -85,30 +85,14 @@
 .cni:hover .cnt{opacity:1}
 .cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}}
 
-/* ── Responsividade dos cases ─────────────────────────────── */
-@media (min-width: 1200px) {
-  .cbody, .body { max-width: 1100px !important; padding: 5rem 5rem 5rem !important; }
-}
-@media (min-width: 900px) and (max-width: 1199px) {
-  .cbody, .body { max-width: 900px !important; padding: 5rem 4rem 5rem !important; }
-}
-@media (max-width: 899px) {
-  .cbody, .body { padding: 3rem 2rem 4rem !important; }
-  .case-hero { padding-left: 2rem !important; padding-right: 2rem !important; }
-}
-@media (max-width: 600px) {
-  .cbody, .body { padding: 2rem 1.25rem 3rem !important; }
-  .case-hero { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-}
-.case-img-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-img { width: 100%; height: auto; display: block; }
-.case-img-caption { font-size: .75rem; color: var(--gray); text-align: center; padding: .6rem 1rem; background: var(--gray-light); border-top: 1px solid var(--gray-line); margin: 0; }
-.case-anim-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-anim-block iframe { display: block; width: 100%; border: none; transition: height 0.2s ease; }
 
+
+
+
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 </style>
 </head>
-<body data-page="case03">
+<body>
 
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
 
@@ -116,7 +100,7 @@
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
@@ -155,7 +139,7 @@
     <div class="sec-label" data-pt="01 — A fala que revelou tudo" data-en="01 — The quote that revealed everything">01 — A fala que revelou tudo</div>
     <blockquote class="pq">
       <p data-pt='"Não entendi, tenho empréstimo ou não?"' data-en='"I didn\'t get it — do I have a loan or not?"'>"Não entendi, tenho empréstimo ou não?"</p>
-      <cite data-pt="Avaliação real de CSAT — chatbot de crédito PJ" data-en="Real CSAT review — business credit chatbot">Avaliação real de CSAT — chatbot de crédito PJ</cite>
+      <cite data-pt="Avaliação real de CSAT: chatbot de crédito PJ" data-en="Real CSAT review — business credit chatbot">Avaliação real de CSAT: chatbot de crédito PJ</cite>
     </blockquote>
     <div class="stats-2">
       <div class="scard"><div class="sv">3k+</div><div class="sl" data-pt="acessos mensais no fluxo de crédito" data-en="monthly accesses in the credit flow">acessos mensais no fluxo de crédito</div></div>
@@ -166,27 +150,20 @@
 
   <div class="sec fade">
     <div class="sec-label" data-pt="02 — O que os dados escondiam" data-en="02 — What the data was hiding">02 — O que os dados escondiam</div>
-  <div class="case-img-block">
-    <img src="../assets/images/case-03-arvore.svg" alt="Árvore de decisão: fluxo original vs cenários descobertos nas conversas" class="case-img" loading="lazy"/>
-    <p class="case-img-caption">O que o fluxo via · vs · o que as conversas mostravam</p>
-  </div>
+  <div class="case-img-block"><img src="../assets/images/case-03-arvore.svg" alt="Árvore de decisão: fluxo original vs cenários" class="case-img" loading="lazy"/><p class="case-img-caption">O que o fluxo via vs o que as conversas mostravam</p></div>
     <h2 data-pt="Os números mostravam sintomas. As conversas mostravam a causa." data-en="The numbers showed symptoms. The conversations showed the cause.">Os números mostravam sintomas. As conversas mostravam a causa.</h2>
-    <p data-pt="Li cada conversa para entender o que estava acontecendo de verdade. Encontrei três padrões que não apareciam nos tickets de suporte como problema de conteúdo." data-en="I read each conversation to understand what was really happening. I found three patterns that didn't appear in support tickets as content problems.">Li cada conversa para entender o que estava acontecendo de verdade. Encontrei três padrões que não apareciam nos tickets de suporte como problema de conteúdo.</p>
+    <p data-pt="Li cada conversa para entender o que estava acontecendo. Encontrei três padrões que não apareciam nos tickets como problema de conteúdo." data-en="I read each conversation to understand what was really happening. I found three patterns that didn't appear in support tickets as content problems.">Li cada conversa para entender o que estava acontecendo. Encontrei três padrões que não apareciam nos tickets como problema de conteúdo.</p>
     <div class="diags">
       <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="O cliente perguntava <strong>se tinha crédito</strong>. O bot explicava como o sistema de análise funcionava." data-en="The customer asked <strong>if they had credit</strong>. The bot explained how the analysis system worked.">O cliente perguntava <strong>se tinha crédito</strong>. O bot explicava como o sistema de análise funcionava.</div></div>
       <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirado</strong>, sem nenhuma explicação." data-en="Customers who received an offer email arrived at the chatbot and <strong>the offer had already expired</strong>, with no explanation.">Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirada</strong>, sem nenhuma explicação.</div></div>
       <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto." data-en="Customers who searched for credit more than once in the month <strong>fell into the same generic flow</strong>, with no context recognition.">Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto.</div></div>
-      <div class="diag"><span class="dd g" aria-hidden="true"></span><div class="dt" data-pt="Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas deu para enxergar." data-en="None of these scenarios appeared in tickets as content problems. Only by reading the conversations did it become visible.">Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas deu para enxergar.</div></div>
+      <div class="diag"><span class="dd g" aria-hidden="true"></span><div class="dt" data-pt="Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas foi possível enxergar." data-en="None of these scenarios appeared in tickets as content problems. Only by reading the conversations did it become visible.">Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas foi possível enxergar.</div></div>
     </div>
   </div>
 
   <div class="sec fade">
     <div class="sec-label" data-pt="03 — Antes e depois" data-en="03 — Before and after">03 — Antes e depois</div>
-  <div class="case-anim-block">
-    <iframe src="../assets/images/case-03-whatsapp-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Animação antes e depois do chatbot de crédito PJ no WhatsApp" style="display:block;width:100%;border:none;min-height:200px"></iframe></iframe>
-    <p class="case-img-caption">Antes e depois — a resposta que não enrolava</p>
-  </div>
-    <h2 data-pt="A resposta tinha 4 parágrafos. A nova tinha 2 linhas." data-en="The response had 4 paragraphs. The new one had 2 lines.">A resposta tinha 4 parágrafos. A nova tinha 2 linhas.</h2>
+    <h2 data-pt="A resposta antiga tinha 4 parágrafos. A nova tinha 2 linhas." data-en="The response had 4 paragraphs. The new one had 2 lines.">A resposta antiga tinha 4 parágrafos. A nova tinha 2 linhas.</h2>
     <p data-pt="A diferença não era o tamanho. Era o que vinha primeiro." data-en="The difference wasn't the size. It was what came first.">A diferença não era o tamanho. Era o que vinha primeiro.</p>
     <div class="ba">
       <div class="bap ba-b">
@@ -227,7 +204,7 @@
       <span class="fp">"a informação"</span>
     </div>
     <div class="learned">
-      <p data-pt="Dados mostram onde dói. Conversas mostram por quê. Às vezes o problema que você foi resolver não é o problema real. É só o mais visível." data-en="Data shows where it hurts. Conversations show why. Sometimes the problem you went to solve isn't the real problem. It's just the most visible one.">Dados mostram onde dói. Conversas mostram por quê. Às vezes o problema que você foi resolver não é o problema real. É só o mais visível.</p>
+      <p data-pt="Dados mostram onde dói. Conversas mostram por quê. Muitas vezes o problema que você foi resolver não é o problema real. É só o mais visível." data-en="Data shows where it hurts. Conversations show why. Sometimes the problem you went to solve isn't the real problem. It's just the most visible one.">Dados mostram onde dói. Conversas mostram por quê. Muitas vezes o problema que você foi resolver não é o problema real. É só o mais visível.</p>
       <cite>Samantha Silva</cite>
     </div>
   </div>
@@ -235,8 +212,8 @@
   <div class="sec fade">
     <div class="sec-label" data-pt="06 — Decisões de design" data-en="06 — Design decisions">06 — Decisões de design</div>
     <div class="qas">
-      <div class="qa"><div class="qq" data-pt="Por que hierarquia de informação resolve um problema de CSAT?" data-en="Why does information hierarchy solve a CSAT problem?">Por que hierarquia de informação resolve um problema de CSAT?</div><div class="qa-a" data-pt="O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço significa melhor percepção da experiência." data-en="The customer wasn't dissatisfied with the product. They were dissatisfied with the effort to understand the response. When the most important information comes first and the message fits on screen without scrolling, cognitive effort drops. Less effort means better experience perception.">O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço significa melhor percepção da experiência.</div></div>
-      <div class="qa"><div class="qq" data-pt="O que diferencia mapear cenários de simplesmente reescrever textos?" data-en="What distinguishes mapping scenarios from simply rewriting text?">O que diferencia mapear cenários de simplesmente reescrever textos?</div><div class="qa-a" data-pt="Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Precisei ler as conversas para enxergar isso." data-en="Rewriting without mapping scenarios solves symptoms, not causes. The two scenarios I identified weren't in tickets as content problems. They were hidden as dissatisfied customers. I needed to read the conversations to see that.">Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Precisei ler as conversas para enxergar isso.</div></div>
+      <div class="qa"><div class="qq" data-pt="Por que hierarquia de informação resolve um problema de CSAT?" data-en="Why does information hierarchy solve a CSAT problem?">Por que hierarquia de informação resolve um problema de CSAT?</div><div class="qa-a" data-pt="O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai." data-en="The customer wasn't dissatisfied with the product. They were dissatisfied with the effort to understand the response. When the most important information comes first and the message fits on screen without scrolling, cognitive effort drops. Less effort means better experience perception.">O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai.</div></div>
+      <div class="qa"><div class="qq" data-pt="O que diferencia mapear cenários de simplesmente reescrever textos?" data-en="What distinguishes mapping scenarios from simply rewriting text?">O que diferencia mapear cenários de simplesmente reescrever textos?</div><div class="qa-a" data-pt="Reescrever sem mapear cenários resolve os sintomas, não as causas. Os cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Só lendo as conversas foi possível enxergar." data-en="Rewriting without mapping scenarios solves symptoms, not causes. The two scenarios I identified weren't in tickets as content problems. They were hidden as dissatisfied customers. I needed to read the conversations to see that.">Reescrever sem mapear cenários resolve os sintomas, não as causas. Os cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Só lendo as conversas foi possível enxergar.</div></div>
     </div>
   </div>
 
@@ -249,9 +226,8 @@
 
 <footer>
   <p>© 2025 Samantha Silva</p>
-  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+  <p><a href="../index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
-<script src="../assets/textos.js"></script>
 <script src="../assets/shared.js"></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
@@ -260,20 +236,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-(function(){
-  window.addEventListener('message', function(e) {
-    if (e.data && typeof e.data.iframeHeight === 'number') {
-      var iframes = document.querySelectorAll('iframe');
-      iframes.forEach(function(f) {
-        try {
-          if (f.contentWindow === e.source) {
-            f.style.height = Math.max(e.data.iframeHeight, 200) + 'px';
-          }
-        } catch(x) {}
-      });
-    }
-  });
-})();
+window.addEventListener('message',function(e){if(e.data&&typeof e.data.iframeHeight==='number'){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=Math.max(e.data.iframeHeight,200)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>

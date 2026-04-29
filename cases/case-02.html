@@ -29,7 +29,7 @@
 .pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
 .pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.cbody{max-width:1100px;margin:0 auto;padding:5rem 4rem 5rem}
+.cbody{max-width:800px;margin:0 auto;padding:5rem 4rem 5rem}
 .sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
 .slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
 .sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
@@ -172,36 +172,20 @@
 .cni:hover .cnt{opacity:1}
 .cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
 
-/* ── Responsividade dos cases ─────────────────────────────── */
-@media (min-width: 1200px) {
-  .cbody, .body { max-width: 1100px !important; padding: 5rem 5rem 5rem !important; }
-}
-@media (min-width: 900px) and (max-width: 1199px) {
-  .cbody, .body { max-width: 900px !important; padding: 5rem 4rem 5rem !important; }
-}
-@media (max-width: 899px) {
-  .cbody, .body { padding: 3rem 2rem 4rem !important; }
-  .case-hero { padding-left: 2rem !important; padding-right: 2rem !important; }
-}
-@media (max-width: 600px) {
-  .cbody, .body { padding: 2rem 1.25rem 3rem !important; }
-  .case-hero { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-}
-.case-img-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-img { width: 100%; height: auto; display: block; }
-.case-img-caption { font-size: .75rem; color: var(--gray); text-align: center; padding: .6rem 1rem; background: var(--gray-light); border-top: 1px solid var(--gray-line); margin: 0; }
-.case-anim-block { margin: 2rem 0 2.5rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-line); }
-.case-anim-block iframe { display: block; width: 100%; border: none; transition: height 0.2s ease; }
 
+
+
+
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 </style>
 </head>
-<body data-page="case02">
+<body>
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
@@ -230,11 +214,11 @@
     <div class="pq">
       <p>"Vamos fazer um push para reengajar clientes inativos."</p>
     </div>
-    <p>O canal foi definido antes de qualquer pergunta sobre o cliente. Quem é esse cliente? Onde está na jornada? O que sente? O que precisa saber? Nenhuma dessas perguntas foi feita.</p>
+    <p>O canal foi definido antes de qualquer pergunta sobre o cliente. Quem é essa pessoa? Onde está na jornada? O que sente? O que precisa saber? Nenhuma dessas perguntas foi feita.</p>
     <div class="pq" style="border-color:var(--green);background:var(--green-mist)">
       <p style="color:var(--green)">"Clientes que abriram conta mas não fizeram o primeiro aporte estão com medo de errar o primeiro passo. Precisam de clareza e encorajamento, não de pressão."</p>
     </div>
-    <p>A intenção e o contexto do cliente definem o conteúdo. <strong>O canal vem no final</strong>, não no começo.</p>
+    <p>A intenção e o contexto do cliente definem o conteúdo. O canal vem por último, não no começo.</p>
   </div>
   <div class="sec fade">
     <div class="slabel">02 — O framework Content First</div>
@@ -250,13 +234,10 @@
   </div>
   <div class="sec fade">
     <div class="slabel">03 — Por que um bot e não um documento</div>
-  <div class="case-anim-block">
-    <iframe src="../assets/images/case-02-contentfirst-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Animação do ContentFirst Bot: intenção antes de canal" style="display:block;width:100%;border:none;min-height:200px"></iframe></iframe>
-    <p class="case-img-caption">O ContentFirst Bot invertendo o processo — intenção antes de canal</p>
-  </div>
+  <div class="case-anim-block"><iframe src="../assets/images/case-02-contentfirst-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="ContentFirst Bot no Slack" style="display:block;width:100%;border:none;min-height:200px"></iframe><p class="case-img-caption">O ContentFirst Bot em acao</p></div>
     <div class="qas">
-      <div class="qa"><div class="qq">Por que um bot e não um checklist ou guia?</div><div class="qa-a">Um documento exige que a pessoa lembre de consultá-lo. Um checklist não conecta as respostas entre si. O bot força a sequência certa — você não chega ao canal antes de definir a intenção, e entrega uma saída estruturada pronta para refinar. A lógica está embutida no processo, não na disciplina de quem usa.</div></div>
-      <div class="qa"><div class="qq">Por que canal vem por último?</div><div class="qa-a">Começar pelo canal é o padrão mais comum em comunicação digital. Ele força o conteúdo a se adaptar às limitações do canal antes de definir o que precisa ser dito. Inverter essa lógica muda o resultado: o canal passa a ser uma consequência da intenção, não uma restrição inicial.</div></div>
+      <div class="qa"><div class="qq">Por que um bot e não um checklist ou guia?</div><div class="qa-a">Um documento exige que a pessoa lembre de consultá-lo. Um checklist não conecta as respostas entre si. O bot força a sequência certa: você não chega ao canal antes de definir a intenção, e entrega uma saída estruturada pronta para refinar. A lógica está embutida no processo, não na disciplina de quem usa.</div></div>
+      <div class="qa"><div class="qq">Por que o canal vem por último?</div><div class="qa-a">Começar pelo canal é o padrão mais comum em comunicação digital. Ele força o conteúdo a se adaptar às limitações do canal antes de definir o que precisa ser dito. Inverter essa lógica muda o resultado: o canal passa a ser uma consequência da intenção, não uma restrição de partida.</div></div>
       <div class="qa"><div class="qq">Por que é uma iniciativa própria?</div><div class="qa-a">Nasceu de uma fricção real que eu observava no dia a dia. Estruturei a solução, prototipei o bot e estou validando antes de propor como processo oficial do time. É design orientado por problema, não por demanda.</div></div>
     </div>
   </div>
@@ -274,9 +255,8 @@
 </nav>
 <footer>
   <p>© 2025 Samantha Silva</p>
-  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+  <p><a href="../index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
-<script src="../assets/textos.js"></script>
 <script src="../assets/shared.js"></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
@@ -285,20 +265,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-(function(){
-  window.addEventListener('message', function(e) {
-    if (e.data && typeof e.data.iframeHeight === 'number') {
-      var iframes = document.querySelectorAll('iframe');
-      iframes.forEach(function(f) {
-        try {
-          if (f.contentWindow === e.source) {
-            f.style.height = Math.max(e.data.iframeHeight, 200) + 'px';
-          }
-        } catch(x) {}
-      });
-    }
-  });
-})();
+window.addEventListener('message',function(e){if(e.data&&typeof e.data.iframeHeight==='number'){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=Math.max(e.data.iframeHeight,200)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>
