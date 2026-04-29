@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samantha Silva — Content Designer & UX Writer</title>
+<meta name="description" content="Portfólio de Samantha Silva — Content Designer, UX Writer e Designer Conversacional, especialista em IA Generativa e fintech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+/* ── HERO ─────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  background: var(--navy-mid);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: auto;
+  }
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 80%, rgba(15,110,86,0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 80% 20%, rgba(26,26,46,0.6) 0%, transparent 60%);
+  pointer-events: none;
+}
+/* subtle grid texture */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 9rem 4rem 5rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .hero-left {
+    padding: 7rem 2rem 2rem;
+    order: 2;
+  }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-2);
+  margin-bottom: 1.75rem;
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green-2);
+  animation: blink 2s ease-in-out infinite;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3.2rem, 5vw, 5rem);
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  margin-bottom: 1.5rem;
+}
+.hero-name em {
+  font-style: normal;
+  color: var(--green-2);
+}
+
+.hero-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 3rem;
+}
+.hero-role {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+}
+.hero-role.hi { color: rgba(255,255,255,0.82); font-weight: 400; }
+
+.hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.hero-right {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  .hero-right {
+    order: 1;
+    min-height: 55vw;
+    max-height: 480px;
+  }
+}
+.hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hero-illustration-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.hero-photo-frame {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  max-width: 380px;
+  aspect-ratio: 3/4;
+  border-radius: 200px 200px 60px 60px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  margin-bottom: 0;
+  align-self: flex-end;
+}
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+@media (max-width: 900px) {
+  .hero-photo-frame {
+    width: 65%;
+    max-width: 280px;
+  }
+}
+@media (max-width: 480px) {
+  .hero-photo-frame {
+    width: 72%;
+  }
+}
+.hero-illustration {
+  width: 100%;
+  opacity: 0.9;
+}
+.hero-bio { display: none; }
+.hero-stats { display: none; }
+
+/* scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}
+.scroll-hint span {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
+  animation: scrollpulse 2s ease-in-out infinite;
+}
+@keyframes scrollpulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+/* ── COMPANIES ──────────────────────────────────────────────────── */
+.companies-sec {
+  padding: 3rem 4rem;
+  border-bottom: 1px solid var(--gray-line);
+}
+.companies-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 1.25rem;
+}
+.companies-row {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.company-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  opacity: 0.55;
+  transition: all 0.2s;
+  padding: 0.35rem 1.25rem;
+  border-right: 1px solid var(--gray-line);
+}
+.company-name:first-child { padding-left: 0; }
+.company-name:last-child { border-right: none; }
+.company-name:hover { opacity: 1; color: var(--green); }
+
+/* ── ABOUT ──────────────────────────────────────────────────────── */
+.about-sec {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.about-left {
+  background: var(--navy-mid);
+  padding: 6rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.about-left::before {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15,110,86,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.about-left .sec-label { color: var(--green-2); }
+.about-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  color: var(--white);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.about-quote em {
+  font-style: normal;
+  color: var(--green-2);
+}
+.about-body {
+  max-width: 420px;
+  margin-bottom: 2rem;
+}
+.about-body p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.about-body p:last-child { margin-bottom: 0; }
+.about-body strong { color: rgba(255,255,255,0.88); font-weight: 500; }
+.about-highlight {
+  color: rgba(255,255,255,0.75) !important;
+  font-style: italic;
+  border-left: 2px solid rgba(26,155,118,0.5);
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+.about-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.about-right {
+  padding: 6rem 4rem;
+  background: var(--gray-light);
+}
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.5rem;
+}
+.skill-row {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--gray-line);
+}
+.skill-row:last-child { border-bottom: none; }
+.skill-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding-top: 6px;
+}
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.skill-pill {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: var(--r-full);
+  background: var(--white);
+  color: var(--navy);
+  border: 1.5px solid rgba(26,26,46,0.18);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.skill-pill-green {
+  background: var(--green-mist);
+  color: var(--green);
+  border-color: rgba(15,110,86,0.25);
+}
+
+/* ── CASES ──────────────────────────────────────────────────────── */
+.cases-sec { background: var(--white); }
+
+.cases-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+}
+
+/* Featured case (full-width) */
+.case-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--navy-mid);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  position: relative;
+}
+.case-featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 10% 80%, rgba(15,110,86,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+.case-featured:hover { transform: translateY(-3px); box-shadow: 0 20px 60px rgba(26,26,46,0.25); }
+.case-featured-left {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+.case-featured-right {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+.case-featured .case-card-number { color: rgba(26,155,118,0.7); }
+.case-featured .case-card-co { color: rgba(255,255,255,0.3); }
+.case-featured .case-card-title { color: var(--white); font-size: 1.75rem; }
+.case-featured .case-card-desc { color: rgba(255,255,255,0.45); }
+.case-featured .case-metric-val { font-size: 2rem; color: var(--green-2); }
+.case-featured .case-metric-label { color: rgba(255,255,255,0.35); }
+.case-featured .case-card-metrics { border-top-color: rgba(255,255,255,0.07); }
+.case-featured .tag { background: rgba(15,110,86,0.2); color: var(--green-2); }
+
+/* Grid of remaining cases */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--gray-line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.cases-grid .case-card {
+  border-radius: 0;
+  border: none;
+}
+.cases-grid .case-card:first-child { border-radius: var(--r-lg) 0 0 0; }
+.cases-grid .case-card:nth-child(3) { border-radius: 0 var(--r-lg) 0 0; }
+.cases-grid .case-card:nth-child(4) { border-radius: 0 0 0 var(--r-lg); }
+.cases-grid .case-card:last-child { border-radius: 0 0 var(--r-lg) 0; }
+
+.cases-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ── PROCESS ────────────────────────────────────────────────────── */
+.process-sec { background: var(--navy-mid); }
+.process-sec .sec-label { color: var(--green-2); }
+
+.process-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  margin-top: 4rem;
+  align-items: start;
+}
+.process-steps { display: flex; flex-direction: column; }
+.process-step {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  align-items: start;
+}
+.process-step:last-child { border-bottom: none; }
+.p-num {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--green-2);
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+.p-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.p-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* chat demo */
+.chat-demo {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.chat-header {
+  padding: 1rem 1.25rem;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.chat-dot { width: 8px; height: 8px; border-radius: 50%; }
+.chat-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+}
+.chat-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+}
+.label-before { background: rgba(230,60,60,0.15); color: #F09595; }
+.label-after  { background: rgba(15,110,86,0.25); color: var(--green-2); }
+
+.chat-body { padding: 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+.bubble {
+  max-width: 80%;
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.bubble-bot {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.72);
+  border-radius: 4px 14px 14px 14px;
+  align-self: flex-start;
+}
+.bubble-user {
+  background: rgba(15,110,86,0.18);
+  color: rgba(255,255,255,0.65);
+  border-radius: 14px 14px 4px 14px;
+  align-self: flex-end;
+}
+.bubble-bot-v2 {
+  background: rgba(15,110,86,0.25);
+  border: 1px solid rgba(15,110,86,0.3);
+  color: rgba(255,255,255,0.82);
+  border-radius: 4px 14px 14px 14px;
+  align-self: flex-start;
+}
+.chat-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+.chat-divider-line { flex: 1; height: 1px; background: rgba(255,255,255,0.06); }
+.chat-divider span {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+/* ── CONTACT ────────────────────────────────────────────────────── */
+.contact-sec {
+  background: var(--white);
+  text-align: center;
+  padding: 7rem 4rem;
+}
+.contact-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-mist);
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 2rem;
+}
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  max-width: 600px;
+  margin: 0 auto 1.25rem;
+}
+.contact-title em { font-style: normal; color: var(--green); }
+.contact-sub {
+  font-size: 1rem;
+  color: var(--gray);
+  font-weight: 300;
+  max-width: 460px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+.contact-links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ─────────────────────────────────────────────────────── */
+footer {
+  background: var(--navy);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+footer p { font-size: 0.78rem; color: rgba(255,255,255,0.2); font-weight: 300; }
+footer a { color: rgba(255,255,255,0.35); transition: color 0.2s; }
+footer a:hover { color: var(--green-2); }
+
+/* ── NAV override for hero (light nav on dark bg) ─────────────── */
+.nav-on-dark .nav-logo { color: var(--white); }
+.nav-on-dark .nav-center a { color: rgba(255,255,255,0.45); }
+.nav-on-dark .nav-center a:hover { color: var(--green-2); }
+.nav-on-dark .lang-toggle { background: rgba(255,255,255,0.08); }
+.nav-on-dark .lang-btn { color: rgba(255,255,255,0.4); }
+.nav-on-dark .lang-btn.active { background: rgba(255,255,255,0.15); color: var(--white); }
+nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+<!-- NAV -->
+<nav class="nav-on-dark" id="main-nav" aria-label="Navegação principal">
+  <a href="index.html" class="nav-logo">Samantha<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero" aria-label="Apresentação">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      <span data-pt="Disponível para novas oportunidades" data-en="Open to new opportunities">Disponível para novas oportunidades</span>
+    </div>
+    <h1 class="hero-name">Samantha<br><em>Silva</em></h1>
+    <div class="hero-roles">
+      <span class="hero-role hi">Content Designer</span>
+      <span class="hero-role hi" data-pt="Designer Conversacional" data-en="Conversational Designer">Designer Conversacional</span>
+      <span class="hero-role hi">UX Writer</span>
+      <span class="hero-role" data-pt="IA Generativa · Fintech · 6+ anos" data-en="Generative AI · Fintech · 6+ years">IA Generativa · Fintech · 6+ anos</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#cases" class="btn btn-primary" data-pt="Ver cases" data-en="See work">Ver cases</a>
+      <a href="#contato" class="btn btn-ghost" data-pt="Fale comigo" data-en="Get in touch">Fale comigo</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <!-- Ilustração como fundo decorativo -->
+      <svg class="hero-illustration-bg" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+<style>
+.il-lt{stroke:rgba(26,155,118,0.4);stroke-width:1.2;fill:none;stroke-linecap:round}
+.il-ld{stroke:rgba(255,255,255,0.15);stroke-width:1;fill:none;stroke-linecap:round}
+.il-le{stroke:rgba(230,80,80,0.25);stroke-width:1;fill:none;stroke-linecap:round}
+.il-da{stroke:rgba(26,155,118,0.2);stroke-width:1;fill:none;stroke-dasharray:3 5}
+.il-dg{fill:rgba(26,155,118,0.5)}
+.il-dw{fill:rgba(255,255,255,0.2)}
+.il-dr{fill:rgba(230,80,80,0.45)}
+.il-lb{fill:rgba(255,255,255,0.25);font-family:"DM Sans",sans-serif;font-size:9px;letter-spacing:.07em}
+.il-lg{fill:rgba(26,155,118,0.7);font-family:"DM Sans",sans-serif;font-size:9px;letter-spacing:.07em}
+@keyframes il-blink{0%,100%{opacity:1}50%{opacity:0}}
+.il-cur{fill:rgba(26,155,118,0.8);animation:il-blink 1.3s ease-in-out infinite}
+
+/* ── Carrossel do processo ──────────────────────────────────────── */
+.process-carousel { margin-top: 0; }
+
+.carousel-eyebrow {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-bottom: 1rem;
+}
+.carousel-slides { position: relative; }
+.carousel-slide { display: none; }
+.carousel-slide.active { display: block; animation: slideIn 0.35s ease; }
+@keyframes slideIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+.cslide-header {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--r-md) var(--r-md) 0 0;
+  border-bottom: none;
+}
+.cslide-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; color: var(--green-2); }
+.cslide-title { font-size: 0.85rem; font-weight: 500; color: var(--white); }
+
+.cslide-body {
+  padding: 1.25rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 0 0 var(--r-md) var(--r-md);
+  display: flex; flex-direction: column; gap: 0.875rem;
+  min-height: 200px;
+}
+.cslide-body.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+.cslide-stats { display: flex; flex-direction: column; gap: 0.75rem; }
+.cstat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--r-sm); padding: 0.875rem 1rem;
+}
+.cstat-val { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--green-2); line-height: 1; }
+.cstat-label { font-size: 0.72rem; color: rgba(255,255,255,0.38); margin-top: 3px; line-height: 1.4; }
+
+.cquote {
+  border-left: 2px solid rgba(220,80,80,0.4);
+  padding: 0.75rem 1rem;
+  background: rgba(220,80,80,0.05);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: 0.875rem; color: rgba(255,255,255,0.65);
+  line-height: 1.6; font-style: italic;
+  margin-bottom: 0.75rem;
+}
+.cnote { font-size: 0.82rem; color: rgba(255,255,255,0.42); line-height: 1.65; font-weight: 300; }
+
+.cdiag { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.cdiag:last-child { border-bottom: none; padding-bottom: 0; }
+.cdiag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.cdiag-dot.red { background: rgba(220,80,80,0.65); }
+.cdiag-dot.green { background: var(--green-2); }
+.cdiag p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 300; }
+.cdiag p strong { color: rgba(255,255,255,0.78); font-weight: 500; }
+
+.cbefore-label, .cafter-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; margin-bottom: 0.6rem;
+  display: flex; align-items: center; gap: 5px;
+}
+.cbefore-label { color: rgba(220,80,80,0.65); }
+.cafter-label { color: var(--green-2); }
+.cbefore-label::before { content:''; width:5px; height:5px; border-radius:50%; background:rgba(220,80,80,0.65); }
+.cafter-label::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--green-2); }
+
+.cbubble {
+  max-width: 90%; padding: 0.65rem 0.875rem;
+  font-size: 0.8rem; line-height: 1.55; margin-bottom: 0.4rem;
+}
+.cbubble.user {
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5);
+  border-radius: 12px 12px 4px 12px; margin-left: auto;
+  font-style: italic;
+}
+.cbubble.bot-before {
+  background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.5);
+  border-radius: 4px 12px 12px 12px;
+  border-left: 2px solid rgba(220,80,80,0.25);
+}
+.cbubble.bot-after {
+  background: rgba(26,155,118,0.1);
+  border: 1px solid rgba(26,155,118,0.2);
+  color: rgba(255,255,255,0.78);
+  border-radius: 4px 12px 12px 12px;
+}
+.cdecision {
+  font-size: 0.78rem; color: rgba(255,255,255,0.38);
+  line-height: 1.6; font-style: italic;
+  border-left: 2px solid rgba(26,155,118,0.25);
+  padding: 0.6rem 0.875rem;
+  background: rgba(26,155,118,0.05);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  margin-top: 0.5rem;
+}
+.cdecision.green strong { color: var(--green-2); font-style: normal; }
+
+.cresult-metrics { display: flex; gap: 0.875rem; margin-bottom: 1rem; }
+.cresult-metric {
+  background: rgba(26,155,118,0.08);
+  border: 1px solid rgba(26,155,118,0.15);
+  border-radius: var(--r-sm); padding: 0.875rem 1rem; flex: 1; text-align: center;
+}
+.crval { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--green-2); line-height: 1; }
+.crlabel { font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-top: 3px; }
+.cfeedback-label {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 0.6rem;
+}
+.cfeedbacks { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 0.875rem; }
+.cfeed {
+  font-size: 0.75rem; padding: 3px 10px; border-radius: var(--r-full);
+  background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.cresult-note {
+  font-size: 0.82rem; color: rgba(255,255,255,0.42);
+  line-height: 1.65; font-style: italic;
+  padding-top: 0.875rem; border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.carousel-controls {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-top: 1rem;
+}
+.carousel-dots { display: flex; gap: 6px; }
+.cdot {
+  width: 20px; height: 3px; border-radius: 2px;
+  background: rgba(255,255,255,0.12);
+  border: none; cursor: pointer;
+  transition: all 0.2s; padding: 0;
+}
+.cdot.active { background: var(--green-2); width: 32px; }
+.carousel-btns { display: flex; gap: 6px; }
+.carousel-btn {
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
+  padding: 6px 14px; border-radius: var(--r-full);
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer; transition: all 0.2s;
+}
+.carousel-btn:hover { background: rgba(255,255,255,0.12); color: var(--white); }
+.carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+@media (max-width: 700px) {
+  .cslide-body.two-col { grid-template-columns: 1fr; }
+  .cresult-metrics { flex-direction: column; }
+}
+</style>
+<defs><marker id="il-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 2L8 5L2 8" fill="none" stroke="rgba(26,155,118,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<!-- Frame app esquerda -->
+<rect x="20" y="40" width="200" height="300" rx="14" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+<circle cx="48" cy="62" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="62" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="72" cy="62" r="3" fill="rgba(255,255,255,0.1)"/>
+<line x1="44" y1="90" x2="160" y2="90" stroke="rgba(255,255,255,0.2)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="44" y1="104" x2="196" y2="104" class="il-ld"/><line x1="44" y1="114" x2="172" y2="114" class="il-ld"/>
+<rect x="44" y="136" width="160" height="30" rx="6" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+<line x1="56" y1="148" x2="110" y2="148" class="il-ld"/><line x1="56" y1="158" x2="140" y2="158" class="il-ld" style="opacity:.5"/>
+<text x="56" y="132" class="il-lb">nome completo</text>
+<rect x="44" y="180" width="160" height="26" rx="6" fill="rgba(230,80,80,0.05)" stroke="rgba(230,80,80,0.18)" stroke-width="0.8"/>
+<circle cx="56" cy="193" r="3" class="il-dr"/>
+<line x1="66" y1="189" x2="186" y2="189" class="il-le"/><line x1="66" y1="199" x2="160" y2="199" class="il-le" style="opacity:.5"/>
+<rect x="44" y="220" width="160" height="34" rx="17" fill="rgba(26,155,118,0.15)" stroke="rgba(26,155,118,0.3)" stroke-width="0.8"/>
+<text x="124" y="242" text-anchor="middle" class="il-lg">continuar</text>
+<text x="80" y="276" class="il-lb">precisa de ajuda?</text>
+<line x1="80" y1="279" x2="176" y2="279" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+<rect x="44" y="296" width="160" height="26" rx="7" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+<circle cx="58" cy="309" r="4" fill="rgba(26,155,118,0.25)" stroke="rgba(26,155,118,0.35)" stroke-width="0.5"/>
+<line x1="70" y1="305" x2="186" y2="305" class="il-ld"/><line x1="70" y1="315" x2="160" y2="315" class="il-ld" style="opacity:.5"/>
+<!-- Linha divisória central -->
+<line x1="340" y1="20" x2="340" y2="380" stroke="rgba(26,155,118,0.08)" stroke-width="0.5" stroke-dasharray="2 10"/>
+<!-- Bolhas chat direita -->
+<rect x="380" y="44" width="240" height="60" rx="18" fill="rgba(26,155,118,0.06)" stroke="rgba(26,155,118,0.22)" stroke-width="0.8"/>
+<line x1="400" y1="66" x2="568" y2="66" class="il-lt"/><line x1="400" y1="78" x2="530" y2="78" class="il-lt"/><line x1="400" y1="90" x2="480" y2="90" class="il-lt"/>
+<rect x="484" y="84" width="1.5" height="10" class="il-cur"/>
+<path d="M400 104 L382 118 L418 104" fill="rgba(26,155,118,0.06)" stroke="rgba(26,155,118,0.22)" stroke-width="0.8" stroke-linejoin="round"/>
+<rect x="420" y="134" width="200" height="44" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+<line x1="440" y1="154" x2="590" y2="154" class="il-ld"/><line x1="440" y1="166" x2="548" y2="166" class="il-ld"/>
+<path d="M616 178 L636 190 L612 178" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8" stroke-linejoin="round"/>
+<path d="M480 118 Q450 126 480 134" class="il-da" marker-end="url(#il-a)"/>
+<path d="M510 178 Q530 188 510 202" class="il-da" marker-end="url(#il-a)"/>
+<rect x="380" y="202" width="240" height="70" rx="18" fill="rgba(26,155,118,0.06)" stroke="rgba(26,155,118,0.22)" stroke-width="0.8"/>
+<line x1="400" y1="224" x2="568" y2="224" class="il-lt"/><line x1="400" y1="236" x2="548" y2="236" class="il-lt"/><line x1="400" y1="248" x2="556" y2="248" class="il-lt"/><line x1="400" y1="260" x2="440" y2="260" class="il-lt"/>
+<rect x="444" y="254" width="1.5" height="10" class="il-cur"/>
+<!-- Tags processo -->
+<circle cx="394" cy="308" r="2" class="il-dg"/>
+<rect x="402" y="299" width="64" height="18" rx="9" fill="rgba(26,155,118,0.1)" stroke="rgba(26,155,118,0.25)" stroke-width="0.7"/>
+<text x="434" y="312" text-anchor="middle" class="il-lg">intenção</text>
+<circle cx="394" cy="336" r="2" class="il-dw"/>
+<rect x="402" y="327" width="58" height="18" rx="9" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
+<text x="431" y="340" text-anchor="middle" class="il-lb">contexto</text>
+<line x1="394" y1="312" x2="394" y2="326" stroke="rgba(26,155,118,0.15)" stroke-width="0.6"/>
+<!-- Base -->
+<line x1="20" y1="376" x2="640" y2="376" stroke="rgba(255,255,255,0.05)" stroke-width="0.6"/>
+<text x="44" y="392" class="il-lb">app · faq · e-mail · notificação · landing page · chatbot · ia generativa</text>
+      </svg>
+      <!-- Foto principal -->
+      <div class="hero-photo-frame">
+        <img class="hero-photo" src="assets/foto.jpg" alt="Samantha Silva, Content Designer">
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- COMPANIES -->
+<section class="companies-sec" id="main-content">
+  <p class="companies-label" data-pt="Onde trabalhei" data-en="Where I've worked">Onde trabalhei</p>
+  <div class="companies-row">
+    <span class="company-name">Avenue Securities</span>
+    <span class="company-name">Stone & Co</span>
+    <span class="company-name">IBM Brasil</span>
+    <span class="company-name">Banco Itaú</span>
+    <span class="company-name">Cognizant</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-sec" id="sobre" aria-label="Sobre Samantha Silva">
+  <div class="about-left fade">
+    <div class="sec-label" data-pt="Sobre mim" data-en="About me">Sobre mim</div>
+    <h2 class="about-quote" data-pt="Conteúdo que <em>resolve</em>, não só comunica." data-en="Content that <em>solves</em>, not just communicates.">Conteúdo que <em>resolve</em>, não só comunica.</h2>
+    <div class="about-body">
+      <p>Sou apaixonada por tecnologia, escrita e por tudo que envolve gente de verdade.</p>
+      <p>Minha especialidade está na interseção entre linguagem, comportamento e dados. É ali que eu desenho experiências que fazem sentido, que fluem e que não precisam ser explicadas duas vezes.</p>
+      <p>Crio fluxos conversacionais e sistemas de conteúdo que <strong>funcionam</strong>. Que acolhem. E que as pessoas entendem já na primeira leitura. Porque clareza também é cuidado.</p>
+      <p>Trabalho junto com times de produto, design e engenharia para transformar evidências em decisões.</p>
+      <p class="about-highlight">E, no meio disso tudo, existe um momento que ainda me encanta.<br>Quando um número melhora por causa de uma frase bem colocada.</p>
+    </div>
+    <div class="about-links">
+      <a href="https://linkedin.com/in/samanthasilva-ux" class="btn btn-ghost" target="_blank">LinkedIn</a>
+      <a href="https://wa.me/5511952054102?text=Oi%20Samantha%2C%20vi%20seu%20portf%C3%B3lio%20e%20queria%20conversar!" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+  <div class="about-right fade" data-delay="100">
+    <div class="sec-label" data-pt="Habilidades" data-en="Skills">Habilidades</div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-cat" data-pt="Conversacional" data-en="Conversational">Conversacional</span>
+        <div class="skill-items">
+          <span class="skill-pill skill-pill-green">Chatbot</span>
+          <span class="skill-pill skill-pill-green">NLP / Intents</span>
+          <span class="skill-pill skill-pill-green">Dialogflow</span>
+          <span class="skill-pill skill-pill-green">Watson</span>
+          <span class="skill-pill skill-pill-green">Fluxos</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">IA Generativa</span>
+        <div class="skill-items">
+          <span class="skill-pill skill-pill-green">Prompt Engineering</span>
+          <span class="skill-pill skill-pill-green">Knowledge Base</span>
+          <span class="skill-pill skill-pill-green">LLM</span>
+          <span class="skill-pill skill-pill-green">Curadoria</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">UX Writing</span>
+        <div class="skill-items">
+          <span class="skill-pill">Microcopy</span>
+          <span class="skill-pill">Tom de Voz</span>
+          <span class="skill-pill">Personas</span>
+          <span class="skill-pill">Guidelines</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat" data-pt="Pesquisa" data-en="Research">Pesquisa</span>
+        <div class="skill-items">
+          <span class="skill-pill">Entrevistas</span>
+          <span class="skill-pill">Card Sorting</span>
+          <span class="skill-pill">Testes conteúdo</span>
+          <span class="skill-pill">CSAT</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat" data-pt="Métricas" data-en="Metrics">Métricas</span>
+        <div class="skill-items">
+          <span class="skill-pill">KPIs</span>
+          <span class="skill-pill">A/B Test</span>
+          <span class="skill-pill">Análise dados</span>
+          <span class="skill-pill">Retenção</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat" data-pt="Ferramentas" data-en="Tools">Ferramentas</span>
+        <div class="skill-items">
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">Miro</span>
+          <span class="skill-pill">Jira</span>
+          <span class="skill-pill">Confluence</span>
+          <span class="skill-pill">Salesforce</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat" data-pt="Idiomas" data-en="Languages">Idiomas</span>
+        <div class="skill-items">
+          <span class="skill-pill" data-pt="Português nativo" data-en="Native Portuguese">Português nativo</span>
+          <span class="skill-pill" data-pt="Inglês fluente" data-en="Fluent English">Inglês fluente</span>
+          <span class="skill-pill" data-pt="Espanhol intermediário" data-en="Intermediate Spanish">Espanhol intermediário</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="sec cases-sec" id="cases" aria-label="Cases selecionados">
+  <div class="cases-header fade">
+    <div>
+      <div class="sec-label" data-pt="Cases selecionados" data-en="Selected work">Cases selecionados</div>
+      <h2 class="sec-title" data-pt="Cada projeto começa<br>com uma dor real." data-en="Every project starts<br>with a real problem.">Cada projeto começa<br>com uma dor real.</h2>
+    </div>
+    <a href="cases/index.html" class="btn btn-outline" data-pt="Ver todos os cases →" data-en="See all cases →">Ver todos os cases →</a>
+  </div>
+
+  <!-- Featured: Niara -->
+  <a href="cases/case-04.html" class="case-featured fade">
+    <div class="case-featured-left">
+      <div class="case-card-number" data-pt="Case em destaque · Personalidade & Tom de Voz" data-en="Featured case · Personality & Tone of Voice">Case em destaque · Personalidade & Tom de Voz</div>
+      <div class="case-card-co">IBM Brasil / Banco Itaú · 2020–2022</div>
+      <h3 class="case-card-title" data-pt="Niara: Criando a alma de um assistente virtual de RH" data-en="Niara — Building the soul of an HR virtual assistant">Niara: Criando a alma de um assistente virtual de RH</h3>
+      <p class="case-card-desc" data-pt="+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot." data-en="+600 employees interviewed, 40h of content testing, 24h of Design Sprint. From scratch to a personality that changed the bot's numbers.">+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot.</p>
+      <div class="case-card-tags">
+        <span class="tag" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</span>
+        <span class="tag" data-pt="Persona" data-en="Persona">Persona</span>
+        <span class="tag">Design Sprint</span>
+        <span class="tag">UX Research</span>
+      </div>
+    </div>
+    <div class="case-featured-right">
+      <div class="case-card-metrics" style="flex-direction:column; gap:1.25rem; border:none; padding:0; margin:0;">
+        <div>
+          <div class="case-metric-val">+64%</div>
+          <div class="case-metric-label" data-pt="volume de conversas" data-en="conversation volume">volume de conversas</div>
+        </div>
+        <div>
+          <div class="case-metric-val">+25%</div>
+          <div class="case-metric-label" data-pt="share de atendimento digital" data-en="digital support share">share de atendimento digital</div>
+        </div>
+        <div>
+          <div class="case-metric-val">−11,5pp</div>
+          <div class="case-metric-label" data-pt="falso positivo" data-en="false positive">falso positivo</div>
+        </div>
+        <div>
+          <div class="case-metric-val">+9pp</div>
+          <div class="case-metric-label" data-pt="acurácia" data-en="accuracy">acurácia</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Grid: 6 cases -->
+  <div class="cases-grid fade" data-delay="120">
+
+    <a href="cases/case-01.html" class="case-card">
+      <div class="case-card-body">
+        <div class="case-card-number">Case 01 · IA Generativa</div>
+        <div class="case-card-co">Avenue Securities · 2025</div>
+        <h3 class="case-card-title" data-pt="Assistente de Voz da Marca" data-en="Brand Voice Assistant">Assistente de Voz da Marca</h3>
+        <p class="case-card-desc" data-pt="Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada." data-en="AI copilot to ensure voice consistency across all channels — adapted by segment and journey moment.">Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.</p>
+        <div class="case-card-tags">
+          <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-pt="Em piloto" data-en="In pilot">Em piloto</span>
+          <span class="tag">Gen AI</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-02.html" class="case-card">
+      <div class="case-card-body">
+        <div class="case-card-number" data-pt="Case 02 · Framework próprio" data-en="Case 02 · Own framework">Case 02 · Framework próprio</div>
+        <div class="case-card-co">Avenue Securities · 2026</div>
+        <h3 class="case-card-title" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</h3>
+        <p class="case-card-desc" data-pt="Uma iniciativa minha para inverter o processo. Intenção antes de canal. Prototipado e testando." data-en="Own initiative to flip the process: intention before channel. Prototyped and testing.">Uma iniciativa minha para inverter o processo. Intenção antes de canal. Prototipado e testando.</p>
+        <div class="case-card-tags">
+          <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-pt="Em testes" data-en="In testing">Em testes</span>
+          <span class="tag">Content Strategy</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-03.html" class="case-card">
+      <div class="case-card-body">
+        <div class="case-card-number">Case 03 · UX Writing</div>
+        <div class="case-card-co">Stone & Co · 2023–2025</div>
+        <h3 class="case-card-title" data-pt="Redesign Conversacional: Crédito PJ" data-en="Conversational Redesign — Business Credit">Redesign Conversacional: Crédito PJ</h3>
+        <p class="case-card-desc" data-pt="O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo." data-en="Information hierarchy and unmapped scenarios. Biggest CSAT offender turned into real improvement.">O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo.</p>
+        <div class="case-card-metrics">
+          <div>
+            <div class="case-metric-val">+10pp</div>
+            <div class="case-metric-label">CSAT</div>
+          </div>
+          <div>
+            <div class="case-metric-val">+3pp</div>
+            <div class="case-metric-label" data-pt="Retenção" data-en="Retention">Retenção</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-05.html" class="case-card">
+      <div class="case-card-body">
+        <div class="case-card-number" data-pt="Case 05 · Alta pressão" data-en="Case 05 · High pressure">Case 05 · Alta pressão</div>
+        <div class="case-card-co">IBM / Banco Itaú · 2020–2022</div>
+        <h3 class="case-card-title" data-pt="Assistente de Gerentes PF: do zero ao segundo começo" data-en="Branch Manager Assistant — from scratch to a second start">Assistente de Gerentes PF: do zero ao segundo começo</h3>
+        <p class="case-card-desc" data-pt="O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto." data-en="Chatbot for branch managers with the customer right in front. High-pressure context changes everything in conversational design.">O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto.</p>
+        <div class="case-card-tags">
+          <span class="tag">Conversational Design</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-06.html" class="case-card">
+      <div class="case-card-body">
+        <div class="case-card-number">Case 06 · Content First</div>
+        <div class="case-card-co">IBM / Banco Itaú · 2020–2022</div>
+        <h3 class="case-card-title" data-pt="Seguros — Content First do Zero" data-en="Insurance — Content First from Scratch">Seguros — Content First do Zero</h3>
+        <p class="case-card-desc" data-pt="Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa." data-en="New insurance assistant designed before any screen: intention, expected outcome, enactment, and journey.">Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa.</p>
+        <div class="case-card-tags">
+          <span class="tag">Content First</span>
+          <span class="tag" data-pt="Novo Bot" data-en="New Bot">Novo Bot</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-07.html" class="case-card">
+      <div class="case-card-body">
+        <div class="case-card-number">Case 07 · API & Jornada</div>
+        <div class="case-card-co">IBM / Banco Itaú · 2020–2022</div>
+        <h3 class="case-card-title" data-pt="Cartão de Crédito: a pergunta que não foi respondida" data-en="Credit Card — the question that wasn't answered">Cartão de Crédito: a pergunta que não foi respondida</h3>
+        <p class="case-card-desc" data-pt="O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API." data-en="The customer asked when the card arrives, not what the deadline is. Three solution scenarios with and without API.">O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API.</p>
+        <div class="case-card-tags">
+          <span class="tag">API</span>
+          <span class="tag" data-pt="Cenários" data-en="Scenarios">Cenários</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="cases-cta fade">
+    <a href="cases/index.html" class="btn btn-outline" data-pt="Ver todos os cases →" data-en="See all cases →">Ver todos os cases →</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec process-sec" id="processo" aria-label="Processo de trabalho">
+  <div class="sec-label" data-pt="Como trabalho" data-en="How I work">Como trabalho</div>
+  <h2 class="sec-title sec-title-light" data-pt="Do problema real ao resultado real." data-en="From real problem to real result.">Do problema real ao resultado real.</h2>
+
+  <div class="process-layout">
+    <div class="process-steps fade">
+      <div class="process-step">
+        <span class="p-num">01</span>
+        <div>
+          <div class="p-title" data-pt="Entendo antes de escrever" data-en="Understand before writing">Entendo antes de escrever</div>
+          <div class="p-desc" data-pt="Converso com quem usa, leio os dados, ouço o atendimento. A pergunta certa raramente é a primeira que aparece." data-en="I talk to users, read the data, listen to support. The right question is rarely the first one that comes up.">Converso com quem usa, leio os dados, ouço o atendimento. A pergunta certa raramente é a primeira que aparece.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="p-num">02</span>
+        <div>
+          <div class="p-title" data-pt="Mapeio o contexto" data-en="Map the context">Mapeio o contexto</div>
+          <div class="p-desc" data-pt="Onde a pessoa está na jornada, o que ela já sabe, o que precisa saber. Vale para chatbot, e-mail, botão ou FAQ." data-en="Where the person is in the journey, what they already know, what they need to know. Works for chatbot, email, button or FAQ.">Onde a pessoa está na jornada, o que ela já sabe, o que precisa saber. Vale para chatbot, e-mail, botão ou FAQ.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="p-num">03</span>
+        <div>
+          <div class="p-title" data-pt="Tomo decisões intencionais" data-en="Make intentional decisions">Tomo decisões intencionais</div>
+          <div class="p-desc" data-pt="Tom, hierarquia, canal, formato. Cada escolha tem uma razão. Nada é por instinto ou convenção." data-en="Tone, hierarchy, channel, format. Every choice has a reason. Nothing is by instinct or convention.">Tom, hierarquia, canal, formato. Cada escolha tem uma razão. Nada é por instinto ou convenção.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="p-num">04</span>
+        <div>
+          <div class="p-title" data-pt="Meço e ajusto" data-en="Measure and adjust">Meço e ajusto</div>
+          <div class="p-desc" data-pt="KPIs definidos antes de publicar. Ciclos curtos. O trabalho não termina no go-live." data-en="KPIs defined before publishing. Short cycles. The work doesn't end at go-live.">KPIs definidos antes de publicar. Ciclos curtos. O trabalho não termina no go-live.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrossel do processo -->
+    <div class="process-carousel fade" data-delay="150" role="region" aria-label="Exemplo prático do processo de trabalho">
+      <div class="carousel-eyebrow">Na prática · Chatbot de Crédito PJ · Stone & Co · 2023–2025</div>
+      <div class="carousel-slides">
+
+        <div class="carousel-slide active" id="cs1">
+          <div class="cslide-header">
+            <span class="cslide-num" aria-label="Slide 1 de 4">01 / 04</span>
+            <span class="cslide-title">O problema</span>
+          </div>
+          <div class="cslide-body two-col">
+            <div class="cslide-stats">
+              <div class="cstat"><div class="cstat-val">3k+</div><div class="cstat-label">acessos mensais no fluxo de crédito</div></div>
+              <div class="cstat"><div class="cstat-val">60%</div><div class="cstat-label">CSAT médio. Maior ofensor do produto.</div></div>
+            </div>
+            <div>
+              <blockquote class="cquote">"Não entendi, tenho empréstimo ou não?"</blockquote>
+              <p class="cnote">O bot usava quatro mensagens para não responder à pergunta mais básica. O problema não era técnico. Era de conteúdo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide" id="cs2">
+          <div class="cslide-header">
+            <span class="cslide-num" aria-label="Slide 2 de 4">02 / 04</span>
+            <span class="cslide-title">O diagnóstico</span>
+          </div>
+          <div class="cslide-body">
+            <div class="cdiag"><span class="cdiag-dot red"></span><p>A resposta não respondia à pergunta. O cliente perguntava <strong>se tinha crédito</strong> e o bot explicava como o sistema de análise funcionava.</p></div>
+            <div class="cdiag"><span class="cdiag-dot red"></span><p>Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirado</strong>, sem nenhuma explicação no fluxo.</p></div>
+            <div class="cdiag"><span class="cdiag-dot red"></span><p>Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto.</p></div>
+            <div class="cdiag"><span class="cdiag-dot green"></span><p>Esses cenários foram identificados lendo conversas reais. <strong>Não apareciam nos tickets</strong> como problema de conteúdo. Estavam escondidos como clientes insatisfeitos.</p></div>
+          </div>
+        </div>
+
+        <div class="carousel-slide" id="cs3">
+          <div class="cslide-header">
+            <span class="cslide-num" aria-label="Slide 3 de 4">03 / 04</span>
+            <span class="cslide-title">Antes e depois</span>
+          </div>
+          <div class="cslide-body two-col">
+            <div>
+              <div class="cbefore-label">Antes</div>
+              <div class="cbubble user">Tenho empréstimo disponível?</div>
+              <div class="cbubble bot-before">Sabemos que o empréstimo pode fazer a diferença no seu negócio e é por isso que estamos fazendo melhorias. Por enquanto, apenas uma pequena base de clientes tem o produto disponível.</div>
+              <div class="cbubble bot-before">A gente não consegue te garantir uma oferta no momento, mas temos algumas dicas que podem te ajudar a aumentar suas chances de passar pela análise de crédito.</div>
+              <div class="cdecision">Quatro mensagens. Sem responder se tem ou não tem. O cliente ainda perguntou de novo no final.</div>
+            </div>
+            <div>
+              <div class="cafter-label">Depois</div>
+              <div class="cbubble user">Tenho empréstimo disponível?</div>
+              <div class="cbubble bot-after">Verifiquei aqui e no momento não há crédito disponível pra você. 😕<br><br>Assim que surgir uma oferta, a gente te avisa!</div>
+              <div class="cdecision green"><strong>Resposta direta primeiro.</strong> Sem dicas não solicitadas. Fechamento claro com próximo passo.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide" id="cs4">
+          <div class="cslide-header">
+            <span class="cslide-num" aria-label="Slide 4 de 4">04 / 04</span>
+            <span class="cslide-title">O resultado</span>
+          </div>
+          <div class="cslide-body">
+            <div class="cresult-metrics">
+              <div class="cresult-metric"><div class="crval">+10pp</div><div class="crlabel">CSAT (66% para 76%)</div></div>
+              <div class="cresult-metric"><div class="crval">+3pp</div><div class="crlabel">Retenção (76% para 79%)</div></div>
+            </div>
+            <div class="cfeedback-label">O que os clientes passaram a dizer</div>
+            <div class="cfeedbacks">
+              <span class="cfeed">"respostas mais claras"</span>
+              <span class="cfeed">"rapidez"</span>
+              <span class="cfeed">"agilidade"</span>
+              <span class="cfeed">"muito bom atendimento"</span>
+              <span class="cfeed">"a informação"</span>
+            </div>
+            <p class="cresult-note">Menos esforço cognitivo. Melhor percepção da experiência. O cliente queria saber se tinha ou não tinha e passou a receber exatamente isso.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="carousel-controls">
+        <div class="carousel-dots" role="tablist" aria-label="Slides do carrossel">
+          <button class="cdot active" role="tab" aria-selected="true" aria-controls="cs1" onclick="goSlide(0)"><span class="sr-only">Slide 1: O problema</span></button>
+          <button class="cdot" role="tab" aria-selected="false" aria-controls="cs2" onclick="goSlide(1)"><span class="sr-only">Slide 2: O diagnóstico</span></button>
+          <button class="cdot" role="tab" aria-selected="false" aria-controls="cs3" onclick="goSlide(2)"><span class="sr-only">Slide 3: Antes e depois</span></button>
+          <button class="cdot" role="tab" aria-selected="false" aria-controls="cs4" onclick="goSlide(3)"><span class="sr-only">Slide 4: O resultado</span></button>
+        </div>
+        <div class="carousel-btns">
+          <button class="carousel-btn" id="cprev" onclick="navSlide(-1)" disabled aria-label="Slide anterior">&#8592; Anterior</button>
+          <button class="carousel-btn" id="cnext" onclick="navSlide(1)" aria-label="Próximo slide">Próximo &#8594;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contato" aria-label="Contato">
+  <div class="contact-availability fade">
+    <span class="hero-eyebrow-dot"></span>
+    <span data-pt="Disponível para novas oportunidades" data-en="Open to new opportunities">Disponível para novas oportunidades</span>
+  </div>
+  <h2 class="contact-title fade" data-pt="Vamos construir algo <em>juntos</em>?" data-en="Let's build something <em>together</em>?">Vamos construir algo <em>juntos</em>?</h2>
+  <p class="contact-sub fade" data-pt="Aberta a conversas sobre oportunidades em Content Design, Design Conversacional e IA Generativa — no Brasil ou internacionalmente." data-en="Open to conversations about opportunities in Content Design, Conversational Design, and Generative AI — in Brazil or internationally.">Aberta a conversas sobre oportunidades em Content Design, Design Conversacional e IA Generativa — no Brasil ou internacionalmente.</p>
+  <div class="contact-links fade">
+    <a href="mailto:silvabsamantha@gmail.com" class="btn btn-primary">silvabsamantha@gmail.com</a>
+    <a href="https://linkedin.com/in/samanthasilva-ux" class="btn btn-outline" target="_blank">LinkedIn</a>
+    <a href="https://wa.me/5511952054102?text=Oi%20Samantha%2C%20vi%20seu%20portf%C3%B3lio%20e%20queria%20conversar!" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Samantha Silva · Diadema, SP</p>
+  <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
+  <p><a href="cases/index.html" data-pt="Ver todos os cases" data-en="See all cases">Ver todos os cases</a></p>
+</footer>
+
+<script src="assets/shared.js"></script>
+<script>
+  // Counter trigger on intersection
+  const counterEls = document.querySelectorAll('.counter');
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = true;
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const start = performance.now();
+        const isFloat = target % 1 !== 0;
+        function step(now) {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const val = isFloat ? (eased * target).toFixed(1) : Math.round(eased * target);
+          el.textContent = val + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+    });
+  }, { threshold: 0.5 });
+  counterEls.forEach(el => counterObs.observe(el));
+
+  // Nav dark/light based on hero visibility
+  const heroEl = document.querySelector('.hero');
+  const navEl = document.getElementById('main-nav');
+  const navObs = new IntersectionObserver(([entry]) => {
+    navEl.classList.toggle('nav-on-dark', entry.isIntersecting);
+  }, { threshold: 0.1 });
+  navObs.observe(heroEl);
+</script>
+
+<script>
+// ── Carrossel do processo ─────────────────────────────────────────
+let curSlide = 0;
+const cslides = document.querySelectorAll('.carousel-slide');
+const cdots   = document.querySelectorAll('.cdot');
+
+function goSlide(n) {
+  cslides[curSlide].classList.remove('active');
+  cdots[curSlide].classList.remove('active');
+  cdots[curSlide].setAttribute('aria-selected', 'false');
+  curSlide = n;
+  cslides[curSlide].classList.add('active');
+  cdots[curSlide].classList.add('active');
+  cdots[curSlide].setAttribute('aria-selected', 'true');
+  document.getElementById('cprev').disabled = curSlide === 0;
+  document.getElementById('cnext').disabled = curSlide === cslides.length - 1;
+}
+
+function navSlide(d) {
+  goSlide(Math.max(0, Math.min(cslides.length - 1, curSlide + d)));
+}
+
+// Teclado no carrossel
+document.addEventListener('keydown', (e) => {
+  if (!document.activeElement.closest('.process-carousel')) return;
+  if (e.key === 'ArrowRight') navSlide(1);
+  if (e.key === 'ArrowLeft')  navSlide(-1);
+});
+</script>
+
+</body>
+</html>
