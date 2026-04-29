@@ -100,7 +100,7 @@
 
 /* ── Nav entre cases ───────────────────────────────────────────── */
 .cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
-.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:300px}
 .cni:hover{background:#ECEEF2}
 .cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
 .cni-right{border-left:1px solid var(--gray-line);align-items:flex-end}
@@ -114,7 +114,7 @@
 .case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--off-white,#F8F9FA);border-top:1px solid var(--gray-line);margin:0}
 </style>
 </head>
-<body>
+<body data-case="case05">
 
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
 
@@ -421,5 +421,18 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
+
+<script>
+window.addEventListener('message', function(e){
+  if(e.data && e.data.iframeHeight){
+    var iframes = document.querySelectorAll('iframe');
+    iframes.forEach(function(f){
+      try{ if(f.contentWindow === e.source) f.style.height = (e.data.iframeHeight + 16) + 'px'; }catch(ex){}
+    });
+  }
+});
+</script>
+
+<script src="../assets/content.js"></script>
 </body>
 </html>
