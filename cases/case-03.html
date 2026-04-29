@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case 03 — Redesign Conversacional Crédito PJ — Samantha Silva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+.case-hero {
+  padding: 9rem 4rem 5rem;
+  background: var(--navy-mid);
+  position: relative; overflow: hidden;
+}
+.case-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 90% 50%, rgba(15,110,86,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.case-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.case-hero-inner { position: relative; z-index: 1; }
+.case-hero-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+.case-number-pill {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green-2); background: rgba(26,155,118,0.12); border: 1px solid rgba(26,155,118,0.2);
+  padding: 5px 12px; border-radius: var(--r-full);
+}
+.case-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  color: var(--white); max-width: 700px; margin-bottom: 1rem;
+}
+.case-hero-sub {
+  font-size: 1.05rem; color: rgba(255,255,255,0.45); font-weight: 300;
+  max-width: 600px; line-height: 1.7; margin-bottom: 2.5rem;
+}
+.case-meta-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.case-meta-pill {
+  font-size: 0.75rem; padding: 5px 12px; border-radius: var(--r-full);
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Metrics bar */
+.case-metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 3rem;
+}
+.case-metric-item {
+  padding: 2rem 0;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.case-metric-item:last-child { border-right: none; }
+.cmv {
+  font-family: var(--font-display);
+  font-size: 2.5rem; font-weight: 800;
+  color: var(--green-2); letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.4rem;
+}
+.cml { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+
+/* Content area */
+.case-body { max-width: 800px; margin: 0 auto; padding: 5rem 4rem; }
+
+.case-section { margin-bottom: 4rem; }
+.case-section-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 1rem; padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--gray-line);
+}
+.case-section h2 {
+  font-size: 1.5rem; color: var(--navy); margin-bottom: 0.75rem;
+}
+.case-section p {
+  font-size: 0.95rem; color: var(--gray); line-height: 1.8; font-weight: 300; margin-bottom: 1rem;
+}
+.case-section p strong { color: var(--navy); font-weight: 500; }
+
+/* Quote / highlight */
+.case-pullquote {
+  border-left: 3px solid var(--green);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background: var(--green-mist);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+}
+.case-pullquote p {
+  font-size: 1rem; color: var(--navy); font-weight: 500; line-height: 1.65; margin: 0;
+}
+
+/* Before / after */
+.before-after-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--gray-line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+.ba-panel { padding: 1.75rem; }
+.ba-before { background: #FEF2F2; }
+.ba-after  { background: #F0FDF4; }
+.ba-header {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.ba-before .ba-header { color: #991B1B; }
+.ba-after  .ba-header { color: #166534; }
+.ba-item {
+  display: flex; gap: 0.6rem; align-items: flex-start;
+  font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.6rem;
+}
+.ba-before .ba-item { color: #7F1D1D; }
+.ba-after  .ba-item { color: #14532D; }
+.ba-icon { flex-shrink: 0; margin-top: 2px; font-size: 0.75rem; }
+
+/* Step rows */
+.steps { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+.step {
+  display: grid; grid-template-columns: 2.5rem 1fr;
+  gap: 1.25rem; align-items: start;
+  padding: 1.25rem 0; border-bottom: 1px solid var(--gray-line);
+}
+.step:last-child { border-bottom: none; }
+.step-n {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--green); padding-top: 2px;
+}
+.step-t { font-size: 0.95rem; font-weight: 500; color: var(--navy); margin-bottom: 0.25rem; }
+.step-d { font-size: 0.875rem; color: var(--gray); line-height: 1.65; font-weight: 300; }
+
+/* Q&A */
+.qa-list { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
+.qa {
+  border-left: 2px solid var(--green);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  background: var(--gray-light);
+}
+.qa-q { font-size: 0.875rem; font-weight: 500; color: var(--green); margin-bottom: 0.4rem; }
+.qa-a { font-size: 0.875rem; color: var(--gray); line-height: 1.7; font-weight: 300; }
+
+/* Voice pills */
+.voice-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 1rem 0; }
+
+/* Nav next/prev */
+.case-nav {
+  border-top: 1px solid var(--gray-line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--gray-light);
+}
+.case-nav-item {
+  padding: 2rem 4rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.case-nav-item:hover { background: #ECEEF2; }
+.case-nav-item + .case-nav-item { border-left: 1px solid var(--gray-line); }
+.case-nav-dir {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gray); margin-bottom: 0.4rem;
+}
+.case-nav-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--navy); letter-spacing: -0.03em; }
+</style>
+</head>
+<body>
+
+<nav id="main-nav" class="scrolled">
+  <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-hero-top">
+      <a href="index.html" class="back-link" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a>
+      <span class="case-number-pill">Case 03 · UX Writing · Design Conversacional</span>
+    </div>
+    <div class="case-meta-row" style="margin-bottom:1.25rem;">
+      <span class="case-meta-pill" data-pt="Pagora (confidencial)" data-en="Pagora (confidential)">Pagora (confidencial)</span>
+      <span class="case-meta-pill">Content Designer III</span>
+      <span class="case-meta-pill">2023–2025</span>
+    </div>
+    <h1 data-pt="Redesign conversacional — Crédito para empresas" data-en="Conversational redesign — Business credit">Redesign conversacional — Crédito para empresas</h1>
+    <p class="case-hero-sub" data-pt="Como reescrever fluxos com hierarquia da informação gerou +10p.p de CSAT e +3p.p de retenção — e o que os dados não estavam mostrando." data-en="How rewriting flows with information hierarchy generated +10pp CSAT and +3pp retention — and what the data wasn't showing.">Como reescrever fluxos com hierarquia da informação gerou +10p.p de CSAT e +3p.p de retenção — e o que os dados não estavam mostrando.</p>
+
+    <div class="case-metrics-bar">
+      <div class="case-metric-item">
+        <div class="cmv">+10pp</div>
+        <div class="cml">CSAT (66% → 76%)</div>
+      </div>
+      <div class="case-metric-item">
+        <div class="cmv">+3pp</div>
+        <div class="cml" data-pt="Retenção (76% → 79%)" data-en="Retention (76% → 79%)">Retenção (76% → 79%)</div>
+      </div>
+      <div class="case-metric-item">
+        <div class="cmv">3k+</div>
+        <div class="cml" data-pt="acessos mensais no fluxo" data-en="monthly accesses in the flow">acessos mensais no fluxo</div>
+      </div>
+      <div class="case-metric-item">
+        <div class="cmv">60%</div>
+        <div class="cml" data-pt="CSAT inicial — maior ofensor" data-en="initial CSAT — biggest offender">CSAT inicial — maior ofensor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="case-body">
+
+  <!-- Disclaimer -->
+  <div style="background:var(--gray-light);border-left:2px solid var(--gray-line);padding:0.75rem 1rem;border-radius:0 var(--r-sm) var(--r-sm) 0;margin-bottom:3rem;font-size:0.78rem;color:var(--gray);line-height:1.6;" data-pt="Elementos ficcionalizados: Pagora (empresa real: confidencial). Métricas de CSAT e retenção são reais e pertencem ao trabalho realizado." data-en="Fictionalized elements: Pagora (real company: confidential). CSAT and retention metrics are real and belong to work done.">
+    Elementos ficcionalizados: Pagora (empresa real: confidencial). Métricas de CSAT e retenção são reais e pertencem ao trabalho realizado.
+  </div>
+
+  <!-- Contexto -->
+  <div class="case-section fade">
+    <div class="case-section-label" data-pt="01 — Contexto" data-en="01 — Context">01 — Contexto</div>
+    <p data-pt="O chatbot de crédito para empresas da Pagora era o maior ofensor de CSAT do produto — com avaliação média de 60% — e o fluxo com maior volume de acessos: mais de 3 mil mensais. Clientes saíam sem entender se tinham crédito disponível." data-en="Pagora's business credit chatbot was the product's biggest CSAT offender — with an average score of 60% — and the flow with the highest access volume: over 3,000 monthly. Customers left without understanding if they had credit available.">O chatbot de crédito para empresas da Pagora era o maior ofensor de CSAT do produto — com avaliação média de 60% — e o fluxo com maior volume de acessos: mais de 3 mil mensais. Clientes saíam sem entender se tinham crédito disponível.</p>
+    <div class="case-pullquote">
+      <p data-pt="O problema não era técnico. Era de conteúdo." data-en="The problem wasn't technical. It was content.">O problema não era técnico. Era de conteúdo.</p>
+    </div>
+  </div>
+
+  <!-- Problema -->
+  <div class="case-section fade">
+    <div class="case-section-label" data-pt="02 — O problema" data-en="02 — The problem">02 — O problema</div>
+    <h2 data-pt="O que os dados mostravam — e o que estavam escondendo" data-en="What the data showed — and what it was hiding">O que os dados mostravam — e o que estavam escondendo</h2>
+    <p data-pt="Os dados apontavam sintomas: alto CSAT negativo, alto transbordo para atendimento humano. Mas a causa estava nas conversas — e para entendê-la, precisei lê-las." data-en="The data pointed to symptoms: high negative CSAT, high overflow to human support. But the cause was in the conversations — and to understand it, I needed to read them.">Os dados apontavam sintomas: alto CSAT negativo, alto transbordo para atendimento humano. Mas a causa estava nas conversas — e para entendê-la, precisei lê-las.</p>
+    <p data-pt='O que os clientes diziam: <strong>"Não entendi se tenho empréstimo disponível."</strong> · <strong>"Tem ou não tem?"</strong> · <strong>"Eu recebi um e-mail de oferta semana passada, como não tem disponível?"</strong>' data-en='What customers said: <strong>"I didn\'t understand if I have a loan available."</strong> · <strong>"Do I have it or not?"</strong> · <strong>"I received an offer email last week — how is it not available?"</strong>'>O que os clientes diziam: <strong>"Não entendi se tenho empréstimo disponível."</strong> · <strong>"Tem ou não tem?"</strong> · <strong>"Eu recebi um e-mail de oferta semana passada, como não tem disponível?"</strong></p>
+    <p data-pt="Além dos problemas visíveis, identifiquei dois cenários que o fluxo não tratava: clientes que buscavam crédito mais de uma vez no mesmo mês, e clientes que recebiam e-mail com oferta mas, ao acessar, a análise de risco já havia rodado e a oferta estava expirada — sem nenhuma explicação." data-en="Beyond the visible problems, I identified two scenarios the flow didn't handle: customers searching for credit more than once in the same month, and customers who received an offer email but, when accessing it, the risk analysis had already run and the offer had expired — with no explanation.">Além dos problemas visíveis, identifiquei dois cenários que o fluxo não tratava: clientes que buscavam crédito mais de uma vez no mesmo mês, e clientes que recebiam e-mail com oferta mas, ao acessar, a análise de risco já havia rodado e a oferta estava expirada — sem nenhuma explicação.</p>
+  </div>
+
+  <!-- Diagnóstico -->
+  <div class="case-section fade">
+    <div class="case-section-label" data-pt="03 — Diagnóstico de conteúdo" data-en="03 — Content diagnosis">03 — Diagnóstico de conteúdo</div>
+    <h2 data-pt="Antes e depois do redesign" data-en="Before and after the redesign">Antes e depois do redesign</h2>
+    <div class="before-after-grid">
+      <div class="ba-panel ba-before">
+        <div class="ba-header" data-pt="Problemas identificados" data-en="Problems identified">Problemas identificados</div>
+        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Resposta longa, sem hierarquia de informação" data-en="Long response, no information hierarchy">Resposta longa, sem hierarquia de informação</span></div>
+        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Muitas informações simultâneas sem ordem de prioridade" data-en="Too much information at once, no priority order">Muitas informações simultâneas sem ordem de prioridade</span></div>
+        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Não objetiva — não respondia diretamente à pergunta" data-en="Not direct — didn't answer the actual question">Não objetiva — não respondia diretamente à pergunta</span></div>
+        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Necessidade de rolar a tela para chegar à resposta" data-en="Required scrolling to get to the answer">Necessidade de rolar a tela para chegar à resposta</span></div>
+        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Cenários de oferta expirada sem qualquer explicação" data-en="Expired offer scenarios with no explanation">Cenários de oferta expirada sem qualquer explicação</span></div>
+      </div>
+      <div class="ba-panel ba-after">
+        <div class="ba-header" data-pt="Solução aplicada" data-en="Solution applied">Solução aplicada</div>
+        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Texto mais limpo, reduzindo esforço cognitivo" data-en="Cleaner text, reducing cognitive effort">Texto mais limpo, reduzindo esforço cognitivo</span></div>
+        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Hierarquia clara: o mais importante primeiro" data-en="Clear hierarchy: most important first">Hierarquia clara: o mais importante primeiro</span></div>
+        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Quebra de blocos semânticos para facilitar leitura" data-en="Semantic blocks broken up for easier reading">Quebra de blocos semânticos para facilitar leitura</span></div>
+        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Sem necessidade de rolar a tela" data-en="No scrolling required">Sem necessidade de rolar a tela</span></div>
+        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Novos cenários mapeados e jornadas redesenhadas" data-en="New scenarios mapped and journeys redesigned">Novos cenários mapeados e jornadas redesenhadas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Processo -->
+  <div class="case-section fade">
+    <div class="case-section-label" data-pt="04 — Processo" data-en="04 — Process">04 — Processo</div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-n">01</span>
+        <div>
+          <div class="step-t" data-pt="Análise de conversas e dados" data-en="Conversation and data analysis">Análise de conversas e dados</div>
+          <div class="step-d" data-pt="Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto de crédito." data-en="Reading real conversations, analyzing answered CSAT, mapping conversational behavior and desk research with the credit product team.">Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto de crédito.</div>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <div>
+          <div class="step-t" data-pt="Identificação de cenários não mapeados" data-en="Identifying unmapped scenarios">Identificação de cenários não mapeados</div>
+          <div class="step-d" data-pt="Dois cenários recorrentes que o fluxo não tratava — busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada." data-en="Two recurring scenarios the flow didn't handle — repeated search in the same month and expired offer after email. These scenarios caused frustration with no adequate response.">Dois cenários recorrentes que o fluxo não tratava — busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada.</div>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <div>
+          <div class="step-t" data-pt="Redesign dos fluxos" data-en="Flow redesign">Redesign dos fluxos</div>
+          <div class="step-d" data-pt="Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados." data-en="Rewriting applying information hierarchy, reducing cognitive load, breaking semantic blocks, and creating specific journeys for the identified scenarios.">Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados.</div>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-n">04</span>
+        <div>
+          <div class="step-t" data-pt="Monitoramento e iteração" data-en="Monitoring and iteration">Monitoramento e iteração</div>
+          <div class="step-d" data-pt="Acompanhamento de KPIs após implementação — CSAT, retenção, volume de transbordo — para validar o impacto e identificar novas oportunidades de melhoria." data-en="Tracking KPIs after implementation — CSAT, retention, overflow volume — to validate impact and identify new improvement opportunities.">Acompanhamento de KPIs após implementação — CSAT, retenção, volume de transbordo — para validar o impacto e identificar novas oportunidades de melhoria.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resultados -->
+  <div class="case-section fade">
+    <div class="case-section-label" data-pt="05 — Resultados" data-en="05 — Results">05 — Resultados</div>
+    <h2 data-pt="O que mudou — em número e em fala" data-en="What changed — in numbers and in words">O que mudou — em número e em fala</h2>
+    <p data-pt="Após o redesign, os indicadores do chatbot completo mostraram melhora consistente durante minha atuação na Pagora (2023–2025)." data-en="After the redesign, the full chatbot's indicators showed consistent improvement during my time at Pagora (2023–2025).">Após o redesign, os indicadores do chatbot completo mostraram melhora consistente durante minha atuação na Pagora (2023–2025).</p>
+    <div class="voice-pills">
+      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"respostas mais claras"</span>
+      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"rapidez nas respostas"</span>
+      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"agilidade"</span>
+      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"muito bom atendimento"</span>
+      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"a informação"</span>
+    </div>
+    <p style="font-size:0.8rem; margin-top:0.5rem;" data-pt="Feedback qualitativo das avaliações de CSAT após o redesign." data-en="Qualitative feedback from CSAT reviews after the redesign.">Feedback qualitativo das avaliações de CSAT após o redesign.</p>
+  </div>
+
+  <!-- Decisões -->
+  <div class="case-section fade">
+    <div class="case-section-label" data-pt="06 — Decisões de design" data-en="06 — Design decisions">06 — Decisões de design</div>
+    <div class="qa-list">
+      <div class="qa">
+        <div class="qa-q" data-pt="Por que hierarquia de informação resolve um problema de CSAT?" data-en="Why does information hierarchy solve a CSAT problem?">Por que hierarquia de informação resolve um problema de CSAT?</div>
+        <div class="qa-a" data-pt="O cliente não estava insatisfeito com o produto — estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço = melhor percepção da experiência." data-en="The customer wasn't dissatisfied with the product — they were dissatisfied with the effort to understand the response. When the most important information comes first and the message fits on one screen without scrolling, cognitive effort drops. Less effort = better experience perception.">O cliente não estava insatisfeito com o produto — estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço = melhor percepção da experiência.</div>
+      </div>
+      <div class="qa">
+        <div class="qa-q" data-pt="O que diferencia mapear cenários de simplesmente reescrever textos?" data-en="What distinguishes mapping scenarios from simply rewriting text?">O que diferencia mapear cenários de simplesmente reescrever textos?</div>
+        <div class="qa-a" data-pt="Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei — busca repetida e oferta expirada — não estavam nos tickets de suporte como 'problema de conteúdo'. Estavam escondidos como 'clientes insatisfeitos'. Precisei ler as conversas para enxergar isso." data-en="Rewriting without mapping scenarios fixes symptoms, not causes. The two scenarios I identified — repeated search and expired offer — weren't in support tickets as 'content problem'. They were hidden as 'dissatisfied customers'. I needed to read the conversations to see it.">Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei — busca repetida e oferta expirada — não estavam nos tickets de suporte como 'problema de conteúdo'. Estavam escondidos como 'clientes insatisfeitos'. Precisei ler as conversas para enxergar isso.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CASE NAV -->
+<div class="case-nav">
+  <a href="case-02.html" class="case-nav-item">
+    <div class="case-nav-dir" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div>
+    <div class="case-nav-title" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</div>
+  </a>
+  <a href="case-04.html" class="case-nav-item" style="text-align:right;">
+    <div class="case-nav-dir" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div>
+    <div class="case-nav-title" data-pt="Niara — Assistente de RH" data-en="Niara — HR Assistant">Niara — Assistente de RH</div>
+  </a>
+</div>
+
+<footer>
+  <p>© 2025 Samantha Silva</p>
+  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+</footer>
+
+<script src="../assets/shared.js"></script>
+</body>
+</html>
