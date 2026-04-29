@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/shared.css">
 <style>
-.case-hero{padding:9rem 4rem 0;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero{padding:calc(var(--nav-height) + 3.5rem) 4rem 3.5rem;background:var(--navy-mid);position:relative;overflow:hidden}
 .case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
 .case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .case-hero-inner{position:relative;z-index:1;max-width:800px}
-.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:2rem;transition:color .2s}
-.case-back:hover{color:var(--green-2)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
 .cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green-2);background:rgba(26,155,118,.12);border:1px solid rgba(26,155,118,.2);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
 .cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.5rem}
 .case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
@@ -163,21 +163,19 @@
 .tenbox{background:#FAEEDA;border-left:3px solid #C4820A;padding:1rem 1.25rem;margin:1.5rem 0}
 .tentext{font-size:1.05rem;font-weight:500;color:#633806;line-height:1.5;font-style:italic}
 .cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
-.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:block}
-.cni:hover{background:#ECEEF2}.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
-.cni+.cni{border-left:1px solid var(--gray-line);text-align:right}
-.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:.35rem}
-.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em}
-.badge-study{display:inline-flex;align-items:center;gap:.5rem;background:rgba(127,119,221,.1);border:1px solid rgba(127,119,221,.2);border-radius:var(--r-full);padding:.4rem 1rem;margin-top:1.25rem;font-size:.7rem;font-weight:500;color:#534AB7;letter-spacing:.08em;text-transform:uppercase}
-.cpill.purple{color:#7F77DD;background:rgba(127,119,221,.12);border-color:rgba(127,119,221,.2)}
-.cpill.amber{color:#C4820A;background:rgba(196,130,10,.12);border-color:rgba(196,130,10,.2)}
-@media(prefers-reduced-motion:reduce){.sec{opacity:1;transform:none;transition:none}}
-@media(max-width:768px){.case-hero{padding:7rem 1.5rem 0}.cbody{padding:3rem 1.5rem 4rem}.ba{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr}.intgrid{grid-template-columns:1fr}.objgrid{grid-template-columns:1fr}.mbar{flex-direction:column;gap:1rem}.mitem{border-right:none;padding:0;margin:0}.cnav{grid-template-columns:1fr}.cni{padding:1.5rem}.cni+.cni{border-left:none;border-top:1px solid var(--gray-line);text-align:left}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni:hover{background:#ECEEF2}
+.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cni-right{border-left:1px solid var(--gray-line);align-items:flex-end}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
+.cni:hover .cnt{opacity:1}
+.cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
 </style>
 </head>
 <body>
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
-<nav id="main-nav" class="scrolled" aria-label="Navegação principal">
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
@@ -194,7 +192,6 @@
 </nav>
 <section class="case-hero" aria-label="Case 01: Assistente de Voz da Marca na Meridian">
   <div class="case-hero-inner">
-    <a href="index.html" class="case-back" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a>
     <div class="cpill">Case 01 · IA Generativa · Governança de Conteúdo</div>
     <div class="cco">Meridian Investimentos · Content Designer II · 2025</div>
     <h1 data-pt="Assistente de Voz da Marca" data-en="Brand Voice Assistant">Assistente de Voz da Marca</h1>
@@ -260,8 +257,8 @@
   </div>
 </main>
 <nav class="cnav" aria-label="Navegação entre cases">
-  <a href="index.html" class="cni"><div class="cnd" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div><div class="cnt" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</div></a>
-  <a href="case-02.html" class="cni"><div class="cnd" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div><div class="cnt" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</div></a>
+  <a href="index.html" class="cni"><div class="cnd">← Todos os cases</div><div class="cnt">← Todos os cases</div></a>
+  <a href="case-02.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Bot de Content First</div></a>
 </nav>
 <footer>
   <p>© 2025 Samantha Silva</p>

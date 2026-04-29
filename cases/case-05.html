@@ -10,13 +10,12 @@
 <link rel="stylesheet" href="../assets/shared.css">
 <style>
 /* ── Base ──────────────────────────────────────────────────────── */
-.case-hero{padding:9rem 4rem 0;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero{padding:calc(var(--nav-height) + 3.5rem) 4rem 3.5rem;background:var(--navy-mid);position:relative;overflow:hidden}
 .case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(196,130,10,.08) 0%,transparent 60%);pointer-events:none}
 .case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .case-hero-inner{position:relative;z-index:1;max-width:800px}
-.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:2rem;transition:color .2s}
-.case-back:hover{color:#EF9F27}
-.case-back:focus-visible{outline:2px solid #EF9F27;outline-offset:3px;border-radius:4px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
 .cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#EF9F27;background:rgba(186,117,23,.15);border:1px solid rgba(186,117,23,.3);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
 .cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem}
 .case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:#fff;margin-bottom:1rem;font-weight:500}
@@ -101,22 +100,14 @@
 
 /* ── Nav entre cases ───────────────────────────────────────────── */
 .cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
-.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:block}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
 .cni:hover{background:#ECEEF2}
 .cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
-.cni+.cni{border-left:1px solid var(--gray-line);text-align:right}
-.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:.35rem}
-.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.sec{opacity:1;transform:none;transition:none}}
-@media(max-width:768px){
-  .case-hero{padding:7rem 1.5rem 0}
-  .cbody{padding:3rem 1.5rem 4rem}
-  .ctxgrid,.pins{grid-template-columns:1fr}
-  .cnav{grid-template-columns:1fr}
-  .cni{padding:1.5rem}
-  .cni+.cni{border-left:none;border-top:1px solid var(--gray-line);text-align:left}
+.cni-right{border-left:1px solid var(--gray-line);align-items:flex-end}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
+.cni:hover .cnt{opacity:1}
+.cni:focus-visible .cnt{opacity:1}
 }
 </style>
 </head>
@@ -124,7 +115,7 @@
 
 <a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
 
-<nav id="main-nav" class="scrolled" aria-label="Navegação principal">
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
@@ -142,7 +133,6 @@
 
 <section class="case-hero" aria-label="Case 05: Assistente de Gerentes PF no Banco Nacional">
   <div class="case-hero-inner">
-    <a href="index.html" class="case-back" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a>
     <div class="cpill">Case 05 · Design Conversacional · Alta pressão</div>
     <div class="cco">Banco Nacional · UX Writer · 2020–2022</div>
     <h1 data-pt="Assistente de Gerentes PF: do zero ao segundo começo" data-en="Branch Manager Assistant: from scratch to a second start">Assistente de Gerentes PF: do zero ao segundo começo</h1>
@@ -407,14 +397,8 @@
 </main>
 
 <nav class="cnav" aria-label="Navegação entre cases">
-  <a href="case-04.html" class="cni">
-    <div class="cnd" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div>
-    <div class="cnt" data-pt="Niara: a alma de um assistente" data-en="Niara: the soul of an assistant">Niara: a alma de um assistente</div>
-  </a>
-  <a href="case-06.html" class="cni">
-    <div class="cnd" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div>
-    <div class="cnt" data-pt="Seguros: Content First do zero" data-en="Insurance: Content First from scratch">Seguros: Content First do zero</div>
-  </a>
+  <a href="case-04.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">Niara: a alma de um assistente</div></a>
+  <a href="case-06.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Seguros: Content First do zero</div></a>
 </nav>
 
 <footer>
