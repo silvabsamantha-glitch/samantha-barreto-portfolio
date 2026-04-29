@@ -29,8 +29,8 @@
 .pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
 .pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.cbody{max-width:800px;margin:0 auto;padding:4rem 4rem 5rem}
-.sec{margin-bottom:3.5rem}
+.cbody{max-width:800px;margin:0 auto;padding:5rem 4rem 5rem}
+.sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
 .slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
 .sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
 .sec p{font-size:.95rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem}
@@ -171,6 +171,7 @@
 .badge-study{display:inline-flex;align-items:center;gap:.5rem;background:rgba(127,119,221,.1);border:1px solid rgba(127,119,221,.2);border-radius:var(--r-full);padding:.4rem 1rem;margin-top:1.25rem;font-size:.7rem;font-weight:500;color:#534AB7;letter-spacing:.08em;text-transform:uppercase}
 .cpill.purple{color:#7F77DD;background:rgba(127,119,221,.12);border-color:rgba(127,119,221,.2)}
 .cpill.amber{color:#C4820A;background:rgba(196,130,10,.12);border-color:rgba(196,130,10,.2)}
+@media(prefers-reduced-motion:reduce){.sec{opacity:1;transform:none;transition:none}}
 @media(max-width:768px){.case-hero{padding:7rem 1.5rem 0}.cbody{padding:3rem 1.5rem 4rem}.ba{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr}.intgrid{grid-template-columns:1fr}.objgrid{grid-template-columns:1fr}.mbar{flex-direction:column;gap:1rem}.mitem{border-right:none;padding:0;margin:0}.cnav{grid-template-columns:1fr}.cni{padding:1.5rem}.cni+.cni{border-left:none;border-top:1px solid var(--gray-line);text-align:left}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
 </style>
 </head>
@@ -275,5 +276,11 @@
   <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
 <script src="../assets/shared.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.sec').forEach(s => obs.observe(s));
+</script>
 </body>
 </html>
