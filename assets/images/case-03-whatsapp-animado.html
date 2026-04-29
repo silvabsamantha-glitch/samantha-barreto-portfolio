@@ -63,4 +63,16 @@ function run(){seq.forEach((fn,i)=>setTimeout(fn,delays[i]));setTimeout(reset,85
 function reset(){['b1','b2','b3','b4','a1','a2','a3','a4','csat','result'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('show')});setTimeout(run,700);}
 run();
 </script>
+
+<script>
+function notifyHeight(){
+  var h = document.body.scrollHeight || document.documentElement.scrollHeight;
+  window.parent.postMessage({iframeHeight: h}, '*');
+}
+window.addEventListener('load', notifyHeight);
+window.addEventListener('resize', notifyHeight);
+setTimeout(notifyHeight, 500);
+setTimeout(notifyHeight, 1500);
+</script>
+
 </body></html>

@@ -73,4 +73,16 @@ function run(){seq.forEach((fn,i)=>setTimeout(fn,delays[i]));setTimeout(reset,75
 function reset(){document.querySelectorAll('.msg').forEach(el=>el.classList.remove('show'));document.querySelectorAll('.seg-card').forEach(el=>el.classList.remove('show'));document.getElementById('bot-intro').style.opacity='0';document.getElementById('reacts').classList.remove('show');setTimeout(run,600);}
 run();
 </script>
+
+<script>
+function notifyHeight(){
+  var h = document.body.scrollHeight || document.documentElement.scrollHeight;
+  window.parent.postMessage({iframeHeight: h}, '*');
+}
+window.addEventListener('load', notifyHeight);
+window.addEventListener('resize', notifyHeight);
+setTimeout(notifyHeight, 500);
+setTimeout(notifyHeight, 1500);
+</script>
+
 </body></html>
