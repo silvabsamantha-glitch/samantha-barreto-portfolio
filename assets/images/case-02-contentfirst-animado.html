@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#0D1B2A;padding:24px;font-family:'Courier New',monospace}
+.slack{background:#1A1D21;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.slack-top{background:#350D36;padding:10px 16px;display:flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%}.dot-r{background:#FF5F57}.dot-y{background:#FFBD2E}.dot-g{background:#28C840}
+.slack-ws{font-size:12px;color:rgba(255,255,255,0.6);margin-left:8px}
+.slack-body{display:flex}
+.sidebar{width:190px;background:#350D36;padding:12px 0;flex-shrink:0}
+.sidebar-section{font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:1px;padding:8px 16px 4px;text-transform:uppercase}
+.ch{font-size:12px;color:rgba(255,255,255,0.45);padding:4px 16px}
+.ch.active{background:rgba(255,255,255,0.1);color:#fff;border-radius:4px;margin:0 8px;padding:4px 8px}
+.app-item{display:flex;align-items:center;gap:8px;padding:6px 16px;margin-top:4px}
+.app-dot{width:22px;height:22px;border-radius:50%;background:#0F4D3A;display:flex;align-items:center;justify-content:center;font-size:9px;color:#4DB896;font-weight:700;flex-shrink:0}
+.app-name{font-size:12px;color:#4DB896}.app-sub{font-size:9px;color:rgba(255,255,255,0.3);margin-top:1px}
+.main{flex:1;display:flex;flex-direction:column;min-width:0}
+.ch-header{background:#1E2130;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.ch-name{font-size:14px;color:#fff;font-weight:500}
+.ch-desc{font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px}
+.messages{padding:16px;display:flex;flex-direction:column;gap:14px;min-height:380px}
+.msg{display:flex;gap:10px;opacity:0;transform:translateY(8px);transition:opacity 0.4s ease,transform 0.4s ease}
+.msg.show{opacity:1;transform:none}
+.avatar{width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;margin-top:2px}
+.av-pm{background:#1A2A4E}.av-cf{background:#0F4D3A}
+.msg-body{flex:1;min-width:0}
+.msg-name{font-size:12px;font-weight:500;color:#E8F4F0;margin-bottom:4px}
+.msg-name span{font-size:10px;color:rgba(255,255,255,0.25);font-weight:400;margin-left:8px}
+.badge{display:inline-block;background:rgba(15,110,86,0.35);font-size:9px;color:#4DB896;padding:1px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.msg-text{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.65}
+.hl{color:#4DB896;font-weight:500}
+.questions{background:#111B28;border-left:3px solid #0F6E56;border-radius:0 6px 6px 0;padding:10px 14px;margin-top:8px;opacity:0;transition:opacity 0.4s}
+.questions.show{opacity:1}
+.q-item{font-size:11px;color:rgba(255,255,255,0.7);padding:5px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;gap:8px}
+.q-item:last-child{border-bottom:none;padding-bottom:0}
+.q-num{color:#4DB896;font-weight:700;flex-shrink:0}
+.rec-box{background:#0A2018;border-radius:6px;border:0.5px solid rgba(15,110,86,0.4);padding:10px 14px;margin-top:8px;opacity:0;transition:opacity 0.4s}
+.rec-box.show{opacity:1}
+.rec-label{font-size:9px;color:#4DB896;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.rec-text{font-size:12px;color:#E8F4F0;line-height:1.6}
+.rec-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;font-style:italic}
+.input-bar{background:#1E2130;padding:10px 16px;border-top:1px solid rgba(255,255,255,0.06)}
+.input-fake{background:#2A2E3D;border-radius:6px;padding:8px 12px;font-size:12px;color:rgba(255,255,255,0.2)}
+</style></head><body>
+<div class="slack">
+  <div class="slack-top"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span class="slack-ws">Avenue Securities</span></div>
+  <div class="slack-body">
+    <div class="sidebar">
+      <div class="sidebar-section">Canais</div>
+      <div class="ch"># produto</div><div class="ch"># releases</div><div class="ch active"># content-first-bot</div>
+      <div class="sidebar-section" style="margin-top:12px">Apps</div>
+      <div class="app-item"><div class="app-dot">CF</div><div><div class="app-name">ContentFirst Bot</div><div class="app-sub">intenção antes de canal</div></div></div>
+    </div>
+    <div class="main">
+      <div class="ch-header"><div class="ch-name"># content-first-bot</div><div class="ch-desc">Intenção antes de canal · iniciativa própria · Avenue</div></div>
+      <div class="messages">
+        <div class="msg" id="m1"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name">Ana <span>14:18</span></div><div class="msg-text">Preciso comunicar uma mudança no onboarding. Qual canal uso?</div></div></div>
+        <div class="msg" id="m2"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>14:18</span></div><div class="msg-text">Antes de escolher o canal, vamos entender a <span class="hl">intenção</span>. Responde três perguntas rápidas:</div><div class="questions" id="qs"><div class="q-item"><span class="q-num">01</span><span>O que você quer que o usuário <span class="hl">faça</span> depois de ler?</span></div><div class="q-item"><span class="q-num">02</span><span>Em qual <span class="hl">momento da jornada</span> ele está?</span></div><div class="q-item"><span class="q-num">03</span><span>A mudança é <span class="hl">urgente</span> ou informativa?</span></div></div></div></div>
+        <div class="msg" id="m3"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name">Ana <span>14:19</span></div><div class="msg-text">Quero que ele complete o onboarding. Está no dia 2. É informativa, não urgente.</div></div></div>
+        <div class="msg" id="m4"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>14:19</span></div><div class="msg-text">Entendido. Com base na intenção e no momento:</div><div class="rec-box" id="rec"><div class="rec-label">recomendação</div><div class="rec-text"><span class="hl">Canal:</span> e-mail contextual (D+2) · <span class="hl">Tom:</span> motivacional, sem urgência</div><div class="rec-sub">"Você está quase lá — 2 minutos para finalizar seu cadastro"</div></div></div></div>
+      </div>
+      <div class="input-bar"><div class="input-fake">Mensagem para #content-first-bot</div></div>
+    </div>
+  </div>
+</div>
+<script>
+function show(id){const el=document.getElementById(id);if(el)el.classList.add('show')}
+const seq=[()=>show('m1'),()=>show('m2'),()=>show('qs'),()=>show('m3'),()=>show('m4'),()=>show('rec')];
+const delays=[300,1000,1600,2800,3800,4400];
+function run(){seq.forEach((fn,i)=>setTimeout(fn,delays[i]));setTimeout(reset,8000);}
+function reset(){['m1','m2','m3','m4','qs','rec'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('show')});setTimeout(run,700);}
+run();
+</script>
+</body></html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#0D1B2A;padding:24px;font-family:'Courier New',monospace}
+.slack{background:#1A1D21;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.slack-top{background:#350D36;padding:10px 16px;display:flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%}.dot-r{background:#FF5F57}.dot-y{background:#FFBD2E}.dot-g{background:#28C840}
+.slack-ws{font-size:12px;color:rgba(255,255,255,0.6);margin-left:8px}
+.slack-body{display:flex}
+.sidebar{width:190px;background:#350D36;padding:12px 0;flex-shrink:0}
+.sidebar-section{font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:1px;padding:8px 16px 4px;text-transform:uppercase}
+.ch{font-size:12px;color:rgba(255,255,255,0.45);padding:4px 16px}
+.ch.active{background:rgba(255,255,255,0.1);color:#fff;border-radius:4px;margin:0 8px;padding:4px 8px}
+.app-item{display:flex;align-items:center;gap:8px;padding:6px 16px;margin-top:4px}
+.app-dot{width:22px;height:22px;border-radius:50%;background:#0F6E56;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:700;flex-shrink:0}
+.app-name{font-size:12px;color:#4DB896}
+.main{flex:1;display:flex;flex-direction:column;min-width:0}
+.ch-header{background:#1E2130;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.ch-name{font-size:14px;color:#fff;font-weight:500}
+.ch-desc{font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px}
+.messages{padding:16px;display:flex;flex-direction:column;gap:14px;min-height:340px}
+.msg{display:flex;gap:10px;opacity:0;transform:translateY(8px);transition:opacity 0.4s ease,transform 0.4s ease}
+.msg.show{opacity:1;transform:none}
+.avatar{width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;margin-top:2px}
+.av-sa{background:#3A1A3C}.av-bot{background:#0F6E56}
+.msg-body{flex:1;min-width:0}
+.msg-name{font-size:12px;font-weight:500;color:#E8F4F0;margin-bottom:4px}
+.msg-name span{font-size:10px;color:rgba(255,255,255,0.25);font-weight:400;margin-left:8px}
+.badge{display:inline-block;background:rgba(15,110,86,0.35);font-size:9px;color:#4DB896;padding:1px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.msg-text{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.seg-card{border-radius:6px;padding:10px 12px;opacity:0;transform:translateY(6px);transition:opacity 0.35s ease,transform 0.35s ease}
+.seg-card.show{opacity:1;transform:none}
+.seg-card.digital{background:#1E2840;border-left:3px solid #4A9EE8}
+.seg-card.advanced{background:#1A2A1E;border-left:3px solid #0F6E56;outline:1px solid rgba(15,110,86,0.4)}
+.seg-card.singular{background:#22201A;border-left:3px solid #C8A96A}
+.seg-label{font-size:9px;letter-spacing:1px;font-weight:700;text-transform:uppercase;margin-bottom:6px}
+.seg-label.d{color:#4A9EE8}.seg-label.a{color:#4DB896}.seg-label.s{color:#C8A96A}
+.seg-text{font-size:11px;color:rgba(255,255,255,0.72);line-height:1.55}
+.seg-sub{font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px}
+.reactions{display:flex;gap:6px;margin-top:8px;opacity:0;transition:opacity 0.4s}
+.reactions.show{opacity:1}
+.reaction{background:rgba(255,255,255,0.07);border:0.5px solid rgba(255,255,255,0.12);border-radius:20px;padding:2px 8px;font-size:11px;color:rgba(255,255,255,0.5)}
+.input-bar{background:#1E2130;padding:10px 16px;border-top:1px solid rgba(255,255,255,0.06)}
+.input-fake{background:#2A2E3D;border-radius:6px;padding:8px 12px;font-size:12px;color:rgba(255,255,255,0.2)}
+</style></head><body>
+<div class="slack">
+  <div class="slack-top"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span class="slack-ws">Avenue Securities</span></div>
+  <div class="slack-body">
+    <div class="sidebar">
+      <div class="sidebar-section">Canais</div>
+      <div class="ch"># conteudo-geral</div><div class="ch"># campanhas</div><div class="ch active"># voz-da-marca</div>
+      <div class="sidebar-section" style="margin-top:12px">Apps</div>
+      <div class="app-item"><div class="app-dot">V</div><div class="app-name">VozBot</div></div>
+    </div>
+    <div class="main">
+      <div class="ch-header"><div class="ch-name"># voz-da-marca</div><div class="ch-desc">Assistente de voz calibrado por segmento · Avenue Securities</div></div>
+      <div class="messages">
+        <div class="msg" id="m1"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>09:44</span></div><div class="msg-text">@VozBot preciso de 3 versões de push de aportes para os segmentos. Campanha de fim de mês. Adapte o tom por segmento.</div></div></div>
+        <div class="msg" id="m2"><div class="avatar av-bot">V</div><div class="msg-body"><div class="msg-name">VozBot <span class="badge">APP</span> <span>09:44</span></div><div class="msg-text" id="bot-intro" style="opacity:0;transition:opacity 0.3s">Aqui estão as 3 versões calibradas por segmento e momento de jornada:</div><div class="cards"><div class="seg-card digital" id="c1"><div class="seg-label d">Digital · tom leve</div><div class="seg-text">Que tal fazer seu dinheiro trabalhar por você este mês?</div><div class="seg-sub">Configure aportes agora.</div></div><div class="seg-card advanced" id="c2"><div class="seg-label a">Advanced · direto</div><div class="seg-text">Aporte programado reduz custo médio e aumenta retorno.</div><div class="seg-sub">Configure agora.</div></div><div class="seg-card singular" id="c3"><div class="seg-label s">Singular · refinado</div><div class="seg-text">Patrimônio que cresce com consistência. Programe seu próximo aporte.</div></div></div><div class="reactions" id="reacts"><div class="reaction">🙌 3</div><div class="reaction">✅ 2</div><div class="reaction">🔥 1</div></div></div></div>
+        <div class="msg" id="m3"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>09:46</span></div><div class="msg-text">Perfeito. Vou usar a versão Advanced na campanha de hoje.</div></div></div>
+      </div>
+      <div class="input-bar"><div class="input-fake">Mensagem para #voz-da-marca</div></div>
+    </div>
+  </div>
+</div>
+<script>
+function show(el){if(el)el.classList.add('show')}
+function fadeIn(el){if(el)el.style.opacity='1'}
+const seq=[()=>show(document.getElementById('m1')),()=>{show(document.getElementById('m2'));fadeIn(document.getElementById('bot-intro'))},()=>show(document.getElementById('c1')),()=>show(document.getElementById('c2')),()=>show(document.getElementById('c3')),()=>document.getElementById('reacts').classList.add('show'),()=>show(document.getElementById('m3'))];
+const delays=[300,900,1600,2000,2400,3000,3800];
+function run(){seq.forEach((fn,i)=>setTimeout(fn,delays[i]));setTimeout(reset,7500);}
+function reset(){document.querySelectorAll('.msg').forEach(el=>el.classList.remove('show'));document.querySelectorAll('.seg-card').forEach(el=>el.classList.remove('show'));document.getElementById('bot-intro').style.opacity='0';document.getElementById('reacts').classList.remove('show');setTimeout(run,600);}
+run();
+</script>
+</body></html>
