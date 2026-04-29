@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case 03: A pergunta que o chatbot nunca respondeu — Samantha Silva</title>
+<meta name="description" content="Como reescrever fluxos de chatbot com hierarquia da informação gerou mais 10 pontos percentuais de CSAT na Stone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+.case-hero{padding:calc(var(--nav-height) + 3.5rem) 4rem 3.5rem;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.case-hero-inner{position:relative;z-index:1;max-width:800px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
+.case-pill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green-2);background:rgba(26,155,118,.12);border:1px solid rgba(26,155,118,.2);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.case-co{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.5rem}
+.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
+.case-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.disclaimer{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.6}
+.metrics-bar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
+.metric{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.metric:last-child{border-right:none;margin-right:0}
+.mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.4}
+.body{max-width:800px;margin:0 auto;padding:4rem 4rem 5rem}
+.sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
+.sec-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
+.sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
+.sec p{font-size:.95rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem}
+.sec p:last-child{margin-bottom:0}
+.sec p strong{color:var(--navy);font-weight:500}
+.pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
+.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
+.stats-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
+.scard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.sv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:3px}
+.sl{font-size:.78rem;color:var(--gray);line-height:1.4}
+.diags{display:flex;flex-direction:column}
+.diag{display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 0;border-bottom:1px solid var(--gray-line)}
+.diag:last-child{border-bottom:none;padding-bottom:0}
+.dd{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.dd.r{background:#A32D2D}.dd.g{background:var(--green)}
+.dt{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.dt strong{color:var(--navy);font-weight:500}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-line);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.bap{padding:1.5rem}
+.ba-b{background:#FEF2F2}.ba-a{background:#F0FDF4}
+.bah{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:5px}
+.ba-b .bah{color:#991B1B}.ba-a .bah{color:#166534}
+.bdt{width:5px;height:5px;border-radius:50%}
+.ba-b .bdt{background:#991B1B}.ba-a .bdt{background:#166534}
+.bat{font-size:.875rem;line-height:1.65;margin-bottom:.5rem}
+.ba-b .bat{color:#7F1D1D}.ba-a .bat{color:#14532D}
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--gray-line);align-items:start}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.sn{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--green);padding-top:2px}
+.st{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
+.sd{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.qas{display:flex;flex-direction:column;gap:1rem;margin-top:.5rem}
+.qa{border-left:2px solid var(--green);padding:1rem 1.25rem;background:var(--gray-light)}
+.qq{font-size:.875rem;font-weight:500;color:var(--green);margin-bottom:.4rem}
+.qa-a{font-size:.875rem;color:var(--gray);line-height:1.7;font-weight:300}
+.rms{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.rm{background:var(--green-mist);border:0.5px solid rgba(15,110,86,.2);border-radius:var(--r-md);padding:1rem 1.25rem;flex:1;min-width:120px;text-align:center}
+.rmv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:4px}
+.rml{font-size:.72rem;color:var(--gray);line-height:1.4}
+.fps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.fp{font-size:.78rem;padding:4px 10px;border-radius:var(--r-full);background:var(--white);color:var(--gray);border:0.5px solid var(--gray-line);font-style:italic}
+.learned{background:var(--gray-light);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
+.learned p{font-size:1rem;color:var(--gray);line-height:1.75;font-style:italic;margin:0}
+.learned cite{font-size:.8rem;color:var(--navy);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
+.cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni:hover{background:#ECEEF2}
+.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cni-right{border-left:1px solid var(--gray-line);align-items:flex-end}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
+.cni:hover .cnt{opacity:1}
+.cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}}
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}
+.case-img{width:100%;height:auto;display:block}
+.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--off-white,#F8F9FA);border-top:1px solid var(--gray-line);margin:0}
+.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}
+.case-anim-block iframe{display:block;width:100%;border:none}
+</style>
+</head>
+<body>
+
+<a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
+  <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section class="case-hero" aria-label="Case 03: Redesign Conversacional Crédito PJ na Stone">
+  <div class="case-hero-inner">
+    <div class="case-pill">Case 03 · UX Writing · Design Conversacional</div>
+    <div class="case-co">Stone &amp; Co · Content Designer III · 2023–2025</div>
+    <h1 data-pt="A pergunta que o chatbot nunca respondeu" data-en="The question the chatbot never answered">A pergunta que o chatbot nunca respondeu</h1>
+    <p class="hero-sub" data-pt="Como reescrever fluxos com hierarquia da informação gerou mais 10 pontos percentuais de CSAT e mais 3 de retenção, e o que os dados não estavam mostrando." data-en="How rewriting flows with information hierarchy generated 10 more CSAT points and 3 more retention points — and what the data wasn't showing.">Como reescrever fluxos com hierarquia da informação gerou mais 10 pontos percentuais de CSAT e mais 3 de retenção, e o que os dados não estavam mostrando.</p>
+    <div class="case-tags">
+      <span class="tag">UX Writing</span>
+      <span class="tag">Design Conversacional</span>
+      <span class="tag">Hierarquia da informação</span>
+      <span class="tag">Análise de dados</span>
+    </div>
+    <div class="disclaimer" data-pt="Elementos ficcionalizados para proteger a confidencialidade: nome do produto interno e detalhes do sistema. O processo, as decisões e os resultados são reais." data-en="Fictionalized elements to protect confidentiality: internal product name and system details. The process, decisions, and results are real.">Elementos ficcionalizados para proteger a confidencialidade: nome do produto interno e detalhes do sistema. O processo, as decisões e os resultados são reais.</div>
+    <div class="metrics-bar">
+      <div class="metric"><div class="mv">+10pp</div><div class="ml">CSAT (66% para 76%)</div></div>
+      <div class="metric"><div class="mv">+3pp</div><div class="ml" data-pt="Retenção (76% para 79%)" data-en="Retention (76% to 79%)">Retenção (76% para 79%)</div></div>
+      <div class="metric"><div class="mv">3k+</div><div class="ml" data-pt="acessos mensais no fluxo" data-en="monthly accesses">acessos mensais no fluxo</div></div>
+    </div>
+  </div>
+</section>
+
+<main id="case-content" class="body">
+
+  <div class="sec fade">
+    <div class="sec-label" data-pt="01 — A fala que revelou tudo" data-en="01 — The quote that revealed everything">01 — A fala que revelou tudo</div>
+    <blockquote class="pq">
+      <p data-pt='"Não entendi, tenho empréstimo ou não?"' data-en='"I didn\'t get it — do I have a loan or not?"'>"Não entendi, tenho empréstimo ou não?"</p>
+      <cite data-pt="Avaliação real de CSAT — chatbot de crédito PJ" data-en="Real CSAT review — business credit chatbot">Avaliação real de CSAT — chatbot de crédito PJ</cite>
+    </blockquote>
+    <div class="stats-2">
+      <div class="scard"><div class="sv">3k+</div><div class="sl" data-pt="acessos mensais no fluxo de crédito" data-en="monthly accesses in the credit flow">acessos mensais no fluxo de crédito</div></div>
+      <div class="scard"><div class="sv">60%</div><div class="sl" data-pt="CSAT médio. Maior ofensor do produto." data-en="Average CSAT. Biggest product offender.">CSAT médio. Maior ofensor do produto.</div></div>
+    </div>
+    <p data-pt="O chatbot de crédito PJ era o maior ofensor de CSAT da Stone. Mais de 3 mil clientes por mês acessavam o fluxo e saíam sem entender se tinham crédito disponível. O problema não era técnico. Era de conteúdo." data-en="The business credit chatbot was Stone's biggest CSAT offender. More than 3,000 customers per month accessed the flow and left without understanding if they had credit available. The problem wasn't technical. It was content.">O chatbot de crédito PJ era o maior ofensor de CSAT da Stone. Mais de 3 mil clientes por mês acessavam o fluxo e saíam sem entender se tinham crédito disponível. O problema não era técnico. Era de conteúdo.</p>
+  </div>
+
+  <div class="sec fade">
+    <div class="sec-label" data-pt="02 — O que os dados escondiam" data-en="02 — What the data was hiding">02 — O que os dados escondiam</div>
+  <div class="case-img-block">
+    <img src="../assets/images/case-03-arvore.svg" alt="Árvore de decisão: fluxo original vs cenários descobertos nas conversas" class="case-img" loading="lazy"/>
+    <p class="case-img-caption">O que o fluxo via · vs · o que as conversas mostravam</p>
+  </div>
+    <h2 data-pt="Os números mostravam sintomas. As conversas mostravam a causa." data-en="The numbers showed symptoms. The conversations showed the cause.">Os números mostravam sintomas. As conversas mostravam a causa.</h2>
+    <p data-pt="Li cada conversa para entender o que estava acontecendo de verdade. Encontrei três padrões que não apareciam nos tickets de suporte como problema de conteúdo." data-en="I read each conversation to understand what was really happening. I found three patterns that didn't appear in support tickets as content problems.">Li cada conversa para entender o que estava acontecendo de verdade. Encontrei três padrões que não apareciam nos tickets de suporte como problema de conteúdo.</p>
+    <div class="diags">
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="O cliente perguntava <strong>se tinha crédito</strong>. O bot explicava como o sistema de análise funcionava." data-en="The customer asked <strong>if they had credit</strong>. The bot explained how the analysis system worked.">O cliente perguntava <strong>se tinha crédito</strong>. O bot explicava como o sistema de análise funcionava.</div></div>
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirado</strong>, sem nenhuma explicação." data-en="Customers who received an offer email arrived at the chatbot and <strong>the offer had already expired</strong>, with no explanation.">Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirada</strong>, sem nenhuma explicação.</div></div>
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto." data-en="Customers who searched for credit more than once in the month <strong>fell into the same generic flow</strong>, with no context recognition.">Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto.</div></div>
+      <div class="diag"><span class="dd g" aria-hidden="true"></span><div class="dt" data-pt="Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas deu para enxergar." data-en="None of these scenarios appeared in tickets as content problems. Only by reading the conversations did it become visible.">Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas deu para enxergar.</div></div>
+    </div>
+  </div>
+
+  <div class="sec fade">
+    <div class="sec-label" data-pt="03 — Antes e depois" data-en="03 — Before and after">03 — Antes e depois</div>
+  <div class="case-anim-block">
+    <iframe src="../assets/images/case-03-whatsapp-animado.html" width="100%" height="480" frameborder="0" scrolling="no" loading="lazy" style="display:block;width:100%;border:none;min-height:300px"></iframe>
+    <p class="case-img-caption">Antes e depois — a resposta que não enrolava</p>
+  </div>
+    <h2 data-pt="A resposta tinha 4 parágrafos. A nova tinha 2 linhas." data-en="The response had 4 paragraphs. The new one had 2 lines.">A resposta tinha 4 parágrafos. A nova tinha 2 linhas.</h2>
+    <p data-pt="A diferença não era o tamanho. Era o que vinha primeiro." data-en="The difference wasn't the size. It was what came first.">A diferença não era o tamanho. Era o que vinha primeiro.</p>
+    <div class="ba">
+      <div class="bap ba-b">
+        <div class="bah"><span class="bdt" aria-hidden="true"></span><span data-pt="Antes" data-en="Before">Antes</span></div>
+        <p class="bat" data-pt="Sabemos que o empréstimo pode fazer a diferença no seu negócio e é por isso que estamos fazendo melhorias. Por enquanto, apenas uma pequena base de clientes tem o produto disponível." data-en="We know that a loan can make a difference for your business and that's why we're making improvements. For now, only a small customer base has the product available.">Sabemos que o empréstimo pode fazer a diferença no seu negócio e é por isso que estamos fazendo melhorias. Por enquanto, apenas uma pequena base de clientes tem o produto disponível.</p>
+        <p class="bat" data-pt="A gente não consegue te garantir uma oferta no momento, mas temos algumas dicas que podem te ajudar a aumentar suas chances de passar pela análise de crédito..." data-en="We can't guarantee you an offer right now, but we have some tips that can help you increase your chances of passing the credit analysis...">A gente não consegue te garantir uma oferta no momento, mas temos algumas dicas que podem te ajudar a aumentar suas chances de passar pela análise de crédito...</p>
+      </div>
+      <div class="bap ba-a">
+        <div class="bah"><span class="bdt" aria-hidden="true"></span><span data-pt="Depois" data-en="After">Depois</span></div>
+        <p class="bat" data-pt="Verifiquei aqui e no momento não há crédito disponível pra você." data-en="I checked here and at the moment there's no credit available for you.">Verifiquei aqui e no momento não há crédito disponível pra você.</p>
+        <p class="bat" data-pt="Assim que surgir uma oferta, a gente te avisa!" data-en="As soon as an offer appears, we'll let you know!">Assim que surgir uma oferta, a gente te avisa!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec fade">
+    <div class="sec-label" data-pt="04 — O processo" data-en="04 — The process">04 — O processo</div>
+    <div class="steps">
+      <div class="step"><span class="sn">01</span><div><div class="st" data-pt="Análise de conversas e dados" data-en="Conversation and data analysis">Análise de conversas e dados</div><div class="sd" data-pt="Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto." data-en="Reading real conversations, analyzing CSAT responses, mapping conversational behavior, and desk research with the product team.">Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto.</div></div></div>
+      <div class="step"><span class="sn">02</span><div><div class="st" data-pt="Identificação de cenários não mapeados" data-en="Identifying unmapped scenarios">Identificação de cenários não mapeados</div><div class="sd" data-pt="Dois cenários recorrentes que o fluxo não tratava: busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada." data-en="Two recurring scenarios the flow didn't handle: repeated search in the same month and expired offer after email. These scenarios caused frustration with no adequate response.">Dois cenários recorrentes que o fluxo não tratava: busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada.</div></div></div>
+      <div class="step"><span class="sn">03</span><div><div class="st" data-pt="Redesign dos fluxos" data-en="Flow redesign">Redesign dos fluxos</div><div class="sd" data-pt="Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados." data-en="Rewriting applying information hierarchy, reducing cognitive load, breaking semantic blocks and creating specific journeys for the identified scenarios.">Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados.</div></div></div>
+      <div class="step"><span class="sn">04</span><div><div class="st" data-pt="Monitoramento e iteração" data-en="Monitoring and iteration">Monitoramento e iteração</div><div class="sd" data-pt="Acompanhamento de KPIs após a implementação: CSAT, retenção, volume de transbordo. Para validar o impacto e identificar novas oportunidades de melhoria." data-en="Tracking KPIs after implementation: CSAT, retention, overflow volume. To validate impact and identify new improvement opportunities.">Acompanhamento de KPIs após a implementação: CSAT, retenção, volume de transbordo. Para validar o impacto e identificar novas oportunidades de melhoria.</div></div></div>
+    </div>
+  </div>
+
+  <div class="sec fade">
+    <div class="sec-label" data-pt="05 — O resultado" data-en="05 — The result">05 — O resultado</div>
+    <div class="rms">
+      <div class="rm"><div class="rmv">+10pp</div><div class="rml" data-pt="CSAT (66% para 76%)" data-en="CSAT (66% to 76%)">CSAT (66% para 76%)</div></div>
+      <div class="rm"><div class="rmv">+3pp</div><div class="rml" data-pt="Retenção (76% para 79%)" data-en="Retention (76% to 79%)">Retenção (76% para 79%)</div></div>
+    </div>
+    <p data-pt="O que os clientes passaram a dizer nas avaliações:" data-en="What customers started saying in reviews:">O que os clientes passaram a dizer nas avaliações:</p>
+    <div class="fps">
+      <span class="fp">"respostas mais claras"</span>
+      <span class="fp">"rapidez"</span>
+      <span class="fp">"agilidade"</span>
+      <span class="fp">"muito bom atendimento"</span>
+      <span class="fp">"a informação"</span>
+    </div>
+    <div class="learned">
+      <p data-pt="Dados mostram onde dói. Conversas mostram por quê. Às vezes o problema que você foi resolver não é o problema real. É só o mais visível." data-en="Data shows where it hurts. Conversations show why. Sometimes the problem you went to solve isn't the real problem. It's just the most visible one.">Dados mostram onde dói. Conversas mostram por quê. Às vezes o problema que você foi resolver não é o problema real. É só o mais visível.</p>
+      <cite>Samantha Silva</cite>
+    </div>
+  </div>
+
+  <div class="sec fade">
+    <div class="sec-label" data-pt="06 — Decisões de design" data-en="06 — Design decisions">06 — Decisões de design</div>
+    <div class="qas">
+      <div class="qa"><div class="qq" data-pt="Por que hierarquia de informação resolve um problema de CSAT?" data-en="Why does information hierarchy solve a CSAT problem?">Por que hierarquia de informação resolve um problema de CSAT?</div><div class="qa-a" data-pt="O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço significa melhor percepção da experiência." data-en="The customer wasn't dissatisfied with the product. They were dissatisfied with the effort to understand the response. When the most important information comes first and the message fits on screen without scrolling, cognitive effort drops. Less effort means better experience perception.">O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço significa melhor percepção da experiência.</div></div>
+      <div class="qa"><div class="qq" data-pt="O que diferencia mapear cenários de simplesmente reescrever textos?" data-en="What distinguishes mapping scenarios from simply rewriting text?">O que diferencia mapear cenários de simplesmente reescrever textos?</div><div class="qa-a" data-pt="Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Precisei ler as conversas para enxergar isso." data-en="Rewriting without mapping scenarios solves symptoms, not causes. The two scenarios I identified weren't in tickets as content problems. They were hidden as dissatisfied customers. I needed to read the conversations to see that.">Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Precisei ler as conversas para enxergar isso.</div></div>
+    </div>
+  </div>
+
+</main>
+
+<nav class="cnav" aria-label="Navegação entre cases">
+  <a href="case-02.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">Bot de Content First</div></a>
+  <a href="case-04.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Niara: a alma de um assistente</div></a>
+</nav>
+
+<footer>
+  <p>© 2025 Samantha Silva</p>
+  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+</footer>
+<script src="../assets/shared.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.sec').forEach(s => obs.observe(s));
+</script>
+<script>
+window.addEventListener('message',function(e){
+  if(e.data&&e.data.iframeHeight){
+    document.querySelectorAll('iframe').forEach(function(f){
+      try{if(f.contentWindow===e.source)f.style.height=(e.data.iframeHeight+16)+'px';}catch(ex){}
+    });
+  }
+});
+</script>
+</body>
+</html>
