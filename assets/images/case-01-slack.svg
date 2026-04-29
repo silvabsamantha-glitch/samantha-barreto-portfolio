@@ -1,0 +1,95 @@
+<svg width="720" height="460" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interface do Slack mostrando o VozBot gerando três versões de push notification para os segmentos Iniciante, Crescimento e Patrimônio da Meridian">
+  <title>VozBot em ação no Slack — Assistente de Voz da Marca</title>
+  <defs>
+    <rect id="card" rx="8"/>
+  </defs>
+
+  <!-- Fundo geral -->
+  <rect width="720" height="460" rx="12" fill="#1A1D21"/>
+
+  <!-- Barra de topo -->
+  <rect width="720" height="40" rx="0" fill="#350D36"/>
+  <rect y="28" width="720" height="12" fill="#350D36"/>
+  <circle cx="20" cy="20" r="6" fill="#FF5F57"/>
+  <circle cx="38" cy="20" r="6" fill="#FFBD2E"/>
+  <circle cx="56" cy="20" r="6" fill="#28C840"/>
+  <text x="360" y="25" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" font-weight="500">Meridian · Workspace</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="40" width="180" height="420" fill="#3F0E40"/>
+  <text x="14" y="72" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="700" letter-spacing="1">CANAIS</text>
+  <text x="14" y="92" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)"># produto-geral</text>
+  <text x="14" y="112" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)"># design-system</text>
+  <rect x="0" y="120" width="180" height="26" fill="rgba(255,255,255,0.15)"/>
+  <text x="14" y="137" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="600"># conteudo-tools</text>
+  <text x="14" y="165" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="700" letter-spacing="1">DIRETOS</text>
+  <rect x="14" y="175" width="16" height="16" rx="3" fill="#1A9B76"/>
+  <text x="22" y="187" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#fff" font-weight="700">V</text>
+  <text x="36" y="187" font-family="DM Sans,sans-serif" font-size="12" fill="#1A9B76" font-weight="600">VozBot</text>
+
+  <!-- Chat area -->
+  <rect x="180" y="40" width="540" height="420" fill="#1A1D21"/>
+
+  <!-- Chat header -->
+  <rect x="180" y="40" width="540" height="44" fill="#222529"/>
+  <text x="198" y="60" font-family="DM Sans,sans-serif" font-size="14" fill="rgba(255,255,255,0.5)">#</text>
+  <text x="214" y="62" font-family="DM Sans,sans-serif" font-size="13" fill="#fff" font-weight="700">conteudo-tools</text>
+  <text x="340" y="62" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.35)">Assistente de voz da marca · uso interno</text>
+  <rect x="180" y="84" width="540" height="0.5" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Mensagem do usuário -->
+  <circle cx="210" cy="112" r="14" fill="#4A154B"/>
+  <text x="210" y="117" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(233,164,234,0.9)" font-weight="600">L</text>
+  <text x="232" y="107" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="700">lucas.design</text>
+  <text x="300" y="107" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">10:32</text>
+  <text x="232" y="124" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.75)">@VozBot preciso de um push de reengajamento para clientes</text>
+  <text x="232" y="140" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.75)">inativos. Pode gerar nas três versões de segmento?</text>
+
+  <!-- Mensagem do VozBot -->
+  <rect x="198" y="162" width="16" height="16" rx="3" fill="#1A9B76"/>
+  <text x="206" y="174" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#fff" font-weight="700">V</text>
+  <text x="222" y="174" font-family="DM Sans,sans-serif" font-size="12" fill="#1A9B76" font-weight="700">VozBot</text>
+  <text x="278" y="174" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">10:32</text>
+  <text x="222" y="191" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">Contexto identificado: cliente inativo pós-cadastro. Aplicando registro</text>
+  <rect x="390" y="181" width="62" height="16" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <text x="421" y="193" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(233,164,234,0.9)">Acolhedor</text>
+  <text x="456" y="191" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)"> (Iniciante) e</text>
+  <rect x="222" y="199" width="68" height="16" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <text x="256" y="211" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(233,164,234,0.9)">Desafiador</text>
+  <text x="294" y="211" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)"> (Crescimento e Patrimônio).</text>
+
+  <!-- Card de versões -->
+  <rect x="222" y="224" width="468" height="176" rx="8" fill="#222529" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="240" y="244" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.3)" font-weight="700" letter-spacing="1">PUSH NOTIFICATION · 3 VERSÕES POR SEGMENTO</text>
+
+  <!-- Versão Iniciante -->
+  <rect x="234" y="252" width="444" height="38" rx="6" fill="rgba(24,95,165,0.15)" stroke="rgba(24,95,165,0.3)" stroke-width="0.5"/>
+  <text x="248" y="267" font-family="DM Sans,sans-serif" font-size="9" fill="#4A9EE8" font-weight="700" letter-spacing="1">INICIANTE</text>
+  <text x="248" y="282" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.72)">Seu dinheiro pode estar rendendo mais. Comece com o valor que tiver disponível agora.</text>
+
+  <!-- Versão Crescimento -->
+  <rect x="234" y="296" width="444" height="38" rx="6" fill="rgba(15,110,86,0.15)" stroke="rgba(15,110,86,0.3)" stroke-width="0.5"/>
+  <text x="248" y="311" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="700" letter-spacing="1">CRESCIMENTO</text>
+  <text x="248" y="326" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.72)">Sua conta está pronta. Falta o primeiro passo para o seu dinheiro começar a trabalhar.</text>
+
+  <!-- Versão Patrimônio -->
+  <rect x="234" y="340" width="444" height="38" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+  <text x="248" y="355" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="700" letter-spacing="1">PATRIMÔNIO</text>
+  <text x="248" y="370" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.55)">Conta ativa, primeiro aporte pendente. Quando quiser começar, seu assessor está disponível.</text>
+
+  <!-- Tags -->
+  <rect x="240" y="384" width="172" height="14" rx="7" fill="rgba(26,155,118,0.15)" stroke="rgba(26,155,118,0.25)" stroke-width="0.5"/>
+  <text x="326" y="395" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76">Registro aplicado: Acolhedor (Iniciante)</text>
+  <rect x="420" y="384" width="176" height="14" rx="7" fill="rgba(26,155,118,0.15)" stroke="rgba(26,155,118,0.25)" stroke-width="0.5"/>
+  <text x="508" y="395" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76">Desafiador (Crescimento e Patrimônio)</text>
+
+  <!-- Reações -->
+  <rect x="222" y="408" width="42" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+  <text x="244" y="422" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">👍 3</text>
+  <rect x="270" y="408" width="42" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+  <text x="292" y="422" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">✨ 2</text>
+
+  <!-- Input bar -->
+  <rect x="180" y="432" width="540" height="28" fill="#222529" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+  <text x="200" y="450" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.25)">Escreva para @VozBot ou use /voz...</text>
+</svg>
