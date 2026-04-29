@@ -1,110 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0D1B2A;padding:20px;font-family:'Courier New',monospace;min-height:100vh}
-.wrap{display:grid;grid-template-columns:280px 1fr;gap:0;border-radius:14px;overflow:hidden;min-height:480px}
-@media(max-width:600px){.wrap{grid-template-columns:1fr}}
+body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;margin:0}
 
-/* Niara side */
-.niara-side{background:linear-gradient(160deg,#0A1F30,#0D2A20);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:24px 16px 0;position:relative;overflow:hidden}
-.niara-side::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(15,110,86,0.15),transparent 70%)}
-.niara-name{font-size:11px;letter-spacing:2px;color:#4DB896;text-transform:uppercase;margin-bottom:6px;position:relative}
-.niara-role{font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:16px;position:relative}
-.niara-status{display:flex;align-items:center;gap:6px;font-size:10px;color:#4DB896;margin-bottom:20px;position:relative}
-.status-dot{width:7px;height:7px;border-radius:50%;background:#25D366;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-.niara-img{width:100%;max-width:240px;position:relative;z-index:1;display:block}
-@media(max-width:600px){.niara-side{display:none}}
+.wrap{display:grid;grid-template-columns:260px 1fr;min-height:500px}
+@media(max-width:580px){.wrap{grid-template-columns:1fr}}
 
-/* Chat side */
-.chat-side{background:#1A1D27;display:flex;flex-direction:column}
-.chat-header{background:#1E2130;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0}
-.ch-name{font-size:13px;color:#fff;font-weight:500}
-.ch-desc{font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px}
-.messages{flex:1;padding:16px;display:flex;flex-direction:column;gap:12px;min-height:360px}
-.msg{display:flex;gap:10px;opacity:0;transform:translateY(8px);transition:opacity 0.4s ease,transform 0.4s ease}
+/* ── Painel da Niara ── */
+.niara-panel{background:linear-gradient(175deg,#1A1A2E 0%,#0F2A1E 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:28px 20px 0;position:relative;overflow:hidden}
+.niara-panel::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:200px;height:200px;background:radial-gradient(circle,rgba(15,110,86,0.2) 0%,transparent 70%);pointer-events:none}
+.niara-badge{background:rgba(15,110,86,0.15);border:1px solid rgba(15,110,86,0.3);border-radius:20px;padding:4px 14px;font-size:10px;color:#4DB896;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.niara-name{font-size:20px;font-weight:600;color:#FFFFFF;letter-spacing:-0.3px;margin-bottom:4px}
+.niara-role{font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.niara-online{display:flex;align-items:center;gap:6px;font-size:10px;color:#4DB896;margin-bottom:20px}
+.online-dot{width:7px;height:7px;border-radius:50%;background:#25D366;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.niara-img{width:100%;max-width:220px;display:block;position:relative;z-index:1}
+@media(max-width:580px){.niara-panel{display:none}}
+
+/* ── Chat ── */
+.chat-panel{background:#1E2A45;display:flex;flex-direction:column}
+.chat-header{background:#16213E;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.chat-header-name{font-size:13px;font-weight:600;color:#FFFFFF}
+.chat-header-desc{font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px}
+
+.messages{flex:1;padding:18px;display:flex;flex-direction:column;gap:14px;min-height:380px}
+
+.msg{display:flex;gap:10px;opacity:0;transform:translateY(8px);transition:opacity 0.45s ease,transform 0.45s ease}
 .msg.show{opacity:1;transform:none}
-.av{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-top:2px}
-.av-u{background:#2A3A5E}.av-n{background:#0F4D3A}
+
+.av{width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;margin-top:2px;flex-shrink:0}
+.av-u{background:#2A3A5E}
+.av-n{background:#0F6E56}
+
 .mb{flex:1;min-width:0}
-.mn{font-size:11px;font-weight:500;color:#E8F4F0;margin-bottom:3px}
-.mn span{font-size:9px;color:rgba(255,255,255,0.25);font-weight:400;margin-left:6px}
-.mt{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.6}
-.hl{color:#4DB896}
-.info-card{background:#0A2018;border:0.5px solid rgba(15,110,86,0.4);border-radius:8px;padding:12px 14px;margin-top:8px;opacity:0;transition:opacity 0.4s}
-.info-card.show{opacity:1}
-.ic-label{font-size:9px;color:#4DB896;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-.ic-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:0.5px solid rgba(255,255,255,0.05);font-size:11px}
-.ic-row:last-child{border-bottom:none;padding-bottom:0}
-.ic-key{color:rgba(255,255,255,0.45)}
-.ic-val{color:#E8F4F0;font-weight:500}
-.ic-val.green{color:#4DB896}
-.input-bar{background:#1E2130;padding:10px 16px;border-top:1px solid rgba(255,255,255,0.06);flex-shrink:0}
-.input-fake{background:#2A2E3D;border-radius:6px;padding:8px 12px;font-size:11px;color:rgba(255,255,255,0.2)}
+.mname{font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);margin-bottom:4px}
+.mname span{font-size:9px;color:rgba(255,255,255,0.2);font-weight:400;margin-left:6px}
+.mtext{font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.65}
+.mtext .hl{color:#4DB896;font-weight:500}
+
+/* Card de direcionamento */
+.dir-card{margin-top:10px;background:#0D1F14;border:1px solid rgba(15,110,86,0.35);border-radius:8px;overflow:hidden;opacity:0;transition:opacity 0.4s}
+.dir-card.show{opacity:1}
+.dir-card-header{background:rgba(15,110,86,0.15);padding:8px 14px;font-size:9px;color:#4DB896;letter-spacing:1px;text-transform:uppercase}
+.dir-card-body{padding:12px 14px}
+.dir-item{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:0.5px solid rgba(255,255,255,0.05)}
+.dir-item:last-child{border-bottom:none;padding-bottom:0}
+.dir-num{width:20px;height:20px;border-radius:50%;background:rgba(15,110,86,0.2);border:1px solid rgba(15,110,86,0.4);display:flex;align-items:center;justify-content:center;font-size:9px;color:#4DB896;font-weight:700;flex-shrink:0;margin-top:1px}
+.dir-text{font-size:11.5px;color:rgba(255,255,255,0.7);line-height:1.5}
+.dir-link{color:#4DB896;font-weight:500}
+
+.input-bar{background:#16213E;padding:12px 18px;border-top:1px solid rgba(255,255,255,0.06)}
+.input-fake{background:#243252;border-radius:8px;padding:9px 14px;font-size:12px;color:rgba(255,255,255,0.2)}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="niara-side">
+  <!-- Niara -->
+  <div class="niara-panel">
+    <div class="niara-badge">RH · Banco Nacional</div>
     <div class="niara-name">Niara</div>
-    <div class="niara-role">Assistente Virtual · RH</div>
-    <div class="niara-status"><div class="status-dot"></div>online agora</div>
-    <img class="niara-img" src="niara-final.png" alt="Niara, assistente virtual de RH do Banco Nacional"/>
+    <div class="niara-role">Assistente Virtual de RH</div>
+    <div class="niara-online">
+      <div class="online-dot"></div>online agora
+    </div>
+    <img class="niara-img" src="niara-final.png" alt="Niara, assistente virtual de RH do Banco Nacional — personagem 3D ruiva com óculos e crachá"/>
   </div>
-  <div class="chat-side">
+
+  <!-- Chat -->
+  <div class="chat-panel">
     <div class="chat-header">
-      <div class="ch-name">Chat com Niara</div>
-      <div class="ch-desc">Banco Nacional · Assistente de RH</div>
+      <div class="chat-header-name">Niara · Assistente de RH</div>
+      <div class="chat-header-desc">Banco Nacional · sem integração de API · direcionamento por caminho</div>
     </div>
     <div class="messages">
+
       <div class="msg" id="m1">
         <div class="av av-u">Co</div>
-        <div class="mb"><div class="mn">Colaborador <span>14:32</span></div>
-        <div class="mt">Oi Niara! Quero tirar 15 dias de férias. Quando posso começar?</div></div>
+        <div class="mb">
+          <div class="mname">Colaborador <span>10:14</span></div>
+          <div class="mtext">Oi Niara, preciso solicitar minhas férias. Como faço?</div>
+        </div>
       </div>
+
       <div class="msg" id="m2">
         <div class="av av-n">N</div>
-        <div class="mb"><div class="mn">Niara <span>14:32</span></div>
-        <div class="mt">Oi! Consultei seu saldo agora. Você tem <span class="hl">22 dias disponíveis</span>. Os 15 dias podem começar a partir de <span class="hl">15 de julho</span>, respeitando o aviso de 30 dias.</div>
-        <div class="info-card" id="card1">
-          <div class="ic-label">Resumo do saldo</div>
-          <div class="ic-row"><span class="ic-key">Saldo disponível</span><span class="ic-val green">22 dias</span></div>
-          <div class="ic-row"><span class="ic-key">Início mais cedo</span><span class="ic-val">15/07/2025</span></div>
-          <div class="ic-row"><span class="ic-key">Retorno previsto</span><span class="ic-val">30/07/2025</span></div>
-        </div></div>
+        <div class="mb">
+          <div class="mname">Niara <span>10:14</span></div>
+          <div class="mtext">Oi! Para solicitar férias, você precisa acessar o <span class="hl">Portal RH</span>. Vou te guiar no caminho:</div>
+          <div class="dir-card" id="card1">
+            <div class="dir-card-header">caminho no Portal RH</div>
+            <div class="dir-card-body">
+              <div class="dir-item"><div class="dir-num">1</div><div class="dir-text">Acesse <span class="dir-link">portalbanco.com.br/rh</span> com seu login corporativo</div></div>
+              <div class="dir-item"><div class="dir-num">2</div><div class="dir-text">Clique em <span class="dir-link">Benefícios → Férias → Nova Solicitação</span></div></div>
+              <div class="dir-item"><div class="dir-num">3</div><div class="dir-text">Escolha o período e confirme. Seu gestor receberá para aprovação</div></div>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="msg" id="m3">
         <div class="av av-u">Co</div>
-        <div class="mb"><div class="mn">Colaborador <span>14:33</span></div>
-        <div class="mt">Perfeito! Pode abrir a solicitação para 15/07?</div></div>
+        <div class="mb">
+          <div class="mname">Colaborador <span>10:15</span></div>
+          <div class="mtext">E qual o prazo mínimo de aviso?</div>
+        </div>
       </div>
+
       <div class="msg" id="m4">
         <div class="av av-n">N</div>
-        <div class="mb"><div class="mn">Niara <span>14:33</span></div>
-        <div class="mt">Solicitação aberta! Seu gestor vai receber a notificação agora.</div>
-        <div class="info-card" id="card2">
-          <div class="ic-label">Solicitação #F-2847</div>
-          <div class="ic-row"><span class="ic-key">Período</span><span class="ic-val">15/07 a 30/07</span></div>
-          <div class="ic-row"><span class="ic-key">Status</span><span class="ic-val green">aguardando aprovação</span></div>
-        </div></div>
+        <div class="mb">
+          <div class="mname">Niara <span>10:15</span></div>
+          <div class="mtext">O aviso mínimo é de <span class="hl">30 dias corridos</span> antes do início. Para detalhes da política completa, consulte:</div>
+          <div class="dir-card" id="card2">
+            <div class="dir-card-header">onde encontrar</div>
+            <div class="dir-card-body">
+              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text">Portal RH → <span class="dir-link">Documentos → Política de Férias</span></div></div>
+              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text">Dúvidas adicionais: <span class="dir-link">rh@banco.com.br</span></div></div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
-    <div class="input-bar"><div class="input-fake">Escreva uma mensagem para a Niara...</div></div>
+    <div class="input-bar">
+      <div class="input-fake">Escreva uma mensagem para a Niara...</div>
+    </div>
   </div>
 </div>
+
 <script>
-function show(id){const el=document.getElementById(id);if(el)el.classList.add('show')}
-const seq=[()=>show('m1'),()=>show('m2'),()=>show('card1'),()=>show('m3'),()=>show('m4'),()=>show('card2')];
-const delays=[400,1200,1800,3000,4000,4600];
-function run(){seq.forEach((fn,i)=>setTimeout(fn,delays[i]));setTimeout(reset,9000);}
-function reset(){['m1','m2','m3','m4','card1','card2'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('show')});setTimeout(run,700);}
+function show(id){var el=document.getElementById(id);if(el)el.classList.add('show');}
+var seq=[
+  function(){show('m1');},
+  function(){show('m2');},
+  function(){show('card1');},
+  function(){show('m3');},
+  function(){show('m4');},
+  function(){show('card2');}
+];
+var delays=[400,1300,2000,3200,4200,4900];
+function run(){seq.forEach(function(fn,i){setTimeout(fn,delays[i]);});setTimeout(reset,9500);}
+function reset(){
+  ['m1','m2','m3','m4','card1','card2'].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.classList.remove('show');
+  });
+  setTimeout(run,800);
+}
 run();
 </script>
 <script>
-function notifyHeight(){var h=document.body.scrollHeight||document.documentElement.scrollHeight;window.parent.postMessage({iframeHeight:h},'*');}
-window.addEventListener('load',notifyHeight);window.addEventListener('resize',notifyHeight);
-setTimeout(notifyHeight,500);setTimeout(notifyHeight,1500);
+function notifyHeight(){
+  var h=document.documentElement.scrollHeight||document.body.scrollHeight;
+  window.parent.postMessage({iframeHeight:h},'*');
+}
+window.addEventListener('load',notifyHeight);
+window.addEventListener('resize',notifyHeight);
+setTimeout(notifyHeight,600);
+setTimeout(notifyHeight,2000);
 </script>
-</body></html>
+</body>
+</html>
