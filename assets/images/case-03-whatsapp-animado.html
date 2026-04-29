@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Antes e depois — Pagora Crédito PJ</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0D1B2A;padding:20px;font-family:'Courier New',monospace}
+.wrap{background:#111;border-radius:12px;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:500px){.wrap{grid-template-columns:1fr}}
+.col{display:flex;flex-direction:column;gap:8px}
+.lbl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:5px;padding:0 2px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.before .dot{background:#C47070}.before .lbl{color:#C47070}
+.after .dot{background:#0F6E56}.after .lbl{color:#4DB896}
+.phone{background:#0B141A;border-radius:14px;overflow:hidden;flex:1;display:flex;flex-direction:column;border:1.5px solid #1A2830}
+.wh{background:#1F2C34;padding:8px 12px;display:flex;align-items:center;gap:8px}
+.wav{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0}
+.before .wav{background:#2A5A4A}.after .wav{background:#0F4D3A}
+.wn{font-size:11px;color:#fff;font-weight:500}.ws{font-size:9px;color:#25D366}
+.chat{flex:1;padding:10px;display:flex;flex-direction:column;gap:6px}
+.b{max-width:88%;padding:7px 10px;border-radius:8px;font-size:11px;line-height:1.5;opacity:0;transform:translateY(5px);transition:opacity .35s,transform .35s}
+.b.show{opacity:1;transform:none}
+.bu{background:#005C4B;color:#E9EDEF;align-self:flex-end;border-radius:8px 8px 2px 8px}
+.bb{background:#1F2C34;color:#E9EDEF;align-self:flex-start;border-radius:8px 8px 8px 2px}
+.bb.bad{border-left:2px solid #8B3A3A}
+.bb.ok{border-left:2px solid #0F6E56}
+.no{color:#C47070;font-weight:700}
+.hl{color:#4DB896;font-weight:700}
+.tag{border-radius:0 6px 6px 0;padding:6px 10px;font-size:10px;opacity:0;transition:opacity .4s;margin-top:2px;line-height:1.5}
+.tag.show{opacity:1}
+.t-bad{background:#1A0A0A;border-left:2px solid #C47070;color:#E9EDEF;font-style:italic}
+.t-ok{background:#0A2018;border-left:2px solid #0F6E56;color:#4DB896}
+.t-ok span{color:rgba(255,255,255,.4);display:block;margin-top:2px;font-size:9px}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="col before">
+    <div class="lbl"><div class="dot"></div>antes</div>
+    <div class="phone">
+      <div class="wh"><div class="wav">P</div><div><div class="wn">Pagora Crédito</div><div class="ws">online</div></div></div>
+      <div class="chat">
+        <div class="b bu" id="b1">Tenho empréstimo disponível?</div>
+        <div class="b bb bad" id="b2">Analisamos cada perfil com cuidado para oferecer as melhores condições. Nosso time trabalha para viabilizar soluções para o seu negócio.</div>
+        <div class="b bb bad" id="b3">Em caso de dúvidas, acesse o app Pagora ou fale com nossa central.</div>
+        <div class="b bu" id="b4">Mas tenho ou não tenho??</div>
+        <div class="b bb bad" id="b5">No momento não identificamos uma oferta ativa para o seu CNPJ.</div>
+        <div class="tag t-bad" id="tc">"Por que não falou isso logo?" — avaliação real de CSAT</div>
+      </div>
+    </div>
+  </div>
+  <div class="col after">
+    <div class="lbl"><div class="dot"></div>depois</div>
+    <div class="phone">
+      <div class="wh"><div class="wav">P</div><div><div class="wn">Pagora Crédito</div><div class="ws">online</div></div></div>
+      <div class="chat">
+        <div class="b bu" id="a1">Tenho empréstimo disponível?</div>
+        <div class="b bb ok" id="a2"><span class="no">Ainda não</span> — seu CNPJ não tem oferta ativa agora. Isso pode mudar em 30 dias conforme seu histórico.</div>
+        <div class="b bb ok" id="a3">Posso te avisar quando uma oferta estiver disponível. Quer ativar o <span class="hl">alerta</span>?</div>
+        <div class="b bu" id="a4">Sim, quero o alerta.</div>
+        <div class="tag t-ok" id="tr">+14pp CSAT · retenção mesmo sem oferta<span>"Não" claro vale mais que silêncio enrolado</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+var seq=[
+  function(){s('b1');s('a1');},
+  function(){s('b2');},
+  function(){s('a2');},
+  function(){s('b3');},
+  function(){s('a3');},
+  function(){s('b4');s('a4');},
+  function(){s('b5');},
+  function(){s('tc');},
+  function(){s('tr');}
+];
+var delays=[400,1000,1200,1900,2000,3100,3900,4700,4700];
+function s(id){var el=document.getElementById(id);if(el)el.classList.add('show');}
+function run(){seq.forEach(function(fn,i){setTimeout(fn,delays[i]);});setTimeout(reset,9000);}
+function reset(){
+  ['b1','b2','b3','b4','b5','a1','a2','a3','a4','tc','tr'].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.classList.remove('show');
+  });
+  setTimeout(run,700);
+}
+run();
+</script>
+<script>
+function nh(){var h=document.documentElement.scrollHeight||document.body.scrollHeight;window.parent.postMessage({iframeHeight:h},'*');}
+window.addEventListener('load',nh);window.addEventListener('resize',nh);setTimeout(nh,500);setTimeout(nh,1500);
+</script>
+</body></html>
