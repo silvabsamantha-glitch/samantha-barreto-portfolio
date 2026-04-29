@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case 06: Seguros — Content First do zero — Samantha Silva</title>
+<meta name="description" content="Como projetamos um assistente virtual de seguros antes de qualquer tela, com metodologia Content First.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+.case-hero{padding:calc(var(--nav-height) + 3.5rem) 4rem 3.5rem;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.case-hero-inner{position:relative;z-index:1;max-width:800px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
+.cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green-2);background:rgba(26,155,118,.12);border:1px solid rgba(26,155,118,.2);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.5rem}
+.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
+.hsub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
+.ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.disc{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.6}
+.mbar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
+.mitem{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.mitem:last-child{border-right:none;margin-right:0}
+.mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.4}
+.pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
+.pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.cbody{max-width:800px;margin:0 auto;padding:5rem 4rem 5rem}
+.sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
+.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
+.sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
+.sec p{font-size:.95rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem}
+.sec p:last-child{margin-bottom:0}
+.sec p strong{color:var(--navy);font-weight:500}
+.pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
+.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--gray-line);align-items:start}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.sn{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--green);padding-top:2px}
+.st{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
+.sd{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.qas{display:flex;flex-direction:column;gap:1rem;margin-top:.5rem}
+.qa{border-left:2px solid var(--green);padding:1rem 1.25rem;background:var(--gray-light)}
+.qq{font-size:.875rem;font-weight:500;color:var(--green);margin-bottom:.4rem}
+.qa-a{font-size:.875rem;color:var(--gray);line-height:1.7;font-weight:300}
+.rms{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.rm{background:var(--green-mist);border:0.5px solid rgba(15,110,86,.2);border-radius:var(--r-md);padding:1rem 1.25rem;flex:1;min-width:120px;text-align:center}
+.rmv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:4px}
+.rml{font-size:.72rem;color:var(--gray);line-height:1.4}
+.learned{background:var(--gray-light);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
+.learned p{font-size:1rem;color:var(--gray);line-height:1.75;font-style:italic;margin:0}
+.learned cite{font-size:.8rem;color:var(--navy);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
+.scard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.sv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:3px}
+.sl{font-size:.78rem;color:var(--gray);line-height:1.4}
+.diags{display:flex;flex-direction:column}
+.diag{display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 0;border-bottom:1px solid var(--gray-line)}
+.diag:last-child{border-bottom:none;padding-bottom:0}
+.dd{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.dd.r{background:#A32D2D}.dd.g{background:var(--green)}
+.dt{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.dt strong{color:var(--navy);font-weight:500}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.pcard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.pnum{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:.4rem}
+.ptit{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
+.pdesc{font-size:.875rem;color:var(--gray);line-height:1.55;font-weight:300}
+.ps-status{background:#FAEEDA;border:0.5px solid rgba(186,117,23,.25);border-radius:var(--r-md);padding:1rem 1.25rem}
+.ps-title{font-size:.875rem;font-weight:500;color:#854F0B;margin-bottom:.4rem}
+.ps-text{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.regs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.reg{border-radius:var(--r-md);padding:1rem;border:0.5px solid}
+.reg.d{background:#EAF3DE;border-color:rgba(59,109,17,.2)}
+.reg.a{background:#E6F1FB;border-color:rgba(24,95,165,.2)}
+.reg.e{background:#FAEEDA;border-color:rgba(133,79,11,.2)}
+.rn{font-size:.875rem;font-weight:500;margin-bottom:.35rem}
+.reg.d .rn{color:#27500A}.reg.a .rn{color:#0C447C}.reg.e .rn{color:#633806}
+.rd{font-size:.8rem;line-height:1.55;margin-bottom:.625rem}
+.reg.d .rd{color:#3B6D11}.reg.a .rd{color:#185FA5}.reg.e .rd{color:#854F0B}
+.rex{font-size:.75rem;font-style:italic;line-height:1.5;padding:.4rem .625rem;border-radius:4px}
+.reg.d .rex{background:rgba(59,109,17,.1);color:#3B6D11}
+.reg.a .rex{background:rgba(24,95,165,.1);color:#185FA5}
+.reg.e .rex{background:rgba(133,79,11,.1);color:#854F0B}
+.segs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-line);border-radius:var(--r-md);overflow:hidden;margin-bottom:1rem}
+.seg{background:var(--white);padding:1rem}
+.segn{font-size:.875rem;font-weight:500;color:var(--navy);margin-bottom:.3rem}
+.segd{font-size:.8rem;color:var(--gray);line-height:1.5;margin-bottom:.5rem}
+.segt{display:flex;flex-wrap:wrap;gap:4px}
+.stag{font-size:.72rem;padding:2px 7px;border-radius:var(--r-full);background:var(--gray-light);color:var(--gray);border:0.5px solid var(--gray-line)}
+.fw5{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--gray-line);border-radius:var(--r-md);overflow:hidden;margin-bottom:1rem}
+.fwc{background:var(--white);padding:.875rem .625rem;text-align:center}
+.fwc.last{background:var(--gray-light)}
+.fwn{font-family:var(--font-display);font-size:1.25rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:.25rem}
+.fwc.last .fwn{color:var(--gray)}
+.fwt{font-size:.8rem;font-weight:500;color:var(--navy);margin-bottom:.2rem}
+.fwc.last .fwt{color:var(--gray)}
+.fwd{font-size:.72rem;color:var(--gray);line-height:1.4}
+.fwn2{font-size:.68rem;color:var(--gray);font-style:italic;margin-top:.375rem}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-line);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.bap{padding:1.5rem}
+.ba-b{background:#FEF2F2}.ba-a{background:#F0FDF4}
+.bah{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:5px}
+.ba-b .bah{color:#991B1B}.ba-a .bah{color:#166534}
+.bdt{width:5px;height:5px;border-radius:50%}
+.ba-b .bdt{background:#991B1B}.ba-a .bdt{background:#166534}
+.bat{font-size:.875rem;line-height:1.65;margin-bottom:.5rem}
+.ba-b .bat{color:#7F1D1D}.ba-a .bat{color:#14532D}
+.intgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.intcard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.intl{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem}
+.intt{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.375rem}
+.intd{font-size:.8rem;color:var(--gray);line-height:1.55;font-weight:300}
+.objgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.objcard{border-radius:var(--r-md);padding:1rem}
+.objcard.seg{background:#E6F1FB;border:0.5px solid rgba(24,95,165,.2)}
+.objcard.seg2{background:#E1F5EE;border:0.5px solid rgba(15,110,86,.2)}
+.objl{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.625rem}
+.objcard.seg .objl{color:#0C447C}.objcard.seg2 .objl{color:#085041}
+.obji{display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.375rem}
+.objd{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.objcard.seg .objd{background:#185FA5}.objcard.seg2 .objd{background:var(--green)}
+.objt{font-size:.8rem;line-height:1.5}
+.objcard.seg .objt{color:#185FA5}.objcard.seg2 .objt{color:var(--green)}
+.scen{border-radius:var(--r-md);overflow:hidden;border:0.5px solid var(--gray-line);margin-bottom:8px}
+.scheader{padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem}
+.scheader.api{background:#E1F5EE}.scheader.semi{background:#FAEEDA}.scheader.noapi{background:var(--gray-light)}
+.scn{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.scheader.api .scn{color:#085041}.scheader.semi .scn{color:#633806}.scheader.noapi .scn{color:var(--gray)}
+.sct{font-size:.875rem;font-weight:500}
+.scheader.api .sct{color:#085041}.scheader.semi .sct{color:#633806}.scheader.noapi .sct{color:var(--navy)}
+.scbadge{margin-left:auto;font-size:.7rem;padding:2px 8px;border-radius:var(--r-full);font-weight:500}
+.scheader.api .scbadge{background:rgba(15,110,86,.15);color:#085041}
+.scheader.semi .scbadge{background:rgba(133,79,11,.15);color:#633806}
+.scheader.noapi .scbadge{background:var(--gray-light);color:var(--gray)}
+.scbody{padding:.875rem 1rem}
+.scitem{display:flex;gap:.625rem;align-items:flex-start;margin-bottom:.375rem}
+.scdot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.scheader.api+.scbody .scdot{background:var(--green)}
+.scheader.semi+.scbody .scdot{background:#C4820A}
+.scheader.noapi+.scbody .scdot{background:var(--gray)}
+.sctext{font-size:.875rem;color:var(--gray);line-height:1.55;font-weight:300}
+.sctext strong{color:var(--navy);font-weight:500}
+.scex{font-size:.8rem;background:var(--gray-light);border-left:2px solid var(--gray-line);padding:.5rem .75rem;margin-top:.5rem;color:var(--gray);font-style:italic;line-height:1.55}
+.journey{display:flex;overflow:hidden;border-radius:var(--r-md);border:0.5px solid var(--gray-line)}
+.jstep{flex:1;padding:.75rem .5rem;background:var(--white);text-align:center;position:relative;border-right:0.5px solid var(--gray-line)}
+.jstep:last-child{border-right:none}
+.jn{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.2rem}
+.jt{font-size:.8rem;font-weight:500;color:var(--navy);line-height:1.3}
+.constr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.constpill{font-size:.78rem;padding:4px 10px;border-radius:var(--r-md);background:#FAEEDA;color:#854F0B}
+.pins{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.pin{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.pinnum{font-family:var(--font-display);font-size:1.25rem;font-weight:500;color:#C4820A;line-height:1;margin-bottom:.4rem}
+.pint{font-size:.875rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
+.pind{font-size:.8rem;color:var(--gray);line-height:1.55;font-weight:300}
+.tenbox{background:#FAEEDA;border-left:3px solid #C4820A;padding:1rem 1.25rem;margin:1.5rem 0}
+.tentext{font-size:1.05rem;font-weight:500;color:#633806;line-height:1.5;font-style:italic}
+.cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni:hover{background:#ECEEF2}
+.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cni-right{border-left:1px solid var(--gray-line);align-items:flex-end}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
+.cni:hover .cnt{opacity:1}
+.cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}
+.case-img{width:100%;height:auto;display:block}
+.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--off-white,#F8F9FA);border-top:1px solid var(--gray-line);margin:0}
+.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}
+.case-anim-block iframe{display:block;width:100%;border:none}
+</style>
+</head>
+<body data-page="case06">
+<a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
+  <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</nav>
+<section class="case-hero" aria-label="Case 06: Seguros Content First do zero no Banco Nacional">
+  <div class="case-hero-inner">
+    <div class="cpill">Case 06 · Content First · Design Conversacional</div>
+    <div class="cco">Banco Nacional · UX Writer · 2020–2022</div>
+    <h1 data-pt="Seguros: Content First do zero" data-en="Insurance: Content First from scratch">Seguros: Content First do zero</h1>
+    <p class="hsub" data-pt="Como projetamos um assistente virtual de seguros antes de qualquer tela, definindo intenção, resultado esperado e encenando a conversa antes de escrever uma linha de fluxo." data-en="How we designed an insurance virtual assistant before any screen, defining intention, expected outcome, and enacting the conversation before writing a single flow line.">Como projetamos um assistente virtual de seguros antes de qualquer tela, definindo intenção, resultado esperado e encenando a conversa antes de escrever uma linha de fluxo.</p>
+    <div class="ctags"><span class="tag">Content First</span><span class="tag">Novo produto</span><span class="tag">Design Conversacional</span><span class="tag">Jornada</span></div>
+    <div class="disc">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Banco Nacional). O processo de Content First, a metodologia e as decisões de design são reais.</div>
+  </div>
+</section>
+<main id="case-content" class="cbody">
+  <div class="sec fade">
+    <div class="slabel">01 — O contexto</div>
+  <div class="case-img-block">
+    <img src="../assets/images/case-06.svg" alt="Diagrama das cinco etapas do processo Content First aplicado ao assistente de seguros" class="case-img" loading="lazy"/>
+    <p class="case-img-caption">O processo Content First — do zero ao fluxo certo</p>
+  </div>
+  <div class="case-img-block">
+    <img src="../assets/images/case-06.svg" alt="Diagrama das cinco etapas do processo Content First" class="case-img" loading="lazy"/>
+    <p class="case-img-caption">O processo Content First — do zero ao fluxo certo</p>
+  </div>
+    <p>O Banco Nacional estava lançando seu primeiro assistente virtual de seguros. Sem histórico, sem fluxos herdados, sem legado para respeitar. Uma folha em branco e uma oportunidade para fazer do jeito certo desde o começo.</p>
+    <div class="pq">
+      <p>O objetivo era entregar um atendimento completo: da contratação até a ativação do sinistro. E ser melhor que os concorrentes já no lançamento.</p>
+    </div>
+    <p>A decisão mais importante que tomamos foi <strong>não começar pelo fluxo</strong>. Começamos pela intenção do usuário e pelo resultado que queríamos entregar. O fluxo veio depois, como consequência.</p>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">02 — Intenção e resultado primeiro</div>
+    <div class="intgrid">
+      <div class="intcard"><div class="intl">Intenção do usuário</div><div class="intt">Quer um seguro que caiba no orçamento</div><div class="intd">Estado mental: incerteza sobre cobertura, medo de pagar mais do que precisa, dúvida sobre o que está comprando de fato.</div></div>
+      <div class="intcard"><div class="intl">Resultado esperado</div><div class="intt">Seguro contratado</div><div class="intd">Com a pessoa entendendo o que está levando, confiante na escolha e sem dúvidas que gerem arrependimento depois.</div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">03 — Mapeando os dois lados</div>
+    <p>Uma boa jornada de seguros precisa satisfazer dois objetivos ao mesmo tempo: o que o segurado precisa e o que a seguradora precisa saber para oferecer o produto certo.</p>
+    <div class="objgrid">
+      <div class="objcard seg"><div class="objl">Objetivos do segurado</div><div class="obji"><div class="objd"></div><div class="objt">Ter um seguro que funcione quando precisar</div></div><div class="obji"><div class="objd"></div><div class="objt">Encontrar uma opção que caiba no orçamento</div></div><div class="obji"><div class="objd"></div><div class="objt">Não se preocupar com imprevistos</div></div></div>
+      <div class="objcard seg2"><div class="objl">Objetivos da seguradora</div><div class="obji"><div class="objd"></div><div class="objt">Conhecer o perfil do cliente</div></div><div class="obji"><div class="objd"></div><div class="objt">Oferecer o seguro mais adequado ao perfil</div></div><div class="obji"><div class="objd"></div><div class="objt">Entregar a melhor opção dentro do orçamento</div></div></div>
+    </div>
+    <p>Quando os dois lados estão claros, a conversa se projeta quase sozinha. Você sabe o que perguntar, em que ordem e por quê.</p>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">04 — Da encenação à jornada</div>
+  <div class="case-img-block">
+    <img src="../assets/images/case-06-arvore.svg" alt="Árvore de decisão do assistente de seguros: três ramos — contratar, entender cobertura e acionar sinistro" class="case-img" loading="lazy"/>
+    <p class="case-img-caption">A intenção define o caminho · o conteúdo define as perguntas · a estrutura vem por último</p>
+  </div>
+  <div class="case-img-block">
+    <img src="../assets/images/case-06-arvore.svg" alt="Árvore de decisão do assistente de seguros" class="case-img" loading="lazy"/>
+    <p class="case-img-caption">A intenção define o caminho · o conteúdo define as perguntas · a estrutura vem por último</p>
+  </div>
+    <p>Antes de escrever o fluxo formal, encenamos a conversa como se fosse real. Essa etapa revelou lacunas que o fluxo formal não teria mostrado: perguntas que o segurado faz fora de ordem, informações que ele assume que o assistente já sabe.</p>
+    <p>Com a encenação validada, transformamos os passos em uma jornada estruturada. Sempre partindo da intenção do usuário e garantindo que cada etapa tinha uma razão clara de existir.</p>
+    <div class="journey">
+      <div class="jstep"><div class="jn">01</div><div class="jt">Intenção do usuário</div></div>
+      <div class="jstep"><div class="jn">02</div><div class="jt">Valores e opções</div></div>
+      <div class="jstep"><div class="jn">03</div><div class="jt">Forma de pagamento</div></div>
+      <div class="jstep"><div class="jn">04</div><div class="jt">Benefícios do seguro</div></div>
+      <div class="jstep"><div class="jn">05</div><div class="jt">Seguro contratado</div></div>
+    </div>
+    <p>Cada etapa da jornada foi construída a partir da encenação, não o contrário. O conteúdo ditou a estrutura, não a estrutura ditou o conteúdo.</p>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">05 — Decisões de design</div>
+    <div class="qas">
+      <div class="qa"><div class="qq">Por que começar pela intenção e não pelo fluxo?</div><div class="qa-a">Fluxos projetados sem intenção clara tendem a ser completos para quem os criou e confusos para quem usa. Quando você começa pela pergunta "o que essa pessoa quer?" e pela resposta "o que significa termos entregado bem?", o fluxo se torna uma consequência, não um ponto de partida.</div></div>
+      <div class="qa"><div class="qq">Para que serve a encenação antes do fluxo?</div><div class="qa-a">A encenação simula o caos real de uma conversa: perguntas fora de ordem, informações assumidas, contextos não previstos. Um fluxo formal esconde esses problemas porque está organizado demais. A encenação os expõe antes que o usuário real os encontre.</div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">06 — O aprendizado</div>
+    <div class="learned">
+      <p>Quando você tem uma folha em branco, a tentação é começar a preencher. A decisão mais difícil e mais valiosa é resistir a essa tentação e fazer as perguntas certas antes de escrever qualquer coisa.</p>
+      <cite>Samantha Silva</cite>
+    </div>
+  </div>
+</main>
+<nav class="cnav" aria-label="Navegação entre cases">
+  <a href="case-05.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">Assistente de Gerentes PF</div></a>
+  <a href="case-07.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Cartão de Crédito: a pergunta que não foi respondida</div></a>
+</nav>
+<footer>
+  <p>© 2025 Samantha Silva</p>
+  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+</footer>
+<script src="../assets/textos.js"></script>
+<script src="../assets/shared.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.sec').forEach(s => obs.observe(s));
+</script>
+<script>
+window.addEventListener('message',function(e){
+  if(e.data&&e.data.iframeHeight){
+    document.querySelectorAll('iframe').forEach(function(f){
+      try{if(f.contentWindow===e.source)f.style.height=(e.data.iframeHeight+16)+'px';}catch(ex){}
+    });
+  }
+});
+</script>
+</body>
+</html>
