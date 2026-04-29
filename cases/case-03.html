@@ -3,180 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case 03 — Redesign Conversacional Crédito PJ — Samantha Silva</title>
+<title>Case 03: A pergunta que o chatbot nunca respondeu — Samantha Silva</title>
+<meta name="description" content="Como reescrever fluxos de chatbot com hierarquia da informação gerou mais 10 pontos percentuais de CSAT na Stone.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/shared.css">
 <style>
-.case-hero {
-  padding: 9rem 4rem 5rem;
-  background: var(--navy-mid);
-  position: relative; overflow: hidden;
-}
-.case-hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 50% 80% at 90% 50%, rgba(15,110,86,0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-.case-hero::after {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
-.case-hero-inner { position: relative; z-index: 1; }
-.case-hero-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
-.case-number-pill {
-  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--green-2); background: rgba(26,155,118,0.12); border: 1px solid rgba(26,155,118,0.2);
-  padding: 5px 12px; border-radius: var(--r-full);
-}
-.case-hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  color: var(--white); max-width: 700px; margin-bottom: 1rem;
-}
-.case-hero-sub {
-  font-size: 1.05rem; color: rgba(255,255,255,0.45); font-weight: 300;
-  max-width: 600px; line-height: 1.7; margin-bottom: 2.5rem;
-}
-.case-meta-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-.case-meta-pill {
-  font-size: 0.75rem; padding: 5px 12px; border-radius: var(--r-full);
-  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-/* Metrics bar */
-.case-metrics-bar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-top: 3rem;
-}
-.case-metric-item {
-  padding: 2rem 0;
-  border-right: 1px solid rgba(255,255,255,0.07);
-}
-.case-metric-item:last-child { border-right: none; }
-.cmv {
-  font-family: var(--font-display);
-  font-size: 2.5rem; font-weight: 800;
-  color: var(--green-2); letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.4rem;
-}
-.cml { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
-
-/* Content area */
-.case-body { max-width: 800px; margin: 0 auto; padding: 5rem 4rem; }
-
-.case-section { margin-bottom: 4rem; }
-.case-section-label {
-  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--green); margin-bottom: 1rem; padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--gray-line);
-}
-.case-section h2 {
-  font-size: 1.5rem; color: var(--navy); margin-bottom: 0.75rem;
-}
-.case-section p {
-  font-size: 0.95rem; color: var(--gray); line-height: 1.8; font-weight: 300; margin-bottom: 1rem;
-}
-.case-section p strong { color: var(--navy); font-weight: 500; }
-
-/* Quote / highlight */
-.case-pullquote {
-  border-left: 3px solid var(--green);
-  padding: 1rem 1.5rem;
-  margin: 2rem 0;
-  background: var(--green-mist);
-  border-radius: 0 var(--r-md) var(--r-md) 0;
-}
-.case-pullquote p {
-  font-size: 1rem; color: var(--navy); font-weight: 500; line-height: 1.65; margin: 0;
-}
-
-/* Before / after */
-.before-after-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--gray-line);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  margin: 2rem 0;
-}
-.ba-panel { padding: 1.75rem; }
-.ba-before { background: #FEF2F2; }
-.ba-after  { background: #F0FDF4; }
-.ba-header {
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.ba-before .ba-header { color: #991B1B; }
-.ba-after  .ba-header { color: #166534; }
-.ba-item {
-  display: flex; gap: 0.6rem; align-items: flex-start;
-  font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.6rem;
-}
-.ba-before .ba-item { color: #7F1D1D; }
-.ba-after  .ba-item { color: #14532D; }
-.ba-icon { flex-shrink: 0; margin-top: 2px; font-size: 0.75rem; }
-
-/* Step rows */
-.steps { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
-.step {
-  display: grid; grid-template-columns: 2.5rem 1fr;
-  gap: 1.25rem; align-items: start;
-  padding: 1.25rem 0; border-bottom: 1px solid var(--gray-line);
-}
-.step:last-child { border-bottom: none; }
-.step-n {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
-  color: var(--green); padding-top: 2px;
-}
-.step-t { font-size: 0.95rem; font-weight: 500; color: var(--navy); margin-bottom: 0.25rem; }
-.step-d { font-size: 0.875rem; color: var(--gray); line-height: 1.65; font-weight: 300; }
-
-/* Q&A */
-.qa-list { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
-.qa {
-  border-left: 2px solid var(--green);
-  padding: 1rem 1.25rem;
-  border-radius: 0 var(--r-md) var(--r-md) 0;
-  background: var(--gray-light);
-}
-.qa-q { font-size: 0.875rem; font-weight: 500; color: var(--green); margin-bottom: 0.4rem; }
-.qa-a { font-size: 0.875rem; color: var(--gray); line-height: 1.7; font-weight: 300; }
-
-/* Voice pills */
-.voice-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 1rem 0; }
-
-/* Nav next/prev */
-.case-nav {
-  border-top: 1px solid var(--gray-line);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--gray-light);
-}
-.case-nav-item {
-  padding: 2rem 4rem;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.case-nav-item:hover { background: #ECEEF2; }
-.case-nav-item + .case-nav-item { border-left: 1px solid var(--gray-line); }
-.case-nav-dir {
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gray); margin-bottom: 0.4rem;
-}
-.case-nav-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--navy); letter-spacing: -0.03em; }
+.case-hero{padding:9rem 4rem 0;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.case-hero-inner{position:relative;z-index:1;max-width:800px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:2rem;transition:color .2s}
+.case-back:hover{color:var(--green-2)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
+.case-pill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green-2);background:rgba(26,155,118,.12);border:1px solid rgba(26,155,118,.2);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.case-co{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.5rem}
+.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
+.case-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.disclaimer{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.6}
+.metrics-bar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
+.metric{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.metric:last-child{border-right:none;margin-right:0}
+.mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.4}
+.body{max-width:800px;margin:0 auto;padding:4rem 4rem 5rem}
+.sec{margin-bottom:3.5rem}
+.sec-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
+.sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
+.sec p{font-size:.95rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem}
+.sec p:last-child{margin-bottom:0}
+.sec p strong{color:var(--navy);font-weight:500}
+.pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
+.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
+.stats-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
+.scard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.sv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:3px}
+.sl{font-size:.78rem;color:var(--gray);line-height:1.4}
+.diags{display:flex;flex-direction:column}
+.diag{display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 0;border-bottom:1px solid var(--gray-line)}
+.diag:last-child{border-bottom:none;padding-bottom:0}
+.dd{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.dd.r{background:#A32D2D}.dd.g{background:var(--green)}
+.dt{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.dt strong{color:var(--navy);font-weight:500}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-line);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.bap{padding:1.5rem}
+.ba-b{background:#FEF2F2}.ba-a{background:#F0FDF4}
+.bah{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:5px}
+.ba-b .bah{color:#991B1B}.ba-a .bah{color:#166534}
+.bdt{width:5px;height:5px;border-radius:50%}
+.ba-b .bdt{background:#991B1B}.ba-a .bdt{background:#166534}
+.bat{font-size:.875rem;line-height:1.65;margin-bottom:.5rem}
+.ba-b .bat{color:#7F1D1D}.ba-a .bat{color:#14532D}
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--gray-line);align-items:start}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.sn{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--green);padding-top:2px}
+.st{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
+.sd{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.qas{display:flex;flex-direction:column;gap:1rem;margin-top:.5rem}
+.qa{border-left:2px solid var(--green);padding:1rem 1.25rem;background:var(--gray-light)}
+.qq{font-size:.875rem;font-weight:500;color:var(--green);margin-bottom:.4rem}
+.qa-a{font-size:.875rem;color:var(--gray);line-height:1.7;font-weight:300}
+.rms{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.rm{background:var(--green-mist);border:0.5px solid rgba(15,110,86,.2);border-radius:var(--r-md);padding:1rem 1.25rem;flex:1;min-width:120px;text-align:center}
+.rmv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:4px}
+.rml{font-size:.72rem;color:var(--gray);line-height:1.4}
+.fps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.fp{font-size:.78rem;padding:4px 10px;border-radius:var(--r-full);background:var(--white);color:var(--gray);border:0.5px solid var(--gray-line);font-style:italic}
+.learned{background:var(--gray-light);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
+.learned p{font-size:1rem;color:var(--gray);line-height:1.75;font-style:italic;margin:0}
+.learned cite{font-size:.8rem;color:var(--navy);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
+.cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:block}
+.cni:hover{background:#ECEEF2}.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cni+.cni{border-left:1px solid var(--gray-line);text-align:right}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:.35rem}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em}
+@media(max-width:768px){.case-hero{padding:7rem 1.5rem 0}.body{padding:3rem 1.5rem 4rem}.ba{grid-template-columns:1fr}.stats-2{grid-template-columns:1fr}.metrics-bar{flex-direction:column;gap:1rem}.metric{border-right:none;padding:0;margin:0}.cnav{grid-template-columns:1fr}.cni{padding:1.5rem}.cni+.cni{border-left:none;border-top:1px solid var(--gray-line);text-align:left}.rms{flex-direction:column}}
 </style>
 </head>
 <body>
 
-<nav id="main-nav" class="scrolled">
+<a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+
+<nav id="main-nav" class="scrolled" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
     <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
@@ -185,183 +97,129 @@
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-toggle">
-      <button class="lang-btn active" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="case-hero">
+<section class="case-hero" aria-label="Case 03: Redesign Conversacional Crédito PJ na Stone">
   <div class="case-hero-inner">
-    <div class="case-hero-top">
-      <a href="index.html" class="back-link" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a>
-      <span class="case-number-pill">Case 03 · UX Writing · Design Conversacional</span>
+    <a href="index.html" class="case-back" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a>
+    <div class="case-pill">Case 03 · UX Writing · Design Conversacional</div>
+    <div class="case-co">Stone &amp; Co · Content Designer III · 2023–2025</div>
+    <h1 data-pt="A pergunta que o chatbot nunca respondeu" data-en="The question the chatbot never answered">A pergunta que o chatbot nunca respondeu</h1>
+    <p class="hero-sub" data-pt="Como reescrever fluxos com hierarquia da informação gerou mais 10 pontos percentuais de CSAT e mais 3 de retenção, e o que os dados não estavam mostrando." data-en="How rewriting flows with information hierarchy generated 10 more CSAT points and 3 more retention points — and what the data wasn't showing.">Como reescrever fluxos com hierarquia da informação gerou mais 10 pontos percentuais de CSAT e mais 3 de retenção, e o que os dados não estavam mostrando.</p>
+    <div class="case-tags">
+      <span class="tag">UX Writing</span>
+      <span class="tag">Design Conversacional</span>
+      <span class="tag">Hierarquia da informação</span>
+      <span class="tag">Análise de dados</span>
     </div>
-    <div class="case-meta-row" style="margin-bottom:1.25rem;">
-      <span class="case-meta-pill" data-pt="Pagora (confidencial)" data-en="Pagora (confidential)">Pagora (confidencial)</span>
-      <span class="case-meta-pill">Content Designer III</span>
-      <span class="case-meta-pill">2023–2025</span>
-    </div>
-    <h1 data-pt="Redesign conversacional — Crédito para empresas" data-en="Conversational redesign — Business credit">Redesign conversacional — Crédito para empresas</h1>
-    <p class="case-hero-sub" data-pt="Como reescrever fluxos com hierarquia da informação gerou +10p.p de CSAT e +3p.p de retenção — e o que os dados não estavam mostrando." data-en="How rewriting flows with information hierarchy generated +10pp CSAT and +3pp retention — and what the data wasn't showing.">Como reescrever fluxos com hierarquia da informação gerou +10p.p de CSAT e +3p.p de retenção — e o que os dados não estavam mostrando.</p>
-
-    <div class="case-metrics-bar">
-      <div class="case-metric-item">
-        <div class="cmv">+10pp</div>
-        <div class="cml">CSAT (66% → 76%)</div>
-      </div>
-      <div class="case-metric-item">
-        <div class="cmv">+3pp</div>
-        <div class="cml" data-pt="Retenção (76% → 79%)" data-en="Retention (76% → 79%)">Retenção (76% → 79%)</div>
-      </div>
-      <div class="case-metric-item">
-        <div class="cmv">3k+</div>
-        <div class="cml" data-pt="acessos mensais no fluxo" data-en="monthly accesses in the flow">acessos mensais no fluxo</div>
-      </div>
-      <div class="case-metric-item">
-        <div class="cmv">60%</div>
-        <div class="cml" data-pt="CSAT inicial — maior ofensor" data-en="initial CSAT — biggest offender">CSAT inicial — maior ofensor</div>
-      </div>
+    <div class="disclaimer" data-pt="Elementos ficcionalizados para proteger a confidencialidade: nome do produto interno e detalhes do sistema. O processo, as decisões e os resultados são reais." data-en="Fictionalized elements to protect confidentiality: internal product name and system details. The process, decisions, and results are real.">Elementos ficcionalizados para proteger a confidencialidade: nome do produto interno e detalhes do sistema. O processo, as decisões e os resultados são reais.</div>
+    <div class="metrics-bar">
+      <div class="metric"><div class="mv">+10pp</div><div class="ml">CSAT (66% para 76%)</div></div>
+      <div class="metric"><div class="mv">+3pp</div><div class="ml" data-pt="Retenção (76% para 79%)" data-en="Retention (76% to 79%)">Retenção (76% para 79%)</div></div>
+      <div class="metric"><div class="mv">3k+</div><div class="ml" data-pt="acessos mensais no fluxo" data-en="monthly accesses">acessos mensais no fluxo</div></div>
     </div>
   </div>
 </section>
 
-<!-- BODY -->
-<div class="case-body">
+<main id="case-content" class="body">
 
-  <!-- Disclaimer -->
-  <div style="background:var(--gray-light);border-left:2px solid var(--gray-line);padding:0.75rem 1rem;border-radius:0 var(--r-sm) var(--r-sm) 0;margin-bottom:3rem;font-size:0.78rem;color:var(--gray);line-height:1.6;" data-pt="Elementos ficcionalizados: Pagora (empresa real: confidencial). Métricas de CSAT e retenção são reais e pertencem ao trabalho realizado." data-en="Fictionalized elements: Pagora (real company: confidential). CSAT and retention metrics are real and belong to work done.">
-    Elementos ficcionalizados: Pagora (empresa real: confidencial). Métricas de CSAT e retenção são reais e pertencem ao trabalho realizado.
+  <div class="sec fade">
+    <div class="sec-label" data-pt="01 — A fala que revelou tudo" data-en="01 — The quote that revealed everything">01 — A fala que revelou tudo</div>
+    <blockquote class="pq">
+      <p data-pt='"Não entendi, tenho empréstimo ou não?"' data-en='"I didn\'t get it — do I have a loan or not?"'>"Não entendi, tenho empréstimo ou não?"</p>
+      <cite data-pt="Avaliação real de CSAT — chatbot de crédito PJ" data-en="Real CSAT review — business credit chatbot">Avaliação real de CSAT — chatbot de crédito PJ</cite>
+    </blockquote>
+    <div class="stats-2">
+      <div class="scard"><div class="sv">3k+</div><div class="sl" data-pt="acessos mensais no fluxo de crédito" data-en="monthly accesses in the credit flow">acessos mensais no fluxo de crédito</div></div>
+      <div class="scard"><div class="sv">60%</div><div class="sl" data-pt="CSAT médio. Maior ofensor do produto." data-en="Average CSAT. Biggest product offender.">CSAT médio. Maior ofensor do produto.</div></div>
+    </div>
+    <p data-pt="O chatbot de crédito PJ era o maior ofensor de CSAT da Stone. Mais de 3 mil clientes por mês acessavam o fluxo e saíam sem entender se tinham crédito disponível. O problema não era técnico. Era de conteúdo." data-en="The business credit chatbot was Stone's biggest CSAT offender. More than 3,000 customers per month accessed the flow and left without understanding if they had credit available. The problem wasn't technical. It was content.">O chatbot de crédito PJ era o maior ofensor de CSAT da Stone. Mais de 3 mil clientes por mês acessavam o fluxo e saíam sem entender se tinham crédito disponível. O problema não era técnico. Era de conteúdo.</p>
   </div>
 
-  <!-- Contexto -->
-  <div class="case-section fade">
-    <div class="case-section-label" data-pt="01 — Contexto" data-en="01 — Context">01 — Contexto</div>
-    <p data-pt="O chatbot de crédito para empresas da Pagora era o maior ofensor de CSAT do produto — com avaliação média de 60% — e o fluxo com maior volume de acessos: mais de 3 mil mensais. Clientes saíam sem entender se tinham crédito disponível." data-en="Pagora's business credit chatbot was the product's biggest CSAT offender — with an average score of 60% — and the flow with the highest access volume: over 3,000 monthly. Customers left without understanding if they had credit available.">O chatbot de crédito para empresas da Pagora era o maior ofensor de CSAT do produto — com avaliação média de 60% — e o fluxo com maior volume de acessos: mais de 3 mil mensais. Clientes saíam sem entender se tinham crédito disponível.</p>
-    <div class="case-pullquote">
-      <p data-pt="O problema não era técnico. Era de conteúdo." data-en="The problem wasn't technical. It was content.">O problema não era técnico. Era de conteúdo.</p>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="02 — O que os dados escondiam" data-en="02 — What the data was hiding">02 — O que os dados escondiam</div>
+    <h2 data-pt="Os números mostravam sintomas. As conversas mostravam a causa." data-en="The numbers showed symptoms. The conversations showed the cause.">Os números mostravam sintomas. As conversas mostravam a causa.</h2>
+    <p data-pt="Li cada conversa para entender o que estava acontecendo de verdade. Encontrei três padrões que não apareciam nos tickets de suporte como problema de conteúdo." data-en="I read each conversation to understand what was really happening. I found three patterns that didn't appear in support tickets as content problems.">Li cada conversa para entender o que estava acontecendo de verdade. Encontrei três padrões que não apareciam nos tickets de suporte como problema de conteúdo.</p>
+    <div class="diags">
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="O cliente perguntava <strong>se tinha crédito</strong>. O bot explicava como o sistema de análise funcionava." data-en="The customer asked <strong>if they had credit</strong>. The bot explained how the analysis system worked.">O cliente perguntava <strong>se tinha crédito</strong>. O bot explicava como o sistema de análise funcionava.</div></div>
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirado</strong>, sem nenhuma explicação." data-en="Customers who received an offer email arrived at the chatbot and <strong>the offer had already expired</strong>, with no explanation.">Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirada</strong>, sem nenhuma explicação.</div></div>
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto." data-en="Customers who searched for credit more than once in the month <strong>fell into the same generic flow</strong>, with no context recognition.">Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto.</div></div>
+      <div class="diag"><span class="dd g" aria-hidden="true"></span><div class="dt" data-pt="Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas deu para enxergar." data-en="None of these scenarios appeared in tickets as content problems. Only by reading the conversations did it become visible.">Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas deu para enxergar.</div></div>
     </div>
   </div>
 
-  <!-- Problema -->
-  <div class="case-section fade">
-    <div class="case-section-label" data-pt="02 — O problema" data-en="02 — The problem">02 — O problema</div>
-    <h2 data-pt="O que os dados mostravam — e o que estavam escondendo" data-en="What the data showed — and what it was hiding">O que os dados mostravam — e o que estavam escondendo</h2>
-    <p data-pt="Os dados apontavam sintomas: alto CSAT negativo, alto transbordo para atendimento humano. Mas a causa estava nas conversas — e para entendê-la, precisei lê-las." data-en="The data pointed to symptoms: high negative CSAT, high overflow to human support. But the cause was in the conversations — and to understand it, I needed to read them.">Os dados apontavam sintomas: alto CSAT negativo, alto transbordo para atendimento humano. Mas a causa estava nas conversas — e para entendê-la, precisei lê-las.</p>
-    <p data-pt='O que os clientes diziam: <strong>"Não entendi se tenho empréstimo disponível."</strong> · <strong>"Tem ou não tem?"</strong> · <strong>"Eu recebi um e-mail de oferta semana passada, como não tem disponível?"</strong>' data-en='What customers said: <strong>"I didn\'t understand if I have a loan available."</strong> · <strong>"Do I have it or not?"</strong> · <strong>"I received an offer email last week — how is it not available?"</strong>'>O que os clientes diziam: <strong>"Não entendi se tenho empréstimo disponível."</strong> · <strong>"Tem ou não tem?"</strong> · <strong>"Eu recebi um e-mail de oferta semana passada, como não tem disponível?"</strong></p>
-    <p data-pt="Além dos problemas visíveis, identifiquei dois cenários que o fluxo não tratava: clientes que buscavam crédito mais de uma vez no mesmo mês, e clientes que recebiam e-mail com oferta mas, ao acessar, a análise de risco já havia rodado e a oferta estava expirada — sem nenhuma explicação." data-en="Beyond the visible problems, I identified two scenarios the flow didn't handle: customers searching for credit more than once in the same month, and customers who received an offer email but, when accessing it, the risk analysis had already run and the offer had expired — with no explanation.">Além dos problemas visíveis, identifiquei dois cenários que o fluxo não tratava: clientes que buscavam crédito mais de uma vez no mesmo mês, e clientes que recebiam e-mail com oferta mas, ao acessar, a análise de risco já havia rodado e a oferta estava expirada — sem nenhuma explicação.</p>
-  </div>
-
-  <!-- Diagnóstico -->
-  <div class="case-section fade">
-    <div class="case-section-label" data-pt="03 — Diagnóstico de conteúdo" data-en="03 — Content diagnosis">03 — Diagnóstico de conteúdo</div>
-    <h2 data-pt="Antes e depois do redesign" data-en="Before and after the redesign">Antes e depois do redesign</h2>
-    <div class="before-after-grid">
-      <div class="ba-panel ba-before">
-        <div class="ba-header" data-pt="Problemas identificados" data-en="Problems identified">Problemas identificados</div>
-        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Resposta longa, sem hierarquia de informação" data-en="Long response, no information hierarchy">Resposta longa, sem hierarquia de informação</span></div>
-        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Muitas informações simultâneas sem ordem de prioridade" data-en="Too much information at once, no priority order">Muitas informações simultâneas sem ordem de prioridade</span></div>
-        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Não objetiva — não respondia diretamente à pergunta" data-en="Not direct — didn't answer the actual question">Não objetiva — não respondia diretamente à pergunta</span></div>
-        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Necessidade de rolar a tela para chegar à resposta" data-en="Required scrolling to get to the answer">Necessidade de rolar a tela para chegar à resposta</span></div>
-        <div class="ba-item"><span class="ba-icon">—</span><span data-pt="Cenários de oferta expirada sem qualquer explicação" data-en="Expired offer scenarios with no explanation">Cenários de oferta expirada sem qualquer explicação</span></div>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="03 — Antes e depois" data-en="03 — Before and after">03 — Antes e depois</div>
+    <h2 data-pt="A resposta tinha 4 parágrafos. A nova tinha 2 linhas." data-en="The response had 4 paragraphs. The new one had 2 lines.">A resposta tinha 4 parágrafos. A nova tinha 2 linhas.</h2>
+    <p data-pt="A diferença não era o tamanho. Era o que vinha primeiro." data-en="The difference wasn't the size. It was what came first.">A diferença não era o tamanho. Era o que vinha primeiro.</p>
+    <div class="ba">
+      <div class="bap ba-b">
+        <div class="bah"><span class="bdt" aria-hidden="true"></span><span data-pt="Antes" data-en="Before">Antes</span></div>
+        <p class="bat" data-pt="Sabemos que o empréstimo pode fazer a diferença no seu negócio e é por isso que estamos fazendo melhorias. Por enquanto, apenas uma pequena base de clientes tem o produto disponível." data-en="We know that a loan can make a difference for your business and that's why we're making improvements. For now, only a small customer base has the product available.">Sabemos que o empréstimo pode fazer a diferença no seu negócio e é por isso que estamos fazendo melhorias. Por enquanto, apenas uma pequena base de clientes tem o produto disponível.</p>
+        <p class="bat" data-pt="A gente não consegue te garantir uma oferta no momento, mas temos algumas dicas que podem te ajudar a aumentar suas chances de passar pela análise de crédito..." data-en="We can't guarantee you an offer right now, but we have some tips that can help you increase your chances of passing the credit analysis...">A gente não consegue te garantir uma oferta no momento, mas temos algumas dicas que podem te ajudar a aumentar suas chances de passar pela análise de crédito...</p>
       </div>
-      <div class="ba-panel ba-after">
-        <div class="ba-header" data-pt="Solução aplicada" data-en="Solution applied">Solução aplicada</div>
-        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Texto mais limpo, reduzindo esforço cognitivo" data-en="Cleaner text, reducing cognitive effort">Texto mais limpo, reduzindo esforço cognitivo</span></div>
-        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Hierarquia clara: o mais importante primeiro" data-en="Clear hierarchy: most important first">Hierarquia clara: o mais importante primeiro</span></div>
-        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Quebra de blocos semânticos para facilitar leitura" data-en="Semantic blocks broken up for easier reading">Quebra de blocos semânticos para facilitar leitura</span></div>
-        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Sem necessidade de rolar a tela" data-en="No scrolling required">Sem necessidade de rolar a tela</span></div>
-        <div class="ba-item"><span class="ba-icon">+</span><span data-pt="Novos cenários mapeados e jornadas redesenhadas" data-en="New scenarios mapped and journeys redesigned">Novos cenários mapeados e jornadas redesenhadas</span></div>
+      <div class="bap ba-a">
+        <div class="bah"><span class="bdt" aria-hidden="true"></span><span data-pt="Depois" data-en="After">Depois</span></div>
+        <p class="bat" data-pt="Verifiquei aqui e no momento não há crédito disponível pra você." data-en="I checked here and at the moment there's no credit available for you.">Verifiquei aqui e no momento não há crédito disponível pra você.</p>
+        <p class="bat" data-pt="Assim que surgir uma oferta, a gente te avisa!" data-en="As soon as an offer appears, we'll let you know!">Assim que surgir uma oferta, a gente te avisa!</p>
       </div>
     </div>
   </div>
 
-  <!-- Processo -->
-  <div class="case-section fade">
-    <div class="case-section-label" data-pt="04 — Processo" data-en="04 — Process">04 — Processo</div>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="04 — O processo" data-en="04 — The process">04 — O processo</div>
     <div class="steps">
-      <div class="step">
-        <span class="step-n">01</span>
-        <div>
-          <div class="step-t" data-pt="Análise de conversas e dados" data-en="Conversation and data analysis">Análise de conversas e dados</div>
-          <div class="step-d" data-pt="Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto de crédito." data-en="Reading real conversations, analyzing answered CSAT, mapping conversational behavior and desk research with the credit product team.">Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto de crédito.</div>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">02</span>
-        <div>
-          <div class="step-t" data-pt="Identificação de cenários não mapeados" data-en="Identifying unmapped scenarios">Identificação de cenários não mapeados</div>
-          <div class="step-d" data-pt="Dois cenários recorrentes que o fluxo não tratava — busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada." data-en="Two recurring scenarios the flow didn't handle — repeated search in the same month and expired offer after email. These scenarios caused frustration with no adequate response.">Dois cenários recorrentes que o fluxo não tratava — busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada.</div>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">03</span>
-        <div>
-          <div class="step-t" data-pt="Redesign dos fluxos" data-en="Flow redesign">Redesign dos fluxos</div>
-          <div class="step-d" data-pt="Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados." data-en="Rewriting applying information hierarchy, reducing cognitive load, breaking semantic blocks, and creating specific journeys for the identified scenarios.">Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados.</div>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">04</span>
-        <div>
-          <div class="step-t" data-pt="Monitoramento e iteração" data-en="Monitoring and iteration">Monitoramento e iteração</div>
-          <div class="step-d" data-pt="Acompanhamento de KPIs após implementação — CSAT, retenção, volume de transbordo — para validar o impacto e identificar novas oportunidades de melhoria." data-en="Tracking KPIs after implementation — CSAT, retention, overflow volume — to validate impact and identify new improvement opportunities.">Acompanhamento de KPIs após implementação — CSAT, retenção, volume de transbordo — para validar o impacto e identificar novas oportunidades de melhoria.</div>
-        </div>
-      </div>
+      <div class="step"><span class="sn">01</span><div><div class="st" data-pt="Análise de conversas e dados" data-en="Conversation and data analysis">Análise de conversas e dados</div><div class="sd" data-pt="Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto." data-en="Reading real conversations, analyzing CSAT responses, mapping conversational behavior, and desk research with the product team.">Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto.</div></div></div>
+      <div class="step"><span class="sn">02</span><div><div class="st" data-pt="Identificação de cenários não mapeados" data-en="Identifying unmapped scenarios">Identificação de cenários não mapeados</div><div class="sd" data-pt="Dois cenários recorrentes que o fluxo não tratava: busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada." data-en="Two recurring scenarios the flow didn't handle: repeated search in the same month and expired offer after email. These scenarios caused frustration with no adequate response.">Dois cenários recorrentes que o fluxo não tratava: busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada.</div></div></div>
+      <div class="step"><span class="sn">03</span><div><div class="st" data-pt="Redesign dos fluxos" data-en="Flow redesign">Redesign dos fluxos</div><div class="sd" data-pt="Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados." data-en="Rewriting applying information hierarchy, reducing cognitive load, breaking semantic blocks and creating specific journeys for the identified scenarios.">Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados.</div></div></div>
+      <div class="step"><span class="sn">04</span><div><div class="st" data-pt="Monitoramento e iteração" data-en="Monitoring and iteration">Monitoramento e iteração</div><div class="sd" data-pt="Acompanhamento de KPIs após a implementação: CSAT, retenção, volume de transbordo. Para validar o impacto e identificar novas oportunidades de melhoria." data-en="Tracking KPIs after implementation: CSAT, retention, overflow volume. To validate impact and identify new improvement opportunities.">Acompanhamento de KPIs após a implementação: CSAT, retenção, volume de transbordo. Para validar o impacto e identificar novas oportunidades de melhoria.</div></div></div>
     </div>
   </div>
 
-  <!-- Resultados -->
-  <div class="case-section fade">
-    <div class="case-section-label" data-pt="05 — Resultados" data-en="05 — Results">05 — Resultados</div>
-    <h2 data-pt="O que mudou — em número e em fala" data-en="What changed — in numbers and in words">O que mudou — em número e em fala</h2>
-    <p data-pt="Após o redesign, os indicadores do chatbot completo mostraram melhora consistente durante minha atuação na Pagora (2023–2025)." data-en="After the redesign, the full chatbot's indicators showed consistent improvement during my time at Pagora (2023–2025).">Após o redesign, os indicadores do chatbot completo mostraram melhora consistente durante minha atuação na Pagora (2023–2025).</p>
-    <div class="voice-pills">
-      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"respostas mais claras"</span>
-      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"rapidez nas respostas"</span>
-      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"agilidade"</span>
-      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"muito bom atendimento"</span>
-      <span class="tag" style="background:#FAEEDA;color:#854F0B;">"a informação"</span>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="05 — O resultado" data-en="05 — The result">05 — O resultado</div>
+    <div class="rms">
+      <div class="rm"><div class="rmv">+10pp</div><div class="rml" data-pt="CSAT (66% para 76%)" data-en="CSAT (66% to 76%)">CSAT (66% para 76%)</div></div>
+      <div class="rm"><div class="rmv">+3pp</div><div class="rml" data-pt="Retenção (76% para 79%)" data-en="Retention (76% to 79%)">Retenção (76% para 79%)</div></div>
     </div>
-    <p style="font-size:0.8rem; margin-top:0.5rem;" data-pt="Feedback qualitativo das avaliações de CSAT após o redesign." data-en="Qualitative feedback from CSAT reviews after the redesign.">Feedback qualitativo das avaliações de CSAT após o redesign.</p>
-  </div>
-
-  <!-- Decisões -->
-  <div class="case-section fade">
-    <div class="case-section-label" data-pt="06 — Decisões de design" data-en="06 — Design decisions">06 — Decisões de design</div>
-    <div class="qa-list">
-      <div class="qa">
-        <div class="qa-q" data-pt="Por que hierarquia de informação resolve um problema de CSAT?" data-en="Why does information hierarchy solve a CSAT problem?">Por que hierarquia de informação resolve um problema de CSAT?</div>
-        <div class="qa-a" data-pt="O cliente não estava insatisfeito com o produto — estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço = melhor percepção da experiência." data-en="The customer wasn't dissatisfied with the product — they were dissatisfied with the effort to understand the response. When the most important information comes first and the message fits on one screen without scrolling, cognitive effort drops. Less effort = better experience perception.">O cliente não estava insatisfeito com o produto — estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço = melhor percepção da experiência.</div>
-      </div>
-      <div class="qa">
-        <div class="qa-q" data-pt="O que diferencia mapear cenários de simplesmente reescrever textos?" data-en="What distinguishes mapping scenarios from simply rewriting text?">O que diferencia mapear cenários de simplesmente reescrever textos?</div>
-        <div class="qa-a" data-pt="Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei — busca repetida e oferta expirada — não estavam nos tickets de suporte como 'problema de conteúdo'. Estavam escondidos como 'clientes insatisfeitos'. Precisei ler as conversas para enxergar isso." data-en="Rewriting without mapping scenarios fixes symptoms, not causes. The two scenarios I identified — repeated search and expired offer — weren't in support tickets as 'content problem'. They were hidden as 'dissatisfied customers'. I needed to read the conversations to see it.">Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei — busca repetida e oferta expirada — não estavam nos tickets de suporte como 'problema de conteúdo'. Estavam escondidos como 'clientes insatisfeitos'. Precisei ler as conversas para enxergar isso.</div>
-      </div>
+    <p data-pt="O que os clientes passaram a dizer nas avaliações:" data-en="What customers started saying in reviews:">O que os clientes passaram a dizer nas avaliações:</p>
+    <div class="fps">
+      <span class="fp">"respostas mais claras"</span>
+      <span class="fp">"rapidez"</span>
+      <span class="fp">"agilidade"</span>
+      <span class="fp">"muito bom atendimento"</span>
+      <span class="fp">"a informação"</span>
+    </div>
+    <div class="learned">
+      <p data-pt="Dados mostram onde dói. Conversas mostram por quê. Às vezes o problema que você foi resolver não é o problema real. É só o mais visível." data-en="Data shows where it hurts. Conversations show why. Sometimes the problem you went to solve isn't the real problem. It's just the most visible one.">Dados mostram onde dói. Conversas mostram por quê. Às vezes o problema que você foi resolver não é o problema real. É só o mais visível.</p>
+      <cite>Samantha Silva</cite>
     </div>
   </div>
 
-</div>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="06 — Decisões de design" data-en="06 — Design decisions">06 — Decisões de design</div>
+    <div class="qas">
+      <div class="qa"><div class="qq" data-pt="Por que hierarquia de informação resolve um problema de CSAT?" data-en="Why does information hierarchy solve a CSAT problem?">Por que hierarquia de informação resolve um problema de CSAT?</div><div class="qa-a" data-pt="O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço significa melhor percepção da experiência." data-en="The customer wasn't dissatisfied with the product. They were dissatisfied with the effort to understand the response. When the most important information comes first and the message fits on screen without scrolling, cognitive effort drops. Less effort means better experience perception.">O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai. Menos esforço significa melhor percepção da experiência.</div></div>
+      <div class="qa"><div class="qq" data-pt="O que diferencia mapear cenários de simplesmente reescrever textos?" data-en="What distinguishes mapping scenarios from simply rewriting text?">O que diferencia mapear cenários de simplesmente reescrever textos?</div><div class="qa-a" data-pt="Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Precisei ler as conversas para enxergar isso." data-en="Rewriting without mapping scenarios solves symptoms, not causes. The two scenarios I identified weren't in tickets as content problems. They were hidden as dissatisfied customers. I needed to read the conversations to see that.">Reescrever sem mapear cenários resolve os sintomas, não as causas. Os dois cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Precisei ler as conversas para enxergar isso.</div></div>
+    </div>
+  </div>
 
-<!-- CASE NAV -->
-<div class="case-nav">
-  <a href="case-02.html" class="case-nav-item">
-    <div class="case-nav-dir" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div>
-    <div class="case-nav-title" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</div>
-  </a>
-  <a href="case-04.html" class="case-nav-item" style="text-align:right;">
-    <div class="case-nav-dir" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div>
-    <div class="case-nav-title" data-pt="Niara — Assistente de RH" data-en="Niara — HR Assistant">Niara — Assistente de RH</div>
-  </a>
-</div>
+</main>
+
+<nav class="cnav" aria-label="Navegação entre cases">
+  <a href="case-02.html" class="cni"><div class="cnd" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div><div class="cnt" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</div></a>
+  <a href="case-04.html" class="cni"><div class="cnd" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div><div class="cnt" data-pt="Niara: a alma de um assistente" data-en="Niara: the soul of an assistant">Niara: a alma de um assistente</div></a>
+</nav>
 
 <footer>
   <p>© 2025 Samantha Silva</p>
   <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
-
 <script src="../assets/shared.js"></script>
 </body>
 </html>

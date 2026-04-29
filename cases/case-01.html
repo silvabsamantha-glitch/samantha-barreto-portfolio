@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case 01: Assistente de Voz da Marca — Samantha Silva</title>
+<meta name="description" content="Como criamos um copiloto com IA para garantir consistência de voz em todos os canais da Meridian.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+.case-hero{padding:9rem 4rem 0;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.case-hero-inner{position:relative;z-index:1;max-width:800px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:2rem;transition:color .2s}
+.case-back:hover{color:var(--green-2)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
+.cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green-2);background:rgba(26,155,118,.12);border:1px solid rgba(26,155,118,.2);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.5rem}
+.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
+.hsub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
+.ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.disc{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.6}
+.mbar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
+.mitem{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.mitem:last-child{border-right:none;margin-right:0}
+.mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.4}
+.pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
+.pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.cbody{max-width:800px;margin:0 auto;padding:4rem 4rem 5rem}
+.sec{margin-bottom:3.5rem}
+.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
+.sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
+.sec p{font-size:.95rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem}
+.sec p:last-child{margin-bottom:0}
+.sec p strong{color:var(--navy);font-weight:500}
+.pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
+.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--gray-line);align-items:start}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.sn{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--green);padding-top:2px}
+.st{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
+.sd{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.qas{display:flex;flex-direction:column;gap:1rem;margin-top:.5rem}
+.qa{border-left:2px solid var(--green);padding:1rem 1.25rem;background:var(--gray-light)}
+.qq{font-size:.875rem;font-weight:500;color:var(--green);margin-bottom:.4rem}
+.qa-a{font-size:.875rem;color:var(--gray);line-height:1.7;font-weight:300}
+.rms{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.rm{background:var(--green-mist);border:0.5px solid rgba(15,110,86,.2);border-radius:var(--r-md);padding:1rem 1.25rem;flex:1;min-width:120px;text-align:center}
+.rmv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:4px}
+.rml{font-size:.72rem;color:var(--gray);line-height:1.4}
+.learned{background:var(--gray-light);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
+.learned p{font-size:1rem;color:var(--gray);line-height:1.75;font-style:italic;margin:0}
+.learned cite{font-size:.8rem;color:var(--navy);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
+.scard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.sv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:3px}
+.sl{font-size:.78rem;color:var(--gray);line-height:1.4}
+.diags{display:flex;flex-direction:column}
+.diag{display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 0;border-bottom:1px solid var(--gray-line)}
+.diag:last-child{border-bottom:none;padding-bottom:0}
+.dd{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.dd.r{background:#A32D2D}.dd.g{background:var(--green)}
+.dt{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.dt strong{color:var(--navy);font-weight:500}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.pcard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.pnum{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:.4rem}
+.ptit{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
+.pdesc{font-size:.875rem;color:var(--gray);line-height:1.55;font-weight:300}
+.ps-status{background:#FAEEDA;border:0.5px solid rgba(186,117,23,.25);border-radius:var(--r-md);padding:1rem 1.25rem}
+.ps-title{font-size:.875rem;font-weight:500;color:#854F0B;margin-bottom:.4rem}
+.ps-text{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.regs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.reg{border-radius:var(--r-md);padding:1rem;border:0.5px solid}
+.reg.d{background:#EAF3DE;border-color:rgba(59,109,17,.2)}
+.reg.a{background:#E6F1FB;border-color:rgba(24,95,165,.2)}
+.reg.e{background:#FAEEDA;border-color:rgba(133,79,11,.2)}
+.rn{font-size:.875rem;font-weight:500;margin-bottom:.35rem}
+.reg.d .rn{color:#27500A}.reg.a .rn{color:#0C447C}.reg.e .rn{color:#633806}
+.rd{font-size:.8rem;line-height:1.55;margin-bottom:.625rem}
+.reg.d .rd{color:#3B6D11}.reg.a .rd{color:#185FA5}.reg.e .rd{color:#854F0B}
+.rex{font-size:.75rem;font-style:italic;line-height:1.5;padding:.4rem .625rem;border-radius:4px}
+.reg.d .rex{background:rgba(59,109,17,.1);color:#3B6D11}
+.reg.a .rex{background:rgba(24,95,165,.1);color:#185FA5}
+.reg.e .rex{background:rgba(133,79,11,.1);color:#854F0B}
+.segs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-line);border-radius:var(--r-md);overflow:hidden;margin-bottom:1rem}
+.seg{background:var(--white);padding:1rem}
+.segn{font-size:.875rem;font-weight:500;color:var(--navy);margin-bottom:.3rem}
+.segd{font-size:.8rem;color:var(--gray);line-height:1.5;margin-bottom:.5rem}
+.segt{display:flex;flex-wrap:wrap;gap:4px}
+.stag{font-size:.72rem;padding:2px 7px;border-radius:var(--r-full);background:var(--gray-light);color:var(--gray);border:0.5px solid var(--gray-line)}
+.fw5{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--gray-line);border-radius:var(--r-md);overflow:hidden;margin-bottom:1rem}
+.fwc{background:var(--white);padding:.875rem .625rem;text-align:center}
+.fwc.last{background:var(--gray-light)}
+.fwn{font-family:var(--font-display);font-size:1.25rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:.25rem}
+.fwc.last .fwn{color:var(--gray)}
+.fwt{font-size:.8rem;font-weight:500;color:var(--navy);margin-bottom:.2rem}
+.fwc.last .fwt{color:var(--gray)}
+.fwd{font-size:.72rem;color:var(--gray);line-height:1.4}
+.fwn2{font-size:.68rem;color:var(--gray);font-style:italic;margin-top:.375rem}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-line);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.bap{padding:1.5rem}
+.ba-b{background:#FEF2F2}.ba-a{background:#F0FDF4}
+.bah{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:5px}
+.ba-b .bah{color:#991B1B}.ba-a .bah{color:#166534}
+.bdt{width:5px;height:5px;border-radius:50%}
+.ba-b .bdt{background:#991B1B}.ba-a .bdt{background:#166534}
+.bat{font-size:.875rem;line-height:1.65;margin-bottom:.5rem}
+.ba-b .bat{color:#7F1D1D}.ba-a .bat{color:#14532D}
+.intgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.intcard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.intl{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem}
+.intt{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.375rem}
+.intd{font-size:.8rem;color:var(--gray);line-height:1.55;font-weight:300}
+.objgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.objcard{border-radius:var(--r-md);padding:1rem}
+.objcard.seg{background:#E6F1FB;border:0.5px solid rgba(24,95,165,.2)}
+.objcard.seg2{background:#E1F5EE;border:0.5px solid rgba(15,110,86,.2)}
+.objl{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.625rem}
+.objcard.seg .objl{color:#0C447C}.objcard.seg2 .objl{color:#085041}
+.obji{display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.375rem}
+.objd{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.objcard.seg .objd{background:#185FA5}.objcard.seg2 .objd{background:var(--green)}
+.objt{font-size:.8rem;line-height:1.5}
+.objcard.seg .objt{color:#185FA5}.objcard.seg2 .objt{color:var(--green)}
+.scen{border-radius:var(--r-md);overflow:hidden;border:0.5px solid var(--gray-line);margin-bottom:8px}
+.scheader{padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem}
+.scheader.api{background:#E1F5EE}.scheader.semi{background:#FAEEDA}.scheader.noapi{background:var(--gray-light)}
+.scn{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.scheader.api .scn{color:#085041}.scheader.semi .scn{color:#633806}.scheader.noapi .scn{color:var(--gray)}
+.sct{font-size:.875rem;font-weight:500}
+.scheader.api .sct{color:#085041}.scheader.semi .sct{color:#633806}.scheader.noapi .sct{color:var(--navy)}
+.scbadge{margin-left:auto;font-size:.7rem;padding:2px 8px;border-radius:var(--r-full);font-weight:500}
+.scheader.api .scbadge{background:rgba(15,110,86,.15);color:#085041}
+.scheader.semi .scbadge{background:rgba(133,79,11,.15);color:#633806}
+.scheader.noapi .scbadge{background:var(--gray-light);color:var(--gray)}
+.scbody{padding:.875rem 1rem}
+.scitem{display:flex;gap:.625rem;align-items:flex-start;margin-bottom:.375rem}
+.scdot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.scheader.api+.scbody .scdot{background:var(--green)}
+.scheader.semi+.scbody .scdot{background:#C4820A}
+.scheader.noapi+.scbody .scdot{background:var(--gray)}
+.sctext{font-size:.875rem;color:var(--gray);line-height:1.55;font-weight:300}
+.sctext strong{color:var(--navy);font-weight:500}
+.scex{font-size:.8rem;background:var(--gray-light);border-left:2px solid var(--gray-line);padding:.5rem .75rem;margin-top:.5rem;color:var(--gray);font-style:italic;line-height:1.55}
+.journey{display:flex;overflow:hidden;border-radius:var(--r-md);border:0.5px solid var(--gray-line)}
+.jstep{flex:1;padding:.75rem .5rem;background:var(--white);text-align:center;position:relative;border-right:0.5px solid var(--gray-line)}
+.jstep:last-child{border-right:none}
+.jn{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.2rem}
+.jt{font-size:.8rem;font-weight:500;color:var(--navy);line-height:1.3}
+.constr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.constpill{font-size:.78rem;padding:4px 10px;border-radius:var(--r-md);background:#FAEEDA;color:#854F0B}
+.pins{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.pin{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.pinnum{font-family:var(--font-display);font-size:1.25rem;font-weight:500;color:#C4820A;line-height:1;margin-bottom:.4rem}
+.pint{font-size:.875rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
+.pind{font-size:.8rem;color:var(--gray);line-height:1.55;font-weight:300}
+.tenbox{background:#FAEEDA;border-left:3px solid #C4820A;padding:1rem 1.25rem;margin:1.5rem 0}
+.tentext{font-size:1.05rem;font-weight:500;color:#633806;line-height:1.5;font-style:italic}
+.cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:block}
+.cni:hover{background:#ECEEF2}.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cni+.cni{border-left:1px solid var(--gray-line);text-align:right}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:.35rem}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em}
+.badge-study{display:inline-flex;align-items:center;gap:.5rem;background:rgba(127,119,221,.1);border:1px solid rgba(127,119,221,.2);border-radius:var(--r-full);padding:.4rem 1rem;margin-top:1.25rem;font-size:.7rem;font-weight:500;color:#534AB7;letter-spacing:.08em;text-transform:uppercase}
+.cpill.purple{color:#7F77DD;background:rgba(127,119,221,.12);border-color:rgba(127,119,221,.2)}
+.cpill.amber{color:#C4820A;background:rgba(196,130,10,.12);border-color:rgba(196,130,10,.2)}
+@media(max-width:768px){.case-hero{padding:7rem 1.5rem 0}.cbody{padding:3rem 1.5rem 4rem}.ba{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr}.intgrid{grid-template-columns:1fr}.objgrid{grid-template-columns:1fr}.mbar{flex-direction:column;gap:1rem}.mitem{border-right:none;padding:0;margin:0}.cnav{grid-template-columns:1fr}.cni{padding:1.5rem}.cni+.cni{border-left:none;border-top:1px solid var(--gray-line);text-align:left}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<nav id="main-nav" class="scrolled" aria-label="Navegação principal">
+  <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="index.html" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</nav>
+<section class="case-hero" aria-label="Case 01: Assistente de Voz da Marca na Meridian">
+  <div class="case-hero-inner">
+    <a href="index.html" class="case-back" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a>
+    <div class="cpill">Case 01 · IA Generativa · Governança de Conteúdo</div>
+    <div class="cco">Meridian Investimentos · Content Designer II · 2025</div>
+    <h1 data-pt="Assistente de Voz da Marca" data-en="Brand Voice Assistant">Assistente de Voz da Marca</h1>
+    <p class="hsub" data-pt="Como criamos um copiloto com IA para garantir que qualquer time pudesse escrever com a voz da Meridian, no canal certo, para o cliente certo, no momento certo." data-en="How we built an AI copilot to ensure any team could write in Meridian's voice, in the right channel, for the right customer, at the right moment.">Como criamos um copiloto com IA para garantir que qualquer time pudesse escrever com a voz da Meridian, no canal certo, para o cliente certo, no momento certo.</p>
+    <div class="ctags"><span class="tag">IA Generativa</span><span class="tag">Governança de Conteúdo</span><span class="tag">Tom de Voz</span><span class="tag">Content Strategy</span></div>
+    <div class="disc" data-pt="Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos), nomes de segmentos e registros de comunicação. O processo, as decisões e os resultados são reais." data-en="Fictionalized elements to protect confidentiality: company name (Meridian Investimentos), segment names and communication registers. The process, decisions, and results are real.">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos), nomes de segmentos e registros de comunicação. O processo, as decisões e os resultados são reais.</div>
+    <div class="pbadge"><span class="pdot"></span><span data-pt="Em piloto" data-en="In pilot">Em piloto</span></div>
+  </div>
+</section>
+<main id="case-content" class="cbody">
+  <div class="sec fade">
+    <div class="slabel">01 — O contexto</div>
+    <p data-pt="A Meridian atende três segmentos de clientes com perfis, vocabulários e estados mentais muito diferentes. Todos os times de produto escreviam copy para esses segmentos sem uma referência consolidada de voz. O resultado eram inconsistências entre canais, entre segmentos e entre times." data-en="Meridian serves three customer segments with very different profiles, vocabularies, and mental states. All product teams were writing copy for these segments without a consolidated voice reference. The result was inconsistency across channels, segments, and teams.">A Meridian atende três segmentos de clientes com perfis, vocabulários e estados mentais muito diferentes. Todos os times de produto escreviam copy para esses segmentos sem uma referência consolidada de voz. O resultado eram inconsistências entre canais, entre segmentos e entre times.</p>
+    <p data-pt="Um mesmo estado de erro podia soar protocolar em um canal e informal em outro. O time de Content não conseguia revisar tudo." data-en="The same error state could sound formal in one channel and informal in another. The Content team couldn't review everything.">Um mesmo estado de erro podia soar protocolar em um canal e informal em outro. O time de Content não conseguia revisar tudo.</p>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">02 — O problema raiz</div>
+    <div class="sgrid">
+      <div class="scard"><div class="intl" data-pt="Sintoma visível" data-en="Visible symptom">Sintoma visível</div><p style="margin:0;font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300" data-pt="Designers e PMs escreviam copy sem referência consolidada. O mesmo erro soava protocolar em um canal e informal em outro." data-en="Designers and PMs wrote copy without a consolidated reference. The same error sounded formal in one channel and informal in another.">Designers e PMs escreviam copy sem referência consolidada. O mesmo erro soava protocolar em um canal e informal em outro.</p></div>
+      <div class="scard"><div class="intl" data-pt="Raiz do problema" data-en="Root cause">Raiz do problema</div><p style="margin:0;font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300" data-pt="Não existia uma arquitetura de voz operacionalizável. Algo que um Designer sem especialização em conteúdo pudesse consultar e aplicar sozinho." data-en="There was no operationalizable voice architecture. Something a Designer without content expertise could consult and apply on their own.">Não existia uma arquitetura de voz operacionalizável. Algo que um Designer sem especialização em conteúdo pudesse consultar e aplicar sozinho.</p></div>
+    </div>
+    <p data-pt="A solução não era só um guia de tom de voz. Guias existem e ficam guardados sem ninguém ler. A solução era um assistente que incorporasse a voz e devolvesse respostas, não documentos." data-en="The solution wasn't just a tone of voice guide. Guides exist and sit around unread. The solution was an assistant that embodied the voice and returned answers, not documents.">A solução não era só um guia de tom de voz. Guias existem e ficam guardados sem ninguém ler. A solução era um assistente que incorporasse a voz e devolvesse respostas, não documentos.</p>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">03 — A arquitetura de voz</div>
+    <h2 data-pt="3 registros de comunicação" data-en="3 communication registers">3 registros de comunicação</h2>
+    <p data-pt="Trabalhei em co-design com o líder de Design e outra Content Designer para estruturar os registros. Cada um calibrado para um estado mental diferente do cliente." data-en="I worked in co-design with the Design Lead and another Content Designer to structure the registers. Each calibrated for a different customer mental state.">Trabalhei em co-design com o líder de Design e outra Content Designer para estruturar os registros. Cada um calibrado para um estado mental diferente do cliente.</p>
+    <div class="regs">
+      <div class="reg d"><div class="rn">Desafiador</div><div class="rd">Para o cliente que está pronto para agir. Direto, confiante, sem explicações desnecessárias.</div><div class="rex">"Seu portfólio perdeu 3% ontem. Veja o que mudou."</div></div>
+      <div class="reg a"><div class="rn">Acolhedor</div><div class="rd">Para o momento de incerteza. Presente, humano, sem jargão financeiro.</div><div class="rex">"Mercados caem. É normal. Seus objetivos continuam no lugar."</div></div>
+      <div class="reg e"><div class="rn">Educativo</div><div class="rd">Para o cliente que precisa entender antes de agir. Claro, sem pressa, sem condescendência.</div><div class="rex">"CDI é a taxa que os bancos usam entre si. Seus fundos seguem ela."</div></div>
+    </div>
+    <h2 data-pt="Calibração por segmento" data-en="Segment calibration">Calibração por segmento</h2>
+    <div class="segs">
+      <div class="seg"><div class="segn">Iniciante</div><div class="segd">Primeiros passos. Precisa de clareza e acolhimento antes de qualquer coisa.</div><div class="segt"><span class="stag">Sem jargão</span><span class="stag">Contexto sempre</span><span class="stag">Tom acolhedor</span></div></div>
+      <div class="seg"><div class="segn">Crescimento</div><div class="segd">Já investe, quer crescer. Precisa de dados e contexto para decidir.</div><div class="segt"><span class="stag">Dados primeiro</span><span class="stag">Tom direto</span></div></div>
+      <div class="seg"><div class="segn">Patrimônio</div><div class="segd">Quer o essencial e acesso ao assessor. Zero redundância.</div><div class="segt"><span class="stag">Extremamente direto</span><span class="stag">Assessor disponível</span></div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">04 — Como construímos</div>
+    <div class="steps">
+      <div class="step"><span class="sn">01</span><div><div class="st">Diagnóstico de inconsistências</div><div class="sd">Auditoria de textos por canal, mapeando os padrões de erro mais frequentes: urgência fabricada, jargão técnico fora de contexto, tom de varejo em produto financeiro sofisticado.</div></div></div>
+      <div class="step"><span class="sn">02</span><div><div class="st">Arquitetura de voz</div><div class="sd">Definição dos 3 registros de comunicação e dos 4 pilares de voz permanentes, que não mudam por canal ou contexto. Com exemplos reais de antes e depois por situação.</div></div></div>
+      <div class="step"><span class="sn">03</span><div><div class="st">Base de conhecimento</div><div class="sd">Foundation Document com vocabulário recomendado e proibido, checklists de revisão, padrões por canal e critérios de quando escalar para um Content Designer.</div></div></div>
+      <div class="step"><span class="sn">04</span><div><div class="st">Piloto com Designers</div><div class="sd">Testes com Designers que não têm Content dedicado no squad. Coleta de feedback qualitativo, ajustes de calibração e definição de casos-limite.</div></div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">05 — Decisões de design</div>
+    <div class="qas">
+      <div class="qa"><div class="qq">Por que 3 registros e não um tom único?</div><div class="qa-a">O mesmo cliente, em estados mentais diferentes, precisa de comunicação diferente. Um tom único forçaria todas as situações em um único registro: ou frio demais ou informal demais.</div></div>
+      <div class="qa"><div class="qq">Por que o assistente avalia mas não aprova?</div><div class="qa-a">Decisões que envolvem contexto regulatório, crise ou lançamento de produto exigem julgamento humano. Delimitar o escopo do assistente foi uma decisão intencional, não uma limitação técnica.</div></div>
+      <div class="qa"><div class="qq">Como o mesmo fato muda por segmento?</div><div class="qa-a">Uma queda de mercado é comunicada sem jargão e com acolhimento para o Iniciante. Com dados e contexto para o Crescimento. Diretamente ao ponto com acesso ao assessor para o Patrimônio. O fato é o mesmo. O ângulo muda completamente.</div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">06 — Status atual</div>
+    <div class="ps-status">
+      <div class="ps-title" data-pt="Em piloto com times de Design" data-en="In pilot with Design teams">Em piloto com times de Design</div>
+      <p class="ps-text" data-pt="O assistente está sendo testado com Designers que não têm Content dedicado no squad. Estamos medindo: adoção pelos times, qualidade de copy antes e depois, redução de ciclos de revisão. Próximos passos: expansão para novos canais e jornadas de produto." data-en="The assistant is being tested with Designers who don't have dedicated Content in their squad. We're measuring: team adoption, copy quality before and after, reduction in review cycles. Next steps: expansion to new channels and product journeys.">O assistente está sendo testado com Designers que não têm Content dedicado no squad. Estamos medindo: adoção pelos times, qualidade de copy antes e depois, redução de ciclos de revisão. Próximos passos: expansão para novos canais e jornadas de produto.</p>
+    </div>
+  </div>
+</main>
+<nav class="cnav" aria-label="Navegação entre cases">
+  <a href="index.html" class="cni"><div class="cnd" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div><div class="cnt" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</div></a>
+  <a href="case-02.html" class="cni"><div class="cnd" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div><div class="cnt" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</div></a>
+</nav>
+<footer>
+  <p>© 2025 Samantha Silva</p>
+  <p><a href="index.html" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+</footer>
+<script src="../assets/shared.js"></script>
+</body>
+</html>
