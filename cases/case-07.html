@@ -171,6 +171,9 @@
 .cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
 .cni:hover .cnt{opacity:1}
 .cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}
+.case-img{width:100%;height:auto;display:block}
+.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--off-white,#F8F9FA);border-top:1px solid var(--gray-line);margin:0}
 </style>
 </head>
 <body>
@@ -207,6 +210,11 @@
 <main id="case-content" class="cbody">
   <div class="sec fade">
     <div class="slabel">01 — O problema</div>
+  <div class="case-img-block">
+    <img src="../assets/images/case-07.svg" alt="Visualização do problema do chatbot de cartão de crédito e os três cenários de solução propostos, com e sem API" class="case-img" loading="lazy"/>
+    <p class="case-img-caption">O problema e os três caminhos — com e sem API</p>
+  </div>
+
     <p>O cliente pediu um cartão de crédito e entrou no chatbot para saber quando ele chegaria. Recebeu a mesma resposta genérica que já tinha visto no app. Insatisfeito, ligou para a central, e o atendente humano disse exatamente a mesma coisa.</p>
     <div class="pq" style="border-color:#A32D2D;background:#FEF2F2">
       <p style="color:#991B1B">"O cliente perguntou quando chega o cartão. Não qual é o prazo padrão."</p>
