@@ -163,7 +163,7 @@
 .tenbox{background:#FAEEDA;border-left:3px solid #C4820A;padding:1rem 1.25rem;margin:1.5rem 0}
 .tentext{font-size:1.05rem;font-weight:500;color:#633806;line-height:1.5;font-style:italic}
 .cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
-.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:100px}
 .cni:hover{background:#ECEEF2}
 .cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
 .cni-right{border-left:1px solid var(--gray-line);align-items:flex-end}
@@ -220,10 +220,6 @@
   <div class="sec fade">
     <div class="slabel">02 — O processo de pesquisa</div>
   <div class="case-img-block">
-    <img src="../assets/images/case-04-pesquisa.svg" alt="Processo de pesquisa da Niara: 600+ colaboradores ouvidos" class="case-img" loading="lazy"/>
-    <p class="case-img-caption">O processo que deu vida à Niara — 600+ colaboradores ouvidos antes de escrever uma linha</p>
-  </div>
-  <div class="case-img-block">
     <img src="../assets/images/case-04-pesquisa.svg" alt="Processo de pesquisa da Niara" class="case-img" loading="lazy"/>
     <p class="case-img-caption">O processo que deu vida à Niara — 600+ colaboradores ouvidos</p>
   </div>
@@ -247,11 +243,7 @@
   <div class="sec fade">
     <div class="slabel">03 — Assim nasceu a Niara</div>
   <div class="case-anim-block">
-    <iframe src="../assets/images/case-04-niara-animado.html" width="100%" height="520" frameborder="0" scrolling="no" loading="lazy" style="display:block;width:100%;border:none;min-height:300px"></iframe>
-    <p class="case-img-caption">A Niara em ação — direta, acolhedora, sem enrolação</p>
-  </div>
-  <div class="case-img-block">
-    <img src="../assets/images/case-04-niara.svg" alt="Niara, assistente virtual de RH" class="case-img" loading="lazy"/>
+    <iframe src="../assets/images/case-04-niara-animado.html" width="100%" height="100" frameborder="0" scrolling="no" loading="lazy" style="display:block;width:100%;border:none"></iframe>
     <p class="case-img-caption">A Niara em ação — direta, acolhedora, sem enrolação</p>
   </div>
     <div class="pq">
@@ -304,13 +296,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.iframeHeight){
-    document.querySelectorAll('iframe').forEach(function(f){
-      try{if(f.contentWindow===e.source)f.style.height=(e.data.iframeHeight+16)+'px';}catch(ex){}
-    });
-  }
-});
+window.addEventListener('message',function(e){if(e.data&&e.data.iframeHeight){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=(e.data.iframeHeight+4)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>

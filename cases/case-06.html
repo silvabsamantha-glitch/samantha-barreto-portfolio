@@ -209,10 +209,6 @@
   <div class="sec fade">
     <div class="slabel">01 — O contexto</div>
   <div class="case-img-block">
-    <img src="../assets/images/case-06.svg" alt="Diagrama das cinco etapas do processo Content First aplicado ao assistente de seguros" class="case-img" loading="lazy"/>
-    <p class="case-img-caption">O processo Content First — do zero ao fluxo certo</p>
-  </div>
-  <div class="case-img-block">
     <img src="../assets/images/case-06.svg" alt="Diagrama das cinco etapas do processo Content First" class="case-img" loading="lazy"/>
     <p class="case-img-caption">O processo Content First — do zero ao fluxo certo</p>
   </div>
@@ -240,10 +236,6 @@
   </div>
   <div class="sec fade">
     <div class="slabel">04 — Da encenação à jornada</div>
-  <div class="case-img-block">
-    <img src="../assets/images/case-06-arvore.svg" alt="Árvore de decisão do assistente de seguros: três ramos — contratar, entender cobertura e acionar sinistro" class="case-img" loading="lazy"/>
-    <p class="case-img-caption">A intenção define o caminho · o conteúdo define as perguntas · a estrutura vem por último</p>
-  </div>
   <div class="case-img-block">
     <img src="../assets/images/case-06-arvore.svg" alt="Árvore de decisão do assistente de seguros" class="case-img" loading="lazy"/>
     <p class="case-img-caption">A intenção define o caminho · o conteúdo define as perguntas · a estrutura vem por último</p>
@@ -291,13 +283,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.iframeHeight){
-    document.querySelectorAll('iframe').forEach(function(f){
-      try{if(f.contentWindow===e.source)f.style.height=(e.data.iframeHeight+16)+'px';}catch(ex){}
-    });
-  }
-});
+window.addEventListener('message',function(e){if(e.data&&e.data.iframeHeight){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=(e.data.iframeHeight+4)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>

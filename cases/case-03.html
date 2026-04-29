@@ -76,7 +76,7 @@
 .learned p{font-size:1rem;color:var(--gray);line-height:1.75;font-style:italic;margin:0}
 .learned cite{font-size:.8rem;color:var(--navy);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
 .cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
-.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:100px}
 .cni:hover{background:#ECEEF2}
 .cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
 .cni-right{border-left:1px solid var(--gray-line);align-items:flex-end}
@@ -153,10 +153,6 @@
     <img src="../assets/images/case-03-arvore.svg" alt="Árvore de decisão: fluxo original vs cenários descobertos nas conversas" class="case-img" loading="lazy"/>
     <p class="case-img-caption">O que o fluxo via · vs · o que as conversas mostravam</p>
   </div>
-  <div class="case-img-block">
-    <img src="../assets/images/case-03-arvore.svg" alt="Árvore de decisão: fluxo original vs cenários descobertos nas conversas" class="case-img" loading="lazy"/>
-    <p class="case-img-caption">O que o fluxo via · vs · o que as conversas mostravam</p>
-  </div>
     <h2 data-pt="Os números mostravam sintomas. As conversas mostravam a causa." data-en="The numbers showed symptoms. The conversations showed the cause.">Os números mostravam sintomas. As conversas mostravam a causa.</h2>
     <p data-pt="Li cada conversa para entender o que estava acontecendo de verdade. Encontrei três padrões que não apareciam nos tickets de suporte como problema de conteúdo." data-en="I read each conversation to understand what was really happening. I found three patterns that didn't appear in support tickets as content problems.">Li cada conversa para entender o que estava acontecendo de verdade. Encontrei três padrões que não apareciam nos tickets de suporte como problema de conteúdo.</p>
     <div class="diags">
@@ -170,11 +166,7 @@
   <div class="sec fade">
     <div class="sec-label" data-pt="03 — Antes e depois" data-en="03 — Before and after">03 — Antes e depois</div>
   <div class="case-anim-block">
-    <iframe src="../assets/images/case-03-whatsapp-animado.html" width="100%" height="420" frameborder="0" scrolling="no" loading="lazy" style="display:block;width:100%;border:none;min-height:300px"></iframe>
-    <p class="case-img-caption">Antes e depois — a resposta que não enrolava</p>
-  </div>
-  <div class="case-anim-block">
-    <iframe src="../assets/images/case-03-whatsapp-animado.html" width="100%" height="480" frameborder="0" scrolling="no" loading="lazy" style="display:block;width:100%;border:none;min-height:300px"></iframe>
+    <iframe src="../assets/images/case-03-whatsapp-animado.html" width="100%" height="100" frameborder="0" scrolling="no" loading="lazy" style="display:block;width:100%;border:none;min-height:100px"></iframe>
     <p class="case-img-caption">Antes e depois — a resposta que não enrolava</p>
   </div>
     <h2 data-pt="A resposta tinha 4 parágrafos. A nova tinha 2 linhas." data-en="The response had 4 paragraphs. The new one had 2 lines.">A resposta tinha 4 parágrafos. A nova tinha 2 linhas.</h2>
@@ -251,13 +243,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.sec').forEach(s => obs.observe(s));
 </script>
 <script>
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.iframeHeight){
-    document.querySelectorAll('iframe').forEach(function(f){
-      try{if(f.contentWindow===e.source)f.style.height=(e.data.iframeHeight+16)+'px';}catch(ex){}
-    });
-  }
-});
+window.addEventListener('message',function(e){if(e.data&&e.data.iframeHeight){document.querySelectorAll('iframe').forEach(function(f){try{if(f.contentWindow===e.source)f.style.height=(e.data.iframeHeight+4)+'px';}catch(x){}});}});
 </script>
 </body>
 </html>
