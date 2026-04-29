@@ -1,0 +1,91 @@
+<svg width="720" height="480" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Demonstração do Bot de Content First: conversa mostrando o framework de 5 perguntas em sequência, terminando com briefing estruturado e sugestão de copy">
+  <title>Bot de Content First em ação — framework de 5 perguntas antes do canal</title>
+
+  <!-- Fundo -->
+  <rect width="720" height="480" rx="12" fill="#1A1D21"/>
+
+  <!-- Header do bot -->
+  <rect width="720" height="44" rx="0" fill="#0D1117"/>
+  <rect y="32" width="720" height="12" fill="#0D1117"/>
+  <rect x="16" y="12" width="20" height="20" rx="4" fill="#185FA5"/>
+  <text x="26" y="26" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#fff" font-weight="700">CF</text>
+  <text x="44" y="22" font-family="DM Sans,sans-serif" font-size="13" fill="#fff" font-weight="600">Content First Bot</text>
+  <circle cx="138" cy="22" r="4" fill="#28C840"/>
+  <text x="146" y="26" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">online</text>
+
+  <!-- Linha divisória -->
+  <rect x="0" y="44" width="720" height="0.5" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Chat body -->
+  <rect x="0" y="44" width="720" height="396" fill="#1A1D21"/>
+
+  <!-- Framework steps no topo -->
+  <rect x="20" y="56" width="680" height="36" rx="8" fill="rgba(24,95,165,0.08)" stroke="rgba(24,95,165,0.15)" stroke-width="0.5"/>
+  <text x="40" y="69" font-family="DM Sans,sans-serif" font-size="9" fill="#4A9EE8" font-weight="700" letter-spacing="1">SEQUÊNCIA OBRIGATÓRIA</text>
+
+  <!-- Steps pills -->
+  <rect x="40" y="74" width="50" height="12" rx="6" fill="rgba(26,155,118,0.2)"/>
+  <text x="65" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="600">01 O quê</text>
+  <text x="97" y="84" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.2)">→</text>
+  <rect x="108" y="74" width="46" height="12" rx="6" fill="rgba(26,155,118,0.2)"/>
+  <text x="131" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="600">02 Como</text>
+  <text x="161" y="84" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.2)">→</text>
+  <rect x="172" y="74" width="60" height="12" rx="6" fill="rgba(26,155,118,0.2)"/>
+  <text x="202" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="600">03 Contexto</text>
+  <text x="239" y="84" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.2)">→</text>
+  <rect x="250" y="74" width="58" height="12" rx="6" fill="rgba(26,155,118,0.2)"/>
+  <text x="279" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="600">04 Momento</text>
+  <text x="315" y="84" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.2)">→</text>
+  <rect x="326" y="74" width="66" height="12" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+  <text x="359" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" font-weight="600">05 Canal (por último)</text>
+
+  <!-- Conversa -->
+  <!-- Bot mensagem 1 -->
+  <rect x="20" y="106" width="480" height="44" rx="8" fill="#2D3139" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+  <text x="36" y="123" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">Oi! Qual é a informação central que você quer transmitir?</text>
+  <text x="36" y="140" font-family="DM Sans,sans-serif" font-size="11" fill="#4A9EE8" font-weight="500">(Não o canal ainda — o conteúdo.)</text>
+
+  <!-- User reply 1 -->
+  <rect x="220" y="158" width="480" height="32" rx="8" fill="#185FA5"/>
+  <text x="240" y="179" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Nova funcionalidade: agendamento automático de aportes</text>
+
+  <!-- Bot mensagem 2 -->
+  <rect x="20" y="198" width="380" height="32" rx="8" fill="#2D3139" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+  <text x="36" y="215" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">Esse cliente já investe regularmente ou está</text>
+  <text x="36" y="230" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">nos primeiros passos?</text>
+
+  <!-- User reply 2 -->
+  <rect x="420" y="238" width="280" height="22" rx="8" fill="#185FA5"/>
+  <text x="560" y="253" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Já investe, segmento Crescimento</text>
+
+  <!-- Bot mensagem 3 -->
+  <rect x="20" y="270" width="420" height="32" rx="8" fill="#2D3139" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+  <text x="36" y="287" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">Qual é o momento dele agora? Acabou de aportar,</text>
+  <text x="36" y="302" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">está inativo ou avaliando novos produtos?</text>
+
+  <!-- User reply 3 -->
+  <rect x="360" y="312" width="340" height="22" rx="8" fill="#185FA5"/>
+  <text x="530" y="327" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Inativo há 2 meses, não aporta</text>
+
+  <!-- Briefing resultado -->
+  <rect x="20" y="344" width="680" height="96" rx="8" fill="#0D2137" stroke="rgba(74,158,232,0.2)" stroke-width="1"/>
+  <text x="36" y="360" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(74,158,232,0.7)" font-weight="700" letter-spacing="1">BRIEFING ESTRUTURADO</text>
+
+  <!-- Campos do briefing -->
+  <text x="36" y="378" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" font-weight="700">O QUÊ</text>
+  <text x="100" y="378" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.72)">Nova funcionalidade: agendamento automático de aportes</text>
+
+  <text x="36" y="394" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" font-weight="700">COMO</text>
+  <text x="100" y="394" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.72)">Registro Desafiador — direto, benefício claro, sem explicações longas</text>
+
+  <text x="36" y="410" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" font-weight="700">MOMENTO</text>
+  <text x="100" y="410" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.72)">Pré-decisão: cliente Crescimento inativo há 2 meses</text>
+
+  <text x="36" y="426" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" font-weight="700">CANAL</text>
+  <text x="100" y="426" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.72)">Push notification + e-mail de aprofundamento</text>
+
+  <!-- Copy sugerido -->
+  <rect x="20" y="430" width="680" height="30" rx="6" fill="rgba(24,95,165,0.1)" stroke="rgba(24,95,165,0.2)" stroke-width="0.5"/>
+  <text x="36" y="441" font-family="DM Sans,sans-serif" font-size="9" fill="#4A9EE8" font-weight="700">COPY SUGERIDO</text>
+  <text x="36" y="455" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.75)">Seu dinheiro pode trabalhar sem você precisar lembrar. Configure aportes automáticos agora.</text>
+</svg>

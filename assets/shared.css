@@ -105,21 +105,38 @@ h1, h2, h3, h4 {
 }
 
 /* ── Nav ────────────────────────────────────────────────────────── */
+:root {
+  --nav-height: 72px;
+}
 nav {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 200;
+  height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 4rem;
+  padding: 0 4rem;
   transition: background 0.3s, box-shadow 0.3s;
 }
 nav.scrolled {
-  background: rgba(255,255,255,0.94);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 var(--gray-line);
 }
+/* Nav sobre hero dark: links brancos, vira branco ao scrollar */
+nav.nav-dark .nav-logo { color: var(--white); }
+nav.nav-dark .nav-logo span { color: var(--green-2); }
+nav.nav-dark .nav-center a { color: rgba(255,255,255,0.65); }
+nav.nav-dark .nav-center a:hover { color: var(--white); }
+nav.nav-dark .lang-btn { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.2); }
+nav.nav-dark .lang-btn.active { color: var(--white); border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.1); }
+nav.nav-dark.scrolled .nav-logo { color: var(--navy); }
+nav.nav-dark.scrolled .nav-logo span { color: var(--green); }
+nav.nav-dark.scrolled .nav-center a { color: var(--gray); }
+nav.nav-dark.scrolled .nav-center a:hover { color: var(--navy); }
+nav.nav-dark.scrolled .lang-btn { color: var(--gray); border-color: var(--gray-line); }
+nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(--navy); background: transparent; }
 .nav-logo {
   font-family: var(--font-display);
   font-weight: 800;

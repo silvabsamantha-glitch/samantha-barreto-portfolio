@@ -1,0 +1,99 @@
+<svg width="720" height="460" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Assistente de Gerentes PF mostrando resposta com caminho de navegação e botões de deeplink para o sistema do banco">
+  <title>Assistente de Gerentes PF — resposta com caminho e deeplinks</title>
+
+  <!-- Fundo -->
+  <rect width="720" height="460" rx="12" fill="#F0F4F8"/>
+
+  <!-- ── Chat interface ── -->
+  <!-- Frame do chat -->
+  <rect x="20" y="20" width="420" height="420" rx="12" fill="#fff" stroke="#D0D8E4" stroke-width="1"/>
+
+  <!-- Header -->
+  <rect x="20" y="20" width="420" height="44" rx="12" fill="#1A3A5C"/>
+  <rect x="20" y="44" width="420" height="20" fill="#1A3A5C"/>
+  <circle cx="46" cy="42" r="5" fill="#28C840"/>
+  <text x="58" y="46" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="600">Assistente Gerentes PF</text>
+  <text x="380" y="46" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">Banco Nacional</text>
+
+  <!-- Mensagem user 1 -->
+  <rect x="220" y="80" width="208" height="28" rx="8" fill="#DDEEFF"/>
+  <text x="324" y="98" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#0C3A6B">Limite do cartão do João Silva?</text>
+
+  <!-- Bot reply 1 -->
+  <rect x="28" y="120" width="352" height="100" rx="8" fill="#F5F7FA" stroke="#D0D8E4" stroke-width="0.5"/>
+  <line x1="28" y1="120" x2="28" y2="220" stroke="#0F6E56" stroke-width="3" stroke-linecap="round"/>
+  <text x="44" y="140" font-family="DM Sans,sans-serif" font-size="11" fill="#1A1A2E">Acesse o Portal do Cliente e siga o caminho:</text>
+  <rect x="44" y="148" width="330" height="20" rx="4" fill="#E8F0E8"/>
+  <text x="54" y="162" font-family="DM Sans,sans-serif" font-size="10" fill="#0A4A39" font-weight="700" font-family="monospace">Produtos → Cartão Corporate → João Silva → Limites</text>
+  <text x="44" y="184" font-family="DM Sans,sans-serif" font-size="11" fill="#4A5568">Ou escolha uma ação rápida:</text>
+  <!-- Botões deeplink -->
+  <rect x="44" y="192" width="138" height="22" rx="5" fill="#E8F0FB" stroke="#B5CCF0" stroke-width="1"/>
+  <text x="113" y="207" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1A4A8A" font-weight="600">↗ Abrir limites</text>
+  <rect x="190" y="192" width="140" height="22" rx="5" fill="#E8F0FB" stroke="#B5CCF0" stroke-width="1"/>
+  <text x="260" y="207" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1A4A8A" font-weight="600">↗ Ver extrato</text>
+  <rect x="338" y="192" width="38" height="22" rx="5" fill="#E8F0FB" stroke="#B5CCF0" stroke-width="1"/>
+  <text x="357" y="207" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1A4A8A" font-weight="600">↗ ...</text>
+
+  <!-- Separador -->
+  <line x1="60" y1="234" x2="380" y2="234" stroke="#E2E8F0" stroke-width="0.5" stroke-dasharray="4 4"/>
+  <text x="220" y="248" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#94A3B8">outra consulta</text>
+
+  <!-- Mensagem user 2 -->
+  <rect x="176" y="260" width="252" height="28" rx="8" fill="#DDEEFF"/>
+  <text x="302" y="278" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#0C3A6B">Portabilidade de salário — como faço?</text>
+
+  <!-- Bot reply 2 -->
+  <rect x="28" y="298" width="362" height="112" rx="8" fill="#F5F7FA" stroke="#D0D8E4" stroke-width="0.5"/>
+  <line x1="28" y1="298" x2="28" y2="410" stroke="#0F6E56" stroke-width="3" stroke-linecap="round"/>
+  <text x="44" y="318" font-family="DM Sans,sans-serif" font-size="11" fill="#1A1A2E">Precisa de autorização do cliente e RH da empresa.</text>
+  <text x="44" y="334" font-family="DM Sans,sans-serif" font-size="11" fill="#1A1A2E" font-weight="600">Docs:</text>
+  <text x="44" y="350" font-family="DM Sans,sans-serif" font-size="11" fill="#4A5568">comprovante de vínculo + últimos 3 holerites.</text>
+  <rect x="44" y="358" width="330" height="20" rx="4" fill="#E8F0E8"/>
+  <text x="54" y="372" font-family="DM Sans,sans-serif" font-size="10" fill="#0A4A39" font-weight="700">Relacionamento → Portabilidade → Nova solicitação</text>
+  <!-- Botões -->
+  <rect x="44" y="382" width="158" height="22" rx="5" fill="#E8F0FB" stroke="#B5CCF0" stroke-width="1"/>
+  <text x="123" y="397" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1A4A8A" font-weight="600">↗ Iniciar portabilidade</text>
+  <rect x="210" y="382" width="170" height="22" rx="5" fill="#E8F0FB" stroke="#B5CCF0" stroke-width="1"/>
+  <text x="295" y="397" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1A4A8A" font-weight="600">↗ Ver checklist de docs</text>
+
+  <!-- Input bar -->
+  <rect x="20" y="420" width="420" height="20" rx="0" fill="#F8FAFC"/>
+  <rect x="20" y="420" width="420" height="20" rx="0 0 12 12" fill="#F8FAFC"/>
+  <text x="40" y="434" font-family="DM Sans,sans-serif" font-size="10" fill="#94A3B8">Escreva sua consulta...</text>
+
+  <!-- ── Princípios panel ── -->
+  <rect x="456" y="20" width="244" height="420" rx="12" fill="#1A3A5C"/>
+
+  <text x="476" y="52" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="700" letter-spacing="1">4 PRINCÍPIOS</text>
+  <text x="476" y="68" font-family="Fraunces,Georgia,serif" font-size="16" fill="#fff" font-weight="500">Design para</text>
+  <text x="476" y="88" font-family="Fraunces,Georgia,serif" font-size="16" fill="#EF9F27" font-weight="500">alta pressão</text>
+
+  <line x1="476" y1="100" x2="680" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+
+  <!-- Princípio 1 -->
+  <text x="476" y="126" font-family="Fraunces,Georgia,serif" font-size="28" fill="#EF9F27" font-weight="500">01</text>
+  <text x="476" y="144" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="600">A resposta primeiro</text>
+  <text x="476" y="160" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">A informação crítica antes</text>
+  <text x="476" y="175" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">de qualquer contexto.</text>
+  <line x1="476" y1="188" x2="680" y2="188" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+
+  <!-- Princípio 2 -->
+  <text x="476" y="214" font-family="Fraunces,Georgia,serif" font-size="28" fill="#EF9F27" font-weight="500">02</text>
+  <text x="476" y="232" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="600">Sem becos sem saída</text>
+  <text x="476" y="248" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Toda jornada tem saída.</text>
+  <text x="476" y="263" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Sempre há próximo passo.</text>
+  <line x1="476" y1="276" x2="680" y2="276" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+
+  <!-- Princípio 3 -->
+  <text x="476" y="302" font-family="Fraunces,Georgia,serif" font-size="28" fill="#EF9F27" font-weight="500">03</text>
+  <text x="476" y="320" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="600">Tom de parceiro</text>
+  <text x="476" y="336" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Não simpático, competente.</text>
+  <text x="476" y="351" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Direto ao ponto.</text>
+  <line x1="476" y1="364" x2="680" y2="364" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+
+  <!-- Princípio 4 -->
+  <text x="476" y="390" font-family="Fraunces,Georgia,serif" font-size="28" fill="#EF9F27" font-weight="500">04</text>
+  <text x="476" y="408" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="600">Leitura em 3 segundos</text>
+  <text x="476" y="424" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Se demorou mais, a mensagem</text>
+  <text x="476" y="439" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">está errada.</text>
+</svg>
