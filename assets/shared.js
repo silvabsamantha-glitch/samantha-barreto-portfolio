@@ -1,5 +1,5 @@
 // ── Language system ──────────────────────────────────────────────
-const LANG_KEY = 'ss_lang';
+var LANG_KEY = 'ss_lang';
 
 function getLang() {
   return localStorage.getItem(LANG_KEY) || 'pt';
@@ -11,24 +11,27 @@ function setLang(lang) {
 }
 
 function applyLang(lang) {
-  // Se textos.js foi carregado, sincroniza data-pt/data-en com os valores de TEXTOS
+  // Se textos.js carregou, sincroniza data-pt/en antes de aplicar
   if (typeof TEXTOS !== 'undefined') {
-    var pageKey = document.body.dataset.page;
-    var pageTexts = pageKey && TEXTOS[pageKey] ? TEXTOS[pageKey] : null;
-    if (pageTexts) {
-      document.querySelectorAll('[data-pt]').forEach(function(el) {
-        var key = el.dataset.textKey;
-        if (key && pageTexts[key]) {
-          el.dataset.pt = pageTexts[key].pt;
-          el.dataset.en = pageTexts[key].en;
+    var pageKey = document.body && document.body.dataset.page;
+    var texts = pageKey && TEXTOS[pageKey];
+    if (texts) {
+      var els = document.querySelectorAll('[data-pt]');
+      var keys = Object.keys(texts);
+      els.forEach(function(el, i) {
+        var k = 't' + i;
+        if (texts[k]) {
+          el.dataset.pt = texts[k].pt;
+          el.dataset.en = texts[k].en;
         }
       });
     }
   }
 
-  // Aplica o idioma em todos os elementos com data-pt
   document.querySelectorAll('[data-pt]').forEach(function(el) {
-    el.innerHTML = lang === 'en' ? (el.dataset.en || el.dataset.pt) : el.dataset.pt;
+    el.innerHTML = lang === 'en'
+      ? (el.dataset.en || el.dataset.pt)
+      : el.dataset.pt;
   });
 
   document.querySelectorAll('[data-pt-placeholder]').forEach(function(el) {
@@ -45,8 +48,7 @@ function applyLang(lang) {
 }
 
 function initLang() {
-  var lang = getLang();
-  applyLang(lang);
+  applyLang(getLang());
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
   });
@@ -60,19 +62,18 @@ function animateCounter(el) {
   var isFloat = target % 1 !== 0;
   var duration = 1600;
   var start = performance.now();
-
   function step(now) {
-    var progress = Math.min((now - start) / duration, 1);
-    var eased = 1 - Math.pow(1 - progress, 3);
-    var value = isFloat ? (eased * target).toFixed(1) : Math.round(eased * target);
-    el.textContent = prefix + value + suffix;
-    if (progress < 1) requestAnimationFrame(step);
+    var p = Math.min((now - start) / duration, 1);
+    var e = 1 - Math.pow(1 - p, 3);
+    var v = isFloat ? (e * target).toFixed(1) : Math.round(e * target);
+    el.textContent = prefix + v + suffix;
+    if (p < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
 }
 
 function initCounters() {
-  var observer = new IntersectionObserver(function(entries) {
+  var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting && !entry.target.dataset.counted) {
         entry.target.dataset.counted = true;
@@ -80,26 +81,20 @@ function initCounters() {
       }
     });
   }, { threshold: 0.5 });
-  document.querySelectorAll('[data-target]').forEach(function(el) {
-    observer.observe(el);
-  });
+  document.querySelectorAll('[data-target]').forEach(function(el) { obs.observe(el); });
 }
 
 // ── Scroll fade-in ────────────────────────────────────────────────
 function initFadeIn() {
-  var observer = new IntersectionObserver(function(entries) {
+  var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         var delay = entry.target.dataset.delay || 0;
-        setTimeout(function() {
-          entry.target.classList.add('visible');
-        }, delay);
+        setTimeout(function() { entry.target.classList.add('visible'); }, delay);
       }
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-  document.querySelectorAll('.fade').forEach(function(el) {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.fade').forEach(function(el) { obs.observe(el); });
 }
 
 // ── Nav scroll state ──────────────────────────────────────────────
@@ -111,7 +106,7 @@ function initNav() {
   }, { passive: true });
 }
 
-// ── Init all ─────────────────────────────────────────────────────
+// ── Init ─────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
   initLang();
   initCounters();
