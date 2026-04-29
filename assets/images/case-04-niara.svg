@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" role="img" aria-label="Niara, assistente virtual de RH com traços indígenas, ilustrada dentro de uma interface de chat respondendo uma dúvida de um colaborador sobre férias">
+  <title>Niara — assistente virtual de RH</title>
+  <desc>Ilustração da Niara em uma interface de chat corporativo. À esquerda, o avatar com traços indígenas: pele morena, cabelos pretos longos, enfeite de cabeça em verde e terracota, expressão acolhedora e direta. À direita, a conversa: um colaborador pergunta sobre férias e a Niara responde com precisão e calor.</desc>
+  <defs>
+    <linearGradient id="bgNiara" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D1B2A"/>
+      <stop offset="100%" stop-color="#0F1D2E"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5E3C"/>
+      <stop offset="100%" stop-color="#7A4F30"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A0E08"/>
+      <stop offset="100%" stop-color="#2A1A0E"/>
+    </linearGradient>
+    <linearGradient id="chatBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111E2D"/>
+      <stop offset="100%" stop-color="#0D1926"/>
+    </linearGradient>
+    <clipPath id="avatarCircle">
+      <circle cx="192" cy="270" r="130"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" fill="url(#bgNiara)"/>
+
+  <!-- Subtle grid -->
+  <pattern id="gridN" width="36" height="36" patternUnits="userSpaceOnUse">
+    <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#162535" stroke-width="0.5"/>
+  </pattern>
+  <rect width="900" height="520" fill="url(#gridN)" opacity="0.5"/>
+
+  <!-- Green top line -->
+  <rect x="0" y="0" width="900" height="3" fill="#0F6E56"/>
+
+  <!-- Left panel - avatar area -->
+  <rect x="0" y="0" width="360" height="520" fill="#0A1520" opacity="0.5"/>
+  <line x1="360" y1="0" x2="360" y2="520" stroke="#1E3A5A" stroke-width="1"/>
+
+  <!-- Avatar background circle (decorative) -->
+  <circle cx="192" cy="270" r="148" fill="#0F2030" opacity="0.8"/>
+  <circle cx="192" cy="270" r="138" fill="#112235" opacity="0.6"/>
+  <!-- Glow ring -->
+  <circle cx="192" cy="270" r="132" fill="none" stroke="#0F6E56" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ── NIARA ILLUSTRATION ── -->
+  <!-- Hair back layer (long) -->
+  <path d="M 120 240 Q 90 290 92 370 Q 96 430 130 460 L 160 480 L 192 490 L 224 480 L 254 460 Q 288 430 292 370 Q 294 290 264 240" fill="url(#hairGrad)"/>
+
+  <!-- Neck -->
+  <rect x="176" y="342" width="32" height="50" rx="10" fill="url(#skinGrad)"/>
+
+  <!-- Body / clothes - starts below neck -->
+  <path d="M 130 390 Q 150 378 192 374 Q 234 378 254 390 L 270 430 L 290 490 L 94 490 L 114 430 Z" fill="#0F4D3A"/>
+  <!-- Blouse detail - collar -->
+  <path d="M 192 374 L 170 390 L 192 400 L 214 390 Z" fill="#0A3D2D"/>
+  <!-- Necklace - traditional beads -->
+  <circle cx="180" cy="386" r="3" fill="#C47F3A"/>
+  <circle cx="192" cy="384" r="3.5" fill="#C47F3A"/>
+  <circle cx="204" cy="386" r="3" fill="#C47F3A"/>
+  <circle cx="170" cy="392" r="2.5" fill="#A06A2A"/>
+  <circle cx="214" cy="392" r="2.5" fill="#A06A2A"/>
+
+  <!-- Face -->
+  <ellipse cx="192" cy="285" rx="58" ry="66" fill="url(#skinGrad)"/>
+
+  <!-- Cheek warmth -->
+  <ellipse cx="156" cy="300" rx="14" ry="10" fill="#A06040" opacity="0.25"/>
+  <ellipse cx="228" cy="300" rx="14" ry="10" fill="#A06040" opacity="0.25"/>
+
+  <!-- Eyebrows - thick and defined -->
+  <path d="M 162 264 Q 172 260 184 262" fill="none" stroke="#1A0E08" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 200 262 Q 212 260 222 264" fill="none" stroke="#1A0E08" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <ellipse cx="173" cy="278" rx="11" ry="8" fill="#1A0E08"/>
+  <ellipse cx="211" cy="278" rx="11" ry="8" fill="#1A0E08"/>
+  <!-- Eye shine -->
+  <circle cx="177" cy="275" r="3" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="215" cy="275" r="3" fill="#FFFFFF" opacity="0.8"/>
+  <!-- Iris -->
+  <circle cx="173" cy="278" r="6" fill="#3D2010"/>
+  <circle cx="211" cy="278" r="6" fill="#3D2010"/>
+  <circle cx="175" cy="276" r="2" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="213" cy="276" r="2" fill="#FFFFFF" opacity="0.6"/>
+
+  <!-- Nose -->
+  <path d="M 192 290 Q 184 308 178 314 Q 192 318 206 314 Q 200 308 192 290" fill="#7A4F30" opacity="0.6"/>
+
+  <!-- Smile - warm and direct -->
+  <path d="M 174 328 Q 192 342 210 328" fill="none" stroke="#5A3020" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Lips -->
+  <path d="M 178 325 Q 192 322 206 325 Q 200 334 192 336 Q 184 334 178 325 Z" fill="#C47070" opacity="0.7"/>
+
+  <!-- Hair front / side strands -->
+  <path d="M 134 245 Q 128 270 130 310 Q 134 340 138 360" fill="none" stroke="#1A0E08" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 250 245 Q 256 270 254 310 Q 250 340 246 360" fill="none" stroke="#1A0E08" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- ── HEADDRESS ── -->
+  <!-- Base band -->
+  <rect x="138" y="228" width="108" height="18" rx="9" fill="#8B4513"/>
+  <!-- Geometric pattern on band -->
+  <rect x="148" y="232" width="8" height="10" rx="1" fill="#0F6E56"/>
+  <rect x="162" y="232" width="8" height="10" rx="1" fill="#C47F3A"/>
+  <rect x="176" y="232" width="8" height="10" rx="1" fill="#0F6E56"/>
+  <rect x="190" y="232" width="8" height="10" rx="1" fill="#C47F3A"/>
+  <rect x="204" y="232" width="8" height="10" rx="1" fill="#0F6E56"/>
+  <rect x="218" y="232" width="8" height="10" rx="1" fill="#C47F3A"/>
+  <!-- Feathers -->
+  <!-- Center feather - tall -->
+  <path d="M 192 228 Q 188 200 192 170 Q 196 200 192 228" fill="#0F6E56"/>
+  <path d="M 192 228 Q 186 205 188 180" fill="none" stroke="#4DB896" stroke-width="1" opacity="0.6"/>
+  <!-- Left feathers -->
+  <path d="M 175 226 Q 165 202 162 178 Q 170 200 175 226" fill="#C47F3A"/>
+  <path d="M 162 222 Q 148 204 142 184 Q 152 202 162 222" fill="#8B5E3C" opacity="0.8"/>
+  <!-- Right feathers -->
+  <path d="M 209 226 Q 219 202 222 178 Q 214 200 209 226" fill="#C47F3A"/>
+  <path d="M 222 222 Q 236 204 242 184 Q 232 202 222 222" fill="#8B5E3C" opacity="0.8"/>
+
+  <!-- Earrings -->
+  <circle cx="134" cy="295" r="5" fill="#C47F3A"/>
+  <path d="M 134 300 L 130 318 L 134 322 L 138 318 L 134 300" fill="#C47F3A" opacity="0.8"/>
+  <circle cx="250" cy="295" r="5" fill="#C47F3A"/>
+  <path d="M 250 300 L 246 318 L 250 322 L 254 318 L 250 300" fill="#C47F3A" opacity="0.8"/>
+
+  <!-- Facial marking - subtle -->
+  <path d="M 155 290 Q 162 295 162 302" fill="none" stroke="#C47F3A" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+  <path d="M 229 290 Q 222 295 222 302" fill="none" stroke="#C47F3A" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- Left panel text -->
+  <text x="192" y="78" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#E8F4F0" text-anchor="middle" font-weight="400" letter-spacing="-0.5">Niara</text>
+  <text x="192" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#4DB896" text-anchor="middle" letter-spacing="1.5">ASSISTENTE VIRTUAL DE RH</text>
+
+  <!-- Personality traits -->
+  <rect x="60" y="116" width="68" height="20" rx="10" fill="#0F6E56" opacity="0.2"/>
+  <rect x="60" y="116" width="68" height="20" rx="10" fill="none" stroke="#0F6E56" stroke-width="0.8" opacity="0.5"/>
+  <text x="94" y="130" font-family="Georgia, serif" font-size="10" fill="#4DB896" text-anchor="middle">direta</text>
+
+  <rect x="136" y="116" width="80" height="20" rx="10" fill="#0F6E56" opacity="0.2"/>
+  <rect x="136" y="116" width="80" height="20" rx="10" fill="none" stroke="#0F6E56" stroke-width="0.8" opacity="0.5"/>
+  <text x="176" y="130" font-family="Georgia, serif" font-size="10" fill="#4DB896" text-anchor="middle">acolhedora</text>
+
+  <rect x="224" y="116" width="68" height="20" rx="10" fill="#0F6E56" opacity="0.2"/>
+  <rect x="224" y="116" width="68" height="20" rx="10" fill="none" stroke="#0F6E56" stroke-width="0.8" opacity="0.5"/>
+  <text x="258" y="130" font-family="Georgia, serif" font-size="10" fill="#4DB896" text-anchor="middle">ágil</text>
+
+  <!-- Status -->
+  <circle cx="152" cy="476" r="5" fill="#25D366"/>
+  <text x="163" y="480" font-family="Georgia, serif" font-size="11" fill="#4DB896">online</text>
+  <text x="234" y="480" font-family="Georgia, serif" font-size="11" fill="#2A4A3A">· Banco Nacional</text>
+
+  <!-- ── RIGHT PANEL - CHAT INTERFACE ── -->
+  <rect x="360" y="0" width="540" height="520" fill="url(#chatBg)"/>
+
+  <!-- Chat header -->
+  <rect x="360" y="0" width="540" height="52" fill="#0A1825"/>
+  <circle cx="412" cy="26" r="16" fill="#122030"/>
+  <circle cx="412" cy="26" r="16" fill="none" stroke="#0F6E56" stroke-width="1.5"/>
+  <text x="412" y="31" font-family="Georgia, serif" font-size="14" fill="#4DB896" text-anchor="middle" font-weight="700">N</text>
+  <text x="435" y="22" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#E8F4F0" font-weight="500">Niara</text>
+  <circle cx="436" cy="33" r="4" fill="#25D366"/>
+  <text x="446" y="37" font-family="Georgia, serif" font-size="10" fill="#4DB896">online agora</text>
+
+  <!-- Chat area -->
+  <!-- Timestamp -->
+  <text x="630" y="80" font-family="'Courier New', monospace" font-size="9" fill="#2A4A5A" text-anchor="middle">hoje · 14h32</text>
+
+  <!-- User message -->
+  <rect x="548" y="90" width="310" height="44" rx="12" fill="#0F3A2A"/>
+  <rect x="548" y="90" width="310" height="44" rx="12" fill="none" stroke="#0F6E56" stroke-width="0.8" opacity="0.4"/>
+  <text x="564" y="109" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#C8E6D8">Oi Niara! Tenho dúvida sobre férias.</text>
+  <text x="564" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#C8E6D8">Quando posso tirar os próximos 15 dias?</text>
+  <text x="847" y="140" font-family="'Courier New', monospace" font-size="8.5" fill="#2A4A3A" text-anchor="end">14:32</text>
+
+  <!-- Niara avatar mini in chat -->
+  <circle cx="378" cy="176" r="14" fill="#122030"/>
+  <circle cx="378" cy="176" r="14" fill="none" stroke="#0F6E56" stroke-width="1"/>
+  <text x="378" y="181" font-family="Georgia, serif" font-size="11" fill="#4DB896" text-anchor="middle" font-weight="700">N</text>
+
+  <!-- Niara response 1 -->
+  <rect x="398" y="155" width="450" height="86" rx="12" fill="#122030"/>
+  <rect x="398" y="155" width="450" height="86" rx="12" fill="none" stroke="#1E3A2A" stroke-width="0.8"/>
+  <text x="416" y="176" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#E8F4F0">Oi! Com base no seu saldo atual de férias, você</text>
+  <text x="416" y="194" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#E8F4F0">tem <tspan fill="#4DB896" font-weight="500">22 dias disponíveis</tspan>. Pode tirar os 15 dias a</text>
+  <text x="416" y="212" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#E8F4F0">partir de <tspan fill="#4DB896" font-weight="500">15 de julho</tspan>, respeitando o aviso de 30 dias.</text>
+  <text x="416" y="232" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#9BB8C4">Quer que eu já abra a solicitação?</text>
+  <text x="418" y="248" font-family="'Courier New', monospace" font-size="8.5" fill="#2A4A3A">14:32 · lido</text>
+
+  <!-- Second user message -->
+  <rect x="548" y="258" width="282" height="28" rx="12" fill="#0F3A2A"/>
+  <rect x="548" y="258" width="282" height="28" rx="12" fill="none" stroke="#0F6E56" stroke-width="0.8" opacity="0.4"/>
+  <text x="564" y="276" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#C8E6D8">Sim! Pode abrir para 15 de julho.</text>
+  <text x="820" y="292" font-family="'Courier New', monospace" font-size="8.5" fill="#2A4A3A" text-anchor="end">14:33</text>
+
+  <!-- Niara avatar mini 2 -->
+  <circle cx="378" cy="324" r="14" fill="#122030"/>
+  <circle cx="378" cy="324" r="14" fill="none" stroke="#0F6E56" stroke-width="1"/>
+  <text x="378" y="329" font-family="Georgia, serif" font-size="11" fill="#4DB896" text-anchor="middle" font-weight="700">N</text>
+
+  <!-- Niara response 2 -->
+  <rect x="398" y="308" width="450" height="66" rx="12" fill="#122030"/>
+  <rect x="398" y="308" width="450" height="66" rx="12" fill="none" stroke="#1E3A2A" stroke-width="0.8"/>
+  <text x="416" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#E8F4F0">Feito! Solicitação #F-2847 aberta com início</text>
+  <text x="416" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#E8F4F0">em <tspan fill="#4DB896">15/07</tspan> e retorno em <tspan fill="#4DB896">30/07</tspan>. Seu gestor</text>
+  <text x="416" y="366" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#9BB8C4">receberá a notificação agora. Boas férias!</text>
+  <text x="418" y="382" font-family="'Courier New', monospace" font-size="8.5" fill="#2A4A3A">14:33 · lido</text>
+
+  <!-- Confirmation card -->
+  <rect x="398" y="392" width="260" height="62" rx="8" fill="#0A2018"/>
+  <rect x="398" y="392" width="260" height="62" rx="8" fill="none" stroke="#0F6E56" stroke-width="1"/>
+  <rect x="398" y="392" width="4" height="62" rx="2" fill="#0F6E56"/>
+  <text x="414" y="412" font-family="'Courier New', monospace" font-size="9" fill="#4DB896" letter-spacing="0.5">SOLICITAÇÃO #F-2847</text>
+  <text x="414" y="428" font-family="Georgia, serif" font-size="11" fill="#E8F4F0">15 dias · 15/07 a 30/07</text>
+  <text x="414" y="444" font-family="'Courier New', monospace" font-size="9" fill="#25D366">aguardando aprovação</text>
+
+  <!-- Input bar -->
+  <rect x="360" y="462" width="540" height="58" fill="#080F18"/>
+  <rect x="380" y="476" width="400" height="32" rx="16" fill="#111E2D"/>
+  <rect x="380" y="476" width="400" height="32" rx="16" fill="none" stroke="#1E3A5A" stroke-width="0.8"/>
+  <text x="400" y="496" font-family="Georgia, serif" font-size="12" fill="#2A4A5A">Escreva uma mensagem...</text>
+
+  <!-- Send button -->
+  <circle cx="800" cy="492" r="14" fill="#0F6E56"/>
+  <path d="M 795 492 L 806 492 M 803 488 L 806 492 L 803 496" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Bottom signature -->
+  <text x="856" y="515" font-family="Georgia, serif" font-size="10" fill="#1A3A2A" text-anchor="end" letter-spacing="0.5">samantha silva · portfólio</text>
+</svg>
