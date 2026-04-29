@@ -1,95 +1,154 @@
-<svg width="720" height="460" viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interface do Slack mostrando o VozBot gerando três versões de push notification para os segmentos Iniciante, Crescimento e Patrimônio da Meridian">
-  <title>VozBot em ação no Slack — Assistente de Voz da Marca</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" role="img" aria-label="Interface do Slack mostrando o Assistente de Voz da Marca da Avenue em ação: um designer solicita três versões de push notification adaptadas por segmento e o assistente retorna respostas calibradas para Iniciante, Crescimento e Singular">
+  <title>Assistente de Voz da Marca — Slack, Avenue</title>
+  <desc>Simulação do Slack com o VozBot respondendo a uma solicitação de copy de push notification para os três segmentos da Avenue: Digital (tom leve e didático), Advanced (tom direto e orientado a dados), e Singular (tom refinado e exclusivo).</desc>
   <defs>
-    <rect id="card" rx="8"/>
+    <linearGradient id="slackBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#19171D"/>
+      <stop offset="100%" stop-color="#1A1823"/>
+    </linearGradient>
+    <linearGradient id="sidebarBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#350D36"/>
+      <stop offset="100%" stop-color="#2D0B2E"/>
+    </linearGradient>
   </defs>
 
-  <!-- Fundo geral -->
-  <rect width="720" height="460" rx="12" fill="#1A1D21"/>
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#slackBg)"/>
+  <rect x="0" y="0" width="900" height="3" fill="#0F6E56"/>
 
-  <!-- Barra de topo -->
-  <rect width="720" height="40" rx="0" fill="#350D36"/>
-  <rect y="28" width="720" height="12" fill="#350D36"/>
-  <circle cx="20" cy="20" r="6" fill="#FF5F57"/>
-  <circle cx="38" cy="20" r="6" fill="#FFBD2E"/>
-  <circle cx="56" cy="20" r="6" fill="#28C840"/>
-  <text x="360" y="25" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" font-weight="500">Meridian · Workspace</text>
+  <!-- ── SIDEBAR ── -->
+  <rect x="0" y="0" width="220" height="500" fill="url(#sidebarBg)"/>
 
-  <!-- Sidebar -->
-  <rect x="0" y="40" width="180" height="420" fill="#3F0E40"/>
-  <text x="14" y="72" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="700" letter-spacing="1">CANAIS</text>
-  <text x="14" y="92" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)"># produto-geral</text>
-  <text x="14" y="112" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)"># design-system</text>
-  <rect x="0" y="120" width="180" height="26" fill="rgba(255,255,255,0.15)"/>
-  <text x="14" y="137" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="600"># conteudo-tools</text>
-  <text x="14" y="165" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="700" letter-spacing="1">DIRETOS</text>
-  <rect x="14" y="175" width="16" height="16" rx="3" fill="#1A9B76"/>
-  <text x="22" y="187" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#fff" font-weight="700">V</text>
-  <text x="36" y="187" font-family="DM Sans,sans-serif" font-size="12" fill="#1A9B76" font-weight="600">VozBot</text>
+  <!-- Workspace name -->
+  <text x="20" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#FFFFFF" font-weight="500">Avenue Securities</text>
+  <circle cx="200" cy="30" r="8" fill="#0F6E56"/>
+  <text x="200" y="34.5" font-family="Georgia, serif" font-size="10" fill="#FFFFFF" text-anchor="middle">+</text>
 
-  <!-- Chat area -->
-  <rect x="180" y="40" width="540" height="420" fill="#1A1D21"/>
+  <!-- User status -->
+  <rect x="0" y="48" width="220" height="1" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="18" cy="68" r="12" fill="#2A1A2E"/>
+  <text x="18" y="72.5" font-family="Georgia, serif" font-size="10" fill="#C9A0DC" text-anchor="middle">Sa</text>
+  <circle cx="26" cy="76" r="4" fill="#25D366"/>
+  <text x="40" y="68" font-family="Georgia, serif" font-size="12" fill="#FFFFFF">Samantha</text>
+  <text x="40" y="82" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.45)">Content Design</text>
 
-  <!-- Chat header -->
-  <rect x="180" y="40" width="540" height="44" fill="#222529"/>
-  <text x="198" y="60" font-family="DM Sans,sans-serif" font-size="14" fill="rgba(255,255,255,0.5)">#</text>
-  <text x="214" y="62" font-family="DM Sans,sans-serif" font-size="13" fill="#fff" font-weight="700">conteudo-tools</text>
-  <text x="340" y="62" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.35)">Assistente de voz da marca · uso interno</text>
-  <rect x="180" y="84" width="540" height="0.5" fill="rgba(255,255,255,0.08)"/>
+  <!-- Channels list -->
+  <rect x="0" y="95" width="220" height="1" fill="rgba(255,255,255,0.07)"/>
+  <text x="16" y="116" font-family="'Courier New', monospace" font-size="9" fill="rgba(255,255,255,0.4)" letter-spacing="0.8">CANAIS</text>
 
-  <!-- Mensagem do usuário -->
-  <circle cx="210" cy="112" r="14" fill="#4A154B"/>
-  <text x="210" y="117" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(233,164,234,0.9)" font-weight="600">L</text>
-  <text x="232" y="107" font-family="DM Sans,sans-serif" font-size="12" fill="#fff" font-weight="700">lucas.design</text>
-  <text x="300" y="107" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">10:32</text>
-  <text x="232" y="124" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.75)">@VozBot preciso de um push de reengajamento para clientes</text>
-  <text x="232" y="140" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.75)">inativos. Pode gerar nas três versões de segmento?</text>
+  <text x="16" y="140" font-family="Georgia, serif" font-size="12" fill="rgba(255,255,255,0.5)"># conteudo-geral</text>
+  <text x="16" y="160" font-family="Georgia, serif" font-size="12" fill="rgba(255,255,255,0.5)"># design-conversacional</text>
+  <text x="16" y="180" font-family="Georgia, serif" font-size="12" fill="rgba(255,255,255,0.5)"># campanhas</text>
+  <!-- Active channel -->
+  <rect x="8" y="193" width="204" height="26" rx="6" fill="rgba(255,255,255,0.1)"/>
+  <text x="16" y="210" font-family="Georgia, serif" font-size="12" fill="#FFFFFF"># voz-da-marca</text>
 
-  <!-- Mensagem do VozBot -->
-  <rect x="198" y="162" width="16" height="16" rx="3" fill="#1A9B76"/>
-  <text x="206" y="174" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#fff" font-weight="700">V</text>
-  <text x="222" y="174" font-family="DM Sans,sans-serif" font-size="12" fill="#1A9B76" font-weight="700">VozBot</text>
-  <text x="278" y="174" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">10:32</text>
-  <text x="222" y="191" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">Contexto identificado: cliente inativo pós-cadastro. Aplicando registro</text>
-  <rect x="390" y="181" width="62" height="16" rx="3" fill="rgba(255,255,255,0.1)"/>
-  <text x="421" y="193" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(233,164,234,0.9)">Acolhedor</text>
-  <text x="456" y="191" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)"> (Iniciante) e</text>
-  <rect x="222" y="199" width="68" height="16" rx="3" fill="rgba(255,255,255,0.1)"/>
-  <text x="256" y="211" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(233,164,234,0.9)">Desafiador</text>
-  <text x="294" y="211" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)"> (Crescimento e Patrimônio).</text>
+  <text x="16" y="240" font-family="Georgia, serif" font-size="12" fill="rgba(255,255,255,0.5)"># aprovacoes</text>
 
-  <!-- Card de versões -->
-  <rect x="222" y="224" width="468" height="176" rx="8" fill="#222529" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-  <text x="240" y="244" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.3)" font-weight="700" letter-spacing="1">PUSH NOTIFICATION · 3 VERSÕES POR SEGMENTO</text>
+  <!-- Apps section -->
+  <rect x="0" y="258" width="220" height="1" fill="rgba(255,255,255,0.07)"/>
+  <text x="16" y="278" font-family="'Courier New', monospace" font-size="9" fill="rgba(255,255,255,0.4)" letter-spacing="0.8">APPS</text>
+  <!-- VozBot highlighted -->
+  <rect x="8" y="285" width="204" height="30" rx="6" fill="#0F6E56" opacity="0.2"/>
+  <rect x="8" y="285" width="204" height="30" rx="6" fill="none" stroke="#0F6E56" stroke-width="0.8" opacity="0.5"/>
+  <circle cx="28" cy="300" r="10" fill="#0F6E56"/>
+  <text x="28" y="304.5" font-family="Georgia, serif" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="700">V</text>
+  <text x="44" y="298" font-family="Georgia, serif" font-size="12" fill="#4DB896">VozBot</text>
+  <circle cx="200" cy="300" r="8" fill="#0F6E56"/>
+  <text x="200" y="304.5" font-family="'Courier New', monospace" font-size="8" fill="#FFFFFF" text-anchor="middle">ON</text>
 
-  <!-- Versão Iniciante -->
-  <rect x="234" y="252" width="444" height="38" rx="6" fill="rgba(24,95,165,0.15)" stroke="rgba(24,95,165,0.3)" stroke-width="0.5"/>
-  <text x="248" y="267" font-family="DM Sans,sans-serif" font-size="9" fill="#4A9EE8" font-weight="700" letter-spacing="1">INICIANTE</text>
-  <text x="248" y="282" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.72)">Seu dinheiro pode estar rendendo mais. Comece com o valor que tiver disponível agora.</text>
+  <!-- ── MAIN CHAT AREA ── -->
+  <rect x="220" y="0" width="680" height="500" fill="#1A1D27"/>
 
-  <!-- Versão Crescimento -->
-  <rect x="234" y="296" width="444" height="38" rx="6" fill="rgba(15,110,86,0.15)" stroke="rgba(15,110,86,0.3)" stroke-width="0.5"/>
-  <text x="248" y="311" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="700" letter-spacing="1">CRESCIMENTO</text>
-  <text x="248" y="326" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.72)">Sua conta está pronta. Falta o primeiro passo para o seu dinheiro começar a trabalhar.</text>
+  <!-- Channel header -->
+  <rect x="220" y="0" width="680" height="52" fill="#1E2130"/>
+  <rect x="220" y="52" width="680" height="1" fill="rgba(255,255,255,0.08)"/>
+  <text x="240" y="24" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#FFFFFF" font-weight="500"># voz-da-marca</text>
+  <text x="240" y="42" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.4)">Assistente de Voz calibrado por segmento · Avenue Securities</text>
 
-  <!-- Versão Patrimônio -->
-  <rect x="234" y="340" width="444" height="38" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-  <text x="248" y="355" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="700" letter-spacing="1">PATRIMÔNIO</text>
-  <text x="248" y="370" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.55)">Conta ativa, primeiro aporte pendente. Quando quiser começar, seu assessor está disponível.</text>
+  <!-- Timestamp -->
+  <text x="560" y="80" font-family="'Courier New', monospace" font-size="9" fill="rgba(255,255,255,0.2)" text-anchor="middle">hoje · 09h44</text>
 
-  <!-- Tags -->
-  <rect x="240" y="384" width="172" height="14" rx="7" fill="rgba(26,155,118,0.15)" stroke="rgba(26,155,118,0.25)" stroke-width="0.5"/>
-  <text x="326" y="395" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76">Registro aplicado: Acolhedor (Iniciante)</text>
-  <rect x="420" y="384" width="176" height="14" rx="7" fill="rgba(26,155,118,0.15)" stroke="rgba(26,155,118,0.25)" stroke-width="0.5"/>
-  <text x="508" y="395" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76">Desafiador (Crescimento e Patrimônio)</text>
+  <!-- ── USER MESSAGE ── -->
+  <circle cx="248" cy="105" r="16" fill="#3A1A3C"/>
+  <text x="248" y="110" font-family="Georgia, serif" font-size="12" fill="#C9A0DC" text-anchor="middle" font-weight="600">Sa</text>
+  <text x="272" y="100" font-family="Georgia, serif" font-size="12" fill="#FFFFFF" font-weight="500">Samantha</text>
+  <text x="340" y="100" font-family="'Courier New', monospace" font-size="9" fill="rgba(255,255,255,0.25)">09:44</text>
+  <text x="272" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="rgba(255,255,255,0.8)">@VozBot preciso de 3 versões de push de aportes para os segmentos.</text>
+  <text x="272" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="rgba(255,255,255,0.8)">Campanha de fim de mês. Adapte o tom por segmento.</text>
 
-  <!-- Reações -->
-  <rect x="222" y="408" width="42" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-  <text x="244" y="422" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">👍 3</text>
-  <rect x="270" y="408" width="42" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-  <text x="292" y="422" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">✨ 2</text>
+  <!-- ── VOZBOT RESPONSE ── -->
+  <!-- Divider -->
+  <rect x="230" y="152" width="650" height="1" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- VozBot avatar -->
+  <circle cx="248" cy="180" r="16" fill="#0F6E56"/>
+  <text x="248" y="185" font-family="Georgia, serif" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="700">V</text>
+  <circle cx="260" cy="192" r="5" fill="#25D366"/>
+
+  <text x="272" y="175" font-family="Georgia, serif" font-size="12" fill="#4DB896" font-weight="500">VozBot</text>
+  <rect x="338" y="165" width="46" height="16" rx="8" fill="#0F6E56" opacity="0.3"/>
+  <text x="361" y="176" font-family="'Courier New', monospace" font-size="8.5" fill="#4DB896" text-anchor="middle">APP</text>
+  <text x="392" y="175" font-family="'Courier New', monospace" font-size="9" fill="rgba(255,255,255,0.25)">09:44</text>
+
+  <text x="272" y="194" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="rgba(255,255,255,0.7)">Aqui estão as 3 versões calibradas por segmento e momento de jornada:</text>
+
+  <!-- Segment cards -->
+  <!-- Card 1: Digital -->
+  <rect x="272" y="208" width="196" height="86" rx="8" fill="#1E2840"/>
+  <rect x="272" y="208" width="4" height="86" rx="2" fill="#4A9EE8"/>
+  <text x="284" y="225" font-family="'Courier New', monospace" font-size="9" fill="#4A9EE8" letter-spacing="0.8">DIGITAL · tom leve</text>
+  <text x="284" y="243" font-family="Georgia, serif" font-size="11.5" fill="#E8F0F8">Que tal fazer seu dinheiro</text>
+  <text x="284" y="259" font-family="Georgia, serif" font-size="11.5" fill="#E8F0F8">trabalhar por você este mês?</text>
+  <text x="284" y="278" font-family="Georgia, serif" font-size="10.5" fill="rgba(255,255,255,0.4)">Configure aportes agora.</text>
+
+  <!-- Card 2: Advanced (highlighted) -->
+  <rect x="476" y="208" width="196" height="86" rx="8" fill="#1A2A1E"/>
+  <rect x="476" y="208" width="4" height="86" rx="2" fill="#0F6E56"/>
+  <rect x="476" y="208" width="196" height="86" rx="8" fill="none" stroke="#0F6E56" stroke-width="0.8" opacity="0.5"/>
+  <text x="488" y="225" font-family="'Courier New', monospace" font-size="9" fill="#4DB896" letter-spacing="0.8">ADVANCED · tom direto</text>
+  <text x="488" y="243" font-family="Georgia, serif" font-size="11.5" fill="#E8F4F0">Aporte programado reduz</text>
+  <text x="488" y="259" font-family="Georgia, serif" font-size="11.5" fill="#E8F4F0">custo médio e aumenta retorno.</text>
+  <text x="488" y="278" font-family="Georgia, serif" font-size="10.5" fill="rgba(255,255,255,0.4)">Configure agora.</text>
+
+  <!-- Card 3: Singular -->
+  <rect x="680" y="208" width="196" height="86" rx="8" fill="#22201A"/>
+  <rect x="680" y="208" width="4" height="86" rx="2" fill="#C8A96A"/>
+  <text x="692" y="225" font-family="'Courier New', monospace" font-size="9" fill="#C8A96A" letter-spacing="0.8">SINGULAR · tom refinado</text>
+  <text x="692" y="243" font-family="Georgia, serif" font-size="11.5" fill="#EDE8D8">Patrimônio que cresce</text>
+  <text x="692" y="259" font-family="Georgia, serif" font-size="11.5" fill="#EDE8D8">com consistência. Programe</text>
+  <text x="692" y="278" font-family="Georgia, serif" font-size="10.5" fill="rgba(237,232,216,0.5)">seu próximo aporte.</text>
+
+  <!-- VozBot footnote -->
+  <text x="272" y="314" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.4)">Calibrado para: momento de jornada (fim de mês), canal (push), segmento (registro, tom, vocabulário).</text>
+
+  <!-- Reactions -->
+  <rect x="272" y="326" width="50" height="22" rx="11" fill="rgba(255,255,255,0.06)"/>
+  <rect x="272" y="326" width="50" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+  <text x="297" y="341" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">🙌 3</text>
+
+  <rect x="328" y="326" width="44" height="22" rx="11" fill="rgba(255,255,255,0.06)"/>
+  <rect x="328" y="326" width="44" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+  <text x="350" y="341" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">✅ 2</text>
+
+  <rect x="378" y="326" width="44" height="22" rx="11" fill="rgba(255,255,255,0.06)"/>
+  <rect x="378" y="326" width="44" height="22" rx="11" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+  <text x="400" y="341" font-family="Georgia, serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle">🔥 1</text>
+
+  <!-- Second user reply -->
+  <rect x="230" y="360" width="650" height="1" fill="rgba(255,255,255,0.04)"/>
+  <circle cx="248" cy="388" r="16" fill="#3A1A3C"/>
+  <text x="248" y="393" font-family="Georgia, serif" font-size="12" fill="#C9A0DC" text-anchor="middle" font-weight="600">Sa</text>
+  <text x="272" y="384" font-family="Georgia, serif" font-size="12" fill="#FFFFFF" font-weight="500">Samantha</text>
+  <text x="340" y="384" font-family="'Courier New', monospace" font-size="9" fill="rgba(255,255,255,0.25)">09:46</text>
+  <text x="272" y="402" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="rgba(255,255,255,0.8)">Perfeito. Vou usar a versão Advanced na campanha de hoje.</text>
 
   <!-- Input bar -->
-  <rect x="180" y="432" width="540" height="28" fill="#222529" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
-  <text x="200" y="450" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.25)">Escreva para @VozBot ou use /voz...</text>
+  <rect x="220" y="452" width="680" height="48" fill="#1E2130"/>
+  <rect x="236" y="462" width="540" height="28" rx="6" fill="#2A2E3D"/>
+  <rect x="236" y="462" width="540" height="28" rx="6" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+  <text x="252" y="479" font-family="Georgia, serif" font-size="12" fill="rgba(255,255,255,0.25)">Mensagem para #voz-da-marca</text>
+
+  <!-- Signature -->
+  <text x="856" y="495" font-family="Georgia, serif" font-size="10" fill="rgba(255,255,255,0.12)" text-anchor="end" letter-spacing="0.5">samantha silva · portfólio</text>
 </svg>
