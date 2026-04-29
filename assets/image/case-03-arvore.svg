@@ -1,0 +1,82 @@
+<svg viewBox="0 0 700 580" width="700" height="580" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Árvore de decisão Pagora: esquerda fluxo original com dois caminhos, direita três cenários reais descobertos nas conversas em coluna">
+<title>Fluxo original vs realidade — Pagora Crédito PJ</title>
+<desc>À esquerda o fluxo original tratava apenas dois caminhos: tem oferta (mostra e CTA) ou não tem (mensagem genérica de 4 parágrafos). À direita, descoberto lendo as conversas: sem oferta na primeira busca, busca repetida no mesmo mês sem reconhecimento de contexto, e oferta expirada vinda por e-mail sem explicação.</desc>
+<defs><style>
+text{font-family:Georgia,serif}
+.nr{fill:#E6F1FB;stroke:#85B7EB;stroke-width:1}
+.ng{fill:#E1F5EE;stroke:#5DCAA5;stroke-width:1}
+.nb{fill:#FCEBEB;stroke:#F09595;stroke-width:1}
+.nh{fill:#FAEEDA;stroke:#EF9F27;stroke-width:1.5;stroke-dasharray:4,3}
+.tr{fill:#0C447C;font-size:12px}
+.tg{fill:#085041;font-size:11px}
+.tb{fill:#A32D2D;font-size:11px}
+.th{fill:#633806;font-size:11px}
+.ts{fill:#888780;font-size:10px}
+.e{stroke:#B4B2A9;stroke-width:1.2;fill:none}
+.eh{stroke:#EF9F27;stroke-width:1.2;stroke-dasharray:5,3;fill:none}
+</style></defs>
+<rect width="700" height="580" fill="#FAFAF8" rx="12"/>
+<text x="16" y="22" class="ts" letter-spacing="1.2">FLUXO ORIGINAL</text>
+<line x1="16" y1="28" x2="310" y2="28" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="380" y="22" class="ts" letter-spacing="1.2" fill="#BA7517">DESCOBERTO NAS CONVERSAS</text>
+<line x1="380" y1="28" x2="684" y2="28" stroke="#EF9F27" stroke-width="0.5" stroke-dasharray="4,3"/>
+<rect x="200" y="40" width="220" height="44" rx="8" class="nr"/>
+<text x="310" y="60" text-anchor="middle" class="tr" font-weight="500">Cliente pergunta:</text>
+<text x="310" y="76" text-anchor="middle" class="tr">"Tenho crédito disponível?"</text>
+<path d="M310,84 L310,104" class="e"/>
+<path d="M310,104 L150,104 M310,104 L530,104" class="e"/>
+<path d="M150,104 L150,124" class="e"/>
+<rect x="70" y="124" width="160" height="38" rx="7" class="ng"/>
+<text x="150" y="141" text-anchor="middle" class="tg" font-weight="500">Tem oferta ativa</text>
+<text x="150" y="155" text-anchor="middle" class="ts">→ caminho feliz</text>
+<path d="M150,162 L150,182" class="e"/>
+<rect x="80" y="182" width="140" height="44" rx="6" class="ng"/>
+<text x="150" y="200" text-anchor="middle" class="tg">Mostra oferta</text>
+<text x="150" y="214" text-anchor="middle" class="ts">+ CTA de contratação</text>
+<path d="M150,104 L150,282 M70,282 L230,282" class="e"/>
+<rect x="70" y="282" width="160" height="38" rx="7" class="nb"/>
+<text x="150" y="299" text-anchor="middle" class="tb" font-weight="500">Não tem oferta</text>
+<text x="150" y="313" text-anchor="middle" class="ts">→ caminho triste</text>
+<path d="M150,320 L150,342" class="e"/>
+<rect x="70" y="342" width="140" height="54" rx="6" class="nb"/>
+<text x="150" y="360" text-anchor="middle" class="tb">Mensagem genérica</text>
+<text x="150" y="374" text-anchor="middle" class="ts">4 parágrafos que não</text>
+<text x="150" y="386" text-anchor="middle" class="ts">respondiam a pergunta</text>
+<line x1="340" y1="34" x2="340" y2="530" stroke="#D3D1C7" stroke-width="0.5" stroke-dasharray="6,4"/>
+<path d="M530,104 L530,130" class="eh"/>
+<path d="M530,130 L454,130" class="eh"/>
+<rect x="376" y="130" width="155" height="38" rx="7" class="nh"/>
+<text x="454" y="147" text-anchor="middle" class="th" font-weight="500">Sem oferta</text>
+<text x="454" y="161" text-anchor="middle" class="ts">1ª vez buscando</text>
+<path d="M454,168 L454,188" class="eh"/>
+<rect x="376" y="188" width="155" height="40" rx="6" class="nh"/>
+<text x="454" y="206" text-anchor="middle" class="th">"Ainda não" + alerta</text>
+<text x="454" y="220" text-anchor="middle" class="ts">próximo passo claro</text>
+<path d="M530,104 L530,258" class="eh"/>
+<path d="M530,258 L454,258" class="eh"/>
+<rect x="376" y="258" width="155" height="38" rx="7" class="nh"/>
+<text x="454" y="275" text-anchor="middle" class="th" font-weight="500">Busca repetida</text>
+<text x="454" y="289" text-anchor="middle" class="ts">mesmo mês</text>
+<path d="M454,296 L454,316" class="eh"/>
+<rect x="376" y="316" width="155" height="50" rx="6" class="nh"/>
+<text x="454" y="334" text-anchor="middle" class="th">Reconhecer contexto</text>
+<text x="454" y="348" text-anchor="middle" class="ts">"Você já verificou antes.</text>
+<text x="454" y="360" text-anchor="middle" class="ts">Nada mudou desde então."</text>
+<path d="M530,104 L530,396" class="eh"/>
+<path d="M530,396 L454,396" class="eh"/>
+<rect x="376" y="396" width="155" height="38" rx="7" class="nh"/>
+<text x="454" y="413" text-anchor="middle" class="th" font-weight="500">Oferta expirada</text>
+<text x="454" y="427" text-anchor="middle" class="ts">veio pelo e-mail</text>
+<path d="M454,434 L454,454" class="eh"/>
+<rect x="376" y="454" width="155" height="50" rx="6" class="nh"/>
+<text x="454" y="472" text-anchor="middle" class="th">Explicar expiração</text>
+<text x="454" y="486" text-anchor="middle" class="ts">"Essa oferta venceu.</text>
+<text x="454" y="498" text-anchor="middle" class="ts">Verificando novas..."</text>
+<rect x="16" y="464" width="12" height="12" rx="2" class="ng"/>
+<text x="34" y="475" class="ts">caminho feliz (original)</text>
+<rect x="16" y="482" width="12" height="12" rx="2" class="nb"/>
+<text x="34" y="493" class="ts">caminho triste (original)</text>
+<rect x="16" y="500" width="12" height="12" rx="2" class="nh"/>
+<text x="34" y="511" class="ts">cenários descobertos nas conversas</text>
+<text x="350" y="548" text-anchor="middle" class="ts">nenhum desses 3 cenários aparecia nos tickets como problema de conteúdo</text>
+</svg>
