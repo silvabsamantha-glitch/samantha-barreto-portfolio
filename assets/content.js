@@ -500,6 +500,281 @@ const PORTFOLIO_CONTENT = {
     },
   },
 
+  // ── INDEX ──────────────────────────────────────
+  index: {
+    "sobre_0": {
+      pt: "Sobre",
+      en: "About"
+    },
+    "cases_1": {
+      pt: "Cases",
+      en: "Work"
+    },
+    "processo_2": {
+      pt: "Processo",
+      en: "Process"
+    },
+    "contato_3": {
+      pt: "Contato",
+      en: "Contact"
+    },
+    "dispon_vel_para_novas_oportuni_4": {
+      pt: "Disponível para novas oportunidades",
+      en: "Open to new opportunities"
+    },
+    "designer_conversacional_5": {
+      pt: "Designer Conversacional",
+      en: "Conversational Designer"
+    },
+    "ia_generativa___fintech___6__a_6": {
+      pt: "IA Generativa · Fintech · 6+ anos",
+      en: "Generative AI · Fintech · 6+ years"
+    },
+    "ver_cases_7": {
+      pt: "Ver cases",
+      en: "See work"
+    },
+    "fale_comigo_8": {
+      pt: "Fale comigo",
+      en: "Get in touch"
+    },
+    "onde_trabalhei_9": {
+      pt: "Onde trabalhei",
+      en: "Where I've worked"
+    },
+    "sobre_mim_10": {
+      pt: "Sobre mim",
+      en: "About me"
+    },
+    "conte_do_que__em_resolve__em_11": {
+      pt: "Conteúdo que <em>resolve</em>, não só comunica.",
+      en: "Content that <em>solves</em>, not just communicates."
+    },
+    "habilidades_12": {
+      pt: "Habilidades",
+      en: "Skills"
+    },
+    "conversacional_13": {
+      pt: "Conversacional",
+      en: "Conversational"
+    },
+    "pesquisa_14": {
+      pt: "Pesquisa",
+      en: "Research"
+    },
+    "m_tricas_15": {
+      pt: "Métricas",
+      en: "Metrics"
+    },
+    "ferramentas_16": {
+      pt: "Ferramentas",
+      en: "Tools"
+    },
+    "idiomas_17": {
+      pt: "Idiomas",
+      en: "Languages"
+    },
+    "portugu_s_nativo_18": {
+      pt: "Português nativo",
+      en: "Native Portuguese"
+    },
+    "ingl_s_fluente_19": {
+      pt: "Inglês fluente",
+      en: "Fluent English"
+    },
+    "espanhol_intermedi_rio_20": {
+      pt: "Espanhol intermediário",
+      en: "Intermediate Spanish"
+    },
+    "cases_selecionados_21": {
+      pt: "Cases selecionados",
+      en: "Selected work"
+    },
+    "cada_projeto_come_a_br_com_uma_22": {
+      pt: "Cada projeto começa<br>com uma dor real.",
+      en: "Every project starts<br>with a real problem."
+    },
+    "ver_todos_os_cases_23": {
+      pt: "Ver todos os cases →",
+      en: "See all cases →"
+    },
+    "case_em_destaque___personalida_24": {
+      pt: "Case em destaque · Personalidade & Tom de Voz",
+      en: "Featured case · Personality & Tone of Voice"
+    },
+    "niara__criando_a_alma_de_um_as_25": {
+      pt: "Niara: Criando a alma de um assistente virtual de RH",
+      en: "Niara — Building the soul of an HR virtual assistant"
+    },
+    "600_colaboradores_ouvidos__40_26": {
+      pt: "+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot.",
+      en: "+600 employees interviewed, 40h of content testing, 24h of Design Sprint. From scratch to a personality that changed the bot's numbers."
+    },
+    "tom_de_voz_27": {
+      pt: "Tom de Voz",
+      en: "Tone of Voice"
+    },
+    "persona_28": {
+      pt: "Persona",
+      en: "Persona"
+    },
+    "volume_de_conversas_29": {
+      pt: "volume de conversas",
+      en: "conversation volume"
+    },
+    "share_de_atendimento_digital_30": {
+      pt: "share de atendimento digital",
+      en: "digital support share"
+    },
+    "falso_positivo_31": {
+      pt: "falso positivo",
+      en: "false positive"
+    },
+    "acur_cia_32": {
+      pt: "acurácia",
+      en: "accuracy"
+    },
+    "assistente_de_voz_da_marca_33": {
+      pt: "Assistente de Voz da Marca",
+      en: "Brand Voice Assistant"
+    },
+    "copiloto_com_ia_para_garantir_34": {
+      pt: "Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.",
+      en: "AI copilot to ensure voice consistency across all channels — adapted by segment and journey moment."
+    },
+    "em_piloto_35": {
+      pt: "Em piloto",
+      en: "In pilot"
+    },
+    "case_02___framework_pr_prio_36": {
+      pt: "Case 02 · Framework próprio",
+      en: "Case 02 · Own framework"
+    },
+    "bot_de_content_first_37": {
+      pt: "Bot de Content First",
+      en: "Content First Bot"
+    },
+    "uma_iniciativa_minha_para_inve_38": {
+      pt: "Uma iniciativa minha para inverter o processo. Intenção antes de canal. Prototipado e testando.",
+      en: "Own initiative to flip the process: intention before channel. Prototyped and testing."
+    },
+    "em_testes_39": {
+      pt: "Em testes",
+      en: "In testing"
+    },
+    "redesign_conversacional__cr_di_40": {
+      pt: "Redesign Conversacional: Crédito PJ",
+      en: "Conversational Redesign — Business Credit"
+    },
+    "o_maior_ofensor_de_csat_do_pro_41": {
+      pt: "O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo.",
+      en: "Information hierarchy and unmapped scenarios. Biggest CSAT offender turned into real improvement."
+    },
+    "reten__o_42": {
+      pt: "Retenção",
+      en: "Retention"
+    },
+    "case_05___alta_press_o_43": {
+      pt: "Case 05 · Alta pressão",
+      en: "Case 05 · High pressure"
+    },
+    "assistente_de_gerentes_pf__do_44": {
+      pt: "Assistente de Gerentes PF: do zero ao segundo começo",
+      en: "Branch Manager Assistant — from scratch to a second start"
+    },
+    "o_cliente_est__na_frente_do_ge_45": {
+      pt: "O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto.",
+      en: "Chatbot for branch managers with the customer right in front. High-pressure context changes everything in conversational design."
+    },
+    "seguros___content_first_do_zer_46": {
+      pt: "Seguros — Content First do Zero",
+      en: "Insurance — Content First from Scratch"
+    },
+    "novo_assistente_de_seguros__an_47": {
+      pt: "Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa.",
+      en: "New insurance assistant designed before any screen: intention, expected outcome, enactment, and journey."
+    },
+    "novo_bot_48": {
+      pt: "Novo Bot",
+      en: "New Bot"
+    },
+    "cart_o_de_cr_dito__a_pergunta_49": {
+      pt: "Cartão de Crédito: a pergunta que não foi respondida",
+      en: "Credit Card — the question that wasn't answered"
+    },
+    "o_cliente_perguntava_quando_ch_50": {
+      pt: "O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API.",
+      en: "The customer asked when the card arrives, not what the deadline is. Three solution scenarios with and without API."
+    },
+    "cen_rios_51": {
+      pt: "Cenários",
+      en: "Scenarios"
+    },
+    "ver_todos_os_cases_52": {
+      pt: "Ver todos os cases →",
+      en: "See all cases →"
+    },
+    "como_trabalho_53": {
+      pt: "Como trabalho",
+      en: "How I work"
+    },
+    "do_problema_real_ao_resultado_54": {
+      pt: "Do problema real ao resultado real.",
+      en: "From real problem to real result."
+    },
+    "entendo_antes_de_escrever_55": {
+      pt: "Entendo antes de escrever",
+      en: "Understand before writing"
+    },
+    "converso_com_quem_usa__leio_os_56": {
+      pt: "Converso com quem usa, leio os dados, ouço o atendimento. A pergunta certa raramente é a primeira que aparece.",
+      en: "I talk to users, read the data, listen to support. The right question is rarely the first one that comes up."
+    },
+    "mapeio_o_contexto_57": {
+      pt: "Mapeio o contexto",
+      en: "Map the context"
+    },
+    "onde_a_pessoa_est__na_jornada_58": {
+      pt: "Onde a pessoa está na jornada, o que ela já sabe, o que precisa saber. Vale para chatbot, e-mail, botão ou FAQ.",
+      en: "Where the person is in the journey, what they already know, what they need to know. Works for chatbot, email, button or FAQ."
+    },
+    "tomo_decis_es_intencionais_59": {
+      pt: "Tomo decisões intencionais",
+      en: "Make intentional decisions"
+    },
+    "tom__hierarquia__canal__format_60": {
+      pt: "Tom, hierarquia, canal, formato. Cada escolha tem uma razão. Nada é por instinto ou convenção.",
+      en: "Tone, hierarchy, channel, format. Every choice has a reason. Nothing is by instinct or convention."
+    },
+    "me_o_e_ajusto_61": {
+      pt: "Meço e ajusto",
+      en: "Measure and adjust"
+    },
+    "kpis_definidos_antes_de_public_62": {
+      pt: "KPIs definidos antes de publicar. Ciclos curtos. O trabalho não termina no go-live.",
+      en: "KPIs defined before publishing. Short cycles. The work doesn't end at go-live."
+    },
+    "dispon_vel_para_novas_oportuni_63": {
+      pt: "Disponível para novas oportunidades",
+      en: "Open to new opportunities"
+    },
+    "vamos_construir_algo__em_junto_64": {
+      pt: "Vamos construir algo <em>juntos</em>?",
+      en: "Let's build something <em>together</em>?"
+    },
+    "aberta_a_conversas_sobre_oport_65": {
+      pt: "Aberta a conversas sobre oportunidades em Content Design, Design Conversacional e IA Generativa — no Brasil ou internacionalmente.",
+      en: "Open to conversations about opportunities in Content Design, Conversational Design, and Generative AI — in Brazil or internationally."
+    },
+    "ingl_s_fluente___espanhol_inte_66": {
+      pt: "Inglês fluente · Espanhol intermediário",
+      en: "Fluent English · Intermediate Spanish"
+    },
+    "ver_todos_os_cases_67": {
+      pt: "Ver todos os cases",
+      en: "See all cases"
+    },
+  },
 };
 
 // Aplica o conteúdo na página conforme o idioma ativo
