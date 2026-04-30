@@ -31,9 +31,9 @@
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 .cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
 .sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
-.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
-.sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.875rem;font-weight:500}
-.sec p{font-size:.95rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem}
+.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-top:3rem;margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
+.sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.75rem;font-weight:500}
+.sec p{font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
 .sec p:last-child{margin-bottom:0}
 .sec p strong{color:var(--navy);font-weight:500}
 .pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
@@ -131,23 +131,23 @@
 .scen{border-radius:var(--r-md);overflow:hidden;border:0.5px solid var(--gray-line);margin-bottom:8px}
 .scheader{padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem}
 .scheader.api{background:#E1F5EE}.scheader.semi{background:#FAEEDA}.scheader.noapi{background:var(--gray-light)}
-.scn{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.scheader.api .scn{color:#085041}.scheader.semi .scn{color:#633806}.scheader.noapi .scn{color:var(--gray)}
+.scn{font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.scheader.api .scn{color:#085041}.scheader.semi .scn{color:#633806}.scheader.noapi .scn{color:var(--navy)}
 .sct{font-size:.875rem;font-weight:500}
 .scheader.api .sct{color:#085041}.scheader.semi .sct{color:#633806}.scheader.noapi .sct{color:var(--navy)}
-.scbadge{margin-left:auto;font-size:.7rem;padding:2px 8px;border-radius:var(--r-full);font-weight:500}
+.scbadge{margin-left:auto;font-size:.8rem;padding:2px 8px;border-radius:var(--r-full);font-weight:500}
 .scheader.api .scbadge{background:rgba(15,110,86,.15);color:#085041}
 .scheader.semi .scbadge{background:rgba(133,79,11,.15);color:#633806}
-.scheader.noapi .scbadge{background:var(--gray-light);color:var(--gray)}
+.scheader.noapi .scbadge{background:var(--gray-line);color:var(--navy)}
 .scbody{padding:.875rem 1rem}
 .scitem{display:flex;gap:.625rem;align-items:flex-start;margin-bottom:.375rem}
 .scdot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
 .scheader.api+.scbody .scdot{background:var(--green)}
 .scheader.semi+.scbody .scdot{background:#C4820A}
-.scheader.noapi+.scbody .scdot{background:var(--gray)}
-.sctext{font-size:.875rem;color:var(--gray);line-height:1.55;font-weight:300}
-.sctext strong{color:var(--navy);font-weight:500}
-.scex{font-size:.8rem;background:var(--gray-light);border-left:2px solid var(--gray-line);padding:.5rem .75rem;margin-top:.5rem;color:var(--gray);font-style:italic;line-height:1.55}
+.scheader.noapi+.scbody .scdot{background:var(--navy)}
+.sctext{font-size:.875rem;color:var(--navy);line-height:1.55;font-weight:400}
+.sctext strong{color:var(--navy);font-weight:600}
+.scex{font-size:.8rem;background:var(--gray-light);border-left:2px solid var(--gray-line);padding:.5rem .75rem;margin-top:.5rem;color:var(--navy);font-style:italic;line-height:1.55}
 .journey{display:flex;overflow:hidden;border-radius:var(--r-md);border:0.5px solid var(--gray-line)}
 .jstep{flex:1;padding:.75rem .5rem;background:var(--white);text-align:center;position:relative;border-right:0.5px solid var(--gray-line)}
 .jstep:last-child{border-right:none}
@@ -178,7 +178,7 @@
 
 .case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 @media(max-width:900px){.case-hero{padding:calc(var(--nav-height) + 2.5rem) 2rem 2.5rem}.cbody,.body{padding:4rem 2rem}.cni{padding:1.5rem 2rem}}
-@media(max-width:600px){.case-hero{padding:calc(var(--nav-height) + 1.75rem) 1.25rem 1.75rem}.cbody,.body{padding:3rem 1.25rem}.cni{padding:1.25rem 1.25rem}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.sgrid,.pgrid,.pins,.intgrid,.objgrid,.ba,.ctxgrid{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.case-hero{padding:calc(var(--nav-height) + 1.75rem) 1.25rem 1.75rem}.cbody,.body{padding:3rem 1.25rem}.cni{padding:1.25rem 1.25rem}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.sgrid,.pgrid,.pins,.intgrid,.objgrid,.ba,.ctxgrid{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(2,1fr)}.case-anim-block iframe{display:none}.case-anim-block .mobile-fallback{display:block}}
 </style>
 </head>
 <body>
@@ -228,7 +228,7 @@
   </div>
   <div class="sec fade">
     <div class="slabel">03 — Os três cenários propostos</div>
-  <div class="case-anim-block"><iframe src="../assets/images/case-07-cartao-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Antes e depois: chatbot de cartão de crédito" style="display:block;width:100%;border:none;min-height:200px"></iframe><p class="case-img-caption">Antes e depois</p></div>
+  <div class="case-anim-block"><iframe src="../assets/images/case-07-cartao-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Antes e depois: chatbot de cartão de crédito" style="display:block;width:100%;border:none;min-height:200px"></iframe><div class="mobile-fallback" style="display:none;padding:1.5rem;background:var(--gray-light);border-radius:8px;font-size:0.9rem;color:var(--gray);line-height:1.7;">O cliente pergunta quando chega o cartão. O chatbot antigo respondia com o prazo padrão genérico. O redesign propõe três cenários: com API completa, com API parcial e sem API — cada um respondendo à pergunta real do cliente.</div><p class="case-img-caption">Antes e depois</p></div>
     <div class="scen">
       <div class="scheader api"><span class="scn">Cenário 1</span><span class="sct">Com API completa</span><span class="scbadge">Melhor experiência</span></div>
       <div class="scbody">
@@ -278,7 +278,7 @@
   <a href="../index.html#cases" class="cni cni-right"><div class="cnd">Todos os cases →</div><div class="cnt">Todos os cases</div></a>
 </nav>
 <footer>
-  <p>© 2025 Samantha Silva</p>
+  <p>© 2026 Samantha Silva</p>
   <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
 <script src="../assets/shared.js"></script>
