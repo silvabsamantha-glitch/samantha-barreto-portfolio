@@ -448,6 +448,17 @@ footer a:hover { color: var(--green-2); }
   .cni { min-height: 44px; }
 }
 
+/* ── Lang toggle in case hero ───────────────────────────────────── */
+.hero-lang {
+  position: absolute;
+  top: calc(var(--nav-height) + 1rem);
+  right: 1rem;
+  z-index: 3;
+}
+.hero-lang .lang-toggle { background: rgba(255,255,255,0.1); }
+.hero-lang .lang-btn { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.2); min-height: 44px; min-width: 44px; }
+.hero-lang .lang-btn.active { background: rgba(255,255,255,0.18); color: var(--white); border-color: rgba(255,255,255,0.5); }
+
 /* ── Voltar ao topo ──────────────────────────────────────────────── */
 .back-to-top {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
