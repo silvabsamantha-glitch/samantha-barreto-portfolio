@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case 05: Assistente de Gerentes PF — Samantha Silva</title>
+<title>Case 05: Assistente de Gerentes PF e PJ — Samantha Barreto</title>
 <meta name="description" content="Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos com o cliente na frente.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -14,15 +14,15 @@
 .case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(196,130,10,.08) 0%,transparent 60%);pointer-events:none}
 .case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .case-hero-inner{position:relative;z-index:1;max-width:800px}
-.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.72);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
 .case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
 .cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#EF9F27;background:rgba(186,117,23,.15);border:1px solid rgba(186,117,23,.3);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
-.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem}
+.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem}
 .case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:#fff;margin-bottom:1rem;font-weight:500}
 .hsub{font-size:1rem;color:rgba(255,255,255,.62);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
 .ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
 .tag{font-size:.72rem;padding:3px 10px;border-radius:var(--r-full);background:rgba(186,117,23,.12);color:#EF9F27;border:1px solid rgba(186,117,23,.25)}
-.disc{background:rgba(255,255,255,.05);border-left:2px solid rgba(255,255,255,.15);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6}
+.disc{background:rgba(255,255,255,.05);border-left:2px solid rgba(255,255,255,.15);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.6}
 
 /* ── Body ──────────────────────────────────────────────────────── */
 .cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
@@ -117,6 +117,7 @@
 .case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 @media(max-width:900px){.case-hero{padding:calc(var(--nav-height) + 2.5rem) 2rem 2.5rem}.cbody,.body{padding:4rem 2rem}.cni{padding:1.5rem 2rem}}
 @media(max-width:600px){.case-hero{padding:calc(var(--nav-height) + 1.75rem) 1.25rem 1.75rem}.cbody,.body{padding:3rem 1.25rem}.cni{padding:1.25rem 1.25rem}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.sgrid,.pgrid,.pins,.intgrid,.objgrid,.ba,.ctxgrid{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1024px){.case-anim-block iframe{display:none}.case-img-block img{display:none}.case-anim-block .desktop-note,.case-img-block .desktop-note{display:block}}
 </style>
 </head>
 <body>
@@ -126,7 +127,7 @@
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
-    <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
     <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
@@ -139,11 +140,11 @@
   </div>
 </nav>
 
-<section class="case-hero" aria-label="Case 05: Assistente de Gerentes PF no Banco Nacional">
+<section class="case-hero" aria-label="Case 05: Assistente de Gerentes PF e PJ em grande instituição financeira nacional">
   <div class="case-hero-inner">
     <div class="cpill">Case 05 · Design Conversacional · Alta pressão</div>
-    <div class="cco">Banco Nacional · UX Writer · 2020–2022</div>
-    <h1 data-pt="Assistente de Gerentes PF: do zero ao segundo começo" data-en="Branch Manager Assistant: from scratch to a second start">Assistente de Gerentes PF: do zero ao segundo começo</h1>
+    <div class="cco">grande instituição financeira nacional · Conversational AI Designer · 2020–2022</div>
+    <h1 data-pt="Assistente de Gerentes PF e PJ: do zero ao segundo começo" data-en="Branch Manager PF &amp; PJ Assistant: from scratch to a second start">Assistente de Gerentes PF e PJ: do zero ao segundo começo</h1>
     <p class="hsub" data-pt="Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na frente." data-en="How to design a chatbot for branch managers who need answers in seconds, with the customer sitting right in front of them.">Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na frente.</p>
     <div class="ctags">
       <span class="tag">Design Conversacional</span>
@@ -151,7 +152,7 @@
       <span class="tag">Reconstrução</span>
       <span class="tag">Arquitetura de informação</span>
     </div>
-    <div class="disc">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Banco Nacional). O processo, os princípios de design e as decisões são reais.</div>
+    <div class="disc">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo, os princípios de design e as decisões são reais.</div>
   </div>
 </section>
 
@@ -162,7 +163,7 @@
     <div class="tenbox">
       <p class="tentext">"O gerente não pode demorar para encontrar a informação. Cada segundo de espera é percebido pelo cliente como falta de preparo."</p>
     </div>
-    <p>O Banco Nacional havia lançado um assistente virtual para gerentes de agência. O rollout não funcionou e o projeto precisou recomeçar. Eu reassumi do zero.</p>
+    <p>A instituição havia lançado um assistente virtual para gerentes de agência. O rollout não funcionou e o projeto precisou recomeçar. Eu reassumi do zero.</p>
     <p>O desafio era diferente da maioria dos chatbots: o usuário final não é um cliente em casa com tempo para ler. É um <strong>gerente com o cliente sentado na sua frente</strong>, que precisa de uma resposta em segundos para não perder credibilidade.</p>
     <div class="constr" role="list" aria-label="Restrições do projeto">
       <span class="constpill" role="listitem">Velocidade acima de tudo</span>
@@ -190,22 +191,22 @@
   <div class="sec">
     <div class="slabel">03 — Princípios de design para alta pressão</div>
     <div class="pins" role="list" aria-label="Quatro princípios de design para alta pressão">
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">01</div><div class="pint">A resposta primeiro</div><div class="pind">A informação crítica vem antes de qualquer contexto ou explicação. O gerente não lê — ele escaneia.</div></div>
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">02</div><div class="pint">Sem becos sem saída</div><div class="pind">Toda jornada tem saída. Nenhuma resposta termina sem uma ação possível. O gerente nunca pode ficar preso.</div></div>
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">03</div><div class="pint">Tom de parceiro, não de tutorial</div><div class="pind">Não simpático — competente. O assistente fala como um colega que sabe a resposta e vai direto ao ponto.</div></div>
+      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">01</div><div class="pint">A resposta primeiro</div><div class="pind">A informação crítica vem antes de qualquer contexto ou explicação. O gerente não lê: ele escaneia.</div></div>
+      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">02</div><div class="pint">Sempre com saída</div><div class="pind">Toda jornada tem saída. Nenhuma resposta termina sem uma ação possível. O gerente nunca pode ficar preso.</div></div>
+      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">03</div><div class="pint">Tom de parceiro, não de tutorial</div><div class="pind">Não simpático: competente. O assistente fala como um colega que sabe a resposta e vai direto ao ponto.</div></div>
       <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">04</div><div class="pint">Leitura em 3 segundos</div><div class="pind">Se o gerente precisar de mais de 3 segundos para encontrar a informação principal, a mensagem está errada.</div></div>
     </div>
   </div>
 
   <div class="sec">
-    <div class="slabel">04 — Respostas com deeplinks: sem API, sem beco</div>
-    <p>Sem acesso a API para puxar dados em tempo real, a solução foi desenhar respostas que <strong>levam o gerente diretamente ao lugar certo</strong> dentro do sistema. O caminho vem antes dos botões — assim o gerente entende o que está abrindo e consegue navegar sozinho se precisar.</p>
+    <div class="slabel">04 — Sempre com saída: deeplinks garantem o caminho mesmo sem API</div>
+    <p>Sem acesso a API para integrar dados em tempo real, a solução foi desenhar respostas que <strong>levam o gerente diretamente ao lugar certo</strong> dentro do sistema. O caminho vem antes dos botões: assim o gerente entende o que está abrindo e consegue navegar sozinho se precisar.</p>
 
     <div class="chat-wrap" role="region" aria-label="Demonstração do assistente de gerentes com respostas e deeplinks">
       <div class="chat-bar">
         <span class="chat-bar-dot" aria-hidden="true"></span>
-        <span class="chat-bar-name">Assistente Gerentes PF</span>
-        <span class="chat-bar-sub">Banco Nacional</span>
+        <span class="chat-bar-name">Assistente Gerentes PF e PJ</span>
+        <span class="chat-bar-sub">grande instituição financeira nacional</span>
       </div>
       <div class="chat-body">
         <div class="bubble b-user" role="note" aria-label="Mensagem do gerente">Qual o limite disponível do cartão corporate do João Silva?</div>
@@ -252,7 +253,7 @@
 
   <div class="sec">
     <div class="slabel">05 — Árvore de decisão conversacional</div>
-    <p>O fluxo abaixo mostra como o gerente navega pelo assistente. Cada bifurcação tem uma saída clara — o caminho feliz resolve na hora, o caminho difícil sempre termina em especialista, nunca em beco sem saída.</p>
+    <p>O fluxo abaixo mostra como o gerente navega pelo assistente. Cada bifurcação tem uma saída clara: o caminho feliz resolve na hora, o caminho difícil sempre termina em especialista, nunca em beco sem saída.</p>
 
     <div class="tree-wrap" role="img" aria-label="Árvore de decisão conversacional do assistente de gerentes PF: fluxo com caminhos feliz e difícil, onde o caminho difícil termina sempre em especialista">
       <svg width="100%" viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg">
@@ -379,7 +380,7 @@
     <div class="slabel">06 — Como construímos</div>
     <div class="steps">
       <div class="step"><span class="sn">01</span><div><div class="st">Imersão no contexto real</div><div class="sd">Entendimento profundo do dia a dia do gerente: quais situações geravam a necessidade do assistente, qual era o estado mental no momento de uso e o que afastava a adoção do sistema anterior.</div></div></div>
-      <div class="step"><span class="sn">02</span><div><div class="st">Mapeamento de macro e micro assuntos</div><div class="sd">Estruturação da árvore conversacional a partir dos temas mais acessados. Identificação dos caminhos principais, variações e situações de exceção que precisavam de jornada própria.</div></div></div>
+      <div class="step"><span class="sn">02</span><div><div class="st">Mapeamento de macro e microassuntos</div><div class="sd">Estruturação da árvore conversacional a partir dos temas mais acessados. Identificação dos caminhos principais, variações e situações de exceção que precisavam de jornada própria.</div></div></div>
       <div class="step"><span class="sn">03</span><div><div class="st">Design do caminho feliz e do caminho difícil</div><div class="sd">Para cada jornada: o fluxo ideal quando tudo funciona e o fluxo alternativo quando o gerente não encontra o que precisa. Sempre com saída clara e sem beco sem saída.</div></div></div>
       <div class="step"><span class="sn">04</span><div><div class="st">Escrita com critério dos 3 segundos</div><div class="sd">Cada resposta testada com um critério simples: se demorava mais de 3 segundos para encontrar a informação principal, era reescrita. Tom ajustado para competência, sem simpatia desnecessária.</div></div></div>
     </div>
@@ -389,7 +390,7 @@
     <div class="slabel">07 — Decisões de design</div>
     <div class="qas">
       <div class="qa"><div class="qq">Por que recomeçar do zero em vez de corrigir o existente?</div><div class="qa-a">Quando a confiança num canal digital se perde, é muito difícil recuperá-la com ajustes incrementais. O gerente já havia aprendido a não usar o assistente. Recomeçar com uma experiência visivelmente diferente era o único caminho para reconquistar a adoção.</div></div>
-      <div class="qa"><div class="qq">O que é o caminho difícil e por que ele importa tanto?</div><div class="qa-a">O caminho feliz é quando o gerente encontra exatamente o que procurava. O caminho difícil é quando não encontra e precisa de uma saída digna. A maioria dos chatbots é projetada para o caminho feliz. Os melhores são projetados para os dois.etados para quando o usuário se perde.</div></div>
+      <div class="qa"><div class="qq">O que é o caminho difícil e por que ele importa tanto?</div><div class="qa-a">O caminho feliz é quando o gerente encontra exatamente o que procurava. O caminho difícil é quando não encontra e precisa de uma saída digna. A maioria dos chatbots é projetada para o caminho feliz. Os melhores são projetados para os dois.</div></div>
       <div class="qa"><div class="qq">Por que o contexto de uso muda tudo no design conversacional?</div><div class="qa-a">Estado mental, tempo disponível e consequências de um erro são radicalmente distintos entre contextos. Ignorar isso foi o que fez o primeiro rollout falhar. Entender o contexto antes de escrever a primeira resposta é o que diferencia um chatbot que as pessoas usam de um que as pessoas evitam.</div></div>
     </div>
   </div>
@@ -398,7 +399,7 @@
     <div class="slabel">08 — O aprendizado</div>
     <div class="learned">
       <p>Um chatbot que falha no contexto de uso não falha por falta de conteúdo. Falha porque alguém projetou para o usuário imaginário, não para o usuário real, no momento real, com o peso real daquele momento.</p>
-      <cite>Samantha Silva</cite>
+      <cite>Samantha Barreto</cite>
     </div>
   </div>
 
@@ -410,7 +411,7 @@
 </nav>
 
 <footer>
-  <p>© 2026 Samantha Silva</p>
+  <p>© 2026 Samantha Barreto</p>
   <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
 

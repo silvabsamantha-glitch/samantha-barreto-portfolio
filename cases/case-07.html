@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case 07: Cartão de Crédito — a pergunta que não foi respondida — Samantha Silva</title>
+<title>Case 07: Cartão de Crédito — a pergunta que não foi respondida — Samantha Barreto</title>
 <meta name="description" content="Um estudo de caso sobre como um chatbot bem-intencionado falhou em responder à pergunta mais simples do cliente.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -13,20 +13,22 @@
 .case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
 .case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .case-hero-inner{position:relative;z-index:1;max-width:800px}
-.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.72);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
 .case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
-.cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green-2);background:rgba(26,155,118,.12);border:1px solid rgba(26,155,118,.2);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
-.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.5rem}
+.cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#4ECBA8;background:rgba(26,155,118,.18);border:1px solid rgba(26,155,118,.35);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem}
 .case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
 .hsub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
 .ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
-.disc{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.6}
+.disc{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.6}
 .mbar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
 .mitem{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
 .mitem:last-child{border-right:none;margin-right:0}
 .mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
-.ml{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.4}
-.pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4}
+.pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#F5C058;background:rgba(186,117,23,.2);border:1px solid rgba(186,117,23,.4);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
+.badge-study{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);padding:5px 14px;border-radius:var(--r-full);margin-top:1.5rem}
+.badge-study span{font-size:.78rem;font-weight:400;color:rgba(255,255,255,.85);line-height:1.4}
 .pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 .cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
@@ -178,7 +180,8 @@
 
 .case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--gray);text-align:center;padding:.6rem 1rem;background:var(--gray-light);border-top:1px solid var(--gray-line);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--gray-line)}.case-anim-block iframe{display:block;width:100%;border:none}
 @media(max-width:900px){.case-hero{padding:calc(var(--nav-height) + 2.5rem) 2rem 2.5rem}.cbody,.body{padding:4rem 2rem}.cni{padding:1.5rem 2rem}}
-@media(max-width:600px){.case-hero{padding:calc(var(--nav-height) + 1.75rem) 1.25rem 1.75rem}.cbody,.body{padding:3rem 1.25rem}.cni{padding:1.25rem 1.25rem}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.sgrid,.pgrid,.pins,.intgrid,.objgrid,.ba,.ctxgrid{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(2,1fr)}.case-anim-block iframe{display:none}.case-anim-block .mobile-fallback{display:block}}
+@media(max-width:600px){.case-hero{padding:calc(var(--nav-height) + 1.75rem) 1.25rem 1.75rem}.cbody,.body{padding:3rem 1.25rem}.cni{padding:1.25rem 1.25rem}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.sgrid,.pgrid,.pins,.intgrid,.objgrid,.ba,.ctxgrid{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1024px){.case-anim-block iframe{display:none}.case-img-block img{display:none}.case-anim-block .desktop-note,.case-img-block .desktop-note{display:block}}
 </style>
 </head>
 <body>
@@ -186,7 +189,7 @@
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
-    <li><a href="../index.html#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
     <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
@@ -198,17 +201,17 @@
     </div>
   </div>
 </nav>
-<section class="case-hero" aria-label="Case 07: Estudo de caso sobre cartão de crédito no Banco Nacional">
+<section class="case-hero" aria-label="Case 07: Estudo de caso sobre cartão de crédito em grande instituição financeira nacional">
   <div class="case-hero-inner">
     <div class="cpill purple">Case 07 · Estudo de Caso · UX Writing · API</div>
-    <div class="cco">Banco Nacional · UX Writer · 2020–2022</div>
+    <div class="cco">grande instituição financeira nacional · Conversational AI Designer · 2020–2022</div>
     <h1 data-pt="Cartão de Crédito: a pergunta que não foi respondida" data-en="Credit Card: the question that wasn't answered">Cartão de Crédito: a pergunta que não foi respondida</h1>
-    <p class="hsub" data-pt="Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API." data-en="An analysis of how a well-intentioned chatbot failed to answer the customer's simplest question — and three possible paths to fix it, with and without API integration.">Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API.</p>
+    <p class="hsub" data-pt="Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API." data-en="An analysis of how a well-intentioned chatbot failed to answer the customer's simplest question, and three possible paths to fix it, with and without API integration.">Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API.</p>
     <div class="ctags"><span class="tag">Estudo de caso</span><span class="tag">UX Writing</span><span class="tag">Cenários</span><span class="tag">API</span><span class="tag">Jornada</span></div>
-    <div class="disc">Este é um estudo de caso: análise e proposta de melhoria, não uma implementação. Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Banco Nacional). A análise e os cenários propostos são reais.</div>
+    <div class="disc">Este é um estudo de caso: análise e proposta de melhoria, não uma implementação. Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. A análise e os cenários propostos são reais.</div>
     <div class="badge-study">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      <span data-pt="Estudo de caso: análise e proposta, não implementação" data-en="Case study — analysis and proposal, not implementation">Estudo de caso: análise e proposta, não implementação</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span data-pt="Estudo de caso: análise e proposta, não implementação" data-en="Case study: analysis and proposal, not implementation">Estudo de caso: análise e proposta, não implementação</span>
     </div>
   </div>
 </section>
@@ -228,7 +231,7 @@
   </div>
   <div class="sec fade">
     <div class="slabel">03 — Os três cenários propostos</div>
-  <div class="case-anim-block"><iframe src="../assets/images/case-07-cartao-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Antes e depois: chatbot de cartão de crédito" style="display:block;width:100%;border:none;min-height:200px"></iframe><div class="mobile-fallback" style="display:none;padding:1.5rem;background:var(--gray-light);border-radius:8px;font-size:0.9rem;color:var(--gray);line-height:1.7;">O cliente pergunta quando chega o cartão. O chatbot antigo respondia com o prazo padrão genérico. O redesign propõe três cenários: com API completa, com API parcial e sem API — cada um respondendo à pergunta real do cliente.</div><p class="case-img-caption">Antes e depois</p></div>
+  <div class="case-anim-block"><iframe src="../assets/images/case-07-cartao-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Antes e depois: chatbot de cartão de crédito" style="display:block;width:100%;border:none;min-height:200px"></iframe><div class="mobile-fallback" style="display:none;padding:1.5rem;background:var(--gray-light);border-radius:8px;font-size:0.9rem;color:var(--gray);line-height:1.7;">O cliente pergunta quando chega o cartão. O chatbot antigo respondia com o prazo padrão genérico. O redesign propõe três cenários: com API completa, com API parcial e sem API — cada um respondendo à pergunta real do cliente.</div><p class="desktop-note" style="display:none;padding:1rem;background:var(--gray-light);border-radius:8px;font-size:0.875rem;color:var(--gray);line-height:1.6;text-align:center;">Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.</p><p class="case-img-caption">Antes e depois</p></div>
     <div class="scen">
       <div class="scheader api"><span class="scn">Cenário 1</span><span class="sct">Com API completa</span><span class="scbadge">Melhor experiência</span></div>
       <div class="scbody">
@@ -269,7 +272,7 @@
     <div class="slabel">05 — O aprendizado</div>
     <div class="learned">
       <p>Um chatbot que responde a pergunta errada de forma correta ainda é um chatbot que falhou. A pergunta do cliente é o ponto de partida, não o fluxo, não o prazo padrão, não a política da empresa.</p>
-      <cite>Samantha Silva</cite>
+      <cite>Samantha Barreto</cite>
     </div>
   </div>
 </main>
@@ -278,7 +281,7 @@
   <a href="../index.html#cases" class="cni cni-right"><div class="cnd">Todos os cases →</div><div class="cnt">Todos os cases</div></a>
 </nav>
 <footer>
-  <p>© 2026 Samantha Silva</p>
+  <p>© 2026 Samantha Barreto</p>
   <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
 <script src="../assets/shared.js"></script>
