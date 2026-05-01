@@ -40,7 +40,9 @@ function applyLang(lang) {
   });
   // Update lang toggle buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
   document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
   document.documentElement.setAttribute('data-lang', lang);
