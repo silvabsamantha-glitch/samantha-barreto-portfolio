@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre — Samantha Barreto · Content Designer & Conversational AI Designer</title>
+<meta name="description" content="Samantha Barreto: Content Designer, Conversational AI Designer e Designer Conversacional. Diadema, SP. Apaixonada por tecnologia, escrita e gente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+/* ── INTRO BLOCK ──────────────────────────────────────────────── */
+.sobre-intro {
+  background: var(--navy-mid);
+  padding: calc(var(--nav-height) + 4rem) 4rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.sobre-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 70% at 10% 90%, rgba(15,110,86,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 85% 15%, rgba(26,26,46,0.5) 0%, transparent 60%);
+  pointer-events: none;
+}
+.sobre-intro::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.sobre-intro-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: center;
+}
+.sobre-intro-text .sec-label-light {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green-2); margin-bottom: 1.5rem;
+}
+.sobre-intro-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--white);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.sobre-intro-text h1 em {
+  font-style: normal;
+  color: var(--green-2);
+}
+.sobre-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+.sobre-role {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.62);
+  font-weight: 300;
+}
+.sobre-role.hi { color: rgba(255,255,255,0.82); font-weight: 400; }
+.sobre-bio {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 540px;
+  margin-bottom: 1.75rem;
+}
+.sobre-bio strong { color: var(--white); font-weight: 400; }
+.sobre-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+}
+.sobre-meta span { display: flex; align-items: center; gap: 5px; }
+.sobre-meta svg { opacity: 0.6; }
+
+.sobre-photo-col {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.sobre-photo-frame {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3/4;
+  border-radius: 200px 200px 60px 60px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  background: var(--navy-soft);
+}
+.sobre-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+}
+.sobre-photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.2); font-size: 0.75rem;
+  text-align: center; padding: 2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .sobre-intro { padding: calc(var(--nav-height) + 2.5rem) 2rem 3.5rem; }
+  .sobre-intro-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .sobre-photo-col { justify-content: flex-start; }
+  .sobre-photo-frame { max-width: 280px; }
+}
+@media (max-width: 600px) {
+  .sobre-intro { padding: calc(var(--nav-height) + 2rem) 1.5rem 3rem; }
+  .sobre-photo-frame { max-width: 240px; }
+}
+
+/* ── PERSONAL BLOCK ──────────────────────────────────────────── */
+.sobre-personal {
+  background: var(--gray-light);
+  padding: 5rem 4rem;
+}
+.sobre-personal-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.personal-text .sec-label {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 1.25rem;
+  display: block;
+}
+.personal-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+.personal-text h2 em { font-style: italic; color: var(--green); }
+.personal-text p {
+  font-size: 1rem; color: var(--gray);
+  line-height: 1.8; font-weight: 300;
+  margin-bottom: 1.25rem;
+}
+.interests-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.interest-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 0.4rem 0.875rem;
+  border-radius: var(--r-full);
+  background: var(--white);
+  border: 1px solid var(--gray-line);
+  font-size: 0.8rem;
+  color: var(--navy);
+  font-weight: 400;
+}
+
+.personal-photo-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.personal-photo-frame {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1/1;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--gray-line);
+}
+.personal-photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.personal-photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gray); font-size: 0.75rem;
+  text-align: center; padding: 2rem; line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .sobre-personal { padding: 3.5rem 2rem; }
+  .sobre-personal-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .personal-photo-col { order: -1; }
+  .personal-photo-frame { max-width: 260px; }
+}
+@media (max-width: 600px) {
+  .sobre-personal { padding: 2.5rem 1.5rem; }
+}
+
+/* ── EDUCATION BLOCK ─────────────────────────────────────────── */
+.sobre-edu {
+  background: var(--white);
+  padding: 5rem 4rem;
+}
+.sobre-edu-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sobre-edu .sec-label {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 1.25rem;
+  display: block;
+}
+.sobre-edu h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.edu-item {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--gray-line);
+  align-items: start;
+}
+.edu-item:first-child { border-top: 1px solid var(--gray-line); }
+.edu-name {
+  font-size: 1rem; color: var(--navy);
+  font-weight: 500; margin-bottom: 0.25rem;
+}
+.edu-inst {
+  font-size: 0.875rem; color: var(--gray);
+  font-weight: 300; line-height: 1.5;
+}
+.edu-badge {
+  display: inline-block;
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: var(--r-full);
+  background: var(--green-mist); color: var(--green);
+  border: 1px solid rgba(15,110,86,0.2);
+  white-space: nowrap;
+  justify-self: end;
+  align-self: start;
+  margin-top: 4px;
+}
+.edu-badge.done {
+  background: var(--gray-light); color: var(--gray);
+  border-color: var(--gray-line);
+}
+
+@media (max-width: 900px) {
+  .sobre-edu { padding: 3.5rem 2rem; }
+  .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .edu-badge { justify-self: start; }
+}
+@media (max-width: 600px) {
+  .sobre-edu { padding: 2.5rem 1.5rem; }
+}
+
+/* ── CERTIFICATIONS BLOCK ────────────────────────────────────── */
+.sobre-certs {
+  background: var(--navy);
+  padding: 5rem 4rem;
+}
+.sobre-certs-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sobre-certs .sec-label-light {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green-2); margin-bottom: 1.25rem;
+  display: block;
+}
+.sobre-certs h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.cert-item {
+  background: rgba(255,255,255,0.02);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  transition: background 0.2s;
+}
+.cert-item:hover { background: rgba(255,255,255,0.05); }
+.cert-name {
+  font-size: 0.9rem; color: var(--white);
+  font-weight: 400; line-height: 1.45;
+}
+.cert-org {
+  font-size: 0.75rem; color: rgba(255,255,255,0.45);
+  font-weight: 300;
+}
+.cert-date {
+  font-size: 0.7rem; color: var(--green-2);
+  font-weight: 600; letter-spacing: 0.06em;
+  margin-top: auto; padding-top: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .sobre-certs { padding: 3.5rem 2rem; }
+  .certs-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .sobre-certs { padding: 2.5rem 1.5rem; }
+  .certs-grid { grid-template-columns: 1fr; }
+}
+
+/* ── CAUSES BLOCK ────────────────────────────────────────────── */
+.sobre-causes {
+  background: var(--white);
+  padding: 5rem 4rem;
+}
+.sobre-causes-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sobre-causes .sec-label {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 1.25rem;
+  display: block;
+}
+.sobre-causes h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.causes-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+.cause-pill {
+  display: inline-flex; align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--r-full);
+  background: var(--green-mist);
+  border: 1px solid rgba(15,110,86,0.2);
+  font-size: 0.85rem; color: var(--green);
+  font-weight: 400;
+  transition: background 0.2s, border-color 0.2s;
+}
+.cause-pill:hover { background: rgba(15,110,86,0.12); border-color: var(--green); }
+
+@media (max-width: 900px) { .sobre-causes { padding: 3.5rem 2rem; } }
+@media (max-width: 600px) { .sobre-causes { padding: 2.5rem 1.5rem; } }
+
+/* ── CTA BLOCK ───────────────────────────────────────────────── */
+.sobre-cta {
+  background: var(--navy-mid);
+  padding: 6rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.sobre-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(15,110,86,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.sobre-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.sobre-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--white);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.sobre-cta h2 em { font-style: italic; color: var(--green-2); }
+.sobre-cta p {
+  font-size: 1rem; color: rgba(255,255,255,0.6);
+  font-weight: 300; line-height: 1.7; margin-bottom: 2.5rem;
+}
+.sobre-cta-btns {
+  display: flex; gap: 0.875rem;
+  justify-content: center; flex-wrap: wrap;
+}
+
+@media (max-width: 900px) { .sobre-cta { padding: 4rem 2rem; } }
+@media (max-width: 600px) {
+  .sobre-cta { padding: 3rem 1.5rem; }
+  .sobre-cta-btns { flex-direction: column; align-items: center; }
+  .sobre-cta-btns .btn { width: 100%; justify-content: center; max-width: 320px; }
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+<!-- NAV -->
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
+  <a href="index.html" class="nav-logo">Samantha<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="sobre.html" data-pt="Sobre" data-en="About" aria-current="page">Sobre</a></li>
+    <li><a href="index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BLOCK 1: INTRO -->
+<section class="sobre-intro" id="main-content" aria-label="Apresentação de Samantha Barreto">
+  <div class="sobre-intro-inner">
+    <div class="sobre-intro-text fade">
+      <div class="sec-label-light" data-pt="Content Designer · Designer Conversacional" data-en="Content Designer · Conversational Designer">Content Designer · Designer Conversacional</div>
+      <h1>Samantha<br><em>Barreto</em></h1>
+      <div class="sobre-roles">
+        <span class="sobre-role hi">Content Designer</span>
+        <span class="sobre-role hi" data-pt="Conversational AI Designer" data-en="Conversational AI Designer">Conversational AI Designer</span>
+        <span class="sobre-role hi" data-pt="Designer Conversacional" data-en="Conversational Designer">Designer Conversacional</span>
+        <span class="sobre-role" data-pt="IA Generativa · Fintech · 6+ anos" data-en="Generative AI · Fintech · 6+ years">IA Generativa · Fintech · 6+ anos</span>
+      </div>
+      <p class="sobre-bio" data-pt="Apaixonada por tecnologia, escrita e por tudo que envolve gente de verdade. Minha especialidade está na interseção entre <strong>linguagem, comportamento e dados</strong>. É ali que eu desenho experiências que fazem sentido, que fluem e que não precisam ser explicadas duas vezes." data-en="Passionate about technology, writing, and everything that involves real people. My specialty lies at the intersection of <strong>language, behavior, and data</strong>. That's where I design experiences that make sense, that flow, and that don't need to be explained twice.">Apaixonada por tecnologia, escrita e por tudo que envolve gente de verdade. Minha especialidade está na interseção entre <strong>linguagem, comportamento e dados</strong>. É ali que eu desenho experiências que fazem sentido, que fluem e que não precisam ser explicadas duas vezes.</p>
+      <div class="sobre-meta">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-pt="Diadema, SP · Brasil" data-en="Diadema, SP · Brazil">Diadema, SP · Brasil</span>
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <span data-pt="Português nativo · Inglês fluente C2 · Espanhol intermediário" data-en="Native Portuguese · Fluent English C2 · Intermediate Spanish">Português nativo · Inglês fluente C2 · Espanhol intermediário</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="sobre-photo-col fade" data-delay="100">
+      <div class="sobre-photo-frame">
+        <img class="sobre-photo" src="assets/foto-sobre.jpg" alt="Samantha Barreto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="sobre-photo-placeholder" style="display:none;" aria-hidden="true">foto-sobre.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 2: PERSONAL -->
+<section class="sobre-personal" aria-label="Espaço pessoal">
+  <div class="sobre-personal-inner">
+    <div class="personal-text fade">
+      <span class="sec-label" data-pt="Fora do trabalho" data-en="Outside work">Fora do trabalho</span>
+      <h2 data-pt="O que me move <em>além</em> das palavras." data-en="What moves me <em>beyond</em> words.">O que me move <em>além</em> das palavras.</h2>
+      <p data-pt="Gatos, cachorros e qualquer animal que apareça. True crime e psicologia como formas de entender comportamento humano. Astrologia e astronomia — o micro e o macro do universo me fascinam igualmente." data-en="Cats, dogs, and any animal that shows up. True crime and psychology as ways to understand human behavior. Astrology and astronomy — the micro and macro of the universe fascinate me equally.">Gatos, cachorros e qualquer animal que apareça. True crime e psicologia como formas de entender comportamento humano. Astrologia e astronomia — o micro e o macro do universo me fascinam igualmente.</p>
+      <p data-pt="Viagens, Pilates, poesia, misticismo, espiritualidade e autoconhecimento. Acredito que entender a si mesma é o caminho mais curto para entender qualquer usuário." data-en="Travel, Pilates, poetry, mysticism, spirituality, and self-knowledge. I believe that understanding yourself is the shortest path to understanding any user.">Viagens, Pilates, poesia, misticismo, espiritualidade e autoconhecimento. Acredito que entender a si mesma é o caminho mais curto para entender qualquer usuário.</p>
+      <div class="interests-grid">
+        <span class="interest-pill" data-pt="🐱 Gatos" data-en="🐱 Cats">🐱 Gatos</span>
+        <span class="interest-pill" data-pt="🐶 Cachorros" data-en="🐶 Dogs">🐶 Cachorros</span>
+        <span class="interest-pill" data-pt="🔍 True Crime" data-en="🔍 True Crime">🔍 True Crime</span>
+        <span class="interest-pill" data-pt="🧠 Psicologia" data-en="🧠 Psychology">🧠 Psicologia</span>
+        <span class="interest-pill" data-pt="♈ Astrologia" data-en="♈ Astrology">♈ Astrologia</span>
+        <span class="interest-pill" data-pt="🌌 Astronomia" data-en="🌌 Astronomy">🌌 Astronomia</span>
+        <span class="interest-pill" data-pt="✈️ Viagens" data-en="✈️ Travel">✈️ Viagens</span>
+        <span class="interest-pill" data-pt="🧘 Pilates" data-en="🧘 Pilates">🧘 Pilates</span>
+        <span class="interest-pill" data-pt="📖 Poesia" data-en="📖 Poetry">📖 Poesia</span>
+        <span class="interest-pill" data-pt="🔮 Misticismo" data-en="🔮 Mysticism">🔮 Misticismo</span>
+        <span class="interest-pill" data-pt="🌿 Espiritualidade" data-en="🌿 Spirituality">🌿 Espiritualidade</span>
+        <span class="interest-pill" data-pt="🪞 Autoconhecimento" data-en="🪞 Self-knowledge">🪞 Autoconhecimento</span>
+      </div>
+    </div>
+
+    <div class="personal-photo-col fade" data-delay="120">
+      <div class="personal-photo-frame">
+        <img class="personal-photo" src="assets/foto-3d.jpg" alt="" aria-hidden="true" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="personal-photo-placeholder" style="display:none;" aria-hidden="true">foto-3d.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 3: EDUCATION -->
+<section class="sobre-edu" aria-label="Formação">
+  <div class="sobre-edu-inner fade">
+    <span class="sec-label" data-pt="Formação" data-en="Education">Formação</span>
+    <h2 data-pt="Sempre aprendendo." data-en="Always learning.">Sempre aprendendo.</h2>
+    <div class="edu-list">
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-name" data-pt="Pós-Graduação em UX Design" data-en="Postgraduate in UX Design">Pós-Graduação em UX Design</div>
+          <div class="edu-inst" data-pt="Universidade Presbiteriana Mackenzie · jan 2025 – em andamento" data-en="Mackenzie Presbyterian University · Jan 2025 – ongoing">Universidade Presbiteriana Mackenzie · jan 2025 – em andamento</div>
+        </div>
+        <span class="edu-badge" data-pt="Em andamento" data-en="Ongoing">Em andamento</span>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-name" data-pt="Digital Product Design" data-en="Digital Product Design">Digital Product Design</div>
+          <div class="edu-inst" data-pt="Tera · em andamento" data-en="Tera · ongoing">Tera · em andamento</div>
+        </div>
+        <span class="edu-badge" data-pt="Em andamento" data-en="Ongoing">Em andamento</span>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-name" data-pt="ComunicaSimples — Escrita e Comunicação" data-en="ComunicaSimples — Writing and Communication">ComunicaSimples — Escrita e Comunicação</div>
+          <div class="edu-inst" data-pt="Heloísa Fischer · em andamento" data-en="Heloísa Fischer · ongoing">Heloísa Fischer · em andamento</div>
+        </div>
+        <span class="edu-badge" data-pt="Em andamento" data-en="Ongoing">Em andamento</span>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-name" data-pt="UX Writing" data-en="UX Writing">UX Writing</div>
+          <div class="edu-inst" data-pt="Mergo · 2019" data-en="Mergo · 2019">Mergo · 2019</div>
+        </div>
+        <span class="edu-badge done" data-pt="Concluído" data-en="Completed">Concluído</span>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-name" data-pt="Comunicação Social — Publicidade e Propaganda" data-en="Social Communication — Advertising and Propaganda">Comunicação Social — Publicidade e Propaganda</div>
+          <div class="edu-inst" data-pt="FAM — Faculdade das Américas · 2016–2019" data-en="FAM — Faculdade das Américas · 2016–2019">FAM — Faculdade das Américas · 2016–2019</div>
+        </div>
+        <span class="edu-badge done" data-pt="Concluído" data-en="Completed">Concluído</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 4: CERTIFICATIONS -->
+<section class="sobre-certs" aria-label="Certificações">
+  <div class="sobre-certs-inner fade">
+    <span class="sec-label-light" data-pt="Certificações" data-en="Certifications">Certificações</span>
+    <h2 data-pt="Credenciais e aprendizados formais." data-en="Credentials and formal learning.">Credenciais e aprendizados formais.</h2>
+    <div class="certs-grid">
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="EF SET English Certificate C2 Proficient" data-en="EF SET English Certificate C2 Proficient">EF SET English Certificate C2 Proficient</div>
+        <div class="cert-org">EF Standard English Test</div>
+        <div class="cert-date" data-pt="mar 2024" data-en="Mar 2024">mar 2024</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="Enterprise Design Thinking Practitioner" data-en="Enterprise Design Thinking Practitioner">Enterprise Design Thinking Practitioner</div>
+        <div class="cert-org">IBM</div>
+        <div class="cert-date" data-pt="mai 2021" data-en="May 2021">mai 2021</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="Advancing Accessibility" data-en="Advancing Accessibility">Advancing Accessibility</div>
+        <div class="cert-org">IBM</div>
+        <div class="cert-date" data-pt="abr 2023" data-en="Apr 2023">abr 2023</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="Design &amp; UX Essentials" data-en="Design &amp; UX Essentials">Design &amp; UX Essentials</div>
+        <div class="cert-org">IBM</div>
+        <div class="cert-date" data-pt="jan 2023" data-en="Jan 2023">jan 2023</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="iOS Design Essentials" data-en="iOS Design Essentials">iOS Design Essentials</div>
+        <div class="cert-org">IBM</div>
+        <div class="cert-date" data-pt="abr 2023" data-en="Apr 2023">abr 2023</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="Watson Assistant Foundations" data-en="Watson Assistant Foundations">Watson Assistant Foundations</div>
+        <div class="cert-org">IBM</div>
+        <div class="cert-date" data-pt="abr 2021" data-en="Apr 2021">abr 2021</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="Comunicação e Oratória" data-en="Communication and Public Speaking">Comunicação e Oratória</div>
+        <div class="cert-org">Conquer</div>
+        <div class="cert-date" data-pt="ago 2023" data-en="Aug 2023">ago 2023</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="Inteligência Emocional 2.0" data-en="Emotional Intelligence 2.0">Inteligência Emocional 2.0</div>
+        <div class="cert-org">Conquer</div>
+        <div class="cert-date" data-pt="ago 2023" data-en="Aug 2023">ago 2023</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 5: CAUSES -->
+<section class="sobre-causes" aria-label="Causas que apoio">
+  <div class="sobre-causes-inner fade">
+    <span class="sec-label" data-pt="Causas" data-en="Causes">Causas</span>
+    <h2 data-pt="O que importa além do trabalho." data-en="What matters beyond work.">O que importa além do trabalho.</h2>
+    <div class="causes-pills">
+      <span class="cause-pill" data-pt="Bem-estar Animal" data-en="Animal Welfare">Bem-estar Animal</span>
+      <span class="cause-pill" data-pt="Artes e Cultura" data-en="Arts and Culture">Artes e Cultura</span>
+      <span class="cause-pill" data-pt="Direitos Civis" data-en="Civil Rights">Direitos Civis</span>
+      <span class="cause-pill" data-pt="Educação" data-en="Education">Educação</span>
+      <span class="cause-pill" data-pt="Meio Ambiente" data-en="Environment">Meio Ambiente</span>
+      <span class="cause-pill" data-pt="Saúde" data-en="Health">Saúde</span>
+      <span class="cause-pill" data-pt="Direitos Humanos" data-en="Human Rights">Direitos Humanos</span>
+      <span class="cause-pill" data-pt="Tecnologia e Ciência" data-en="Technology and Science">Tecnologia e Ciência</span>
+      <span class="cause-pill" data-pt="Empoderamento Econômico" data-en="Economic Empowerment">Empoderamento Econômico</span>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 6: CTA -->
+<section class="sobre-cta" aria-label="Call to action">
+  <div class="sobre-cta-inner fade">
+    <h2 data-pt="Vamos construir algo <em>juntos</em>?" data-en="Let's build something <em>together</em>?">Vamos construir algo <em>juntos</em>?</h2>
+    <p data-pt="Atualmente na Avenue Securities. Aberta a freelas e conversas sobre Content Design, Design Conversacional e IA Generativa." data-en="Currently at Avenue Securities. Open to freelance work and conversations about Content Design, Conversational Design, and Generative AI.">Atualmente na Avenue Securities. Aberta a freelas e conversas sobre Content Design, Design Conversacional e IA Generativa.</p>
+    <div class="sobre-cta-btns">
+      <a href="index.html#cases" class="btn btn-outline" data-pt="← Ver todos os cases" data-en="← See all cases">← Ver todos os cases</a>
+      <a href="mailto:silvabsamantha@gmail.com" class="btn btn-primary">silvabsamantha@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Samantha Barreto · Diadema, SP</p>
+  <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
+  <p><a href="index.html#cases" data-pt="Ver todos os cases" data-en="See all cases">Ver todos os cases</a></p>
+</footer>
+
+<script src="assets/shared.js"></script>
+<script>
+  // Nav dark based on intro section
+  const introEl = document.querySelector('.sobre-intro');
+  const navEl = document.getElementById('main-nav');
+  if (introEl && navEl) {
+    const navObs = new IntersectionObserver(([entry]) => {
+      navEl.classList.toggle('nav-on-dark', entry.isIntersecting);
+    }, { threshold: 0.1 });
+    navObs.observe(introEl);
+  }
+</script>
+</body>
+</html>

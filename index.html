@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samantha Silva — Content Designer & UX Writer</title>
-<meta name="description" content="Portfólio de Samantha Silva — Content Designer, UX Writer e Designer Conversacional, especialista em IA Generativa e fintech.">
+<title>Samantha Barreto — Content Designer & Conversational AI Designer</title>
+<meta name="description" content="Portfólio de Samantha Barreto, Content Designer, Conversational AI Designer e Designer Conversacional, especialista em IA Generativa e fintech.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/shared.css">
@@ -100,7 +100,7 @@
 }
 .hero-role {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.62);
   font-weight: 300;
 }
 .hero-role.hi { color: rgba(255,255,255,0.82); font-weight: 400; }
@@ -120,6 +120,7 @@
     order: 1;
     min-height: 55vw;
     max-height: 480px;
+    padding-top: var(--nav-height);
   }
 }
 .hero-photo-wrap {
@@ -191,7 +192,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.5);
 }
 .scroll-line {
   width: 1px; height: 40px;
@@ -390,7 +391,7 @@
 .case-featured .case-card-number { color: rgba(26,155,118,0.7); }
 .case-featured .case-card-co { color: rgba(255,255,255,0.3); }
 .case-featured .case-card-title { color: var(--white); font-size: 1.75rem; }
-.case-featured .case-card-desc { color: rgba(255,255,255,0.45); }
+.case-featured .case-card-desc { color: rgba(255,255,255,0.6); }
 .case-featured .case-metric-val { font-size: 2rem; color: var(--green-2); }
 .case-featured .case-metric-label { color: rgba(255,255,255,0.35); }
 .case-featured .case-card-metrics { border-top-color: rgba(255,255,255,0.07); }
@@ -585,8 +586,8 @@ footer {
   gap: 1rem;
   flex-wrap: wrap;
 }
-footer p { font-size: 0.78rem; color: rgba(255,255,255,0.2); font-weight: 300; }
-footer a { color: rgba(255,255,255,0.35); transition: color 0.2s; }
+footer p { font-size: 0.78rem; color: rgba(255,255,255,0.6); font-weight: 300; }
+footer a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
 footer a:hover { color: var(--green-2); }
 
 /* ── NAV override for hero (light nav on dark bg) ─────────────── */
@@ -600,13 +601,13 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 </style>
 </head>
 <body data-case="index">
-<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+<a href="#hero" class="skip-link">Pular para o conteúdo principal</a>
 
 <!-- NAV -->
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="index.html" class="nav-logo">Samantha<span>.</span></a>
   <ul class="nav-center">
-    <li><a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
     <li><a href="#cases" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="#processo" data-pt="Processo" data-en="Process">Processo</a></li>
     <li><a href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
@@ -624,13 +625,13 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   <div class="hero-left">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot"></span>
-      <span data-pt="Disponível para freelas e conversas" data-en="Available for freelance and conversations">Disponível para freelas e conversas</span>
+      <span data-pt="Content Designer na Avenue Securities" data-en="Content Designer at Avenue Securities">Content Designer na Avenue Securities</span>
     </div>
-    <h1 class="hero-name">Samantha<br><em>Silva</em></h1>
+    <h1 class="hero-name">Samantha<br><em>Barreto</em></h1>
     <div class="hero-roles">
       <span class="hero-role hi">Content Designer</span>
       <span class="hero-role hi" data-pt="Designer Conversacional" data-en="Conversational Designer">Designer Conversacional</span>
-      <span class="hero-role hi">UX Writer</span>
+      <span class="hero-role hi" data-pt="Conversational AI Designer" data-en="Conversational AI Designer">Conversational AI Designer</span>
       <span class="hero-role" data-pt="IA Generativa · Fintech · 6+ anos" data-en="Generative AI · Fintech · 6+ years">IA Generativa · Fintech · 6+ anos</span>
     </div>
     <div class="hero-cta">
@@ -656,13 +657,39 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 @keyframes il-blink{0%,100%{opacity:1}50%{opacity:0}}
 .il-cur{fill:rgba(26,155,118,0.8);animation:il-blink 1.3s ease-in-out infinite}
 
+/* ── Subtítulo e prática do processo ───────────────────────────── */
+.process-subtitle {
+  font-size: 1rem; color: rgba(255,255,255,0.6); font-weight: 300;
+  margin-top: -0.5rem; margin-bottom: 2.5rem; max-width: 560px;
+  line-height: 1.6;
+}
+.process-practice {
+  margin-top: 3rem; padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.practice-label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--green-2); margin-bottom: 1.25rem;
+}
+.practice-pills {
+  display: flex; flex-wrap: wrap; gap: 0.625rem;
+}
+.practice-pill {
+  display: inline-flex; align-items: center;
+  padding: 0.4rem 0.875rem; border-radius: var(--r-full);
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem; color: rgba(255,255,255,0.75); font-weight: 300;
+  transition: background 0.2s, color 0.2s;
+}
+.practice-pill:hover { background: rgba(15,110,86,0.18); color: var(--green-2); border-color: rgba(15,110,86,0.35); }
+
 /* ── Carrossel do processo ──────────────────────────────────────── */
 .process-carousel { margin-top: 0; }
 
 .carousel-eyebrow {
   font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: rgba(255,255,255,0.25); margin-bottom: 1rem;
+  color: rgba(255,255,255,0.6); margin-bottom: 1rem;
 }
 .carousel-slides { position: relative; }
 .carousel-slide { display: none; }
@@ -697,7 +724,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   border-radius: var(--r-sm); padding: 0.875rem 1rem;
 }
 .cstat-val { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--green-2); line-height: 1; }
-.cstat-label { font-size: 0.72rem; color: rgba(255,255,255,0.38); margin-top: 3px; line-height: 1.4; }
+.cstat-label { font-size: 0.72rem; color: rgba(255,255,255,0.65); margin-top: 3px; line-height: 1.4; }
 
 .cquote {
   border-left: 2px solid rgba(220,80,80,0.4);
@@ -708,7 +735,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   line-height: 1.6; font-style: italic;
   margin-bottom: 0.75rem;
 }
-.cnote { font-size: 0.82rem; color: rgba(255,255,255,0.42); line-height: 1.65; font-weight: 300; }
+.cnote { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.65; font-weight: 300; }
 
 .cdiag { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .cdiag:last-child { border-bottom: none; padding-bottom: 0; }
@@ -869,7 +896,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       </svg>
       <!-- Foto principal -->
       <div class="hero-photo-frame">
-        <img class="hero-photo" src="assets/foto.jpg" alt="Samantha Silva, Content Designer">
+        <img class="hero-photo" src="assets/foto.jpg" alt="Samantha Barreto, Content Designer">
       </div>
     </div>
   </div>
@@ -893,7 +920,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 </section>
 
 <!-- ABOUT -->
-<section class="about-sec" id="sobre" aria-label="Sobre Samantha Silva">
+<section class="about-sec" id="sobre" aria-label="Sobre Samantha Barreto">
   <div class="about-left fade">
     <div class="sec-label" data-pt="Sobre mim" data-en="About me">Sobre mim</div>
     <h2 class="about-quote" data-pt="Conteúdo que <em>resolve</em>, não só comunica." data-en="Content that <em>solves</em>, not just communicates.">Conteúdo que <em>resolve</em>, não só comunica.</h2>
@@ -905,8 +932,9 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       <p class="about-highlight">E, no meio disso tudo, existe um momento que ainda me encanta.<br>Quando um número melhora por causa de uma frase bem colocada.</p>
     </div>
     <div class="about-links">
-      <a href="https://linkedin.com/in/samanthasilva-ux" class="btn btn-ghost" target="_blank">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/samanthabarretoux/" class="btn btn-ghost" target="_blank">LinkedIn</a>
       <a href="https://wa.me/5511952054102?text=Oi%20Samantha%2C%20vi%20seu%20portf%C3%B3lio%20e%20queria%20conversar!" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="sobre.html" class="btn btn-outline" data-pt="Conheça mais sobre mim →" data-en="Get to know me better →">Conheça mais sobre mim →</a>
     </div>
   </div>
   <div class="about-right fade" data-delay="100">
@@ -917,8 +945,8 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
         <div class="skill-items">
           <span class="skill-pill skill-pill-green">Chatbot</span>
           <span class="skill-pill skill-pill-green">NLP / Intents</span>
-          <span class="skill-pill skill-pill-green">Dialogflow</span>
-          <span class="skill-pill skill-pill-green">Watson</span>
+          <span class="skill-pill skill-pill-green">NLU</span>
+          <span class="skill-pill skill-pill-green">NLG</span>
           <span class="skill-pill skill-pill-green">Fluxos</span>
         </div>
       </div>
@@ -994,8 +1022,8 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   <a href="cases/case-04.html" class="case-featured fade">
     <div class="case-featured-left">
       <div class="case-card-number" data-pt="Case em destaque · Personalidade & Tom de Voz" data-en="Featured case · Personality & Tone of Voice">Case em destaque · Personalidade & Tom de Voz</div>
-      <div class="case-card-co">IBM Brasil / Banco Itaú · 2020–2022</div>
-      <h3 class="case-card-title" data-pt="Niara: Criando a alma de um assistente virtual de RH" data-en="Niara — Building the soul of an HR virtual assistant">Niara: Criando a alma de um assistente virtual de RH</h3>
+      <div class="case-card-co">grande instituição de tecnologia / grande instituição financeira nacional · 2020–2022</div>
+      <h3 class="case-card-title" data-pt="Niara: Criando a alma de um assistente virtual de RH" data-en="Niara: Building the soul of an HR virtual assistant">Niara: Criando a alma de um assistente virtual de RH</h3>
       <p class="case-card-desc" data-pt="+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot." data-en="+600 employees interviewed, 40h of content testing, 24h of Design Sprint. From scratch to a personality that changed the bot's numbers.">+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot.</p>
       <div class="case-card-tags">
         <span class="tag" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</span>
@@ -1034,7 +1062,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
         <div class="case-card-number">Case 01 · IA Generativa</div>
         <div class="case-card-co">Avenue Securities · 2025</div>
         <h3 class="case-card-title" data-pt="Assistente de Voz da Marca" data-en="Brand Voice Assistant">Assistente de Voz da Marca</h3>
-        <p class="case-card-desc" data-pt="Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada." data-en="AI copilot to ensure voice consistency across all channels — adapted by segment and journey moment.">Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.</p>
+        <p class="case-card-desc" data-pt="Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada." data-en="AI copilot to ensure voice consistency across all channels, adapted by segment and journey moment.">Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.</p>
         <div class="case-card-tags">
           <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-pt="Em piloto" data-en="In pilot">Em piloto</span>
           <span class="tag">Gen AI</span>
@@ -1044,10 +1072,10 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 
     <a href="cases/case-02.html" class="case-card">
       <div class="case-card-body">
-        <div class="case-card-number" data-pt="Case 02 · Framework próprio" data-en="Case 02 · Own framework">Case 02 · Framework próprio</div>
+        <div class="case-card-number" data-pt="Case 02 · Framework próprio" data-en="Case 02 · Custom framework">Case 02 · Framework próprio</div>
         <div class="case-card-co">Avenue Securities · 2026</div>
         <h3 class="case-card-title" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</h3>
-        <p class="case-card-desc" data-pt="Uma iniciativa minha para inverter o processo. Intenção antes de canal. Prototipado e testando." data-en="Own initiative to flip the process: intention before channel. Prototyped and testing.">Uma iniciativa minha para inverter o processo. Intenção antes de canal. Prototipado e testando.</p>
+        <p class="case-card-desc" data-pt="Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando." data-en="Own initiative to optimize the process: intention before channel. Prototyped and testing.">Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando.</p>
         <div class="case-card-tags">
           <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-pt="Em testes" data-en="In testing">Em testes</span>
           <span class="tag">Content Strategy</span>
@@ -1058,8 +1086,8 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     <a href="cases/case-03.html" class="case-card">
       <div class="case-card-body">
         <div class="case-card-number">Case 03 · UX Writing</div>
-        <div class="case-card-co">Stone & Co · 2023–2025</div>
-        <h3 class="case-card-title" data-pt="Redesign Conversacional: Crédito PJ" data-en="Conversational Redesign — Business Credit">Redesign Conversacional: Crédito PJ</h3>
+        <div class="case-card-co">grande instituição brasileira de pagamentos · 2023–2025</div>
+        <h3 class="case-card-title" data-pt="Redesign Conversacional: Crédito PJ" data-en="Conversational Redesign: Business Credit">Redesign Conversacional: Crédito PJ</h3>
         <p class="case-card-desc" data-pt="O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo." data-en="Information hierarchy and unmapped scenarios. Biggest CSAT offender turned into real improvement.">O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo.</p>
         <div class="case-card-metrics">
           <div>
@@ -1077,8 +1105,8 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     <a href="cases/case-05.html" class="case-card">
       <div class="case-card-body">
         <div class="case-card-number" data-pt="Case 05 · Alta pressão" data-en="Case 05 · High pressure">Case 05 · Alta pressão</div>
-        <div class="case-card-co">IBM / Banco Itaú · 2020–2022</div>
-        <h3 class="case-card-title" data-pt="Assistente de Gerentes PF: do zero ao segundo começo" data-en="Branch Manager Assistant — from scratch to a second start">Assistente de Gerentes PF: do zero ao segundo começo</h3>
+        <div class="case-card-co">grande instituição financeira nacional · 2020–2022</div>
+        <h3 class="case-card-title" data-pt="Assistente de Gerentes PF e PJ: do zero ao segundo começo" data-en="Branch Manager PF &amp; PJ Assistant: from scratch to a second start">Assistente de Gerentes PF e PJ: do zero ao segundo começo</h3>
         <p class="case-card-desc" data-pt="O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto." data-en="Chatbot for branch managers with the customer right in front. High-pressure context changes everything in conversational design.">O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto.</p>
         <div class="case-card-tags">
           <span class="tag">Conversational Design</span>
@@ -1089,8 +1117,8 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     <a href="cases/case-06.html" class="case-card">
       <div class="case-card-body">
         <div class="case-card-number">Case 06 · Content First</div>
-        <div class="case-card-co">IBM / Banco Itaú · 2020–2022</div>
-        <h3 class="case-card-title" data-pt="Seguros — Content First do Zero" data-en="Insurance — Content First from Scratch">Seguros — Content First do Zero</h3>
+        <div class="case-card-co">grande instituição financeira nacional · 2020–2022</div>
+        <h3 class="case-card-title" data-pt="Seguros: Content First do Zero" data-en="Insurance: Content First from Scratch">Seguros: Content First do Zero</h3>
         <p class="case-card-desc" data-pt="Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa." data-en="New insurance assistant designed before any screen: intention, expected outcome, enactment, and journey.">Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa.</p>
         <div class="case-card-tags">
           <span class="tag">Content First</span>
@@ -1102,8 +1130,8 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     <a href="cases/case-07.html" class="case-card">
       <div class="case-card-body">
         <div class="case-card-number">Case 07 · API & Jornada</div>
-        <div class="case-card-co">IBM / Banco Itaú · 2020–2022</div>
-        <h3 class="case-card-title" data-pt="Cartão de Crédito: a pergunta que não foi respondida" data-en="Credit Card — the question that wasn't answered">Cartão de Crédito: a pergunta que não foi respondida</h3>
+        <div class="case-card-co">grande instituição financeira nacional · 2020–2022</div>
+        <h3 class="case-card-title" data-pt="Cartão de Crédito: a pergunta que não foi respondida" data-en="Credit Card: the question that wasn't answered">Cartão de Crédito: a pergunta que não foi respondida</h3>
         <p class="case-card-desc" data-pt="O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API." data-en="The customer asked when the card arrives, not what the deadline is. Three solution scenarios with and without API.">O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API.</p>
         <div class="case-card-tags">
           <span class="tag">API</span>
@@ -1123,6 +1151,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 <section class="sec process-sec" id="processo" aria-label="Processo de trabalho">
   <div class="sec-label" data-pt="Como trabalho" data-en="How I work">Como trabalho</div>
   <h2 class="sec-title sec-title-light" data-pt="Do problema real ao resultado real." data-en="From real problem to real result.">Do problema real ao resultado real.</h2>
+  <p class="process-subtitle fade" data-pt="Do Discovery ao Delivery: CX Research, Content First e validação por dados." data-en="From Discovery to Delivery: CX Research, Content First, and data-driven validation.">Do Discovery ao Delivery: CX Research, Content First e validação por dados.</p>
 
   <div class="process-layout">
     <div class="process-steps fade">
@@ -1158,7 +1187,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 
     <!-- Carrossel do processo -->
     <div class="process-carousel fade" data-delay="150" role="region" aria-label="Exemplo prático do processo de trabalho">
-      <div class="carousel-eyebrow">Na prática · Chatbot de Crédito PJ · Stone & Co · 2023–2025</div>
+      <div class="carousel-eyebrow">Na prática · Chatbot de Crédito PJ · grande instituição brasileira de pagamentos · 2023–2025</div>
       <div class="carousel-slides">
 
         <div class="carousel-slide active" id="cs1">
@@ -1187,7 +1216,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
             <div class="cdiag"><span class="cdiag-dot red"></span><p>A resposta não respondia à pergunta. O cliente perguntava <strong>se tinha crédito</strong> e o bot explicava como o sistema de análise funcionava.</p></div>
             <div class="cdiag"><span class="cdiag-dot red"></span><p>Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirado</strong>, sem nenhuma explicação no fluxo.</p></div>
             <div class="cdiag"><span class="cdiag-dot red"></span><p>Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto.</p></div>
-            <div class="cdiag"><span class="cdiag-dot green"></span><p>Esses cenários foram identificados lendo conversas reais. <strong>Não apareciam nos tickets</strong> como problema de conteúdo. Estavam escondidos como clientes insatisfeitos.</p></div>
+            <div class="cdiag"><span class="cdiag-dot green"></span><p>Esses cenários foram identificados lendo conversas reais. <strong>Não apareciam nos tickets</strong> como problema de conteúdo. Revelavam-se como clientes insatisfeitos.</p></div>
           </div>
         </div>
 
@@ -1250,26 +1279,40 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       </div>
     </div>
   </div>
+
+  <!-- Meu processo em prática -->
+  <div class="process-practice fade" data-delay="100">
+    <div class="practice-label" data-pt="Meu processo em prática" data-en="My process in practice">Meu processo em prática</div>
+    <div class="practice-pills">
+      <span class="practice-pill" data-pt="Pesquisa com clientes (CX Research)" data-en="Customer Research (CX Research)">Pesquisa com clientes (CX Research)</span>
+      <span class="practice-pill" data-pt="Mapeamento da Jornada da Pessoa Usuária" data-en="User Journey Mapping">Mapeamento da Jornada da Pessoa Usuária</span>
+      <span class="practice-pill" data-pt="Content First (Conteúdo Primeiro)" data-en="Content First Approach">Content First (Conteúdo Primeiro)</span>
+      <span class="practice-pill" data-pt="Construção de Content Systems e Content Ops" data-en="Content Systems &amp; Content Ops">Construção de Content Systems e Content Ops</span>
+      <span class="practice-pill" data-pt="Princípios de Conteúdo e Acessibilidade" data-en="Content Principles &amp; Accessibility">Princípios de Conteúdo e Acessibilidade</span>
+      <span class="practice-pill" data-pt="Integração com IA e Revisão Estratégica" data-en="AI Integration &amp; Strategic Review">Integração com IA e Revisão Estratégica</span>
+      <span class="practice-pill" data-pt="Storytelling" data-en="Storytelling">Storytelling</span>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact-sec" id="contato" aria-label="Contato">
   <div class="contact-availability fade">
     <span class="hero-eyebrow-dot"></span>
-    <span data-pt="Disponível para freelas e conversas" data-en="Available for freelance and conversations">Disponível para freelas e conversas</span>
+    <span data-pt="Atualmente na Avenue Securities" data-en="Currently at Avenue Securities">Atualmente na Avenue Securities</span>
   </div>
   <h2 class="contact-title fade" data-pt="Vamos construir algo <em>juntos</em>?" data-en="Let's build something <em>together</em>?">Vamos construir algo <em>juntos</em>?</h2>
-  <p class="contact-sub fade" data-pt="Aberta a freelas e conversas sobre Content Design, Design Conversacional e IA Generativa, no Brasil ou internacionalmente." data-en="Open to freelance work and conversations about Content Design, Conversational Design, and Generative AI — in Brazil or internationally.">Aberta a freelas e conversas sobre Content Design, Design Conversacional e IA Generativa, no Brasil ou internacionalmente.</p>
+  <p class="contact-sub fade" data-pt="Atualmente na Avenue Securities. Aberta a freelas e conversas sobre Content Design, Design Conversacional e IA Generativa, no Brasil ou internacionalmente." data-en="Currently at Avenue Securities. Open to freelance work and conversations about Content Design, Conversational Design, and Generative AI, in Brazil or internationally.">Atualmente na Avenue Securities. Aberta a freelas e conversas sobre Content Design, Design Conversacional e IA Generativa, no Brasil ou internacionalmente.</p>
   <div class="contact-links fade">
     <a href="mailto:silvabsamantha@gmail.com" class="btn btn-primary">silvabsamantha@gmail.com</a>
-    <a href="https://linkedin.com/in/samanthasilva-ux" class="btn btn-outline" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/samanthabarretoux/" class="btn btn-outline" target="_blank">LinkedIn</a>
     <a href="https://wa.me/5511952054102?text=Oi%20Samantha%2C%20vi%20seu%20portf%C3%B3lio%20e%20queria%20conversar!" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Samantha Silva · Diadema, SP</p>
+  <p>© 2026 Samantha Barreto · Diadema, SP</p>
   <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
   <p><a href="#cases" data-pt="Ver todos os cases" data-en="See all cases">Ver todos os cases</a></p>
 </footer>
