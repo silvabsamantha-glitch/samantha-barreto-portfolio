@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case 04: Niara — a alma de um assistente — Samantha Barreto</title>
-<meta name="description" content="Como desenvolvemos a personalidade de um chatbot de RH ouvindo mais de 600 colaboradores.">
+<title>Case 04: Cartão de Crédito, a pergunta que não foi respondida · Samantha Barreto</title>
+<meta name="description" content="Um estudo de caso sobre como um chatbot bem-intencionado falhou em responder à pergunta mais simples do cliente.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/shared.css">
@@ -26,7 +26,9 @@
 .mitem:last-child{border-right:none;margin-right:0}
 .mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
 .ml{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4}
-.pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#854F0B;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.22);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
+.pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#F5C058;background:rgba(186,117,23,.2);border:1px solid rgba(186,117,23,.4);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
+.badge-study{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);padding:5px 14px;border-radius:var(--r-full);margin-top:1.5rem}
+.badge-study span{font-size:.82rem;font-weight:400;color:rgba(255,255,255,.85);line-height:1.4}
 .pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 .cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
@@ -131,23 +133,23 @@
 .scen{border-radius:var(--r-md);overflow:hidden;border:0.5px solid var(--gray-line);margin-bottom:8px}
 .scheader{padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem}
 .scheader.api{background:#E1F5EE}.scheader.semi{background:#FAEEDA}.scheader.noapi{background:var(--gray-light)}
-.scn{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.scheader.api .scn{color:#085041}.scheader.semi .scn{color:#633806}.scheader.noapi .scn{color:var(--gray)}
+.scn{font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.scheader.api .scn{color:#085041}.scheader.semi .scn{color:#633806}.scheader.noapi .scn{color:var(--navy)}
 .sct{font-size:.875rem;font-weight:500}
 .scheader.api .sct{color:#085041}.scheader.semi .sct{color:#633806}.scheader.noapi .sct{color:var(--navy)}
-.scbadge{margin-left:auto;font-size:.7rem;padding:2px 8px;border-radius:var(--r-full);font-weight:500}
+.scbadge{margin-left:auto;font-size:.8rem;padding:2px 8px;border-radius:var(--r-full);font-weight:500}
 .scheader.api .scbadge{background:rgba(15,110,86,.15);color:#085041}
 .scheader.semi .scbadge{background:rgba(133,79,11,.15);color:#633806}
-.scheader.noapi .scbadge{background:var(--gray-light);color:var(--gray)}
+.scheader.noapi .scbadge{background:var(--gray-line);color:var(--navy)}
 .scbody{padding:.875rem 1rem}
 .scitem{display:flex;gap:.625rem;align-items:flex-start;margin-bottom:.375rem}
 .scdot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
 .scheader.api+.scbody .scdot{background:var(--green)}
 .scheader.semi+.scbody .scdot{background:#C4820A}
-.scheader.noapi+.scbody .scdot{background:var(--gray)}
-.sctext{font-size:.875rem;color:var(--gray);line-height:1.55;font-weight:300}
-.sctext strong{color:var(--navy);font-weight:500}
-.scex{font-size:.8rem;background:var(--gray-light);border-left:2px solid var(--gray-line);padding:.5rem .75rem;margin-top:.5rem;color:var(--gray);font-style:italic;line-height:1.55}
+.scheader.noapi+.scbody .scdot{background:var(--navy)}
+.sctext{font-size:.875rem;color:var(--navy);line-height:1.55;font-weight:400}
+.sctext strong{color:var(--navy);font-weight:600}
+.scex{font-size:.8rem;background:var(--gray-light);border-left:2px solid var(--gray-line);padding:.5rem .75rem;margin-top:.5rem;color:var(--navy);font-style:italic;line-height:1.55}
 .journey{display:flex;overflow:hidden;border-radius:var(--r-md);border:0.5px solid var(--gray-line)}
 .jstep{flex:1;padding:.75rem .5rem;background:var(--white);text-align:center;position:relative;border-right:0.5px solid var(--gray-line)}
 .jstep:last-child{border-right:none}
@@ -199,87 +201,84 @@
     </div>
   </div>
 </nav>
-<section class="case-hero" aria-label="Case 04: Niara — criação de personalidade e tom de voz em grande instituição financeira nacional">
+<section class="case-hero" aria-label="Case 07: Estudo de caso sobre cartão de crédito em grande instituição financeira nacional">
   <div class="case-hero-inner">
-    <div class="cpill">Case 04 · Tom de Voz · Persona · UX Research</div>
-    <div class="cco">grande instituição financeira nacional · Conversational AI Designer · 2020–2022</div>
-    <h1 data-pt="Niara: a alma de um assistente virtual" data-en="Niara: the soul of a virtual assistant">Niara: a alma de um assistente virtual</h1>
-    <p class="hsub" data-pt="Como desenvolvemos a personalidade de um chatbot de RH ouvindo mais de 600 colaboradores e o que aconteceu com os números depois que a Niara ganhou vida." data-en="How we developed the personality of an HR chatbot by listening to more than 600 employees, and what happened to the numbers after Niara came to life.">Como desenvolvemos a personalidade de um chatbot de RH ouvindo mais de 600 colaboradores e o que aconteceu com os números depois que a Niara ganhou vida.</p>
-    <div class="ctags"><span class="tag">Tom de Voz</span><span class="tag">Persona</span><span class="tag">Design Sprint</span><span class="tag">UX Research</span><span class="tag">Território Verbal</span></div>
-    <div class="disc">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo de pesquisa, as metodologias aplicadas e os resultados são reais.</div>
-    <div class="mbar">
-      <div class="mitem"><div class="mv">+64%</div><div class="ml">volume de conversas</div></div>
-      <div class="mitem"><div class="mv">+25%</div><div class="ml">share de atendimento digital</div></div>
-      <div class="mitem"><div class="mv">+9pp</div><div class="ml">acurácia</div></div>
-      <div class="mitem"><div class="mv">−11,5pp</div><div class="ml">falso positivo</div></div>
+    <div class="cpill purple">Case 04 · Estudo de Caso · UX Writing · API</div>
+    <div class="cco">grande instituição financeira nacional · Conversational AI Designer · 2020/2022</div>
+    <h1 data-pt="Cartão de Crédito: a pergunta que não foi respondida" data-en="Credit Card: the question that wasn't answered">Cartão de Crédito: a pergunta que não foi respondida</h1>
+    <p class="hsub" data-pt="Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API." data-en="An analysis of how a well-intentioned chatbot failed to answer the customer's simplest question, and three possible paths to fix it, with and without API integration.">Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API.</p>
+    <div class="ctags"><span class="tag">Estudo de caso</span><span class="tag">UX Writing</span><span class="tag">Cenários</span><span class="tag">API</span><span class="tag">Jornada</span></div>
+    <div class="disc">Este é um estudo de caso: análise e proposta de melhoria, não uma implementação. Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. A análise e os cenários propostos são reais.</div>
+    <div class="badge-study">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span data-pt="Estudo de caso: análise e proposta, não implementação" data-en="Case study: analysis and proposal, not implementation">Estudo de caso: análise e proposta, não implementação</span>
     </div>
   </div>
 </section>
 <main id="case-content" class="cbody">
   <div class="sec fade">
-    <div class="slabel">01 — O contexto</div>
-    <p>A instituição tinha um assistente virtual de RH maduro em uso. O problema era que ninguém sabia bem quem ele era. Os colaboradores confundiam com outros bots do banco, o tom era genérico e o objetivo principal, aumentar o share digital de atendimento, estava longe de ser atingido.</p>
-    <p>O desafio era criar uma voz, um nome e uma personalidade a partir do zero, sem perder os resultados que o bot já tinha. E fazer isso <strong>ouvindo as pessoas que usavam o sistema todos os dias</strong>, não só o time de produto.</p>
+    <div class="slabel">01: O problema</div>
+    <p>O cliente pediu um cartão de crédito e entrou no chatbot para saber quando ele chegaria. Recebeu a mesma resposta genérica que já tinha visto no app. Insatisfeito, ligou para a central, e o atendente humano disse exatamente a mesma coisa.</p>
+    <div class="pq" style="border-color:#A32D2D;background:#FEF2F2">
+      <p style="color:#991B1B">"O cliente perguntou quando chega o cartão. Não qual é o prazo padrão."</p>
+    </div>
+    <p>Essa diferença parece pequena. Não é. O atendimento humano tinha acesso à data exata do pedido e conseguia calcular um prazo personalizado. O chatbot não tinha, e entregou uma resposta genérica como se fosse suficiente.</p>
   </div>
   <div class="sec fade">
-    <div class="slabel">02 — O processo de pesquisa</div>
-  <div class="case-img-block"><img src="../assets/images/case-04-pesquisa.svg" alt="Processo de pesquisa da Niara" class="case-img" loading="lazy"/><p class="desktop-note" style="display:none;padding:1rem;background:var(--gray-light);border-radius:8px;font-size:0.875rem;color:var(--gray);line-height:1.6;text-align:center;">Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.</p><p class="case-img-caption">O processo que deu vida a Niara</p></div>
-    <p>Antes de escrever uma linha de conteúdo, fui ouvir. O processo levou semanas e envolveu mais de 600 colaboradores em diferentes formatos.</p>
-    <div class="sgrid">
-      <div class="scard"><div class="sv">600+</div><div class="sl">colaboradores ouvidos</div></div>
-      <div class="scard"><div class="sv">40h</div><div class="sl">de testes de conteúdo</div></div>
-    </div>
-    <div class="sgrid">
-      <div class="scard"><div class="sv">24h</div><div class="sl">de Design Sprint</div></div>
-      <div class="scard"><div class="sv">16h</div><div class="sl">de entrevistas em profundidade</div></div>
-    </div>
-    <div class="pgrid">
-      <div class="pcard"><div class="ptit">Território verbal</div><div class="pdesc">Mapeamos quais palavras e atitudes os colaboradores associavam a um assistente de RH ideal, e o que não queriam de forma alguma.</div></div>
-      <div class="pcard"><div class="ptit">Card sorting</div><div class="pdesc">Atributos de personalidade organizados do mais ao menos desejado. A surpresa estava no que eles rejeitaram.</div></div>
-      <div class="pcard"><div class="ptit">Testes de conteúdo</div><div class="pdesc">Versões diferentes de uma mesma mensagem testadas com colaboradores reais. Medimos clareza, tom percebido e intenção de usar de novo.</div></div>
-      <div class="pcard"><div class="ptit">Entrevistas em profundidade</div><div class="pdesc">Conversas longas para entender o estado mental no momento de uso: estressado, com pressa, buscando resposta rápida.</div></div>
-    </div>
-    <p>O principal aprendizado da pesquisa foi que o tom existente, de pegar na mão e ensinar passo a passo, não fazia sentido para a realidade dos colaboradores. Eles precisavam de <strong>informação simples, concisa e rápida</strong>. Agilidade sem perder o cuidado.</p>
+    <div class="slabel">02: A estratégia de análise</div>
+    <p>Antes de propor soluções, mapeei o que estava disponível e o que faltava. O atendimento humano conseguia calcular o prazo real porque tinha acesso à data de criação do pedido. O chatbot não tinha essa informação.</p>
+    <p>Com esse diagnóstico, propus três caminhos de solução, priorizados por nível de integração técnica e qualidade da experiência entregue.</p>
   </div>
   <div class="sec fade">
-    <div class="slabel">03 — Assim nasceu a Niara</div>
-  <div class="case-anim-block"><iframe src="../assets/images/case-04-niara-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Niara assistente virtual de RH em ação" style="display:block;width:100%;border:none;min-height:200px"></iframe><div class="mobile-fallback" style="display:none;padding:1.5rem;background:var(--gray-light);border-radius:8px;font-size:0.9rem;color:var(--gray);line-height:1.7;">Colaborador pergunta sobre férias. A Niara consulta o saldo, informa os dias disponíveis e o prazo mínimo, e direciona para o portal de RH para a solicitação formal.</div><p class="desktop-note" style="display:none;padding:1rem;background:var(--gray-light);border-radius:8px;font-size:0.875rem;color:var(--gray);line-height:1.6;text-align:center;">Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.</p><p class="case-img-caption">A Niara em ação</p></div>
-    <div class="pq">
-      <p>Aquela pessoa que sabe a resposta, fala direto e ainda te deixa com uma boa sensação no final.</p>
-      <cite>Descrição da Niara no guia de tom de voz</cite>
+    <div class="slabel">03: Os três cenários propostos</div>
+  <div class="case-anim-block"><iframe src="../assets/images/case-07-cartao-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Antes e depois: chatbot de cartão de crédito" style="display:block;width:100%;border:none;min-height:200px"></iframe><div class="mobile-fallback" style="display:none;padding:1.5rem;background:var(--gray-light);border-radius:8px;font-size:0.9rem;color:var(--gray);line-height:1.7;">O cliente pergunta quando chega o cartão. O chatbot antigo respondia com o prazo padrão genérico. O redesign propõe três cenários: com API completa, com API parcial e sem API: cada um respondendo à pergunta real do cliente.</div><p class="desktop-note" style="display:none;padding:1rem;background:var(--gray-light);border-radius:8px;font-size:0.875rem;color:var(--gray);line-height:1.6;text-align:center;">Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.</p><p class="case-img-caption">Antes e depois</p></div>
+    <div class="scen">
+      <div class="scheader api"><span class="scn">Cenário 1</span><span class="sct">Com API completa</span><span class="scbadge">Melhor experiência</span></div>
+      <div class="scbody">
+        <div class="scitem"><span class="scdot" style="background:var(--green)"></span><div class="sctext">API puxa data do pedido, cartão solicitado e <strong>data prevista de entrega</strong> em tempo real</div></div>
+        <div class="scitem"><span class="scdot" style="background:var(--green)"></span><div class="sctext">Se estiver no prazo: informa a data exata e oferece <strong>link de rastreio</strong> da transportadora</div></div>
+        <div class="scitem"><span class="scdot" style="background:var(--green)"></span><div class="sctext">Se estiver atrasado: API identifica o atraso e oferece <strong>cancelamento e emissão de novo cartão</strong>, sem precisar ligar</div></div>
+        <div class="scex">Seu cartão Mastercard Gold foi pedido em 12/01. A previsão de entrega é até 22/01. Rastreie a entrega aqui.</div>
+      </div>
     </div>
-    <p>Além da personalidade, identificamos a necessidade de um rosto e um nome para o assistente. Niara nasceu de um processo colaborativo entre design, conteúdo e os próprios colaboradores que participaram das pesquisas.</p>
-    <p>Com a personalidade definida, desenvolvemos o guia de tom de voz, as personas de quem usa o bot e toda a curadoria de conteúdo que garantiu a consistência da voz ao longo do tempo.</p>
-  </div>
-  <div class="sec fade">
-    <div class="slabel">04 — O resultado</div>
-    <div class="rms">
-      <div class="rm"><div class="rmv">+64%</div><div class="rml">volume de conversas</div></div>
-      <div class="rm"><div class="rmv">+25%</div><div class="rml">share de atendimento digital</div></div>
-      <div class="rm"><div class="rmv">+6pp</div><div class="rml">resolutividade</div></div>
+    <div class="scen">
+      <div class="scheader semi"><span class="scn">Cenário 2</span><span class="sct">Com API parcial</span><span class="scbadge">Boa experiência</span></div>
+      <div class="scbody">
+        <div class="scitem"><span class="scdot" style="background:#C4820A"></span><div class="sctext">API informa data e nome do cartão pedido, mas <strong>sem data de entrega em tempo real</strong></div></div>
+        <div class="scitem"><span class="scdot" style="background:#C4820A"></span><div class="sctext">Chatbot <strong>calcula o prazo</strong> a partir da data do pedido e informa uma data estimada</div></div>
+        <div class="scitem"><span class="scdot" style="background:#C4820A"></span><div class="sctext">Se atrasado: cliente escolhe entre <strong>aguardar ou iniciar cancelamento</strong> via jornada guiada</div></div>
+        <div class="scex">Seu cartão foi pedido em 12/01. Considerando o prazo de 7 dias úteis, deve chegar até 22/01. Está fora do prazo?</div>
+      </div>
     </div>
-    <div class="sgrid">
-      <div class="scard"><div class="sv">+9pp</div><div class="sl">acurácia</div></div>
-      <div class="scard"><div class="sv">−11,5pp</div><div class="sl">falso positivo</div></div>
-    </div>
-    <p>Esses resultados vieram depois do processo completo de personalidade, tom de voz e curadoria, inclusive após o desligamento da URA de atendimento. O share digital não só se manteve como cresceu.</p>
-    <div class="learned">
-      <p>Quando um assistente tem personalidade de verdade, as pessoas param de tratá-lo como uma máquina. E quando param de tratar como máquina, confiam mais. E quando confiam mais, usam mais.</p>
-      <cite>Samantha Barreto</cite>
+    <div class="scen">
+      <div class="scheader noapi"><span class="scn">Cenário 3</span><span class="sct">Sem API</span><span class="scbadge">Experiência mínima</span></div>
+      <div class="scbody">
+        <div class="scitem"><span class="scdot" style="background:var(--gray)"></span><div class="sctext">Sem acesso a dados do pedido, mas com <strong>resposta mais clara e útil</strong> do que a atual</div></div>
+        <div class="scitem"><span class="scdot" style="background:var(--gray)"></span><div class="sctext">Instrui o cliente a <strong>calcular o prazo</strong> com base na data do pedido, com exemplo prático</div></div>
+        <div class="scitem"><span class="scdot" style="background:var(--gray)"></span><div class="sctext">Se atrasado: direciona para especialista, cancelamento ou novo pedido, sem deixar o cliente preso</div></div>
+        <div class="scex">O prazo é de 7 dias úteis após o pedido. Ex: pedido na segunda, chega até a próxima quarta. Está fora do prazo?</div>
+      </div>
     </div>
   </div>
   <div class="sec fade">
-    <div class="slabel">05 — Decisões de design</div>
+    <div class="slabel">04: O que esse estudo revela</div>
     <div class="qas">
-      <div class="qa"><div class="qq">Por que o tom de "pegar na mão" não funcionava?</div><div class="qa-a">Os colaboradores já sabiam usar o sistema. O que eles precisavam era de resposta rápida, não de tutorial. Um tom didático demais comunica desconfiança na capacidade do usuário.</div></div>
-      <div class="qa"><div class="qq">Por que um nome e um rosto fazem diferença em um chatbot corporativo?</div><div class="qa-a">Identidade cria consistência. Quando o assistente tem nome e personalidade definida, toda decisão de conteúdo tem um critério claro: a Niara falaria assim? Se não, reescreve. Sem nome e personalidade, cada texto vira uma opinião diferente.</div></div>
-      <div class="qa"><div class="qq">Como garantir consistência de voz com o crescimento do escopo?</div><div class="qa-a">Guia de tom de voz documentado, personas criadas a partir de pesquisa real e ciclos de curadoria regulares. A voz não pode depender de quem está escrevendo naquele dia.</div></div>
+      <div class="qa"><div class="qq">Por que responder a pergunta certa importa mais que responder corretamente?</div><div class="qa-a">A resposta estava tecnicamente correta. O prazo é de 7 a 10 dias úteis. Mas não respondeu a pergunta do cliente. Ele perguntou quando chega o cartão dele, não qual é o prazo padrão. Essa diferença, ignorada no design, gerou uma ligação desnecessária e uma experiência de baixa qualidade.</div></div>
+      <div class="qa"><div class="qq">Por que propor três cenários e não só o ideal?</div><div class="qa-a">A melhor experiência possível nem sempre é a mais viável agora. Propor três caminhos permite que o time de produto escolha o que é executável no ciclo atual sem deixar a experiência no estado ruim que estava. Mesmo sem API, dá para entregar algo muito melhor.</div></div>
+      <div class="qa"><div class="qq">O que diferencia esse estudo de uma sugestão comum de melhoria?</div><div class="qa-a">O estudo parte de uma análise de gap: o que o atendimento humano fazia que o chatbot não fazia. E propõe soluções graduadas por esforço técnico. Não é só dizer que a resposta deveria ser melhor. É apresentar três formas de melhorar, com diferentes níveis de integração e o impacto de cada uma.</div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel">05: O aprendizado</div>
+    <div class="learned">
+      <p>Um chatbot que responde a pergunta errada de forma correta ainda é um chatbot que falhou. A pergunta do cliente é o ponto de partida, não o fluxo, não o prazo padrão, não a política da empresa.</p>
+      <cite>Samantha Barreto</cite>
     </div>
   </div>
 </main>
 <nav class="cnav" aria-label="Navegação entre cases">
-  <a href="case-03.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">A pergunta que o chatbot nunca respondeu</div></a>
-  <a href="case-05.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Assistente de Gerentes PF</div></a>
+  <a href="case-03.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">Seguros: Content First do zero</div></a>
+  <a href="case-05.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">A pergunta que o chatbot nunca respondeu</div></a>
 </nav>
 <footer>
   <p>© 2026 Samantha Barreto</p>

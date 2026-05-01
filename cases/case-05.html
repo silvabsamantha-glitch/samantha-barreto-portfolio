@@ -3,102 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case 05: Assistente de Gerentes PF e PJ — Samantha Barreto</title>
-<meta name="description" content="Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos com o cliente na frente.">
+<title>Case 05: A pergunta que o chatbot nunca respondeu · Samantha Barreto</title>
+<meta name="description" content="Como reescrever fluxos de chatbot com hierarquia da informação gerou mais 10 pontos percentuais de CSAT em grande instituição brasileira de pagamentos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/shared.css">
 <style>
-/* ── Base ──────────────────────────────────────────────────────── */
 .case-hero{padding:calc(var(--nav-height) + 3.5rem) 4rem 3.5rem;background:var(--navy-mid);position:relative;overflow:hidden}
-.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(196,130,10,.08) 0%,transparent 60%);pointer-events:none}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
 .case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .case-hero-inner{position:relative;z-index:1;max-width:800px}
 .case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.72);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
 .case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
-.cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#EF9F27;background:rgba(186,117,23,.15);border:1px solid rgba(186,117,23,.3);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
-.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem}
-.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:#fff;margin-bottom:1rem;font-weight:500}
-.hsub{font-size:1rem;color:rgba(255,255,255,.62);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
-.ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
-.tag{font-size:.72rem;padding:3px 10px;border-radius:var(--r-full);background:rgba(186,117,23,.12);color:#EF9F27;border:1px solid rgba(186,117,23,.25)}
-.disc{background:rgba(255,255,255,.05);border-left:2px solid rgba(255,255,255,.15);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.6}
-
-/* ── Body ──────────────────────────────────────────────────────── */
-.cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
-.sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
-.sec.visible{opacity:1;transform:none}
-.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-top:3rem;margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
+.case-pill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#4ECBA8;background:rgba(26,155,118,.18);border:1px solid rgba(26,155,118,.35);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.case-co{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem}
+.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
+.case-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.disclaimer{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.6}
+.metrics-bar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
+.metric{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.metric:last-child{border-right:none;margin-right:0}
+.mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4}
+.body{max-width:960px;margin:0 auto;padding:4rem 4rem 5rem}
+.sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
+.sec-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-top:3rem;margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
 .sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.75rem;font-weight:500}
 .sec p{font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
 .sec p:last-child{margin-bottom:0}
 .sec p strong{color:var(--navy);font-weight:500}
-
-/* Tension box — amber acessível */
-.tenbox{background:#FFF8EC;border-left:3px solid #B7650A;padding:1.25rem 1.5rem;margin:1.5rem 0;border-radius:0 var(--r-sm) var(--r-sm) 0}
-.tentext{font-size:1.05rem;font-weight:500;color:#5C3A0A;line-height:1.55;font-style:italic}
-
-/* Constraint pills — amber acessível */
-.constr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
-.constpill{font-size:.8rem;padding:5px 12px;border-radius:var(--r-md);background:#FFF0D6;color:#6B3D0A;border:1px solid rgba(183,101,10,.2);font-weight:400}
-
-/* Context grid */
-.ctxgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
-.ctxcard{background:var(--gray-light);border-radius:var(--r-sm);padding:1.25rem}
-.ctxl{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem}
-.ctxcard p{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300;margin:0}
-.ctxcard p strong{color:var(--navy);font-weight:500}
-
-/* Princípios — amber acessível */
-.pins{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
-.pin{background:var(--gray-light);border-radius:var(--r-sm);padding:1.25rem;border-top:3px solid #B7650A}
-.pinnum{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:#7A4A0A;line-height:1;margin-bottom:.4rem}
-.pint{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
-.pind{font-size:.8rem;color:var(--gray);line-height:1.55;font-weight:300}
-
-/* Steps */
+.pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
+.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
+.stats-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
+.scard{background:var(--gray-light);border-radius:var(--r-md);padding:1rem}
+.sv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:3px}
+.sl{font-size:.78rem;color:var(--gray);line-height:1.4}
+.diags{display:flex;flex-direction:column}
+.diag{display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 0;border-bottom:1px solid var(--gray-line)}
+.diag:last-child{border-bottom:none;padding-bottom:0}
+.dd{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.dd.r{background:#A32D2D}.dd.g{background:var(--green)}
+.dt{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.dt strong{color:var(--navy);font-weight:500}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-line);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.bap{padding:1.5rem}
+.ba-b{background:#FEF2F2}.ba-a{background:#F0FDF4}
+.bah{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:5px}
+.ba-b .bah{color:#991B1B}.ba-a .bah{color:#166534}
+.bdt{width:5px;height:5px;border-radius:50%}
+.ba-b .bdt{background:#991B1B}.ba-a .bdt{background:#166534}
+.bat{font-size:.875rem;line-height:1.65;margin-bottom:.5rem}
+.ba-b .bat{color:#7F1D1D}.ba-a .bat{color:#14532D}
 .steps{display:flex;flex-direction:column}
 .step{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--gray-line);align-items:start}
 .step:last-child{border-bottom:none;padding-bottom:0}
 .sn{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--green);padding-top:2px}
 .st{font-size:.95rem;font-weight:500;color:var(--navy);margin-bottom:.25rem}
 .sd{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
-
-/* QA */
 .qas{display:flex;flex-direction:column;gap:1rem;margin-top:.5rem}
-.qa{border-left:2px solid var(--green);padding:1rem 1.25rem;background:var(--gray-light);border-radius:0 var(--r-sm) var(--r-sm) 0}
+.qa{border-left:2px solid var(--green);padding:1rem 1.25rem;background:var(--gray-light)}
 .qq{font-size:.875rem;font-weight:500;color:var(--green);margin-bottom:.4rem}
 .qa-a{font-size:.875rem;color:var(--gray);line-height:1.7;font-weight:300}
-
-/* Learned */
-.learned{background:var(--gray-light);border-radius:var(--r-sm);padding:1.25rem 1.5rem;margin-top:1rem;border-left:2px solid var(--gray-line)}
+.rms{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.rm{background:var(--green-mist);border:0.5px solid rgba(15,110,86,.2);border-radius:var(--r-md);padding:1rem 1.25rem;flex:1;min-width:120px;text-align:center}
+.rmv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:4px}
+.rml{font-size:.72rem;color:var(--gray);line-height:1.4}
+.fps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.fp{font-size:.78rem;padding:4px 10px;border-radius:var(--r-full);background:var(--white);color:var(--gray);border:0.5px solid var(--gray-line);font-style:italic}
+.learned{background:var(--gray-light);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
 .learned p{font-size:1rem;color:var(--gray);line-height:1.75;font-style:italic;margin:0}
 .learned cite{font-size:.8rem;color:var(--navy);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
-
-/* ── Chat demo — acessível ─────────────────────────────────────── */
-.chat-wrap{background:#F0F4F8;border-radius:var(--r-sm);overflow:hidden;border:1px solid #D0D8E4;margin:1.5rem 0}
-.chat-bar{background:#1A3A5C;padding:.75rem 1rem;display:flex;align-items:center;gap:.5rem}
-.chat-bar-dot{width:7px;height:7px;border-radius:50%;background:#28C840}
-.chat-bar-name{font-size:.8rem;font-weight:600;color:#fff}
-.chat-bar-sub{font-size:.72rem;color:rgba(255,255,255,.55);margin-left:auto}
-.chat-body{padding:1rem;display:flex;flex-direction:column;gap:.625rem;background:#fff}
-.bubble{max-width:88%;padding:.625rem .875rem;border-radius:8px;font-size:.875rem;line-height:1.6}
-.b-user{background:#DDEEFF;color:#0C3A6B;border-radius:8px 4px 8px 8px;align-self:flex-end;margin-left:auto;font-weight:400}
-.b-bot{background:#F5F7FA;color:#1A1A2E;border-radius:4px 8px 8px 8px;border-left:3px solid #0F6E56;align-self:flex-start}
-.b-bot strong{color:#0A4A39;font-weight:600}
-.path-code{display:inline-block;background:#E8F0E8;color:#0A4A39;padding:2px 7px;border-radius:4px;font-family:monospace;font-size:.8rem;font-weight:600;margin:4px 0}
-.btn-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:.5rem}
-.action-btn{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:6px;background:#E8F0FB;color:#1A4A8A;border:1.5px solid #B5CCF0;cursor:pointer;text-decoration:none;transition:background .15s}
-.action-btn:hover{background:#C8DCF8}
-.action-btn:focus-visible{outline:2px solid #1A4A8A;outline-offset:2px}
-.action-btn svg{width:12px;height:12px;flex-shrink:0}
-.chat-note{font-size:.78rem;color:#4A5568;font-style:italic;background:#F0F4F0;border-left:2px solid #0F6E56;padding:.5rem .75rem;margin-top:.5rem;border-radius:0 4px 4px 0}
-
-/* ── Árvore SVG wrapper ────────────────────────────────────────── */
-.tree-wrap{background:var(--gray-light);border-radius:var(--r-sm);padding:1.25rem;overflow-x:auto;margin:1.5rem 0}
-.tree-wrap svg{min-width:600px}
-
-/* ── Nav entre cases ───────────────────────────────────────────── */
 .cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
 .cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
 .cni:hover{background:#ECEEF2}
@@ -107,8 +83,7 @@
 .cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
 .cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
 .cni:hover .cnt{opacity:1}
-.cni:focus-visible .cnt{opacity:1}
-}
+.cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}}
 
 
 
@@ -140,284 +115,125 @@
   </div>
 </nav>
 
-<section class="case-hero" aria-label="Case 05: Assistente de Gerentes PF e PJ em grande instituição financeira nacional">
+<section class="case-hero" aria-label="Case 03: Redesign Conversacional Crédito PJ em grande instituição brasileira de pagamentos">
   <div class="case-hero-inner">
-    <div class="cpill">Case 05 · Design Conversacional · Alta pressão</div>
-    <div class="cco">grande instituição financeira nacional · Conversational AI Designer · 2020–2022</div>
-    <h1 data-pt="Assistente de Gerentes PF e PJ: do zero ao segundo começo" data-en="Branch Manager PF &amp; PJ Assistant: from scratch to a second start">Assistente de Gerentes PF e PJ: do zero ao segundo começo</h1>
-    <p class="hsub" data-pt="Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na frente." data-en="How to design a chatbot for branch managers who need answers in seconds, with the customer sitting right in front of them.">Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na frente.</p>
-    <div class="ctags">
+    <div class="case-pill">Case 05 · UX Writing · Design Conversacional</div>
+    <div class="case-co">grande instituição brasileira de pagamentos · Content Designer III · 2023/2025</div>
+    <h1 data-pt="A pergunta que o chatbot nunca respondeu" data-en="The question the chatbot never answered">A pergunta que o chatbot nunca respondeu</h1>
+    <p class="hero-sub" data-pt="Como reescrever fluxos com hierarquia da informação gerou mais 10 pontos percentuais de CSAT e mais 3 pontos percentuais de retenção, e o que os dados não estavam mostrando." data-en="How rewriting flows with information hierarchy generated 10 more CSAT percentage points and 3 more retention percentage points, and what the data wasn't showing.">Como reescrever fluxos com hierarquia da informação gerou mais 10 pontos percentuais de CSAT e mais 3 pontos percentuais de retenção, e o que os dados não estavam mostrando.</p>
+    <div class="case-tags">
+      <span class="tag">UX Writing</span>
       <span class="tag">Design Conversacional</span>
-      <span class="tag">Alta pressão</span>
-      <span class="tag">Reconstrução</span>
-      <span class="tag">Arquitetura de informação</span>
+      <span class="tag">Hierarquia da informação</span>
+      <span class="tag">Análise de dados</span>
     </div>
-    <div class="disc">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo, os princípios de design e as decisões são reais.</div>
+    <div class="disclaimer" data-pt="Elementos ficcionalizados para proteger a confidencialidade: nome do produto interno e detalhes do sistema. O processo, as decisões e os resultados são reais." data-en="Fictionalized elements to protect confidentiality: internal product name and system details. The process, decisions, and results are real.">Elementos ficcionalizados para proteger a confidencialidade: nome do produto interno e detalhes do sistema. O processo, as decisões e os resultados são reais.</div>
+    <div class="metrics-bar">
+      <div class="metric"><div class="mv">+10pp</div><div class="ml">CSAT (66% para 76%)</div></div>
+      <div class="metric"><div class="mv">+3pp</div><div class="ml" data-pt="Retenção (76% para 79%)" data-en="Retention (76% to 79%)">Retenção (76% para 79%)</div></div>
+      <div class="metric"><div class="mv">3k+</div><div class="ml" data-pt="acessos mensais no fluxo" data-en="monthly accesses">acessos mensais no fluxo</div></div>
+    </div>
   </div>
 </section>
 
-<main id="case-content" class="cbody">
+<main id="case-content" class="body">
 
-  <div class="sec">
-    <div class="slabel">01 — A restrição central</div>
-    <div class="tenbox">
-      <p class="tentext">"O gerente não pode demorar para encontrar a informação. Cada segundo de espera é percebido pelo cliente como falta de preparo."</p>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="01: A fala que revelou tudo" data-en="01: The quote that revealed everything">01: A fala que revelou tudo</div>
+    <blockquote class="pq">
+      <p data-pt='"Não entendi, tenho empréstimo ou não?"' data-en='"I didn\'t get it, do I have a loan or not?"'>"Não entendi, tenho empréstimo ou não?"</p>
+      <cite data-pt="Avaliação real de CSAT: chatbot de crédito PJ" data-en="Real CSAT review, business credit chatbot">Avaliação real de CSAT: chatbot de crédito PJ</cite>
+    </blockquote>
+    <div class="stats-2">
+      <div class="scard"><div class="sv">3k+</div><div class="sl" data-pt="acessos mensais no fluxo de crédito" data-en="monthly accesses in the credit flow">acessos mensais no fluxo de crédito</div></div>
+      <div class="scard"><div class="sv">60%</div><div class="sl" data-pt="CSAT médio. Maior ofensor do produto." data-en="Average CSAT. Biggest product offender.">CSAT médio. Maior ofensor do produto.</div></div>
     </div>
-    <p>A instituição havia lançado um assistente virtual para gerentes de agência. O rollout não funcionou e o projeto precisou recomeçar. Eu reassumi do zero.</p>
-    <p>O desafio era diferente da maioria dos chatbots: o usuário final não é um cliente em casa com tempo para ler. É um <strong>gerente com o cliente sentado na sua frente</strong>, que precisa de uma resposta em segundos para não perder credibilidade.</p>
-    <div class="constr" role="list" aria-label="Restrições do projeto">
-      <span class="constpill" role="listitem">Velocidade acima de tudo</span>
-      <span class="constpill" role="listitem">Resposta sem ambiguidade</span>
-      <span class="constpill" role="listitem">Zero tolerância a erro</span>
-      <span class="constpill" role="listitem">Uso em contexto social de alta pressão</span>
+    <p data-pt="O chatbot de crédito PJ era o maior ofensor de CSAT do produto. Mais de 3 mil clientes por mês acessavam o fluxo e saíam sem entender se tinham crédito disponível. O problema não era técnico. Era de conteúdo." data-en="The business credit chatbot was the product's biggest CSAT offender. More than 3,000 customers per month accessed the flow and left without understanding if they had credit available. The problem wasn't technical. It was content.">O chatbot de crédito PJ era o maior ofensor de CSAT do produto. Mais de 3 mil clientes por mês acessavam o fluxo e saíam sem entender se tinham crédito disponível. O problema não era técnico. Era de conteúdo.</p>
+  </div>
+
+  <div class="sec fade">
+    <div class="sec-label" data-pt="02: O que os dados revelavam" data-en="02: What the data revealed">02: O que os dados revelavam</div>
+  <div class="case-img-block"><img src="../assets/images/case-03-arvore.svg" alt="Árvore de decisão: fluxo original vs cenários" class="case-img" loading="lazy"/><p class="desktop-note" style="display:none;padding:1rem;background:var(--gray-light);border-radius:8px;font-size:0.875rem;color:var(--gray);line-height:1.6;text-align:center;">Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.</p><p class="case-img-caption">O que o fluxo via vs o que as conversas mostravam</p></div>
+    <h2 data-pt="Os números mostravam sintomas. As conversas mostravam a causa." data-en="The numbers showed symptoms. The conversations showed the cause.">Os números mostravam sintomas. As conversas mostravam a causa.</h2>
+    <p data-pt="Li cada conversa para entender o que estava acontecendo. Encontrei três padrões que não apareciam nos tickets como problema de conteúdo." data-en="I read each conversation to understand what was really happening. I found three patterns that didn't appear in support tickets as content problems.">Li cada conversa para entender o que estava acontecendo. Encontrei três padrões que não apareciam nos tickets como problema de conteúdo.</p>
+    <div class="diags">
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="O cliente perguntava <strong>se tinha crédito</strong>. O bot explicava como o sistema de análise funcionava." data-en="The customer asked <strong>if they had credit</strong>. The bot explained how the analysis system worked.">O cliente perguntava <strong>se tinha crédito</strong>. O bot explicava como o sistema de análise funcionava.</div></div>
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirado</strong>, sem nenhuma explicação." data-en="Customers who received an offer email arrived at the chatbot and <strong>the offer had already expired</strong>, with no explanation.">Clientes que recebiam e-mail com oferta chegavam ao chatbot e <strong>a oferta já tinha expirado</strong>, sem nenhuma explicação.</div></div>
+      <div class="diag"><span class="dd r" aria-hidden="true"></span><div class="dt" data-pt="Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto." data-en="Customers who searched for credit more than once in the month <strong>fell into the same generic flow</strong>, with no context recognition.">Clientes que buscavam crédito mais de uma vez no mês <strong>caíam no mesmo fluxo genérico</strong>, sem reconhecimento do contexto.</div></div>
+      <div class="diag"><span class="dd g" aria-hidden="true"></span><div class="dt" data-pt="Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas foi possível enxergar." data-en="None of these scenarios appeared in tickets as content problems. Only by reading the conversations did they become visible.">Nenhum desses cenários aparecia nos tickets como problema de conteúdo. Só lendo as conversas foi possível enxergar.</div></div>
     </div>
   </div>
 
-  <div class="sec">
-    <div class="slabel">02 — Por que o primeiro rollout falhou</div>
-    <div class="ctxgrid">
-      <div class="ctxcard">
-        <div class="ctxl">O que aconteceu</div>
-        <p>O assistente foi construído sem considerar o contexto real de uso. As respostas eram longas demais, a navegação era lenta e o tom não refletia a seriedade esperada por um profissional de agência.</p>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="03: Antes e depois" data-en="03: Before and after">03: Antes e depois</div>
+  <div class="case-anim-block"><iframe src="../assets/images/case-03-whatsapp-animado.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Antes e depois: chatbot de crédito PJ" style="display:block;width:100%;border:none;min-height:200px"></iframe><div class="mobile-fallback" style="display:none; padding:1.5rem; background:var(--gray-light); border-radius:8px; font-size:0.9rem; color:var(--gray); line-height:1.7;">O cliente pergunta se tem crédito. O chatbot antigo enrolava em quatro parágrafos. O redesign responde em duas linhas: direto ao ponto, com o próximo passo claro.</div><p class="desktop-note" style="display:none;padding:1rem;background:var(--gray-light);border-radius:8px;font-size:0.875rem;color:var(--gray);line-height:1.6;text-align:center;">Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.</p><p class="case-img-caption">Antes e depois: a resposta que não enrolava</p></div>
+    <h2 data-pt="A resposta antiga tinha 4 parágrafos. A nova tinha 2 linhas." data-en="The response had 4 paragraphs. The new one had 2 lines.">A resposta antiga tinha 4 parágrafos. A nova tinha 2 linhas.</h2>
+    <p data-pt="A diferença não era o tamanho. Era o que vinha primeiro." data-en="The difference wasn't the size. It was what came first.">A diferença não era o tamanho. Era o que vinha primeiro.</p>
+    <div class="ba">
+      <div class="bap ba-b">
+        <div class="bah"><span class="bdt" aria-hidden="true"></span><span data-pt="Antes" data-en="Before">Antes</span></div>
+        <p class="bat" data-pt="Sabemos que o empréstimo pode fazer a diferença no seu negócio e é por isso que estamos fazendo melhorias. Por enquanto, apenas uma pequena base de clientes tem o produto disponível." data-en="We know that a loan can make a difference for your business and that's why we're making improvements. For now, only a small customer base has the product available.">Sabemos que o empréstimo pode fazer a diferença no seu negócio e é por isso que estamos fazendo melhorias. Por enquanto, apenas uma pequena base de clientes tem o produto disponível.</p>
+        <p class="bat" data-pt="A gente não consegue te garantir uma oferta no momento, mas temos algumas dicas que podem te ajudar a aumentar suas chances de passar pela análise de crédito..." data-en="We can't guarantee you an offer right now, but we have some tips that can help you increase your chances of passing the credit analysis...">A gente não consegue te garantir uma oferta no momento, mas temos algumas dicas que podem te ajudar a aumentar suas chances de passar pela análise de crédito...</p>
       </div>
-      <div class="ctxcard">
-        <div class="ctxl">O resultado</div>
-        <p>O gerente <strong>não confiava no canal</strong> e preferia ligar para o suporte. Quando a confiança se perde, ajustes incrementais não bastam. Era preciso recomeçar de forma visivelmente diferente.</p>
-      </div>
-    </div>
-    <p>Aprendi algo importante nesse projeto: <strong>ignorar o contexto de uso é a maior causa de falha em design conversacional</strong>. Um chatbot para cliente em casa e um chatbot para gerente em atendimento podem ter o mesmo conteúdo, mas precisam de arquiteturas completamente diferentes.</p>
-  </div>
-
-  <div class="sec">
-    <div class="slabel">03 — Princípios de design para alta pressão</div>
-    <div class="pins" role="list" aria-label="Quatro princípios de design para alta pressão">
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">01</div><div class="pint">A resposta primeiro</div><div class="pind">A informação crítica vem antes de qualquer contexto ou explicação. O gerente não lê: ele escaneia.</div></div>
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">02</div><div class="pint">Sempre com saída</div><div class="pind">Toda jornada tem saída. Nenhuma resposta termina sem uma ação possível. O gerente nunca pode ficar preso.</div></div>
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">03</div><div class="pint">Tom de parceiro, não de tutorial</div><div class="pind">Não simpático: competente. O assistente fala como um colega que sabe a resposta e vai direto ao ponto.</div></div>
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">04</div><div class="pint">Leitura em 3 segundos</div><div class="pind">Se o gerente precisar de mais de 3 segundos para encontrar a informação principal, a mensagem está errada.</div></div>
-    </div>
-  </div>
-
-  <div class="sec">
-    <div class="slabel">04 — Sempre com saída: deeplinks garantem o caminho mesmo sem API</div>
-    <p>Sem acesso a API para integrar dados em tempo real, a solução foi desenhar respostas que <strong>levam o gerente diretamente ao lugar certo</strong> dentro do sistema. O caminho vem antes dos botões: assim o gerente entende o que está abrindo e consegue navegar sozinho se precisar.</p>
-
-    <div class="chat-wrap" role="region" aria-label="Demonstração do assistente de gerentes com respostas e deeplinks">
-      <div class="chat-bar">
-        <span class="chat-bar-dot" aria-hidden="true"></span>
-        <span class="chat-bar-name">Assistente Gerentes PF e PJ</span>
-        <span class="chat-bar-sub">grande instituição financeira nacional</span>
-      </div>
-      <div class="chat-body">
-        <div class="bubble b-user" role="note" aria-label="Mensagem do gerente">Qual o limite disponível do cartão corporate do João Silva?</div>
-        <div class="bubble b-bot" aria-live="polite">
-          Para consultar o limite do seu cliente, acesse o Portal do Cliente e siga este caminho:<br><br>
-          <span class="path-code">Produtos → Cartão Corporate → nome do cliente → Limites</span><br><br>
-          Ou escolha uma ação rápida:
-          <div class="btn-row">
-            <a href="#" class="action-btn" aria-label="Abrir tela de limites do cliente no sistema">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Abrir limites do cliente
-            </a>
-            <a href="#" class="action-btn" aria-label="Abrir extrato do cartão no sistema">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Ver extrato do cartão
-            </a>
-            <a href="#" class="action-btn" aria-label="Falar com suporte especializado">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Falar com suporte
-            </a>
-          </div>
-        </div>
-        <div class="bubble b-user" role="note" aria-label="Segunda mensagem do gerente">O cliente quer portabilidade de salário. Como faço?</div>
-        <div class="bubble b-bot" aria-live="polite">
-          Para iniciar a portabilidade, você vai precisar da autorização do cliente e do RH da empresa dele.<br><br>
-          <strong>Documentos obrigatórios:</strong> comprovante de vínculo empregatício e últimos 3 holerites.<br><br>
-          Caminho no sistema:<br>
-          <span class="path-code">Relacionamento → Portabilidade → Nova solicitação</span>
-          <div class="btn-row">
-            <a href="#" class="action-btn" aria-label="Iniciar processo de portabilidade no sistema">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Iniciar portabilidade
-            </a>
-            <a href="#" class="action-btn" aria-label="Ver checklist completo de documentos necessários">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="11" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Ver checklist de documentos
-            </a>
-          </div>
-        </div>
-        <div class="chat-note">O bot sempre mostra o caminho em texto antes dos botões. Assim o gerente sabe o que está abrindo e consegue navegar sozinho se precisar.</div>
+      <div class="bap ba-a">
+        <div class="bah"><span class="bdt" aria-hidden="true"></span><span data-pt="Depois" data-en="After">Depois</span></div>
+        <p class="bat" data-pt="Verifiquei aqui e no momento não há crédito disponível pra você." data-en="I checked here and at the moment there's no credit available for you.">Verifiquei aqui e no momento não há crédito disponível pra você.</p>
+        <p class="bat" data-pt="Assim que surgir uma oferta, a gente te avisa!" data-en="As soon as an offer appears, we'll let you know!">Assim que surgir uma oferta, a gente te avisa!</p>
       </div>
     </div>
   </div>
 
-  <div class="sec">
-    <div class="slabel">05 — Árvore de decisão conversacional</div>
-    <p>O fluxo abaixo mostra como o gerente navega pelo assistente. Cada bifurcação tem uma saída clara: o caminho feliz resolve na hora, o caminho difícil sempre termina em especialista, nunca em beco sem saída.</p>
-
-    <div class="tree-wrap" role="img" aria-label="Árvore de decisão conversacional do assistente de gerentes PF: fluxo com caminhos feliz e difícil, onde o caminho difícil termina sempre em especialista">
-      <svg width="100%" viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-          <marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-          <marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#A32D2D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-          <marker id="arr-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#B7650A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-        </defs>
-
-        <!-- Raiz -->
-        <rect x="30" y="248" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="95" y="265" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">gerente inicia</text>
-        <text x="95" y="280" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">a consulta</text>
-
-        <!-- Linha raiz → coluna de temas -->
-        <line x1="160" y1="270" x2="188" y2="270" stroke="#888" stroke-width="0.75" fill="none"/>
-        <line x1="188" y1="90" x2="188" y2="480" stroke="#CCC" stroke-width="0.75" fill="none"/>
-
-        <!-- Temas — linha vertical e horizontais -->
-        <line x1="188" y1="90" x2="208" y2="90" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="188" y1="175" x2="208" y2="175" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="188" y1="270" x2="208" y2="270" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="188" y1="365" x2="208" y2="365" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="188" y1="480" x2="208" y2="480" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-
-        <!-- Macro temas -->
-        <rect x="208" y="68" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="273" y="85" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">crédito e limite</text>
-        <text x="273" y="100" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">conta e cartão</text>
-
-        <rect x="208" y="153" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="273" y="170" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">cartão corporate</text>
-        <text x="273" y="185" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">limites e bloqueios</text>
-
-        <rect x="208" y="248" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="273" y="265" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">portabilidade</text>
-        <text x="273" y="280" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">salário e serviços</text>
-
-        <rect x="208" y="343" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="273" y="360" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">produtos PF</text>
-        <text x="273" y="375" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">seguros e investimentos</text>
-
-        <rect x="208" y="458" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="273" y="475" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">outras dúvidas</text>
-        <text x="273" y="490" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">processos gerais</text>
-
-        <!-- Detalhes do tema crédito -->
-        <line x1="338" y1="90" x2="358" y2="90" stroke="#888" stroke-width="0.75" fill="none"/>
-        <line x1="358" y1="58" x2="358" y2="195" stroke="#CCC" stroke-width="0.75" fill="none"/>
-        <line x1="358" y1="58" x2="378" y2="58" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="358" y1="90" x2="378" y2="90" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="358" y1="130" x2="378" y2="130" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="358" y1="165" x2="378" y2="165" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="358" y1="195" x2="378" y2="195" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-
-        <rect x="378" y="40" width="120" height="32" rx="6" fill="#F5F5F7" stroke="#CCC" stroke-width="0.75"/>
-        <text x="438" y="60" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#3A3A50">consultar limite</text>
-
-        <rect x="378" y="74" width="120" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="438" y="94" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041" font-weight="600">resposta + deeplink</text>
-
-        <rect x="378" y="114" width="120" height="32" rx="6" fill="#F5F5F7" stroke="#CCC" stroke-width="0.75"/>
-        <text x="438" y="134" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#3A3A50">simular crédito</text>
-
-        <rect x="378" y="149" width="120" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="438" y="169" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041" font-weight="600">resposta + deeplink</text>
-
-        <rect x="378" y="179" width="120" height="32" rx="6" fill="#FEF2F2" stroke="#A32D2D" stroke-width="1"/>
-        <text x="438" y="199" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7F1D1D">não encontrou</text>
-
-        <!-- Caminho difícil → especialista (crédito) -->
-        <line x1="498" y1="195" x2="518" y2="195" stroke="#A32D2D" stroke-width="0.75" fill="none" marker-end="url(#arr-r)"/>
-        <rect x="518" y="179" width="120" height="32" rx="6" fill="#FFF0D6" stroke="#B7650A" stroke-width="1"/>
-        <text x="578" y="199" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#6B3D0A" font-weight="600">falar com especialista</text>
-
-        <!-- Detalhes do tema portabilidade -->
-        <line x1="338" y1="270" x2="358" y2="270" stroke="#888" stroke-width="0.75" fill="none"/>
-        <line x1="358" y1="235" x2="358" y2="345" stroke="#CCC" stroke-width="0.75" fill="none"/>
-        <line x1="358" y1="235" x2="378" y2="235" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="358" y1="270" x2="378" y2="270" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="358" y1="308" x2="378" y2="308" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-        <line x1="358" y1="345" x2="378" y2="345" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
-
-        <rect x="378" y="219" width="120" height="32" rx="6" fill="#F5F5F7" stroke="#CCC" stroke-width="0.75"/>
-        <text x="438" y="239" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#3A3A50">iniciar portabilidade</text>
-
-        <rect x="378" y="254" width="120" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-        <text x="438" y="274" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041" font-weight="600">resposta + deeplink</text>
-
-        <rect x="378" y="292" width="120" height="32" rx="6" fill="#F5F5F7" stroke="#CCC" stroke-width="0.75"/>
-        <text x="438" y="312" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#3A3A50">checklist de docs</text>
-
-        <rect x="378" y="329" width="120" height="32" rx="6" fill="#FEF2F2" stroke="#A32D2D" stroke-width="1"/>
-        <text x="438" y="349" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7F1D1D">dúvida não resolvida</text>
-
-        <!-- Caminho difícil → especialista (portabilidade) -->
-        <line x1="498" y1="345" x2="518" y2="345" stroke="#A32D2D" stroke-width="0.75" fill="none" marker-end="url(#arr-r)"/>
-        <rect x="518" y="329" width="120" height="32" rx="6" fill="#FFF0D6" stroke="#B7650A" stroke-width="1"/>
-        <text x="578" y="349" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#6B3D0A" font-weight="600">falar com especialista</text>
-
-        <!-- Legenda -->
-        <rect x="30" y="524" width="10" height="10" rx="2" fill="#0F6E56"/>
-        <text x="48" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Caminho feliz</text>
-        <rect x="145" y="524" width="10" height="10" rx="2" fill="#A32D2D"/>
-        <text x="163" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Caminho difícil</text>
-        <rect x="270" y="524" width="10" height="10" rx="2" fill="#B7650A"/>
-        <text x="288" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Falar com especialista</text>
-        <rect x="430" y="524" width="10" height="10" rx="2" fill="#888"/>
-        <text x="448" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Neutro / estrutural</text>
-      </svg>
-    </div>
-  </div>
-
-  <div class="sec">
-    <div class="slabel">06 — Como construímos</div>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="04: O processo" data-en="04: The process">04: O processo</div>
     <div class="steps">
-      <div class="step"><span class="sn">01</span><div><div class="st">Imersão no contexto real</div><div class="sd">Entendimento profundo do dia a dia do gerente: quais situações geravam a necessidade do assistente, qual era o estado mental no momento de uso e o que afastava a adoção do sistema anterior.</div></div></div>
-      <div class="step"><span class="sn">02</span><div><div class="st">Mapeamento de macro e microassuntos</div><div class="sd">Estruturação da árvore conversacional a partir dos temas mais acessados. Identificação dos caminhos principais, variações e situações de exceção que precisavam de jornada própria.</div></div></div>
-      <div class="step"><span class="sn">03</span><div><div class="st">Design do caminho feliz e do caminho difícil</div><div class="sd">Para cada jornada: o fluxo ideal quando tudo funciona e o fluxo alternativo quando o gerente não encontra o que precisa. Sempre com saída clara e sem beco sem saída.</div></div></div>
-      <div class="step"><span class="sn">04</span><div><div class="st">Escrita com critério dos 3 segundos</div><div class="sd">Cada resposta testada com um critério simples: se demorava mais de 3 segundos para encontrar a informação principal, era reescrita. Tom ajustado para competência, sem simpatia desnecessária.</div></div></div>
+      <div class="step"><span class="sn">01</span><div><div class="st" data-pt="Análise qualitativa de conversas e quantitativa de dados" data-en="Qualitative conversation analysis and quantitative data analysis">Análise qualitativa de conversas e quantitativa de dados</div><div class="sd" data-pt="Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto." data-en="Reading real conversations, analyzing CSAT responses, mapping conversational behavior, and desk research with the product team.">Leitura de conversas reais, análise de CSAT respondidos, mapeamento de comportamento conversacional e desk research com o time de produto.</div></div></div>
+      <div class="step"><span class="sn">02</span><div><div class="st" data-pt="Identificação de cenários não mapeados" data-en="Identifying unmapped scenarios">Identificação de cenários não mapeados</div><div class="sd" data-pt="Dois cenários recorrentes que o fluxo não tratava: busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada." data-en="Two recurring scenarios the flow didn't handle: repeated search in the same month and expired offer after email. These scenarios caused frustration with no adequate response.">Dois cenários recorrentes que o fluxo não tratava: busca repetida no mesmo mês e oferta expirada após e-mail. Esses cenários geravam frustração sem nenhuma resposta adequada.</div></div></div>
+      <div class="step"><span class="sn">03</span><div><div class="st" data-pt="Redesign dos fluxos" data-en="Flow redesign">Redesign dos fluxos</div><div class="sd" data-pt="Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados." data-en="Rewriting applying information hierarchy, reducing cognitive load, breaking semantic blocks and creating specific journeys for the identified scenarios.">Reescrita aplicando hierarquia da informação, redução de carga cognitiva, quebra de blocos semânticos e criação de jornadas específicas para os cenários identificados.</div></div></div>
+      <div class="step"><span class="sn">04</span><div><div class="st" data-pt="Monitoramento e iteração" data-en="Monitoring and iteration">Monitoramento e iteração</div><div class="sd" data-pt="Acompanhamento de KPIs após a implementação: CSAT, retenção, volume de transbordo. Para validar o impacto e identificar novas oportunidades de melhoria." data-en="Tracking KPIs after implementation: CSAT, retention, overflow volume. To validate impact and identify new improvement opportunities.">Acompanhamento de KPIs após a implementação: CSAT, retenção, volume de transbordo. Para validar o impacto e identificar novas oportunidades de melhoria.</div></div></div>
     </div>
   </div>
 
-  <div class="sec">
-    <div class="slabel">07 — Decisões de design</div>
-    <div class="qas">
-      <div class="qa"><div class="qq">Por que recomeçar do zero em vez de corrigir o existente?</div><div class="qa-a">Quando a confiança num canal digital se perde, é muito difícil recuperá-la com ajustes incrementais. O gerente já havia aprendido a não usar o assistente. Recomeçar com uma experiência visivelmente diferente era o único caminho para reconquistar a adoção.</div></div>
-      <div class="qa"><div class="qq">O que é o caminho difícil e por que ele importa tanto?</div><div class="qa-a">O caminho feliz é quando o gerente encontra exatamente o que procurava. O caminho difícil é quando não encontra e precisa de uma saída digna. A maioria dos chatbots é projetada para o caminho feliz. Os melhores são projetados para os dois.</div></div>
-      <div class="qa"><div class="qq">Por que o contexto de uso muda tudo no design conversacional?</div><div class="qa-a">Estado mental, tempo disponível e consequências de um erro são radicalmente distintos entre contextos. Ignorar isso foi o que fez o primeiro rollout falhar. Entender o contexto antes de escrever a primeira resposta é o que diferencia um chatbot que as pessoas usam de um que as pessoas evitam.</div></div>
+  <div class="sec fade">
+    <div class="sec-label" data-pt="05: O resultado" data-en="05: The result">05: O resultado</div>
+    <div class="rms">
+      <div class="rm"><div class="rmv">+10pp</div><div class="rml" data-pt="CSAT (66% para 76%)" data-en="CSAT (66% to 76%)">CSAT (66% para 76%)</div></div>
+      <div class="rm"><div class="rmv">+3pp</div><div class="rml" data-pt="Retenção (76% para 79%)" data-en="Retention (76% to 79%)">Retenção (76% para 79%)</div></div>
     </div>
-  </div>
-
-  <div class="sec">
-    <div class="slabel">08 — O aprendizado</div>
+    <p data-pt="O que os clientes passaram a dizer nas avaliações:" data-en="What customers started saying in reviews:">O que os clientes passaram a dizer nas avaliações:</p>
+    <div class="fps">
+      <span class="fp">"respostas mais claras"</span>
+      <span class="fp">"rapidez"</span>
+      <span class="fp">"agilidade"</span>
+      <span class="fp">"muito bom atendimento"</span>
+      <span class="fp">"a informação"</span>
+    </div>
     <div class="learned">
-      <p>Um chatbot que falha no contexto de uso não falha por falta de conteúdo. Falha porque alguém projetou para o usuário imaginário, não para o usuário real, no momento real, com o peso real daquele momento.</p>
+      <p data-pt="Dados mostram onde dói. Conversas mostram por quê. Muitas vezes o problema que você foi resolver não é o problema real. É só o mais visível." data-en="Data shows where it hurts. Conversations show why. Sometimes the problem you went to solve isn't the real problem. It's just the most visible one.">Dados mostram onde dói. Conversas mostram por quê. Muitas vezes o problema que você foi resolver não é o problema real. É só o mais visível.</p>
       <cite>Samantha Barreto</cite>
+    </div>
+  </div>
+
+  <div class="sec fade">
+    <div class="sec-label" data-pt="06: Decisões de design" data-en="06: Design decisions">06: Decisões de design</div>
+    <div class="qas">
+      <div class="qa"><div class="qq" data-pt="Por que hierarquia de informação resolve um problema de CSAT?" data-en="Why does information hierarchy solve a CSAT problem?">Por que hierarquia de informação resolve um problema de CSAT?</div><div class="qa-a" data-pt="O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai." data-en="The customer wasn't dissatisfied with the product. They were dissatisfied with the effort to understand the response. When the most important information comes first and the message fits on screen without scrolling, cognitive effort drops. Less effort means better experience perception.">O cliente não estava insatisfeito com o produto. Estava insatisfeito com o esforço de entender a resposta. Quando a informação mais importante vem primeiro e a mensagem cabe em uma tela sem rolagem, o esforço cognitivo cai.</div></div>
+      <div class="qa"><div class="qq" data-pt="O que diferencia mapear cenários de simplesmente reescrever textos?" data-en="What distinguishes mapping scenarios from simply rewriting text?">O que diferencia mapear cenários de simplesmente reescrever textos?</div><div class="qa-a" data-pt="Reescrever sem mapear cenários resolve os sintomas, não as causas. Os cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Só lendo as conversas foi possível enxergar." data-en="Rewriting without mapping scenarios solves symptoms, not causes. The two scenarios I identified weren't in tickets as content problems. They were hidden as dissatisfied customers. I needed to read the conversations to see that.">Reescrever sem mapear cenários resolve os sintomas, não as causas. Os cenários que identifiquei não estavam nos tickets como problema de conteúdo. Estavam escondidos como clientes insatisfeitos. Só lendo as conversas foi possível enxergar.</div></div>
     </div>
   </div>
 
 </main>
 
 <nav class="cnav" aria-label="Navegação entre cases">
-  <a href="case-04.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">Niara: a alma de um assistente</div></a>
-  <a href="case-06.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Seguros: Content First do zero</div></a>
+  <a href="case-04.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">Cartão de Crédito: a pergunta que não foi respondida</div></a>
+  <a href="case-06.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Assistente de Voz da Marca</div></a>
 </nav>
 
 <footer>
   <p>© 2026 Samantha Barreto</p>
   <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
-
 <script src="../assets/shared.js"></script>
 <script>
-// Animação de entrada das seções
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
 }, { threshold: 0.08 });
