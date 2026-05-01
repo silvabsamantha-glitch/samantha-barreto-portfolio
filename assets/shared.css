@@ -444,7 +444,6 @@ footer a:hover { color: var(--green-2); }
 /* ── Case nav mobile ────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .case-back { min-height: 44px; margin-bottom: 2rem; }
-  .cnav { margin-top: 1.5rem; }
   .cni { min-height: 44px; }
 }
 
