@@ -20,11 +20,20 @@ function applyLang(lang) {
   document.querySelectorAll('[data-alt-pt]').forEach(el => {
     el.alt = lang === 'en' ? (el.dataset.altEn || el.dataset.altPt) : el.dataset.altPt;
   });
+  // Toggle PT/EN content blocks (Option B SVG duplication + any data-lang-block elements)
+  document.querySelectorAll('[data-lang-block]').forEach(el => {
+    el.style.display = el.dataset.langBlock === lang ? '' : 'none';
+  });
+  // Broadcast language to all iframes
+  document.querySelectorAll('iframe').forEach(f => {
+    try { f.contentWindow.postMessage({ type: 'setLang', lang: lang }, '*'); } catch(e) {}
+  });
   // Update lang toggle buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
   document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+  document.documentElement.setAttribute('data-lang', lang);
 }
 
 function initLang() {
