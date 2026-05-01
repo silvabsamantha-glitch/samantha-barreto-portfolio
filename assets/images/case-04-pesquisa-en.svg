@@ -1,0 +1,81 @@
+<svg width="720" height="400" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Niara research process: four methods applied with 600+ employees heard, 40 hours of content tests, 24 hours of Design Sprint and 16 hours of in-depth interviews">
+  <title>Research process — Niara, National Bank</title>
+
+  <!-- Background -->
+  <rect width="720" height="400" rx="12" fill="#16213E"/>
+  <rect width="720" height="400" rx="12" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid04" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+  </pattern>
+  <rect width="720" height="400" fill="url(#grid04)"/>
+
+  <!-- Title -->
+  <text x="36" y="48" font-family="Fraunces,Georgia,serif" font-size="22" fill="#fff" font-weight="500">600+ employees heard before writing</text>
+  <text x="36" y="68" font-family="DM Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">a single line of content</text>
+
+  <!-- Separator line -->
+  <line x1="36" y1="82" x2="684" y2="82" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+
+  <!-- Large metrics -->
+  <text x="60" y="130" font-family="Fraunces,Georgia,serif" font-size="48" fill="#1A9B76" font-weight="500">600+</text>
+  <text x="60" y="150" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">employees heard</text>
+
+  <text x="222" y="130" font-family="Fraunces,Georgia,serif" font-size="48" fill="#1A9B76" font-weight="500">40h</text>
+  <text x="222" y="150" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">of content tests</text>
+
+  <text x="374" y="130" font-family="Fraunces,Georgia,serif" font-size="48" fill="#1A9B76" font-weight="500">24h</text>
+  <text x="374" y="150" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">of Design Sprint</text>
+
+  <text x="516" y="130" font-family="Fraunces,Georgia,serif" font-size="48" fill="#1A9B76" font-weight="500">16h</text>
+  <text x="516" y="150" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">of in-depth interviews</text>
+
+  <!-- Method cards -->
+  <!-- Verbal Territory -->
+  <rect x="36" y="172" width="156" height="120" rx="8" fill="rgba(26,155,118,0.08)" stroke="rgba(26,155,118,0.2)" stroke-width="1"/>
+  <text x="54" y="196" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="700" letter-spacing="1">VERBAL TERRITORY</text>
+  <text x="54" y="216" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">We mapped words and</text>
+  <text x="54" y="232" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">attitudes of the ideal</text>
+  <text x="54" y="248" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">assistant, and what</text>
+  <text x="54" y="264" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">people rejected.</text>
+
+  <!-- Card Sorting -->
+  <rect x="204" y="172" width="156" height="120" rx="8" fill="rgba(26,155,118,0.08)" stroke="rgba(26,155,118,0.2)" stroke-width="1"/>
+  <text x="222" y="196" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="700" letter-spacing="1">CARD SORTING</text>
+  <text x="222" y="216" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">Personality attributes</text>
+  <text x="222" y="232" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">ranked from most</text>
+  <text x="222" y="248" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">to least</text>
+  <text x="222" y="264" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">desired.</text>
+
+  <!-- Content Tests -->
+  <rect x="372" y="172" width="156" height="120" rx="8" fill="rgba(26,155,118,0.08)" stroke="rgba(26,155,118,0.2)" stroke-width="1"/>
+  <text x="390" y="196" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="700" letter-spacing="1">CONTENT TESTS</text>
+  <text x="390" y="216" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">Different versions</text>
+  <text x="390" y="232" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">of the same message</text>
+  <text x="390" y="248" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">tested with real</text>
+  <text x="390" y="264" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">people.</text>
+
+  <!-- Interviews -->
+  <rect x="540" y="172" width="144" height="120" rx="8" fill="rgba(26,155,118,0.08)" stroke="rgba(26,155,118,0.2)" stroke-width="1"/>
+  <text x="558" y="196" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76" font-weight="700" letter-spacing="1">INTERVIEWS</text>
+  <text x="558" y="216" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">Long conversations</text>
+  <text x="558" y="232" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">to understand the</text>
+  <text x="558" y="248" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">mental state at the</text>
+  <text x="558" y="264" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.62)">moment of use.</text>
+
+  <!-- Result box -->
+  <rect x="36" y="308" width="648" height="64" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="56" y="332" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.3)" font-weight="700" letter-spacing="1">KEY INSIGHT</text>
+  <text x="56" y="354" font-family="Fraunces,Georgia,serif" font-size="15" fill="rgba(255,255,255,0.78)" font-style="italic">"The hand-holding tone didn't make sense. People wanted quick answers, not a tutorial."</text>
+
+  <!-- Result metrics -->
+  <rect x="36" y="386" width="100" height="8" rx="4" fill="rgba(26,155,118,0.15)"/>
+  <text x="86" y="393" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76">+64% conversations</text>
+  <rect x="148" y="386" width="110" height="8" rx="4" fill="rgba(26,155,118,0.15)"/>
+  <text x="203" y="393" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76">+25% digital share</text>
+  <rect x="270" y="386" width="90" height="8" rx="4" fill="rgba(26,155,118,0.15)"/>
+  <text x="315" y="393" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76">+9pp accuracy</text>
+  <rect x="372" y="386" width="110" height="8" rx="4" fill="rgba(26,155,118,0.15)"/>
+  <text x="427" y="393" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#1A9B76">−11.5pp false positive</text>
+</svg>

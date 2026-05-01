@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Before and after — Pagora Business Credit</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0D1B2A;padding:20px;font-family:'Courier New',monospace}
+.wrap{background:#111;border-radius:12px;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:500px){.wrap{grid-template-columns:1fr}}
+.col{display:flex;flex-direction:column;gap:8px}
+.lbl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:5px;padding:0 2px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.before .dot{background:#C47070}.before .lbl{color:#C47070}
+.after .dot{background:#0F6E56}.after .lbl{color:#4DB896}
+.phone{background:#0B141A;border-radius:14px;overflow:hidden;flex:1;display:flex;flex-direction:column;border:1.5px solid #1A2830}
+.wh{background:#1F2C34;padding:8px 12px;display:flex;align-items:center;gap:8px}
+.wav{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0}
+.before .wav{background:#2A5A4A}.after .wav{background:#0F4D3A}
+.wn{font-size:11px;color:#fff;font-weight:500}.ws{font-size:9px;color:#25D366}
+.chat{flex:1;padding:10px;display:flex;flex-direction:column;gap:6px}
+.b{max-width:88%;padding:7px 10px;border-radius:8px;font-size:11px;line-height:1.5;opacity:0;transform:translateY(5px);transition:opacity .35s,transform .35s}
+.b.show{opacity:1;transform:none}
+.bu{background:#005C4B;color:#E9EDEF;align-self:flex-end;border-radius:8px 8px 2px 8px}
+.bb{background:#1F2C34;color:#E9EDEF;align-self:flex-start;border-radius:8px 8px 8px 2px}
+.bb.bad{border-left:2px solid #8B3A3A}
+.bb.ok{border-left:2px solid #0F6E56}
+.no{color:#C47070;font-weight:700}
+.hl{color:#4DB896;font-weight:700}
+.tag{border-radius:0 6px 6px 0;padding:6px 10px;font-size:10px;opacity:0;transition:opacity .4s;margin-top:2px;line-height:1.5}
+.tag.show{opacity:1}
+.t-bad{background:#1A0A0A;border-left:2px solid #C47070;color:#E9EDEF;font-style:italic}
+.t-ok{background:#0A2018;border-left:2px solid #0F6E56;color:#4DB896}
+.t-ok span{color:rgba(255,255,255,.4);display:block;margin-top:2px;font-size:9px}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="col before">
+    <div class="lbl"><div class="dot"></div><span id="txt-before">before</span></div>
+    <div class="phone">
+      <div class="wh"><div class="wav">P</div><div><div class="wn">Pagora Credit</div><div class="ws" id="txt-online">online</div></div></div>
+      <div class="chat">
+        <div class="b bu" id="b1"></div>
+        <div class="b bb bad" id="b2"></div>
+        <div class="b bb bad" id="b3"></div>
+        <div class="b bu" id="b4"></div>
+        <div class="b bb bad" id="b5"></div>
+        <div class="tag t-bad" id="tc"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col after">
+    <div class="lbl"><div class="dot"></div><span id="txt-after">after</span></div>
+    <div class="phone">
+      <div class="wh"><div class="wav">P</div><div><div class="wn">Pagora Credit</div><div class="ws" id="txt-online2">online</div></div></div>
+      <div class="chat">
+        <div class="b bu" id="a1"></div>
+        <div class="b bb ok" id="a2"></div>
+        <div class="b bb ok" id="a3"></div>
+        <div class="b bu" id="a4"></div>
+        <div class="tag t-ok" id="tr"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+var strings = {
+  en: {
+    before: 'before', after: 'after', online: 'online',
+    b1: 'Do I have a loan available?',
+    b2: 'We carefully analyze each profile to offer the best conditions. Our team works to provide solutions for your business.',
+    b3: 'If you have questions, access the Pagora app or contact our support center.',
+    b4: 'But do I have one or not??',
+    b5: "At this time we haven't identified an active offer for your business.",
+    tc: '"Why didn\'t you just say that?" — real CSAT review',
+    a1: 'Do I have a loan available?',
+    a2noWord: 'Not yet',
+    a2rest: " — your business doesn't have an active offer right now. That can change in 30 days based on your history.",
+    a3pre: 'I can notify you when an offer becomes available. Want to enable the ',
+    a3hl: 'alert',
+    a3post: '?',
+    a4: 'Yes, I want the alert.',
+    trMain: '+14pp CSAT · retention even without an offer',
+    trSub: 'A clear "No" is worth more than vague silence'
+  },
+  pt: {
+    before: 'antes', after: 'depois', online: 'online',
+    b1: 'Tenho empréstimo disponível?',
+    b2: 'Analisamos criteriosamente cada perfil para oferecer as melhores condições. Nossa equipe trabalha para trazer soluções para o seu negócio.',
+    b3: 'Em caso de dúvidas, acesse o app Pagora ou entre em contato com nossa central de suporte.',
+    b4: 'Mas tenho ou não tenho??',
+    b5: 'No momento não identificamos uma oferta ativa para o seu negócio.',
+    tc: '"Por que não disse isso logo?" — avaliação real do CSAT',
+    a1: 'Tenho empréstimo disponível?',
+    a2noWord: 'Ainda não',
+    a2rest: ' — seu negócio não tem uma oferta ativa agora. Isso pode mudar em 30 dias com base no seu histórico.',
+    a3pre: 'Posso te avisar quando uma oferta estiver disponível. Quer ativar o ',
+    a3hl: 'alerta',
+    a3post: '?',
+    a4: 'Sim, quero o alerta.',
+    trMain: '+14pp CSAT · retenção mesmo sem oferta',
+    trSub: 'Um "Não" claro vale mais do que um silêncio vago'
+  }
+};
+
+var currentLang = 'en';
+
+function applyAnimLang(lang) {
+  currentLang = lang;
+  var s = strings[lang] || strings.pt;
+  document.getElementById('txt-before').textContent = s.before;
+  document.getElementById('txt-after').textContent = s.after;
+  document.getElementById('txt-online').textContent = s.online;
+  document.getElementById('txt-online2').textContent = s.online;
+  document.getElementById('b1').textContent = s.b1;
+  document.getElementById('b2').textContent = s.b2;
+  document.getElementById('b3').textContent = s.b3;
+  document.getElementById('b4').textContent = s.b4;
+  document.getElementById('b5').textContent = s.b5;
+  document.getElementById('tc').textContent = s.tc;
+  document.getElementById('a1').textContent = s.a1;
+  document.getElementById('a2').innerHTML = '<span class="no">' + s.a2noWord + '</span>' + s.a2rest;
+  document.getElementById('a3').innerHTML = s.a3pre + '<span class="hl">' + s.a3hl + '</span>' + s.a3post;
+  document.getElementById('a4').textContent = s.a4;
+  document.getElementById('tr').innerHTML = s.trMain + '<span>' + s.trSub + '</span>';
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'setLang') {
+    applyAnimLang(e.data.lang);
+  }
+});
+
+applyAnimLang(currentLang);
+
+var seq=[
+  function(){s('b1');s('a1');},
+  function(){s('b2');},
+  function(){s('a2');},
+  function(){s('b3');},
+  function(){s('a3');},
+  function(){s('b4');s('a4');},
+  function(){s('b5');},
+  function(){s('tc');},
+  function(){s('tr');}
+];
+var delays=[400,1000,1200,1900,2000,3100,3900,4700,4700];
+function s(id){var el=document.getElementById(id);if(el)el.classList.add('show');}
+function run(){seq.forEach(function(fn,i){setTimeout(fn,delays[i]);});setTimeout(reset,9000);}
+function reset(){
+  ['b1','b2','b3','b4','b5','a1','a2','a3','a4','tc','tr'].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.classList.remove('show');
+  });
+  setTimeout(run,700);
+}
+run();
+</script>
+<script>
+function nh(){var h=document.documentElement.scrollHeight||document.body.scrollHeight;window.parent.postMessage({iframeHeight:h},'*');}
+window.addEventListener('load',nh);window.addEventListener('resize',nh);setTimeout(nh,500);setTimeout(nh,1500);
+</script>
+</body></html>
