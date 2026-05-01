@@ -24,7 +24,17 @@ function applyLang(lang) {
   document.querySelectorAll('[data-lang-block]').forEach(el => {
     el.style.display = el.dataset.langBlock === lang ? '' : 'none';
   });
-  // Broadcast language to all iframes
+  // Swap src for iframes with bilingual versions
+  document.querySelectorAll('iframe[data-src-pt]').forEach(function(f) {
+    var newSrc = lang === 'en' ? (f.dataset.srcEn || f.dataset.srcPt) : f.dataset.srcPt;
+    if (f.getAttribute('src') !== newSrc) f.src = newSrc;
+  });
+  // Swap src for static images with bilingual versions
+  document.querySelectorAll('img[data-src-pt]').forEach(function(img) {
+    var newSrc = lang === 'en' ? (img.dataset.srcEn || img.dataset.srcPt) : img.dataset.srcPt;
+    if (img.getAttribute('src') !== newSrc) img.src = newSrc;
+  });
+  // Broadcast language to all iframes (fallback for iframes without data-src-pt)
   document.querySelectorAll('iframe').forEach(f => {
     try { f.contentWindow.postMessage({ type: 'setLang', lang: lang }, '*'); } catch(e) {}
   });
