@@ -197,9 +197,10 @@ nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(-
   align-items: center;
   gap: 0.45rem;
   padding: 0.8rem 1.6rem;
+  min-height: 44px;
   border-radius: var(--r-full);
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border: none;
   cursor: pointer;
@@ -210,6 +211,10 @@ nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(-
 .btn-primary:hover { background: var(--green-2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,110,86,0.25); }
 .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
 .btn-outline:hover { background: var(--navy); color: var(--white); }
+.about-left .btn-outline { color: var(--white); border-color: rgba(255,255,255,0.3); }
+.about-left .btn-outline:hover { background: rgba(255,255,255,0.12); color: var(--white); }
+.sobre-cta .btn-outline { color: var(--white); border-color: rgba(255,255,255,0.3); }
+.sobre-cta .btn-outline:hover { background: rgba(255,255,255,0.12); color: var(--white); }
 .btn-ghost { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
 .btn-ghost:hover { background: rgba(255,255,255,0.18); }
 
@@ -375,6 +380,20 @@ nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(-
 /* ── Desktop-note (hidden by default, shown via 1024px breakpoint) */
 .desktop-note { display: none; }
 
+/* ── Footer ─────────────────────────────────────────────────────── */
+footer {
+  background: var(--navy);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+footer p { font-size: 0.78rem; color: rgba(255,255,255,0.6); font-weight: 300; }
+footer a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
+footer a:hover { color: var(--green-2); }
+
 /* ── Touch targets ──────────────────────────────────────────────── */
 .lang-btn { min-height: 44px; min-width: 44px; }
 
@@ -397,7 +416,7 @@ nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(-
   .process-layout { grid-template-columns: 1fr; gap: 3rem; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .contact-sec { padding: 5rem 2rem; }
-  footer { padding: 2rem; flex-direction: column; gap: 0.75rem; text-align: center; }
+  footer { padding: 2rem; flex-direction: column; gap: 0.75rem; text-align: center; align-items: center; }
 }
 
 @media (max-width: 600px) {

@@ -17,6 +17,9 @@ function applyLang(lang) {
   document.querySelectorAll('[data-pt-placeholder]').forEach(el => {
     el.placeholder = lang === 'en' ? (el.dataset.enPlaceholder || el.dataset.ptPlaceholder) : el.dataset.ptPlaceholder;
   });
+  document.querySelectorAll('[data-alt-pt]').forEach(el => {
+    el.alt = lang === 'en' ? (el.dataset.altEn || el.dataset.altPt) : el.dataset.altPt;
+  });
   // Update lang toggle buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
