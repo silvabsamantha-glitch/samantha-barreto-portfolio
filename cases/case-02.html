@@ -142,119 +142,120 @@
 
 <section class="case-hero" aria-label="Case 05: Assistente de Gerentes PF e PJ em grande instituição financeira nacional">
   <div class="case-hero-inner">
-    <div class="cpill">Case 02 · Design Conversacional · Alta pressão</div>
-    <div class="cco">grande instituição financeira nacional · Conversational AI Designer · 2020/2022</div>
+    <div class="cpill" data-pt="Case 02 · Design Conversacional · Alta pressão" data-en="Case 02 · Conversational Design · High Pressure">Case 02 · Design Conversacional · Alta pressão</div>
+    <div class="cco" data-pt="grande instituição financeira nacional · Conversational AI Designer · 2020/2022" data-en="large national financial institution · Conversational AI Designer · 2020/2022">grande instituição financeira nacional · Conversational AI Designer · 2020/2022</div>
     <h1 data-pt="Assistente de Gerentes PF e PJ: do zero ao segundo começo" data-en="Branch Manager PF &amp; PJ Assistant: from scratch to a second start">Assistente de Gerentes PF e PJ: do zero ao segundo começo</h1>
     <p class="hsub" data-pt="Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na frente." data-en="How to design a chatbot for branch managers who need answers in seconds, with the customer sitting right in front of them.">Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos, com o cliente sentado na frente.</p>
     <div class="ctags">
-      <span class="tag">Design Conversacional</span>
-      <span class="tag">Alta pressão</span>
-      <span class="tag">Reconstrução</span>
-      <span class="tag">Arquitetura de informação</span>
+      <span class="tag" data-pt="Design Conversacional" data-en="Conversational Design">Design Conversacional</span>
+      <span class="tag" data-pt="Alta pressão" data-en="High Pressure">Alta pressão</span>
+      <span class="tag" data-pt="Reconstrução" data-en="Rebuild">Reconstrução</span>
+      <span class="tag" data-pt="Arquitetura de informação" data-en="Information Architecture">Arquitetura de informação</span>
     </div>
-    <div class="disc">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo, os princípios de design e as decisões são reais.</div>
+    <div class="disc" data-pt="Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo, os princípios de design e as decisões são reais." data-en="Some elements have been fictionalized to protect confidentiality: company name and system details. The process, design principles and decisions are real.">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo, os princípios de design e as decisões são reais.</div>
   </div>
 </section>
 
 <main id="case-content" class="cbody">
 
   <div class="sec">
-    <div class="slabel">01: A restrição central</div>
+    <div class="slabel" data-pt="01: A restrição central" data-en="01: The core constraint">01: A restrição central</div>
     <div class="tenbox">
-      <p class="tentext">"O gerente não pode demorar para encontrar a informação. Cada segundo de espera é percebido pelo cliente como falta de preparo."</p>
+      <p class="tentext" data-pt='"O gerente não pode demorar para encontrar a informação. Cada segundo de espera é percebido pelo cliente como falta de preparo."' data-en='"The manager can&apos;t take long to find information. Every second of waiting is perceived by the customer as lack of preparation."'>"O gerente não pode demorar para encontrar a informação. Cada segundo de espera é percebido pelo cliente como falta de preparo."</p>
     </div>
-    <p>A instituição havia lançado um assistente virtual para gerentes de agência. O rollout não funcionou e o projeto precisou pivotar. Eu reassumi do zero.</p>
-    <p>O desafio era diferente da maioria dos chatbots: o usuário final não é um cliente em casa com tempo para ler. É um <strong>gerente com o cliente sentado na sua frente</strong>, que precisa de uma resposta em segundos para não perder credibilidade.</p>
+    <p data-pt="A instituição havia lançado um assistente virtual para gerentes de agência. O rollout não funcionou e o projeto precisou pivotar. Eu reassumi do zero." data-en="The institution had launched a virtual assistant for branch managers. The rollout didn't work and the project needed to pivot. I took it over from scratch.">A instituição havia lançado um assistente virtual para gerentes de agência. O rollout não funcionou e o projeto precisou pivotar. Eu reassumi do zero.</p>
+    <p data-pt="O desafio era diferente da maioria dos chatbots: o usuário final não é um cliente em casa com tempo para ler. É um &lt;strong&gt;gerente com o cliente sentado na sua frente&lt;/strong&gt;, que precisa de uma resposta em segundos para não perder credibilidade." data-en="The challenge was different from most chatbots: the end user isn't a customer at home with time to read. They're a &lt;strong&gt;manager with the customer sitting right in front of them&lt;/strong&gt;, who needs an answer in seconds to avoid losing credibility.">O desafio era diferente da maioria dos chatbots: o usuário final não é um cliente em casa com tempo para ler. É um <strong>gerente com o cliente sentado na sua frente</strong>, que precisa de uma resposta em segundos para não perder credibilidade.</p>
     <div class="constr" role="list" aria-label="Restrições do projeto">
-      <span class="constpill" role="listitem">Velocidade acima de tudo</span>
-      <span class="constpill" role="listitem">Resposta sem ambiguidade</span>
-      <span class="constpill" role="listitem">Zero tolerância a erro</span>
-      <span class="constpill" role="listitem">Uso em contexto social de alta pressão</span>
+      <span class="constpill" role="listitem" data-pt="Velocidade acima de tudo" data-en="Speed above everything">Velocidade acima de tudo</span>
+      <span class="constpill" role="listitem" data-pt="Resposta sem ambiguidade" data-en="Unambiguous answers">Resposta sem ambiguidade</span>
+      <span class="constpill" role="listitem" data-pt="Zero tolerância a erro" data-en="Zero error tolerance">Zero tolerância a erro</span>
+      <span class="constpill" role="listitem" data-pt="Uso em contexto social de alta pressão" data-en="Use in high-pressure social context">Uso em contexto social de alta pressão</span>
     </div>
   </div>
 
   <div class="sec">
-    <div class="slabel">02: Por que o primeiro rollout falhou</div>
+    <div class="slabel" data-pt="02: Por que o primeiro rollout falhou" data-en="02: Why the first rollout failed">02: Por que o primeiro rollout falhou</div>
     <div class="ctxgrid">
       <div class="ctxcard">
-        <div class="ctxl">O que aconteceu</div>
-        <p>O assistente foi construído sem considerar o contexto real de uso. As respostas eram longas demais, a navegação era lenta e o tom não refletia a seriedade esperada por um profissional de agência.</p>
+        <div class="ctxl" data-pt="O que aconteceu" data-en="What happened">O que aconteceu</div>
+        <p data-pt="O assistente foi construído sem considerar o contexto real de uso. As respostas eram longas demais, a navegação era lenta e o tom não refletia a seriedade esperada por um profissional de agência." data-en="The assistant was built without considering the real context of use. Responses were too long, navigation was slow and the tone didn't reflect the seriousness expected by a branch professional.">O assistente foi construído sem considerar o contexto real de uso. As respostas eram longas demais, a navegação era lenta e o tom não refletia a seriedade esperada por um profissional de agência.</p>
       </div>
       <div class="ctxcard">
-        <div class="ctxl">O resultado</div>
-        <p>O gerente <strong>não confiava no canal</strong> e preferia ligar para o suporte. Quando a confiança se perde, ajustes incrementais não bastam. Era preciso recomeçar de forma visivelmente diferente.</p>
+        <div class="ctxl" data-pt="O resultado" data-en="The outcome">O resultado</div>
+        <p data-pt="O gerente &lt;strong&gt;não confiava no canal&lt;/strong&gt; e preferia ligar para o suporte. Quando a confiança se perde, ajustes incrementais não bastam. Era preciso recomeçar de forma visivelmente diferente." data-en="The manager &lt;strong&gt;didn't trust the channel&lt;/strong&gt; and preferred to call support. When trust is lost, incremental adjustments aren't enough. It was necessary to start over in a visibly different way.">O gerente <strong>não confiava no canal</strong> e preferia ligar para o suporte. Quando a confiança se perde, ajustes incrementais não bastam. Era preciso recomeçar de forma visivelmente diferente.</p>
       </div>
     </div>
-    <p>Aprendi algo importante nesse projeto: <strong>ignorar o contexto de uso é a maior causa de falha em design conversacional</strong>. Um chatbot para cliente em casa e um chatbot para gerente em atendimento podem ter o mesmo conteúdo, mas precisam de arquiteturas completamente diferentes.</p>
+    <p data-pt="Aprendi algo importante nesse projeto: &lt;strong&gt;ignorar o contexto de uso é a maior causa de falha em design conversacional&lt;/strong&gt;. Um chatbot para cliente em casa e um chatbot para gerente em atendimento podem ter o mesmo conteúdo, mas precisam de arquiteturas completamente diferentes." data-en="I learned something important in this project: &lt;strong&gt;ignoring the context of use is the biggest cause of failure in conversational design&lt;/strong&gt;. A chatbot for a customer at home and a chatbot for a manager in an appointment can have the same content, but need completely different architectures.">Aprendi algo importante nesse projeto: <strong>ignorar o contexto de uso é a maior causa de falha em design conversacional</strong>. Um chatbot para cliente em casa e um chatbot para gerente em atendimento podem ter o mesmo conteúdo, mas precisam de arquiteturas completamente diferentes.</p>
   </div>
 
   <div class="sec">
-    <div class="slabel">03: Princípios de design para alta pressão</div>
+    <div class="slabel" data-pt="03: Princípios de design para alta pressão" data-en="03: Design principles for high pressure">03: Princípios de design para alta pressão</div>
     <div class="pins" role="list" aria-label="Quatro princípios de design para alta pressão">
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">01</div><div class="pint">A resposta primeiro</div><div class="pind">A informação crítica vem antes de qualquer contexto ou explicação. O gerente não lê: ele escaneia.</div></div>
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">02</div><div class="pint">Sempre com saída</div><div class="pind">Toda jornada tem saída. Nenhuma resposta termina sem uma ação possível. O gerente nunca pode ficar preso.</div></div>
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">03</div><div class="pint">Tom de parceiro, não de tutorial</div><div class="pind">Não simpático: competente. O assistente fala como um colega que sabe a resposta e vai direto ao ponto.</div></div>
-      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">04</div><div class="pint">Leitura em 3 segundos</div><div class="pind">Se o gerente precisar de mais de 3 segundos para encontrar a informação principal, a mensagem está errada.</div></div>
+      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">01</div><div class="pint" data-pt="A resposta primeiro" data-en="Answer first">A resposta primeiro</div><div class="pind" data-pt="A informação crítica vem antes de qualquer contexto ou explicação. O gerente não lê: ele escaneia." data-en="Critical information comes before any context or explanation. The manager doesn't read: they scan.">A informação crítica vem antes de qualquer contexto ou explicação. O gerente não lê: ele escaneia.</div></div>
+      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">02</div><div class="pint" data-pt="Sempre com saída" data-en="Always an exit">Sempre com saída</div><div class="pind" data-pt="Toda jornada tem saída. Nenhuma resposta termina sem uma ação possível. O gerente nunca pode ficar preso." data-en="Every journey has an exit. No response ends without a possible action. The manager can never get stuck.">Toda jornada tem saída. Nenhuma resposta termina sem uma ação possível. O gerente nunca pode ficar preso.</div></div>
+      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">03</div><div class="pint" data-pt="Tom de parceiro, não de tutorial" data-en="Partner tone, not tutorial">Tom de parceiro, não de tutorial</div><div class="pind" data-pt="Não simpático: competente. O assistente fala como um colega que sabe a resposta e vai direto ao ponto." data-en="Not sympathetic: competent. The assistant speaks like a colleague who knows the answer and gets straight to the point.">Não simpático: competente. O assistente fala como um colega que sabe a resposta e vai direto ao ponto.</div></div>
+      <div class="pin" role="listitem"><div class="pinnum" aria-hidden="true">04</div><div class="pint" data-pt="Leitura em 3 segundos" data-en="3-second readability">Leitura em 3 segundos</div><div class="pind" data-pt="Se o gerente precisar de mais de 3 segundos para encontrar a informação principal, a mensagem está errada." data-en="If the manager needs more than 3 seconds to find the key information, the message is wrong.">Se o gerente precisar de mais de 3 segundos para encontrar a informação principal, a mensagem está errada.</div></div>
     </div>
   </div>
 
   <div class="sec">
-    <div class="slabel">04: Sempre com saída: deeplinks garantem o caminho mesmo sem API</div>
-    <p>Sem acesso a API para integrar dados em tempo real, a solução foi desenhar respostas que <strong>levam o gerente diretamente ao lugar certo</strong> dentro do sistema. O caminho vem antes dos botões: assim o gerente entende o que está abrindo e consegue navegar sozinho se precisar.</p>
+    <div class="slabel" data-pt="04: Sempre com saída: deeplinks garantem o caminho mesmo sem API" data-en="04: Always an exit: deeplinks secure the path even without API">04: Sempre com saída: deeplinks garantem o caminho mesmo sem API</div>
+    <p data-pt="Sem acesso a API para integrar dados em tempo real, a solução foi desenhar respostas que &lt;strong&gt;levam o gerente diretamente ao lugar certo&lt;/strong&gt; dentro do sistema. O caminho vem antes dos botões: assim o gerente entende o que está abrindo e consegue navegar sozinho se precisar." data-en="Without API access to integrate real-time data, the solution was to design responses that &lt;strong&gt;take the manager directly to the right place&lt;/strong&gt; within the system. The path comes before the buttons: that way the manager understands what they're opening and can navigate on their own if needed.">Sem acesso a API para integrar dados em tempo real, a solução foi desenhar respostas que <strong>levam o gerente diretamente ao lugar certo</strong> dentro do sistema. O caminho vem antes dos botões: assim o gerente entende o que está abrindo e consegue navegar sozinho se precisar.</p>
 
     <div class="chat-wrap" role="region" aria-label="Demonstração do assistente de gerentes com respostas e deeplinks">
       <div class="chat-bar">
         <span class="chat-bar-dot" aria-hidden="true"></span>
-        <span class="chat-bar-name">Assistente Gerentes PF e PJ</span>
-        <span class="chat-bar-sub">grande instituição financeira nacional</span>
+        <span class="chat-bar-name" data-pt="Assistente Gerentes PF e PJ" data-en="PF &amp; PJ Branch Manager Assistant">Assistente Gerentes PF e PJ</span>
+        <span class="chat-bar-sub" data-pt="grande instituição financeira nacional" data-en="large national financial institution">grande instituição financeira nacional</span>
       </div>
       <div class="chat-body">
-        <div class="bubble b-user" role="note" aria-label="Mensagem do gerente">Qual o limite disponível do cartão corporate do João Silva?</div>
-        <div class="bubble b-bot" aria-live="polite">
+        <div class="bubble b-user" role="note" data-pt="Qual o limite disponível do cartão corporate do João Silva?" data-en="What is the available limit on João Silva's corporate card?">Qual o limite disponível do cartão corporate do João Silva?</div>
+        <div class="bubble b-bot" aria-live="polite" data-pt="Para consultar o limite do seu cliente, acesse o Portal do Cliente e siga este caminho:&lt;br&gt;&lt;br&gt;&lt;span class=&quot;path-code&quot;&gt;Produtos → Cartão Corporate → nome do cliente → Limites&lt;/span&gt;&lt;br&gt;&lt;br&gt;Ou escolha uma ação rápida:" data-en="To check your client's limit, access the Client Portal and follow this path:&lt;br&gt;&lt;br&gt;&lt;span class=&quot;path-code&quot;&gt;Products → Corporate Card → client name → Limits&lt;/span&gt;&lt;br&gt;&lt;br&gt;Or choose a quick action:">
           Para consultar o limite do seu cliente, acesse o Portal do Cliente e siga este caminho:<br><br>
           <span class="path-code">Produtos → Cartão Corporate → nome do cliente → Limites</span><br><br>
           Ou escolha uma ação rápida:
           <div class="btn-row">
-            <a href="#" class="action-btn" aria-label="Abrir tela de limites do cliente no sistema">
+            <a href="#" class="action-btn" aria-label="Abrir tela de limites do cliente no sistema" data-pt="Abrir limites do cliente" data-en="Open client limits">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Abrir limites do cliente
             </a>
-            <a href="#" class="action-btn" aria-label="Abrir extrato do cartão no sistema">
+            <a href="#" class="action-btn" aria-label="Abrir extrato do cartão no sistema" data-pt="Ver extrato do cartão" data-en="View card statement">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Ver extrato do cartão
             </a>
-            <a href="#" class="action-btn" aria-label="Falar com suporte especializado">
+            <a href="#" class="action-btn" aria-label="Falar com suporte especializado" data-pt="Falar com suporte" data-en="Contact support">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               Falar com suporte
             </a>
           </div>
         </div>
-        <div class="bubble b-user" role="note" aria-label="Segunda mensagem do gerente">O cliente quer portabilidade de salário. Como faço?</div>
-        <div class="bubble b-bot" aria-live="polite">
+        <div class="bubble b-user" role="note" data-pt="O cliente quer portabilidade de salário. Como faço?" data-en="The client wants payroll portability. How do I proceed?">O cliente quer portabilidade de salário. Como faço?</div>
+        <div class="bubble b-bot" aria-live="polite" data-pt="Para iniciar a portabilidade, você vai precisar da autorização do cliente e do RH da empresa dele.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Documentos obrigatórios:&lt;/strong&gt; comprovante de vínculo empregatício e últimos 3 holerites.&lt;br&gt;&lt;br&gt;Caminho no sistema:&lt;br&gt;&lt;span class=&quot;path-code&quot;&gt;Relacionamento → Portabilidade → Nova solicitação&lt;/span&gt;" data-en="To start the portability, you'll need the client's authorization and their company's HR.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Required documents:&lt;/strong&gt; proof of employment and the last 3 pay stubs.&lt;br&gt;&lt;br&gt;Path in the system:&lt;br&gt;&lt;span class=&quot;path-code&quot;&gt;Relationships → Portability → New request&lt;/span&gt;">
           Para iniciar a portabilidade, você vai precisar da autorização do cliente e do RH da empresa dele.<br><br>
           <strong>Documentos obrigatórios:</strong> comprovante de vínculo empregatício e últimos 3 holerites.<br><br>
           Caminho no sistema:<br>
           <span class="path-code">Relacionamento → Portabilidade → Nova solicitação</span>
           <div class="btn-row">
-            <a href="#" class="action-btn" aria-label="Iniciar processo de portabilidade no sistema">
+            <a href="#" class="action-btn" aria-label="Iniciar processo de portabilidade no sistema" data-pt="Iniciar portabilidade" data-en="Start portability">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Iniciar portabilidade
             </a>
-            <a href="#" class="action-btn" aria-label="Ver checklist completo de documentos necessários">
+            <a href="#" class="action-btn" aria-label="Ver checklist completo de documentos necessários" data-pt="Ver checklist de documentos" data-en="View document checklist">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="11" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Ver checklist de documentos
             </a>
           </div>
         </div>
-        <div class="chat-note">O bot sempre mostra o caminho em texto antes dos botões. Assim o gerente sabe o que está abrindo e consegue navegar sozinho se precisar.</div>
+        <div class="chat-note" data-pt="O bot sempre mostra o caminho em texto antes dos botões. Assim o gerente sabe o que está abrindo e consegue navegar sozinho se precisar." data-en="The bot always shows the path in text before the buttons. That way the manager knows what they're opening and can navigate on their own if needed.">O bot sempre mostra o caminho em texto antes dos botões. Assim o gerente sabe o que está abrindo e consegue navegar sozinho se precisar.</div>
       </div>
     </div>
   </div>
 
   <div class="sec">
-    <div class="slabel">05: Árvore de decisão conversacional</div>
-    <p>O fluxo abaixo mostra como o gerente navega pelo assistente. Cada bifurcação tem uma saída clara: o caminho feliz resolve na hora, o caminho difícil sempre termina em especialista, nunca em beco sem saída.</p>
+    <div class="slabel" data-pt="05: Árvore de decisão conversacional" data-en="05: Conversational decision tree">05: Árvore de decisão conversacional</div>
+    <p data-pt="O fluxo abaixo mostra como o gerente navega pelo assistente. Cada bifurcação tem uma saída clara: o caminho feliz resolve na hora, o caminho difícil sempre termina em especialista, nunca em beco sem saída." data-en="The flow below shows how the manager navigates the assistant. Each fork has a clear exit: the happy path resolves on the spot, the hard path always ends with a specialist, never a dead end.">O fluxo abaixo mostra como o gerente navega pelo assistente. Cada bifurcação tem uma saída clara: o caminho feliz resolve na hora, o caminho difícil sempre termina em especialista, nunca em beco sem saída.</p>
 
+    <div data-lang-block="pt">
     <div class="tree-wrap" role="img" aria-label="Árvore de decisão conversacional do assistente de gerentes PF: fluxo com caminhos feliz e difícil, onde o caminho difícil termina sempre em especialista">
       <svg width="100%" viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -374,31 +375,123 @@
         <text x="448" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Neutro / estrutural</text>
       </svg>
     </div>
+    </div>
+
+    <div data-lang-block="en" style="display:none">
+    <div class="tree-wrap" role="img" aria-label="Conversational decision tree for PF branch manager assistant: flow with happy path and hard path, where the hard path always ends with a specialist">
+      <svg width="100%" viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="arr-g-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="arr-r-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#A32D2D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="arr-a-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#B7650A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <rect x="30" y="248" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="95" y="265" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">manager starts</text>
+        <text x="95" y="280" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">the query</text>
+        <line x1="160" y1="270" x2="188" y2="270" stroke="#888" stroke-width="0.75" fill="none"/>
+        <line x1="188" y1="90" x2="188" y2="480" stroke="#CCC" stroke-width="0.75" fill="none"/>
+        <line x1="188" y1="90" x2="208" y2="90" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="188" y1="175" x2="208" y2="175" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="188" y1="270" x2="208" y2="270" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="188" y1="365" x2="208" y2="365" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="188" y1="480" x2="208" y2="480" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <rect x="208" y="68" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="273" y="85" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">credit &amp; limit</text>
+        <text x="273" y="100" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">account &amp; card</text>
+        <rect x="208" y="153" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="273" y="170" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">corporate card</text>
+        <text x="273" y="185" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">limits &amp; blocks</text>
+        <rect x="208" y="248" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="273" y="265" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">portability</text>
+        <text x="273" y="280" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">salary &amp; services</text>
+        <rect x="208" y="343" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="273" y="360" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">PF products</text>
+        <text x="273" y="375" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">insurance &amp; investments</text>
+        <rect x="208" y="458" width="130" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="273" y="475" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#085041" font-weight="600">other questions</text>
+        <text x="273" y="490" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041">general processes</text>
+        <line x1="338" y1="90" x2="358" y2="90" stroke="#888" stroke-width="0.75" fill="none"/>
+        <line x1="358" y1="58" x2="358" y2="195" stroke="#CCC" stroke-width="0.75" fill="none"/>
+        <line x1="358" y1="58" x2="378" y2="58" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="358" y1="90" x2="378" y2="90" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="358" y1="130" x2="378" y2="130" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="358" y1="165" x2="378" y2="165" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="358" y1="195" x2="378" y2="195" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <rect x="378" y="40" width="120" height="32" rx="6" fill="#F5F5F7" stroke="#CCC" stroke-width="0.75"/>
+        <text x="438" y="60" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#3A3A50">check limit</text>
+        <rect x="378" y="74" width="120" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="438" y="94" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041" font-weight="600">response + deeplink</text>
+        <rect x="378" y="114" width="120" height="32" rx="6" fill="#F5F5F7" stroke="#CCC" stroke-width="0.75"/>
+        <text x="438" y="134" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#3A3A50">simulate credit</text>
+        <rect x="378" y="149" width="120" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="438" y="169" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041" font-weight="600">response + deeplink</text>
+        <rect x="378" y="179" width="120" height="32" rx="6" fill="#FEF2F2" stroke="#A32D2D" stroke-width="1"/>
+        <text x="438" y="199" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7F1D1D">not found</text>
+        <line x1="498" y1="195" x2="518" y2="195" stroke="#A32D2D" stroke-width="0.75" fill="none" marker-end="url(#arr-r-en)"/>
+        <rect x="518" y="179" width="120" height="32" rx="6" fill="#FFF0D6" stroke="#B7650A" stroke-width="1"/>
+        <text x="578" y="199" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#6B3D0A" font-weight="600">talk to specialist</text>
+        <line x1="338" y1="270" x2="358" y2="270" stroke="#888" stroke-width="0.75" fill="none"/>
+        <line x1="358" y1="235" x2="358" y2="345" stroke="#CCC" stroke-width="0.75" fill="none"/>
+        <line x1="358" y1="235" x2="378" y2="235" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="358" y1="270" x2="378" y2="270" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="358" y1="308" x2="378" y2="308" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <line x1="358" y1="345" x2="378" y2="345" stroke="#888" stroke-width="0.75" fill="none" marker-end="url(#arr-en)"/>
+        <rect x="378" y="219" width="120" height="32" rx="6" fill="#F5F5F7" stroke="#CCC" stroke-width="0.75"/>
+        <text x="438" y="239" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#3A3A50">start portability</text>
+        <rect x="378" y="254" width="120" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="438" y="274" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#085041" font-weight="600">response + deeplink</text>
+        <rect x="378" y="292" width="120" height="32" rx="6" fill="#F5F5F7" stroke="#CCC" stroke-width="0.75"/>
+        <text x="438" y="312" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#3A3A50">docs checklist</text>
+        <rect x="378" y="329" width="120" height="32" rx="6" fill="#FEF2F2" stroke="#A32D2D" stroke-width="1"/>
+        <text x="438" y="349" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7F1D1D">issue not resolved</text>
+        <line x1="498" y1="345" x2="518" y2="345" stroke="#A32D2D" stroke-width="0.75" fill="none" marker-end="url(#arr-r-en)"/>
+        <rect x="518" y="329" width="120" height="32" rx="6" fill="#FFF0D6" stroke="#B7650A" stroke-width="1"/>
+        <text x="578" y="349" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#6B3D0A" font-weight="600">talk to specialist</text>
+        <rect x="30" y="524" width="10" height="10" rx="2" fill="#0F6E56"/>
+        <text x="48" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Happy path</text>
+        <rect x="145" y="524" width="10" height="10" rx="2" fill="#A32D2D"/>
+        <text x="163" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Hard path</text>
+        <rect x="270" y="524" width="10" height="10" rx="2" fill="#B7650A"/>
+        <text x="288" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Talk to specialist</text>
+        <rect x="430" y="524" width="10" height="10" rx="2" fill="#888"/>
+        <text x="448" y="533" font-family="DM Sans,sans-serif" font-size="10" fill="#5C5C6E">Neutral / structural</text>
+      </svg>
+    </div>
+    </div>
   </div>
 
   <div class="sec">
-    <div class="slabel">06: Como construímos</div>
+    <div class="slabel" data-pt="06: Como construímos" data-en="06: How we built it">06: Como construímos</div>
     <div class="steps">
-      <div class="step"><span class="sn">01</span><div><div class="st">Imersão no contexto real</div><div class="sd">Entendimento profundo do dia a dia do gerente: quais situações geravam a necessidade do assistente, qual era o estado mental no momento de uso e o que afastava a adoção do sistema anterior.</div></div></div>
-      <div class="step"><span class="sn">02</span><div><div class="st">Mapeamento de macro e microassuntos</div><div class="sd">Estruturação da árvore conversacional a partir dos temas mais acessados. Identificação dos caminhos principais, variações e situações de exceção que precisavam de jornada própria.</div></div></div>
-      <div class="step"><span class="sn">03</span><div><div class="st">Design do caminho feliz e do caminho difícil</div><div class="sd">Para cada jornada: o fluxo ideal quando tudo funciona e o fluxo alternativo quando o gerente não encontra o que precisa. Sempre com saída clara e sem beco sem saída.</div></div></div>
-      <div class="step"><span class="sn">04</span><div><div class="st">Escrita com critério dos 3 segundos</div><div class="sd">Cada resposta testada com um critério simples: se demorava mais de 3 segundos para encontrar a informação principal, era reescrita. Tom ajustado para competência, sem simpatia desnecessária.</div></div></div>
+      <div class="step"><span class="sn">01</span><div><div class="st" data-pt="Imersão no contexto real" data-en="Immersion in the real context">Imersão no contexto real</div><div class="sd" data-pt="Entendimento profundo do dia a dia do gerente: quais situações geravam a necessidade do assistente, qual era o estado mental no momento de uso e o que afastava a adoção do sistema anterior." data-en="Deep understanding of the manager's day-to-day: what situations triggered the need for the assistant, what was the mental state at the moment of use, and what kept users away from the previous system.">Entendimento profundo do dia a dia do gerente: quais situações geravam a necessidade do assistente, qual era o estado mental no momento de uso e o que afastava a adoção do sistema anterior.</div></div></div>
+      <div class="step"><span class="sn">02</span><div><div class="st" data-pt="Mapeamento de macro e microassuntos" data-en="Macro and micro topic mapping">Mapeamento de macro e microassuntos</div><div class="sd" data-pt="Estruturação da árvore conversacional a partir dos temas mais acessados. Identificação dos caminhos principais, variações e situações de exceção que precisavam de jornada própria." data-en="Structuring the conversational tree from the most accessed topics. Identification of main paths, variations and exception scenarios that needed their own journey.">Estruturação da árvore conversacional a partir dos temas mais acessados. Identificação dos caminhos principais, variações e situações de exceção que precisavam de jornada própria.</div></div></div>
+      <div class="step"><span class="sn">03</span><div><div class="st" data-pt="Design do caminho feliz e do caminho difícil" data-en="Happy path and hard path design">Design do caminho feliz e do caminho difícil</div><div class="sd" data-pt="Para cada jornada: o fluxo ideal quando tudo funciona e o fluxo alternativo quando o gerente não encontra o que precisa. Sempre com saída clara e sem beco sem saída." data-en="For each journey: the ideal flow when everything works and the alternative flow when the manager doesn't find what they need. Always with a clear exit and no dead ends.">Para cada jornada: o fluxo ideal quando tudo funciona e o fluxo alternativo quando o gerente não encontra o que precisa. Sempre com saída clara e sem beco sem saída.</div></div></div>
+      <div class="step"><span class="sn">04</span><div><div class="st" data-pt="Escrita com critério dos 3 segundos" data-en="Writing with the 3-second criterion">Escrita com critério dos 3 segundos</div><div class="sd" data-pt="Cada resposta testada com um critério simples: se demorava mais de 3 segundos para encontrar a informação principal, era reescrita. Tom ajustado para competência, sem simpatia desnecessária." data-en="Each response tested with a simple criterion: if it took more than 3 seconds to find the key information, it was rewritten. Tone adjusted for competence, without unnecessary warmth.">Cada resposta testada com um critério simples: se demorava mais de 3 segundos para encontrar a informação principal, era reescrita. Tom ajustado para competência, sem simpatia desnecessária.</div></div></div>
     </div>
   </div>
 
   <div class="sec">
-    <div class="slabel">07: Decisões de design</div>
+    <div class="slabel" data-pt="07: Decisões de design" data-en="07: Design decisions">07: Decisões de design</div>
     <div class="qas">
-      <div class="qa"><div class="qq">Por que recomeçar do zero em vez de corrigir o existente?</div><div class="qa-a">Quando a confiança num canal digital se perde, é muito difícil recuperá-la com ajustes incrementais. O gerente já havia aprendido a não usar o assistente. Recomeçar com uma experiência visivelmente diferente era o único caminho para reconquistar a adoção.</div></div>
-      <div class="qa"><div class="qq">O que é o caminho difícil e por que ele importa tanto?</div><div class="qa-a">O caminho feliz é quando o gerente encontra exatamente o que procurava. O caminho difícil é quando não encontra e precisa de uma saída digna. A maioria dos chatbots é projetada para o caminho feliz. Os melhores são projetados para os dois.</div></div>
-      <div class="qa"><div class="qq">Por que o contexto de uso muda tudo no design conversacional?</div><div class="qa-a">Estado mental, tempo disponível e consequências de um erro são radicalmente distintos entre contextos. Ignorar isso foi o que fez o primeiro rollout falhar. Entender o contexto antes de escrever a primeira resposta é o que diferencia um chatbot que as pessoas usam de um que as pessoas evitam.</div></div>
+      <div class="qa"><div class="qq" data-pt="Por que recomeçar do zero em vez de corrigir o existente?" data-en="Why restart from scratch instead of fixing the existing one?">Por que recomeçar do zero em vez de corrigir o existente?</div><div class="qa-a" data-pt="Quando a confiança num canal digital se perde, é muito difícil recuperá-la com ajustes incrementais. O gerente já havia aprendido a não usar o assistente. Recomeçar com uma experiência visivelmente diferente era o único caminho para reconquistar a adoção." data-en="When trust in a digital channel is lost, it's very hard to recover with incremental fixes. The manager had already learned not to use the assistant. Restarting with a visibly different experience was the only way to win adoption back.">Quando a confiança num canal digital se perde, é muito difícil recuperá-la com ajustes incrementais. O gerente já havia aprendido a não usar o assistente. Recomeçar com uma experiência visivelmente diferente era o único caminho para reconquistar a adoção.</div></div>
+      <div class="qa"><div class="qq" data-pt="O que é o caminho difícil e por que ele importa tanto?" data-en="What is the hard path and why does it matter so much?">O que é o caminho difícil e por que ele importa tanto?</div><div class="qa-a" data-pt="O caminho feliz é quando o gerente encontra exatamente o que procurava. O caminho difícil é quando não encontra e precisa de uma saída digna. A maioria dos chatbots é projetada para o caminho feliz. Os melhores são projetados para os dois." data-en="The happy path is when the manager finds exactly what they were looking for. The hard path is when they don't, and they need a dignified way out. Most chatbots are designed for the happy path. The best ones are designed for both.">O caminho feliz é quando o gerente encontra exatamente o que procurava. O caminho difícil é quando não encontra e precisa de uma saída digna. A maioria dos chatbots é projetada para o caminho feliz. Os melhores são projetados para os dois.</div></div>
+      <div class="qa"><div class="qq" data-pt="Por que o contexto de uso muda tudo no design conversacional?" data-en="Why does context of use change everything in conversational design?">Por que o contexto de uso muda tudo no design conversacional?</div><div class="qa-a" data-pt="Estado mental, tempo disponível e consequências de um erro são radicalmente distintos entre contextos. Ignorar isso foi o que fez o primeiro rollout falhar. Entender o contexto antes de escrever a primeira resposta é o que diferencia um chatbot que as pessoas usam de um que as pessoas evitam." data-en="Mental state, available time and the consequences of an error are radically different across contexts. Ignoring this is what made the first rollout fail. Understanding context before writing the first response is what separates a chatbot people use from one people avoid.">Estado mental, tempo disponível e consequências de um erro são radicalmente distintos entre contextos. Ignorar isso foi o que fez o primeiro rollout falhar. Entender o contexto antes de escrever a primeira resposta é o que diferencia um chatbot que as pessoas usam de um que as pessoas evitam.</div></div>
     </div>
   </div>
 
   <div class="sec">
-    <div class="slabel">08: O aprendizado</div>
+    <div class="slabel" data-pt="08: O aprendizado" data-en="08: The learning">08: O aprendizado</div>
     <div class="learned">
-      <p>Um chatbot que falha no contexto de uso não falha por falta de conteúdo. Falha porque alguém projetou para o usuário imaginário, não para o usuário real, no momento real, com o peso real daquele momento.</p>
+      <p data-pt="Um chatbot que falha no contexto de uso não falha por falta de conteúdo. Falha porque alguém projetou para o usuário imaginário, não para o usuário real, no momento real, com o peso real daquele momento." data-en="A chatbot that fails in the context of use doesn't fail for lack of content. It fails because someone designed for the imaginary user, not the real user, in the real moment, with the real weight of that moment.">Um chatbot que falha no contexto de uso não falha por falta de conteúdo. Falha porque alguém projetou para o usuário imaginário, não para o usuário real, no momento real, com o peso real daquele momento.</p>
       <cite>Samantha Barreto</cite>
     </div>
   </div>
@@ -406,8 +499,8 @@
 </main>
 
 <nav class="cnav" aria-label="Navegação entre cases">
-  <a href="case-01.html" class="cni"><div class="cnd">← Case anterior</div><div class="cnt">Niara: a alma de um assistente</div></a>
-  <a href="case-03.html" class="cni cni-right"><div class="cnd">Próximo case →</div><div class="cnt">Seguros: Content First do zero</div></a>
+  <a href="case-01.html" class="cni"><div class="cnd" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div><div class="cnt" data-pt="Niara: a alma de um assistente" data-en="Niara: the soul of a virtual assistant">Niara: a alma de um assistente</div></a>
+  <a href="case-03.html" class="cni cni-right"><div class="cnd" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div><div class="cnt" data-pt="Seguros: Content First do zero" data-en="Insurance: Content First from scratch">Seguros: Content First do zero</div></a>
 </nav>
 
 <footer>
