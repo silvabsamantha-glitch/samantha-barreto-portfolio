@@ -217,7 +217,6 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  .personal-photo-col { order: -1; }
   .personal-photo-frame { max-width: 260px; }
 }
 @media (max-width: 600px) {
@@ -464,7 +463,8 @@
   .sobre-causes { padding: 2.5rem 1.25rem; }
   .sobre-cta { padding: 3rem 1.25rem; }
   .sobre-meta { flex-direction: column; gap: 0.375rem; }
-  .sobre-cta-btns .btn { min-height: 44px; }
+  .sobre-cta-btns { flex-direction: column; align-items: center; }
+  .sobre-cta-btns .btn { width: 100%; justify-content: center; max-width: 320px; min-height: 44px; }
 }
 </style>
 </head>
@@ -644,12 +644,6 @@
       </div>
 
       <div class="cert-item">
-        <div class="cert-name" data-pt="Watson Assistant Foundations" data-en="Watson Assistant Foundations">Watson Assistant Foundations</div>
-        <div class="cert-org">IBM</div>
-        <div class="cert-date" data-pt="abr 2021" data-en="Apr 2021">abr 2021</div>
-      </div>
-
-      <div class="cert-item">
         <div class="cert-name" data-pt="Comunicação e Oratória" data-en="Communication and Public Speaking">Comunicação e Oratória</div>
         <div class="cert-org">Conquer</div>
         <div class="cert-date" data-pt="ago 2023" data-en="Aug 2023">ago 2023</div>
@@ -659,6 +653,12 @@
         <div class="cert-name" data-pt="Inteligência Emocional 2.0" data-en="Emotional Intelligence 2.0">Inteligência Emocional 2.0</div>
         <div class="cert-org">Conquer</div>
         <div class="cert-date" data-pt="ago 2023" data-en="Aug 2023">ago 2023</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-name" data-pt="Watson Assistant Foundations" data-en="Watson Assistant Foundations">Watson Assistant Foundations</div>
+        <div class="cert-org">IBM</div>
+        <div class="cert-date" data-pt="abr 2021" data-en="Apr 2021">abr 2021</div>
       </div>
 
     </div>
