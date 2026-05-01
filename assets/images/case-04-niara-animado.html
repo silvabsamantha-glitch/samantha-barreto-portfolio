@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,7 +10,7 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
 .wrap{display:grid;grid-template-columns:260px 1fr;min-height:500px}
 @media(max-width:580px){.wrap{grid-template-columns:1fr}}
 
-/* ── Painel da Niara ── */
+/* ── Niara Panel ── */
 .niara-panel{background:linear-gradient(175deg,#1A1A2E 0%,#0F2A1E 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:28px 20px 0;position:relative;overflow:hidden}
 .niara-panel::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:200px;height:200px;background:radial-gradient(circle,rgba(15,110,86,0.2) 0%,transparent 70%);pointer-events:none}
 .niara-badge{background:rgba(15,110,86,0.15);border:1px solid rgba(15,110,86,0.3);border-radius:20px;padding:4px 14px;font-size:10px;color:#4DB896;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
@@ -43,7 +43,7 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
 .mtext{font-size:12.5px;color:rgba(255,255,255,0.82);line-height:1.65}
 .mtext .hl{color:#4DB896;font-weight:500}
 
-/* Card de direcionamento */
+/* Direction card */
 .dir-card{margin-top:10px;background:#0D1F14;border:1px solid rgba(15,110,86,0.35);border-radius:8px;overflow:hidden;opacity:0;transition:opacity 0.4s}
 .dir-card.show{opacity:1}
 .dir-card-header{background:rgba(15,110,86,0.15);padding:8px 14px;font-size:9px;color:#4DB896;letter-spacing:1px;text-transform:uppercase}
@@ -62,28 +62,28 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
 <div class="wrap">
   <!-- Niara -->
   <div class="niara-panel">
-    <div class="niara-badge">RH · Banco Nacional</div>
+    <div class="niara-badge">HR · National Bank</div>
     <div class="niara-name">Niara</div>
-    <div class="niara-role">Assistente Virtual de RH</div>
+    <div class="niara-role">HR Virtual Assistant</div>
     <div class="niara-online">
-      <div class="online-dot"></div>online agora
+      <div class="online-dot"></div>online now
     </div>
-    <img class="niara-img" src="niara-final.png" alt="Niara, assistente virtual de RH do Banco Nacional — personagem 3D ruiva com óculos e crachá"/>
+    <img class="niara-img" src="niara-final.png" alt="Niara, HR virtual assistant: 3D character with red hair, glasses, and a badge"/>
   </div>
 
   <!-- Chat -->
   <div class="chat-panel">
     <div class="chat-header">
-      <div class="chat-header-name">Niara · Assistente de RH</div>
-      <div class="chat-header-desc">Banco Nacional · sem integração de API · direcionamento por caminho</div>
+      <div class="chat-header-name">Niara · HR Assistant</div>
+      <div class="chat-header-desc">National Bank · no API integration · path-based guidance</div>
     </div>
     <div class="messages">
 
       <div class="msg" id="m1">
-        <div class="av av-u">Co</div>
+        <div class="av av-u">Em</div>
         <div class="mb">
-          <div class="mname">Colaborador <span>10:14</span></div>
-          <div class="mtext">Oi Niara, preciso solicitar minhas férias. Como faço?</div>
+          <div class="mname">Employee <span>10:14</span></div>
+          <div class="mtext">Hi Niara, I need to request my vacation. How do I do that?</div>
         </div>
       </div>
 
@@ -91,23 +91,23 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
         <div class="av av-n">N</div>
         <div class="mb">
           <div class="mname">Niara <span>10:14</span></div>
-          <div class="mtext">Oi! Para solicitar férias, você precisa acessar o <span class="hl">Portal RH</span>. Vou te guiar no caminho:</div>
+          <div class="mtext">Hi! To request vacation, you need to access the <span class="hl">HR Portal</span>. Let me guide you:</div>
           <div class="dir-card" id="card1">
-            <div class="dir-card-header">caminho no Portal RH</div>
+            <div class="dir-card-header">path in the HR Portal</div>
             <div class="dir-card-body">
-              <div class="dir-item"><div class="dir-num">1</div><div class="dir-text">Acesse <span class="dir-link">portalbanco.com.br/rh</span> com seu login corporativo</div></div>
-              <div class="dir-item"><div class="dir-num">2</div><div class="dir-text">Clique em <span class="dir-link">Benefícios → Férias → Nova Solicitação</span></div></div>
-              <div class="dir-item"><div class="dir-num">3</div><div class="dir-text">Escolha o período e confirme. Seu gestor receberá para aprovação</div></div>
+              <div class="dir-item"><div class="dir-num">1</div><div class="dir-text">Go to <span class="dir-link">portalbank.com/hr</span> with your corporate login</div></div>
+              <div class="dir-item"><div class="dir-num">2</div><div class="dir-text">Click <span class="dir-link">Benefits → Vacation → New Request</span></div></div>
+              <div class="dir-item"><div class="dir-num">3</div><div class="dir-text">Choose the period and confirm. Your manager will receive it for approval</div></div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="msg" id="m3">
-        <div class="av av-u">Co</div>
+        <div class="av av-u">Em</div>
         <div class="mb">
-          <div class="mname">Colaborador <span>10:15</span></div>
-          <div class="mtext">E qual o prazo mínimo de aviso?</div>
+          <div class="mname">Employee <span>10:15</span></div>
+          <div class="mtext">What's the minimum notice period?</div>
         </div>
       </div>
 
@@ -115,12 +115,12 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
         <div class="av av-n">N</div>
         <div class="mb">
           <div class="mname">Niara <span>10:15</span></div>
-          <div class="mtext">O aviso mínimo é de <span class="hl">30 dias corridos</span> antes do início. Para detalhes da política completa, consulte:</div>
+          <div class="mtext">The minimum notice is <span class="hl">30 calendar days</span> before the start date. For full policy details, see:</div>
           <div class="dir-card" id="card2">
-            <div class="dir-card-header">onde encontrar</div>
+            <div class="dir-card-header">where to find it</div>
             <div class="dir-card-body">
-              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text">Portal RH → <span class="dir-link">Documentos → Política de Férias</span></div></div>
-              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text">Dúvidas adicionais: <span class="dir-link">rh@banco.com.br</span></div></div>
+              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text">HR Portal → <span class="dir-link">Documents → Vacation Policy</span></div></div>
+              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text">Additional questions: <span class="dir-link">hr@bank.com</span></div></div>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
 
     </div>
     <div class="input-bar">
-      <div class="input-fake">Escreva uma mensagem para a Niara...</div>
+      <div class="input-fake">Write a message to Niara...</div>
     </div>
   </div>
 </div>

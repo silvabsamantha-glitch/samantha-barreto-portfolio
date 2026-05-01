@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
 *{box-sizing:border-box;margin:0;padding:0}body{background:#0D1B2A;padding:24px;font-family:'Courier New',monospace}
 .slack{background:#1A1D21;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
@@ -48,19 +48,19 @@
   <div class="slack-top"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span class="slack-ws">Avenue Securities</span></div>
   <div class="slack-body">
     <div class="sidebar">
-      <div class="sidebar-section">Canais</div>
-      <div class="ch"># conteudo-geral</div><div class="ch"># campanhas</div><div class="ch active"># voz-da-marca</div>
+      <div class="sidebar-section">Channels</div>
+      <div class="ch"># general-content</div><div class="ch"># campaigns</div><div class="ch active"># brand-voice</div>
       <div class="sidebar-section" style="margin-top:12px">Apps</div>
-      <div class="app-item"><div class="app-dot">V</div><div class="app-name">VozBot</div></div>
+      <div class="app-item"><div class="app-dot">V</div><div class="app-name">VoiceBot</div></div>
     </div>
     <div class="main">
-      <div class="ch-header"><div class="ch-name"># voz-da-marca</div><div class="ch-desc">Assistente de voz calibrado por segmento · Avenue Securities</div></div>
+      <div class="ch-header"><div class="ch-name"># brand-voice</div><div class="ch-desc">Segment-calibrated voice assistant · Avenue Securities</div></div>
       <div class="messages">
-        <div class="msg" id="m1"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>09:44</span></div><div class="msg-text">@VozBot preciso de 3 versões de push de aportes para os segmentos. Campanha de fim de mês. Adapte o tom por segmento.</div></div></div>
-        <div class="msg" id="m2"><div class="avatar av-bot">V</div><div class="msg-body"><div class="msg-name">VozBot <span class="badge">APP</span> <span>09:44</span></div><div class="msg-text" id="bot-intro" style="opacity:0;transition:opacity 0.3s">Aqui estão as 3 versões calibradas por segmento e momento de jornada:</div><div class="cards"><div class="seg-card digital" id="c1"><div class="seg-label d">Digital · tom leve</div><div class="seg-text">Que tal fazer seu dinheiro trabalhar por você este mês?</div><div class="seg-sub">Configure aportes agora.</div></div><div class="seg-card advanced" id="c2"><div class="seg-label a">Advanced · direto</div><div class="seg-text">Aporte programado reduz custo médio e aumenta retorno.</div><div class="seg-sub">Configure agora.</div></div><div class="seg-card singular" id="c3"><div class="seg-label s">Singular · refinado</div><div class="seg-text">Patrimônio que cresce com consistência. Programe seu próximo aporte.</div></div></div><div class="reactions" id="reacts"><div class="reaction">🙌 3</div><div class="reaction">✅ 2</div><div class="reaction">🔥 1</div></div></div></div>
-        <div class="msg" id="m3"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>09:46</span></div><div class="msg-text">Perfeito. Vou usar a versão Advanced na campanha de hoje.</div></div></div>
+        <div class="msg" id="m1"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>9:44 AM</span></div><div class="msg-text">@VoiceBot I need 3 versions of investment push notifications for each segment. End-of-month campaign. Adapt the tone per segment.</div></div></div>
+        <div class="msg" id="m2"><div class="avatar av-bot">V</div><div class="msg-body"><div class="msg-name">VoiceBot <span class="badge">APP</span> <span>9:44 AM</span></div><div class="msg-text" id="bot-intro" style="opacity:0;transition:opacity 0.3s">Here are 3 versions calibrated by segment and journey moment:</div><div class="cards"><div class="seg-card digital" id="c1"><div class="seg-label d">Digital · light tone</div><div class="seg-text">How about putting your money to work for you this month?</div><div class="seg-sub">Set up contributions now.</div></div><div class="seg-card advanced" id="c2"><div class="seg-label a">Advanced · direct</div><div class="seg-text">Scheduled contributions lower average cost and increase returns.</div><div class="seg-sub">Set up now.</div></div><div class="seg-card singular" id="c3"><div class="seg-label s">Singular · refined</div><div class="seg-text">Wealth that grows with consistency. Schedule your next contribution.</div></div></div><div class="reactions" id="reacts"><div class="reaction">🙌 3</div><div class="reaction">✅ 2</div><div class="reaction">🔥 1</div></div></div></div>
+        <div class="msg" id="m3"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>9:46 AM</span></div><div class="msg-text">Perfect. I'll use the Advanced version in today's campaign.</div></div></div>
       </div>
-      <div class="input-bar"><div class="input-fake">Mensagem para #voz-da-marca</div></div>
+      <div class="input-bar"><div class="input-fake">Message #brand-voice</div></div>
     </div>
   </div>
 </div>
@@ -73,7 +73,6 @@ function run(){seq.forEach((fn,i)=>setTimeout(fn,delays[i]));setTimeout(reset,75
 function reset(){document.querySelectorAll('.msg').forEach(el=>el.classList.remove('show'));document.querySelectorAll('.seg-card').forEach(el=>el.classList.remove('show'));document.getElementById('bot-intro').style.opacity='0';document.getElementById('reacts').classList.remove('show');setTimeout(run,600);}
 run();
 </script>
-
 <script>
 function notifyHeight(){
   var h = document.body.scrollHeight || document.documentElement.scrollHeight;
@@ -84,5 +83,4 @@ window.addEventListener('resize', notifyHeight);
 setTimeout(notifyHeight, 500);
 setTimeout(notifyHeight, 1500);
 </script>
-
 </body></html>

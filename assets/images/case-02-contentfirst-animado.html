@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
 *{box-sizing:border-box;margin:0;padding:0}body{background:#0D1B2A;padding:24px;font-family:'Courier New',monospace}
 .slack{background:#1A1D21;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
@@ -46,20 +46,20 @@
   <div class="slack-top"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span class="slack-ws">Avenue Securities</span></div>
   <div class="slack-body">
     <div class="sidebar">
-      <div class="sidebar-section">Canais</div>
-      <div class="ch"># produto</div><div class="ch"># releases</div><div class="ch active"># content-first-bot</div>
+      <div class="sidebar-section">Channels</div>
+      <div class="ch"># product</div><div class="ch"># releases</div><div class="ch active"># content-first-bot</div>
       <div class="sidebar-section" style="margin-top:12px">Apps</div>
-      <div class="app-item"><div class="app-dot">CF</div><div><div class="app-name">ContentFirst Bot</div><div class="app-sub">intenção antes de canal</div></div></div>
+      <div class="app-item"><div class="app-dot">CF</div><div><div class="app-name">ContentFirst Bot</div><div class="app-sub">intent before channel</div></div></div>
     </div>
     <div class="main">
-      <div class="ch-header"><div class="ch-name"># content-first-bot</div><div class="ch-desc">Intenção antes de canal · iniciativa própria · Avenue</div></div>
+      <div class="ch-header"><div class="ch-name"># content-first-bot</div><div class="ch-desc">Intent before channel · own initiative · Avenue</div></div>
       <div class="messages">
-        <div class="msg" id="m1"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name">Ana <span>14:18</span></div><div class="msg-text">Preciso comunicar uma mudança no onboarding. Qual canal uso?</div></div></div>
-        <div class="msg" id="m2"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>14:18</span></div><div class="msg-text">Antes de escolher o canal, vamos entender a <span class="hl">intenção</span>. Responde três perguntas rápidas:</div><div class="questions" id="qs"><div class="q-item"><span class="q-num">01</span><span>O que você quer que o usuário <span class="hl">faça</span> depois de ler?</span></div><div class="q-item"><span class="q-num">02</span><span>Em qual <span class="hl">momento da jornada</span> ele está?</span></div><div class="q-item"><span class="q-num">03</span><span>A mudança é <span class="hl">urgente</span> ou informativa?</span></div></div></div></div>
-        <div class="msg" id="m3"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name">Ana <span>14:19</span></div><div class="msg-text">Quero que ele complete o onboarding. Está no dia 2. É informativa, não urgente.</div></div></div>
-        <div class="msg" id="m4"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>14:19</span></div><div class="msg-text">Entendido. Com base na intenção e no momento:</div><div class="rec-box" id="rec"><div class="rec-label">recomendação</div><div class="rec-text"><span class="hl">Canal:</span> e-mail contextual (D+2) · <span class="hl">Tom:</span> motivacional, sem urgência</div><div class="rec-sub">"Você está quase lá — 2 minutos para finalizar seu cadastro"</div></div></div></div>
+        <div class="msg" id="m1"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name">Ana <span>2:18 PM</span></div><div class="msg-text">I need to communicate an onboarding change. Which channel should I use?</div></div></div>
+        <div class="msg" id="m2"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>2:18 PM</span></div><div class="msg-text">Before choosing the channel, let's understand the <span class="hl">intent</span>. Answer three quick questions:</div><div class="questions" id="qs"><div class="q-item"><span class="q-num">01</span><span>What do you want the user to <span class="hl">do</span> after reading?</span></div><div class="q-item"><span class="q-num">02</span><span>At what point in the <span class="hl">journey</span> are they?</span></div><div class="q-item"><span class="q-num">03</span><span>Is the change <span class="hl">urgent</span> or informational?</span></div></div></div></div>
+        <div class="msg" id="m3"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name">Ana <span>2:19 PM</span></div><div class="msg-text">I want them to complete onboarding. They're on day 2. It's informational, not urgent.</div></div></div>
+        <div class="msg" id="m4"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>2:19 PM</span></div><div class="msg-text">Got it. Based on the intent and the moment:</div><div class="rec-box" id="rec"><div class="rec-label">recommendation</div><div class="rec-text"><span class="hl">Channel:</span> contextual email (D+2) · <span class="hl">Tone:</span> motivational, no urgency</div><div class="rec-sub">"You're almost there — 2 minutes to complete your registration"</div></div></div></div>
       </div>
-      <div class="input-bar"><div class="input-fake">Mensagem para #content-first-bot</div></div>
+      <div class="input-bar"><div class="input-fake">Message #content-first-bot</div></div>
     </div>
   </div>
 </div>
@@ -71,7 +71,6 @@ function run(){seq.forEach((fn,i)=>setTimeout(fn,delays[i]));setTimeout(reset,80
 function reset(){['m1','m2','m3','m4','qs','rec'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('show')});setTimeout(run,700);}
 run();
 </script>
-
 <script>
 function notifyHeight(){
   var h = document.body.scrollHeight || document.documentElement.scrollHeight;
@@ -82,5 +81,4 @@ window.addEventListener('resize', notifyHeight);
 setTimeout(notifyHeight, 500);
 setTimeout(notifyHeight, 1500);
 </script>
-
 </body></html>
