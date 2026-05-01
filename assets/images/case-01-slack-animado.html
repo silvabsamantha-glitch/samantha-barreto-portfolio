@@ -48,23 +48,97 @@
   <div class="slack-top"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span class="slack-ws">Avenue Securities</span></div>
   <div class="slack-body">
     <div class="sidebar">
-      <div class="sidebar-section">Channels</div>
-      <div class="ch"># general-content</div><div class="ch"># campaigns</div><div class="ch active"># brand-voice</div>
-      <div class="sidebar-section" style="margin-top:12px">Apps</div>
+      <div class="sidebar-section" id="txt-channels">Channels</div>
+      <div class="ch" id="txt-ch1"># general-content</div><div class="ch" id="txt-ch2"># campaigns</div><div class="ch active"># brand-voice</div>
+      <div class="sidebar-section" style="margin-top:12px" id="txt-apps">Apps</div>
       <div class="app-item"><div class="app-dot">V</div><div class="app-name">VoiceBot</div></div>
     </div>
     <div class="main">
-      <div class="ch-header"><div class="ch-name"># brand-voice</div><div class="ch-desc">Segment-calibrated voice assistant · Avenue Securities</div></div>
+      <div class="ch-header"><div class="ch-name"># brand-voice</div><div class="ch-desc" id="txt-ch-desc">Segment-calibrated voice assistant · Avenue Securities</div></div>
       <div class="messages">
-        <div class="msg" id="m1"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>9:44 AM</span></div><div class="msg-text">@VoiceBot I need 3 versions of investment push notifications for each segment. End-of-month campaign. Adapt the tone per segment.</div></div></div>
-        <div class="msg" id="m2"><div class="avatar av-bot">V</div><div class="msg-body"><div class="msg-name">VoiceBot <span class="badge">APP</span> <span>9:44 AM</span></div><div class="msg-text" id="bot-intro" style="opacity:0;transition:opacity 0.3s">Here are 3 versions calibrated by segment and journey moment:</div><div class="cards"><div class="seg-card digital" id="c1"><div class="seg-label d">Digital · light tone</div><div class="seg-text">How about putting your money to work for you this month?</div><div class="seg-sub">Set up contributions now.</div></div><div class="seg-card advanced" id="c2"><div class="seg-label a">Advanced · direct</div><div class="seg-text">Scheduled contributions lower average cost and increase returns.</div><div class="seg-sub">Set up now.</div></div><div class="seg-card singular" id="c3"><div class="seg-label s">Singular · refined</div><div class="seg-text">Wealth that grows with consistency. Schedule your next contribution.</div></div></div><div class="reactions" id="reacts"><div class="reaction">🙌 3</div><div class="reaction">✅ 2</div><div class="reaction">🔥 1</div></div></div></div>
-        <div class="msg" id="m3"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>9:46 AM</span></div><div class="msg-text">Perfect. I'll use the Advanced version in today's campaign.</div></div></div>
+        <div class="msg" id="m1"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>9:44 AM</span></div><div class="msg-text" id="txt-m1">@VoiceBot I need 3 versions of investment push notifications for each segment. End-of-month campaign. Adapt the tone per segment.</div></div></div>
+        <div class="msg" id="m2"><div class="avatar av-bot">V</div><div class="msg-body"><div class="msg-name">VoiceBot <span class="badge">APP</span> <span>9:44 AM</span></div><div class="msg-text" id="bot-intro" style="opacity:0;transition:opacity 0.3s"></div><div class="cards"><div class="seg-card digital" id="c1"><div class="seg-label d" id="txt-c1-label">Digital · light tone</div><div class="seg-text" id="txt-c1-text">How about putting your money to work for you this month?</div><div class="seg-sub" id="txt-c1-sub">Set up contributions now.</div></div><div class="seg-card advanced" id="c2"><div class="seg-label a" id="txt-c2-label">Advanced · direct</div><div class="seg-text" id="txt-c2-text">Scheduled contributions lower average cost and increase returns.</div><div class="seg-sub" id="txt-c2-sub">Set up now.</div></div><div class="seg-card singular" id="c3"><div class="seg-label s" id="txt-c3-label">Singular · refined</div><div class="seg-text" id="txt-c3-text">Wealth that grows with consistency. Schedule your next contribution.</div></div></div><div class="reactions" id="reacts"><div class="reaction">🙌 3</div><div class="reaction">✅ 2</div><div class="reaction">🔥 1</div></div></div></div>
+        <div class="msg" id="m3"><div class="avatar av-sa">Sa</div><div class="msg-body"><div class="msg-name">Samantha <span>9:46 AM</span></div><div class="msg-text" id="txt-m3">Perfect. I'll use the Advanced version in today's campaign.</div></div></div>
       </div>
-      <div class="input-bar"><div class="input-fake">Message #brand-voice</div></div>
+      <div class="input-bar"><div class="input-fake" id="txt-input">Message #brand-voice</div></div>
     </div>
   </div>
 </div>
 <script>
+var strings = {
+  en: {
+    channels: 'Channels',
+    ch1: '# general-content',
+    ch2: '# campaigns',
+    apps: 'Apps',
+    chDesc: 'Segment-calibrated voice assistant · Avenue Securities',
+    m1: '@VoiceBot I need 3 versions of investment push notifications for each segment. End-of-month campaign. Adapt the tone per segment.',
+    botIntro: 'Here are 3 versions calibrated by segment and journey moment:',
+    c1Label: 'Digital · light tone',
+    c1Text: 'How about putting your money to work for you this month?',
+    c1Sub: 'Set up contributions now.',
+    c2Label: 'Advanced · direct',
+    c2Text: 'Scheduled contributions lower average cost and increase returns.',
+    c2Sub: 'Set up now.',
+    c3Label: 'Singular · refined',
+    c3Text: 'Wealth that grows with consistency. Schedule your next contribution.',
+    m3: "Perfect. I'll use the Advanced version in today's campaign.",
+    input: 'Message #brand-voice'
+  },
+  pt: {
+    channels: 'Canais',
+    ch1: '# conteúdo-geral',
+    ch2: '# campanhas',
+    apps: 'Apps',
+    chDesc: 'Assistente de voz calibrado por segmento · Avenue Securities',
+    m1: '@VoiceBot Preciso de 3 versões de push de investimento para cada segmento. Campanha de fim de mês. Adapte o tom por segmento.',
+    botIntro: 'Aqui estão 3 versões calibradas por segmento e momento de jornada:',
+    c1Label: 'Digital · tom leve',
+    c1Text: 'Que tal colocar o seu dinheiro para trabalhar por você neste mês?',
+    c1Sub: 'Programe contribuições agora.',
+    c2Label: 'Advanced · direto',
+    c2Text: 'Contribuições programadas reduzem o custo médio e aumentam o retorno.',
+    c2Sub: 'Programe agora.',
+    c3Label: 'Singular · refinado',
+    c3Text: 'Riqueza que cresce com consistência. Programe sua próxima contribuição.',
+    m3: 'Perfeito. Vou usar a versão Advanced na campanha de hoje.',
+    input: 'Mensagem #brand-voice'
+  }
+};
+
+var currentLang = 'pt';
+
+function applyAnimLang(lang) {
+  currentLang = lang;
+  var s = strings[lang] || strings.pt;
+  document.getElementById('txt-channels').textContent = s.channels;
+  document.getElementById('txt-ch1').textContent = s.ch1;
+  document.getElementById('txt-ch2').textContent = s.ch2;
+  document.getElementById('txt-apps').textContent = s.apps;
+  document.getElementById('txt-ch-desc').textContent = s.chDesc;
+  document.getElementById('txt-m1').textContent = s.m1;
+  document.getElementById('bot-intro').textContent = s.botIntro;
+  document.getElementById('txt-c1-label').textContent = s.c1Label;
+  document.getElementById('txt-c1-text').textContent = s.c1Text;
+  document.getElementById('txt-c1-sub').textContent = s.c1Sub;
+  document.getElementById('txt-c2-label').textContent = s.c2Label;
+  document.getElementById('txt-c2-text').textContent = s.c2Text;
+  document.getElementById('txt-c2-sub').textContent = s.c2Sub;
+  document.getElementById('txt-c3-label').textContent = s.c3Label;
+  document.getElementById('txt-c3-text').textContent = s.c3Text;
+  document.getElementById('txt-m3').textContent = s.m3;
+  document.getElementById('txt-input').textContent = s.input;
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'setLang') {
+    applyAnimLang(e.data.lang);
+  }
+});
+
+// Apply default language on load
+applyAnimLang(currentLang);
+
 function show(el){if(el)el.classList.add('show')}
 function fadeIn(el){if(el)el.style.opacity='1'}
 const seq=[()=>show(document.getElementById('m1')),()=>{show(document.getElementById('m2'));fadeIn(document.getElementById('bot-intro'))},()=>show(document.getElementById('c1')),()=>show(document.getElementById('c2')),()=>show(document.getElementById('c3')),()=>document.getElementById('reacts').classList.add('show'),()=>show(document.getElementById('m3'))];

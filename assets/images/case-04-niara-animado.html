@@ -62,11 +62,11 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
 <div class="wrap">
   <!-- Niara -->
   <div class="niara-panel">
-    <div class="niara-badge">HR · National Bank</div>
+    <div class="niara-badge" id="txt-badge">HR · National Bank</div>
     <div class="niara-name">Niara</div>
-    <div class="niara-role">HR Virtual Assistant</div>
+    <div class="niara-role" id="txt-role">HR Virtual Assistant</div>
     <div class="niara-online">
-      <div class="online-dot"></div>online now
+      <div class="online-dot"></div><span id="txt-online">online now</span>
     </div>
     <img class="niara-img" src="niara-final.png" alt="Niara, HR virtual assistant: 3D character with red hair, glasses, and a badge"/>
   </div>
@@ -74,16 +74,16 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
   <!-- Chat -->
   <div class="chat-panel">
     <div class="chat-header">
-      <div class="chat-header-name">Niara · HR Assistant</div>
-      <div class="chat-header-desc">National Bank · no API integration · path-based guidance</div>
+      <div class="chat-header-name" id="txt-header-name">Niara · HR Assistant</div>
+      <div class="chat-header-desc" id="txt-header-desc">National Bank · no API integration · path-based guidance</div>
     </div>
     <div class="messages">
 
       <div class="msg" id="m1">
         <div class="av av-u">Em</div>
         <div class="mb">
-          <div class="mname">Employee <span>10:14</span></div>
-          <div class="mtext">Hi Niara, I need to request my vacation. How do I do that?</div>
+          <div class="mname"><span id="txt-employee">Employee</span> <span>10:14</span></div>
+          <div class="mtext" id="txt-m1">Hi Niara, I need to request my vacation. How do I do that?</div>
         </div>
       </div>
 
@@ -91,13 +91,13 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
         <div class="av av-n">N</div>
         <div class="mb">
           <div class="mname">Niara <span>10:14</span></div>
-          <div class="mtext">Hi! To request vacation, you need to access the <span class="hl">HR Portal</span>. Let me guide you:</div>
+          <div class="mtext" id="txt-m2">Hi! To request vacation, you need to access the <span class="hl" id="txt-portal">HR Portal</span>. Let me guide you:</div>
           <div class="dir-card" id="card1">
-            <div class="dir-card-header">path in the HR Portal</div>
+            <div class="dir-card-header" id="txt-card1-header">path in the HR Portal</div>
             <div class="dir-card-body">
-              <div class="dir-item"><div class="dir-num">1</div><div class="dir-text">Go to <span class="dir-link">portalbank.com/hr</span> with your corporate login</div></div>
-              <div class="dir-item"><div class="dir-num">2</div><div class="dir-text">Click <span class="dir-link">Benefits → Vacation → New Request</span></div></div>
-              <div class="dir-item"><div class="dir-num">3</div><div class="dir-text">Choose the period and confirm. Your manager will receive it for approval</div></div>
+              <div class="dir-item"><div class="dir-num">1</div><div class="dir-text" id="txt-step1">Go to <span class="dir-link">portalbank.com/hr</span> with your corporate login</div></div>
+              <div class="dir-item"><div class="dir-num">2</div><div class="dir-text" id="txt-step2">Click <span class="dir-link">Benefits → Vacation → New Request</span></div></div>
+              <div class="dir-item"><div class="dir-num">3</div><div class="dir-text" id="txt-step3">Choose the period and confirm. Your manager will receive it for approval</div></div>
             </div>
           </div>
         </div>
@@ -106,8 +106,8 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
       <div class="msg" id="m3">
         <div class="av av-u">Em</div>
         <div class="mb">
-          <div class="mname">Employee <span>10:15</span></div>
-          <div class="mtext">What's the minimum notice period?</div>
+          <div class="mname"><span id="txt-employee2">Employee</span> <span>10:15</span></div>
+          <div class="mtext" id="txt-m3">What's the minimum notice period?</div>
         </div>
       </div>
 
@@ -115,12 +115,12 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
         <div class="av av-n">N</div>
         <div class="mb">
           <div class="mname">Niara <span>10:15</span></div>
-          <div class="mtext">The minimum notice is <span class="hl">30 calendar days</span> before the start date. For full policy details, see:</div>
+          <div class="mtext" id="txt-m4">The minimum notice is <span class="hl" id="txt-notice">30 calendar days</span> before the start date. For full policy details, see:</div>
           <div class="dir-card" id="card2">
-            <div class="dir-card-header">where to find it</div>
+            <div class="dir-card-header" id="txt-card2-header">where to find it</div>
             <div class="dir-card-body">
-              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text">HR Portal → <span class="dir-link">Documents → Vacation Policy</span></div></div>
-              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text">Additional questions: <span class="dir-link">hr@bank.com</span></div></div>
+              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text" id="txt-find1">HR Portal → <span class="dir-link">Documents → Vacation Policy</span></div></div>
+              <div class="dir-item"><div class="dir-num">→</div><div class="dir-text" id="txt-find2">Additional questions: <span class="dir-link">hr@bank.com</span></div></div>
             </div>
           </div>
         </div>
@@ -128,12 +128,97 @@ body{background:#16213E;font-family:'DM Sans','Segoe UI',sans-serif;padding:0;ma
 
     </div>
     <div class="input-bar">
-      <div class="input-fake">Write a message to Niara...</div>
+      <div class="input-fake" id="txt-input">Write a message to Niara...</div>
     </div>
   </div>
 </div>
 
 <script>
+var strings = {
+  en: {
+    badge: 'HR · National Bank',
+    role: 'HR Virtual Assistant',
+    online: 'online now',
+    headerName: 'Niara · HR Assistant',
+    headerDesc: 'National Bank · no API integration · path-based guidance',
+    employee: 'Employee',
+    m1: 'Hi Niara, I need to request my vacation. How do I do that?',
+    m2pre: 'Hi! To request vacation, you need to access the ',
+    portal: 'HR Portal',
+    m2post: '. Let me guide you:',
+    card1Header: 'path in the HR Portal',
+    step1: 'Go to <span class="dir-link">portalbank.com/hr</span> with your corporate login',
+    step2: 'Click <span class="dir-link">Benefits → Vacation → New Request</span>',
+    step3: 'Choose the period and confirm. Your manager will receive it for approval',
+    m3: "What's the minimum notice period?",
+    m4pre: 'The minimum notice is ',
+    notice: '30 calendar days',
+    m4post: ' before the start date. For full policy details, see:',
+    card2Header: 'where to find it',
+    find1: 'HR Portal → <span class="dir-link">Documents → Vacation Policy</span>',
+    find2: 'Additional questions: <span class="dir-link">hr@bank.com</span>',
+    input: 'Write a message to Niara...'
+  },
+  pt: {
+    badge: 'RH · Grande Banco Nacional',
+    role: 'Assistente Virtual de RH',
+    online: 'online agora',
+    headerName: 'Niara · Assistente de RH',
+    headerDesc: 'Grande Banco Nacional · sem integração API · orientação por caminho',
+    employee: 'Colaborador',
+    m1: 'Oi Niara, preciso solicitar minhas férias. Como faço isso?',
+    m2pre: 'Oi! Para solicitar férias, você precisa acessar o ',
+    portal: 'Portal de RH',
+    m2post: '. Deixa eu te orientar:',
+    card1Header: 'caminho no Portal de RH',
+    step1: 'Acesse <span class="dir-link">portalbank.com/rh</span> com seu login corporativo',
+    step2: 'Clique em <span class="dir-link">Benefícios → Férias → Nova Solicitação</span>',
+    step3: 'Escolha o período e confirme. Seu gestor receberá para aprovação',
+    m3: 'Qual é o prazo mínimo de aviso?',
+    m4pre: 'O aviso mínimo é de ',
+    notice: '30 dias corridos',
+    m4post: ' antes do início. Para detalhes completos da política, consulte:',
+    card2Header: 'onde encontrar',
+    find1: 'Portal de RH → <span class="dir-link">Documentos → Política de Férias</span>',
+    find2: 'Dúvidas adicionais: <span class="dir-link">rh@banco.com</span>',
+    input: 'Escreva uma mensagem para a Niara...'
+  }
+};
+
+var currentLang = 'pt';
+
+function applyAnimLang(lang) {
+  currentLang = lang;
+  var s = strings[lang] || strings.pt;
+  document.getElementById('txt-badge').textContent = s.badge;
+  document.getElementById('txt-role').textContent = s.role;
+  document.getElementById('txt-online').textContent = s.online;
+  document.getElementById('txt-header-name').textContent = s.headerName;
+  document.getElementById('txt-header-desc').textContent = s.headerDesc;
+  document.getElementById('txt-employee').textContent = s.employee;
+  document.getElementById('txt-employee2').textContent = s.employee;
+  document.getElementById('txt-m1').textContent = s.m1;
+  document.getElementById('txt-m2').innerHTML = s.m2pre + '<span class="hl">' + s.portal + '</span>' + s.m2post;
+  document.getElementById('txt-card1-header').textContent = s.card1Header;
+  document.getElementById('txt-step1').innerHTML = s.step1;
+  document.getElementById('txt-step2').innerHTML = s.step2;
+  document.getElementById('txt-step3').textContent = s.step3;
+  document.getElementById('txt-m3').textContent = s.m3;
+  document.getElementById('txt-m4').innerHTML = s.m4pre + '<span class="hl">' + s.notice + '</span>' + s.m4post;
+  document.getElementById('txt-card2-header').textContent = s.card2Header;
+  document.getElementById('txt-find1').innerHTML = s.find1;
+  document.getElementById('txt-find2').innerHTML = s.find2;
+  document.getElementById('txt-input').textContent = s.input;
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'setLang') {
+    applyAnimLang(e.data.lang);
+  }
+});
+
+applyAnimLang(currentLang);
+
 function show(id){var el=document.getElementById(id);if(el)el.classList.add('show');}
 var seq=[
   function(){show('m1');},

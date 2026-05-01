@@ -46,24 +46,100 @@
   <div class="slack-top"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span class="slack-ws">Avenue Securities</span></div>
   <div class="slack-body">
     <div class="sidebar">
-      <div class="sidebar-section">Channels</div>
-      <div class="ch"># product</div><div class="ch"># releases</div><div class="ch active"># content-first-bot</div>
-      <div class="sidebar-section" style="margin-top:12px">Apps</div>
-      <div class="app-item"><div class="app-dot">CF</div><div><div class="app-name">ContentFirst Bot</div><div class="app-sub">intent before channel</div></div></div>
+      <div class="sidebar-section" id="txt-channels">Channels</div>
+      <div class="ch" id="txt-ch1"># product</div><div class="ch" id="txt-ch2"># releases</div><div class="ch active"># content-first-bot</div>
+      <div class="sidebar-section" style="margin-top:12px" id="txt-apps">Apps</div>
+      <div class="app-item"><div class="app-dot">CF</div><div><div class="app-name">ContentFirst Bot</div><div class="app-sub" id="txt-app-sub">intent before channel</div></div></div>
     </div>
     <div class="main">
-      <div class="ch-header"><div class="ch-name"># content-first-bot</div><div class="ch-desc">Intent before channel · own initiative · Avenue</div></div>
+      <div class="ch-header"><div class="ch-name"># content-first-bot</div><div class="ch-desc" id="txt-ch-desc">Intent before channel · own initiative · Avenue</div></div>
       <div class="messages">
-        <div class="msg" id="m1"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name">Ana <span>2:18 PM</span></div><div class="msg-text">I need to communicate an onboarding change. Which channel should I use?</div></div></div>
-        <div class="msg" id="m2"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>2:18 PM</span></div><div class="msg-text">Before choosing the channel, let's understand the <span class="hl">intent</span>. Answer three quick questions:</div><div class="questions" id="qs"><div class="q-item"><span class="q-num">01</span><span>What do you want the user to <span class="hl">do</span> after reading?</span></div><div class="q-item"><span class="q-num">02</span><span>At what point in the <span class="hl">journey</span> are they?</span></div><div class="q-item"><span class="q-num">03</span><span>Is the change <span class="hl">urgent</span> or informational?</span></div></div></div></div>
-        <div class="msg" id="m3"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name">Ana <span>2:19 PM</span></div><div class="msg-text">I want them to complete onboarding. They're on day 2. It's informational, not urgent.</div></div></div>
-        <div class="msg" id="m4"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>2:19 PM</span></div><div class="msg-text">Got it. Based on the intent and the moment:</div><div class="rec-box" id="rec"><div class="rec-label">recommendation</div><div class="rec-text"><span class="hl">Channel:</span> contextual email (D+2) · <span class="hl">Tone:</span> motivational, no urgency</div><div class="rec-sub">"You're almost there — 2 minutes to complete your registration"</div></div></div></div>
+        <div class="msg" id="m1"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name" id="txt-name1">Ana <span>2:18 PM</span></div><div class="msg-text" id="txt-m1">I need to communicate an onboarding change. Which channel should I use?</div></div></div>
+        <div class="msg" id="m2"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>2:18 PM</span></div><div class="msg-text" id="txt-m2">Before choosing the channel, let's understand the <span class="hl" id="txt-intent">intent</span>. Answer three quick questions:</div><div class="questions" id="qs"><div class="q-item"><span class="q-num">01</span><span id="txt-q1">What do you want the user to <span class="hl" id="txt-do">do</span> after reading?</span></div><div class="q-item"><span class="q-num">02</span><span id="txt-q2">At what point in the <span class="hl" id="txt-journey">journey</span> are they?</span></div><div class="q-item"><span class="q-num">03</span><span id="txt-q3">Is the change <span class="hl" id="txt-urgent">urgent</span> or informational?</span></div></div></div></div>
+        <div class="msg" id="m3"><div class="avatar av-pm">PM</div><div class="msg-body"><div class="msg-name" id="txt-name3">Ana <span>2:19 PM</span></div><div class="msg-text" id="txt-m3">I want them to complete onboarding. They're on day 2. It's informational, not urgent.</div></div></div>
+        <div class="msg" id="m4"><div class="avatar av-cf">CF</div><div class="msg-body"><div class="msg-name">ContentFirst Bot <span class="badge">APP</span> <span>2:19 PM</span></div><div class="msg-text" id="txt-m4">Got it. Based on the intent and the moment:</div><div class="rec-box" id="rec"><div class="rec-label" id="txt-rec-label">recommendation</div><div class="rec-text" id="txt-rec-text"><span class="hl" id="txt-channel-lbl">Channel:</span> contextual email (D+2) · <span class="hl" id="txt-tone-lbl">Tone:</span> motivational, no urgency</div><div class="rec-sub" id="txt-rec-sub">"You're almost there — 2 minutes to complete your registration"</div></div></div></div>
       </div>
-      <div class="input-bar"><div class="input-fake">Message #content-first-bot</div></div>
+      <div class="input-bar"><div class="input-fake" id="txt-input">Message #content-first-bot</div></div>
     </div>
   </div>
 </div>
 <script>
+var strings = {
+  en: {
+    channels: 'Channels', ch1: '# product', ch2: '# releases', apps: 'Apps',
+    appSub: 'intent before channel',
+    chDesc: 'Intent before channel · own initiative · Avenue',
+    name1: 'Ana', name3: 'Ana',
+    m1: 'I need to communicate an onboarding change. Which channel should I use?',
+    m2pre: "Before choosing the channel, let's understand the ",
+    intent: 'intent',
+    m2post: '. Answer three quick questions:',
+    q1pre: 'What do you want the user to ', doWord: 'do', q1post: ' after reading?',
+    q2pre: 'At what point in the ', journey: 'journey', q2post: ' are they?',
+    q3pre: 'Is the change ', urgent: 'urgent', q3post: ' or informational?',
+    m3: "I want them to complete onboarding. They're on day 2. It's informational, not urgent.",
+    m4: 'Got it. Based on the intent and the moment:',
+    recLabel: 'recommendation',
+    channelLbl: 'Channel:', toneLbl: 'Tone:',
+    recText: 'contextual email (D+2) · ', recTextTone: 'motivational, no urgency',
+    recSub: '"You\'re almost there — 2 minutes to complete your registration"',
+    input: 'Message #content-first-bot'
+  },
+  pt: {
+    channels: 'Canais', ch1: '# produto', ch2: '# releases', apps: 'Apps',
+    appSub: 'intenção antes do canal',
+    chDesc: 'Intenção antes do canal · iniciativa própria · Avenue',
+    name1: 'Ana', name3: 'Ana',
+    m1: 'Preciso comunicar uma mudança no onboarding. Qual canal devo usar?',
+    m2pre: 'Antes de escolher o canal, vamos entender a ',
+    intent: 'intenção',
+    m2post: '. Responda três perguntas rápidas:',
+    q1pre: 'O que você quer que o usuário ', doWord: 'faça', q1post: ' depois de ler?',
+    q2pre: 'Em que ponto da ', journey: 'jornada', q2post: ' ele está?',
+    q3pre: 'A mudança é ', urgent: 'urgente', q3post: ' ou informativa?',
+    m3: 'Quero que ele conclua o onboarding. Está no dia 2. É informativo, não urgente.',
+    m4: 'Entendido. Com base na intenção e no momento:',
+    recLabel: 'recomendação',
+    channelLbl: 'Canal:', toneLbl: 'Tom:',
+    recText: 'e-mail contextual (D+2) · ', recTextTone: 'motivacional, sem urgência',
+    recSub: '"Você está quase lá — 2 minutos para concluir seu cadastro"',
+    input: 'Mensagem #content-first-bot'
+  }
+};
+
+var currentLang = 'pt';
+
+function applyAnimLang(lang) {
+  currentLang = lang;
+  var s = strings[lang] || strings.pt;
+  document.getElementById('txt-channels').textContent = s.channels;
+  document.getElementById('txt-ch1').textContent = s.ch1;
+  document.getElementById('txt-ch2').textContent = s.ch2;
+  document.getElementById('txt-apps').textContent = s.apps;
+  document.getElementById('txt-app-sub').textContent = s.appSub;
+  document.getElementById('txt-ch-desc').textContent = s.chDesc;
+  document.getElementById('txt-m1').textContent = s.m1;
+  // m2 with inline spans
+  document.getElementById('txt-m2').innerHTML = s.m2pre + '<span class="hl">' + s.intent + '</span>' + s.m2post;
+  document.getElementById('txt-q1').innerHTML = s.q1pre + '<span class="hl">' + s.doWord + '</span>' + s.q1post;
+  document.getElementById('txt-q2').innerHTML = s.q2pre + '<span class="hl">' + s.journey + '</span>' + s.q2post;
+  document.getElementById('txt-q3').innerHTML = s.q3pre + '<span class="hl">' + s.urgent + '</span>' + s.q3post;
+  document.getElementById('txt-m3').textContent = s.m3;
+  document.getElementById('txt-m4').textContent = s.m4;
+  document.getElementById('txt-rec-label').textContent = s.recLabel;
+  document.getElementById('txt-rec-text').innerHTML = '<span class="hl">' + s.channelLbl + '</span> ' + s.recText + '<span class="hl">' + s.toneLbl + '</span> ' + s.recTextTone;
+  document.getElementById('txt-rec-sub').textContent = s.recSub;
+  document.getElementById('txt-input').textContent = s.input;
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'setLang') {
+    applyAnimLang(e.data.lang);
+  }
+});
+
+applyAnimLang(currentLang);
+
 function show(id){const el=document.getElementById(id);if(el)el.classList.add('show')}
 const seq=[()=>show('m1'),()=>show('m2'),()=>show('qs'),()=>show('m3'),()=>show('m4'),()=>show('rec')];
 const delays=[300,1000,1600,2800,3800,4400];

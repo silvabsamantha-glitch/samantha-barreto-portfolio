@@ -37,37 +37,125 @@ body{background:#111;font-family:'Courier New',monospace;padding:16px;min-height
 <body>
 <div class="wrap">
   <div class="col before">
-    <div class="phase-label"><div class="dot-l"></div>before</div>
+    <div class="phase-label"><div class="dot-l"></div><span id="txt-before">before</span></div>
     <div class="phone">
-      <div class="chat-header"><div class="chat-av">B</div><div><div class="chat-name">Digital Bank</div><div class="chat-sub">Virtual assistant</div></div></div>
+      <div class="chat-header"><div class="chat-av">B</div><div><div class="chat-name" id="txt-bank-name">Digital Bank</div><div class="chat-sub" id="txt-bank-sub">Virtual assistant</div></div></div>
       <div class="chat-area">
-        <div class="bub bub-u" id="b1">When will my credit card arrive?</div>
-        <div class="bub bub-b bad" id="b2">The delivery timeframe is 7 to 10 business days after the request.</div>
-        <div class="bub bub-u" id="b3">It's been 8 days. Has it arrived?</div>
-        <div class="bub bub-b bad" id="b4">The timeframe may vary by region. If in doubt, contact our support center.</div>
-        <div class="bub bub-u" id="b5">But I asked when MY card arrives...</div>
-        <div class="tag tag-bad" id="t-bad">"Asked when the card arrives. Not what the standard timeframe is."</div>
+        <div class="bub bub-u" id="b1"></div>
+        <div class="bub bub-b bad" id="b2"></div>
+        <div class="bub bub-u" id="b3"></div>
+        <div class="bub bub-b bad" id="b4"></div>
+        <div class="bub bub-u" id="b5"></div>
+        <div class="tag tag-bad" id="t-bad"></div>
       </div>
     </div>
   </div>
   <div class="col after">
-    <div class="phase-label"><div class="dot-l"></div>after · three scenarios</div>
+    <div class="phase-label"><div class="dot-l"></div><span id="txt-after">after · three scenarios</span></div>
     <div class="phone">
-      <div class="chat-header"><div class="chat-av">B</div><div><div class="chat-name">Digital Bank</div><div class="chat-sub">Virtual assistant</div></div></div>
+      <div class="chat-header"><div class="chat-av">B</div><div><div class="chat-name" id="txt-bank-name2">Digital Bank</div><div class="chat-sub" id="txt-bank-sub2">Virtual assistant</div></div></div>
       <div class="chat-area">
-        <div class="bub bub-u" id="a1">When will my credit card arrive?</div>
-        <div class="scen-label" id="sl1">scenario 1 · full API</div>
-        <div class="bub bub-b c1" id="a2">Your Mastercard Gold was requested on Jan 12. Expected by: <span class="val">Jan 22</span>. Track it here.</div>
-        <div class="scen-label" id="sl2">scenario 2 · partial API</div>
-        <div class="bub bub-b c2" id="a3">Requested on Jan 12. Considering 7 business days, arrives by <span class="val">Jan 22</span>. Is it past the deadline?</div>
-        <div class="scen-label" id="sl3">scenario 3 · no API</div>
-        <div class="bub bub-b c3" id="a4">Timeframe: 7 business days after request. E.g.: Monday → arrives by Wednesday. Is it past the deadline?</div>
-        <div class="tag tag-good" id="t-good">even without API, you can deliver something much better<span>the difference is in answering the right question</span></div>
+        <div class="bub bub-u" id="a1"></div>
+        <div class="scen-label" id="sl1"></div>
+        <div class="bub bub-b c1" id="a2"></div>
+        <div class="scen-label" id="sl2"></div>
+        <div class="bub bub-b c2" id="a3"></div>
+        <div class="scen-label" id="sl3"></div>
+        <div class="bub bub-b c3" id="a4"></div>
+        <div class="tag tag-good" id="t-good"></div>
       </div>
     </div>
   </div>
 </div>
 <script>
+var strings = {
+  en: {
+    before: 'before',
+    after: 'after · three scenarios',
+    bankName: 'Digital Bank',
+    bankSub: 'Virtual assistant',
+    b1: 'When will my credit card arrive?',
+    b2: 'The delivery timeframe is 7 to 10 business days after the request.',
+    b3: "It's been 8 days. Has it arrived?",
+    b4: 'The timeframe may vary by region. If in doubt, contact our support center.',
+    b5: 'But I asked when MY card arrives...',
+    tBad: '"Asked when the card arrives. Not what the standard timeframe is."',
+    a1: 'When will my credit card arrive?',
+    sl1: 'scenario 1 · full API',
+    a2pre: 'Your Mastercard Gold was requested on Jan 12. Expected by: ',
+    a2val: 'Jan 22',
+    a2post: '. Track it here.',
+    sl2: 'scenario 2 · partial API',
+    a3pre: 'Requested on Jan 12. Considering 7 business days, arrives by ',
+    a3val: 'Jan 22',
+    a3post: '. Is it past the deadline?',
+    sl3: 'scenario 3 · no API',
+    a4: 'Timeframe: 7 business days after request. E.g.: Monday → arrives by Wednesday. Is it past the deadline?',
+    tGoodMain: 'even without API, you can deliver something much better',
+    tGoodSub: 'the difference is in answering the right question'
+  },
+  pt: {
+    before: 'antes',
+    after: 'depois · três cenários',
+    bankName: 'Banco Digital',
+    bankSub: 'Assistente virtual',
+    b1: 'Quando meu cartão de crédito vai chegar?',
+    b2: 'O prazo de entrega é de 7 a 10 dias úteis após a solicitação.',
+    b3: 'Já faz 8 dias. Chegou?',
+    b4: 'O prazo pode variar por região. Em caso de dúvida, entre em contato com nossa central.',
+    b5: 'Mas eu perguntei quando O MEU cartão chega...',
+    tBad: '"Perguntou quando o cartão chega. Não qual é o prazo padrão."',
+    a1: 'Quando meu cartão de crédito vai chegar?',
+    sl1: 'cenário 1 · API completa',
+    a2pre: 'Seu Mastercard Gold foi solicitado em 12/01. Previsão: ',
+    a2val: '22/01',
+    a2post: '. Rastreie aqui.',
+    sl2: 'cenário 2 · API parcial',
+    a3pre: 'Solicitado em 12/01. Considerando 7 dias úteis, chega até ',
+    a3val: '22/01',
+    a3post: '. Já passou do prazo?',
+    sl3: 'cenário 3 · sem API',
+    a4: 'Prazo: 7 dias úteis após o pedido. Ex.: segunda → chega até quarta. Já passou do prazo?',
+    tGoodMain: 'mesmo sem API, dá pra entregar algo muito melhor',
+    tGoodSub: 'a diferença está em responder a pergunta certa'
+  }
+};
+
+var currentLang = 'pt';
+
+function applyAnimLang(lang) {
+  currentLang = lang;
+  var s = strings[lang] || strings.pt;
+  document.getElementById('txt-before').textContent = s.before;
+  document.getElementById('txt-after').textContent = s.after;
+  document.getElementById('txt-bank-name').textContent = s.bankName;
+  document.getElementById('txt-bank-sub').textContent = s.bankSub;
+  document.getElementById('txt-bank-name2').textContent = s.bankName;
+  document.getElementById('txt-bank-sub2').textContent = s.bankSub;
+  document.getElementById('b1').textContent = s.b1;
+  document.getElementById('b2').textContent = s.b2;
+  document.getElementById('b3').textContent = s.b3;
+  document.getElementById('b4').textContent = s.b4;
+  document.getElementById('b5').textContent = s.b5;
+  document.getElementById('t-bad').textContent = s.tBad;
+  document.getElementById('a1').textContent = s.a1;
+  document.getElementById('sl1').textContent = s.sl1;
+  document.getElementById('a2').innerHTML = s.a2pre + '<span class="val">' + s.a2val + '</span>' + s.a2post;
+  document.getElementById('sl2').textContent = s.sl2;
+  document.getElementById('a3').innerHTML = s.a3pre + '<span class="val">' + s.a3val + '</span>' + s.a3post;
+  document.getElementById('sl3').textContent = s.sl3;
+  document.getElementById('a4').textContent = s.a4;
+  document.getElementById('t-good').innerHTML = s.tGoodMain + '<span>' + s.tGoodSub + '</span>';
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'setLang') {
+    applyAnimLang(e.data.lang);
+  }
+});
+
+applyAnimLang(currentLang);
+
 function show(id){const el=document.getElementById(id);if(el)el.classList.add('show')}
 const seq=[
   ()=>{show('b1');show('a1')},
