@@ -85,10 +85,26 @@ function initNav() {
   }, { passive: true });
 }
 
+// ── Voltar ao topo ────────────────────────────────────────────────
+function initBackToTop() {
+  const btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.setAttribute('aria-label', 'Voltar ao topo');
+  btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>';
+  document.body.appendChild(btn);
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // ── Init all ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initLang();
   initCounters();
   initFadeIn();
   initNav();
+  initBackToTop();
 });

@@ -372,6 +372,12 @@ nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(-
 }
 .back-link:hover { color: var(--green); }
 
+/* ── Desktop-note (hidden by default, shown via 1024px breakpoint) */
+.desktop-note { display: none; }
+
+/* ── Touch targets ──────────────────────────────────────────────── */
+.lang-btn { min-height: 44px; min-width: 44px; }
+
 /* ── Responsive ─────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   nav { padding: 1rem 1.5rem; }
@@ -413,3 +419,18 @@ nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(-
   .skill-row { grid-template-columns: 1fr; gap: 0.5rem; }
   .case-card-metrics { flex-wrap: wrap; gap: 1rem; }
 }
+
+/* ── Voltar ao topo ──────────────────────────────────────────────── */
+.back-to-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--green); color: var(--white);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out), visibility 0.25s, background 0.2s;
+  box-shadow: 0 4px 16px rgba(15,110,86,0.35);
+}
+.back-to-top.visible { opacity: 1; visibility: visible; transform: none; }
+.back-to-top:hover { background: var(--green-2); transform: translateY(-2px); }
+.back-to-top:focus-visible { outline: 2px solid var(--green-2); outline-offset: 3px; }
