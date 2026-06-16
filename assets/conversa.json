@@ -1,0 +1,92 @@
+{
+  "pt": {
+    "greeting": "Oi. Eu sou a Aurora, assistente deste portfólio. A Samantha me desenhou do jeito que desenha tudo: começando pela intenção. O que te traz aqui?",
+    "back": "O que você gostaria de explorar agora?",
+    "rootQuickReplies": [
+      { "id": "recrutando", "label": "Estou recrutando" },
+      { "id": "ia", "label": "Tenho interesse em IA" },
+      { "id": "cases", "label": "Quero ver os cases" },
+      { "id": "contato", "label": "Quero falar com a Samantha" },
+      { "id": "explorar", "label": "Vou explorar por conta própria" }
+    ],
+    "branches": {
+      "recrutando": {
+        "response": "Perfeito, então vou começar por alguns dos projetos com maior impacto em negócio e experiência.",
+        "action": { "type": "scroll", "target": "#cases" },
+        "quickReplies": [
+          { "id": "trajetoria", "label": "Ver trajetória completa", "action": { "type": "link", "target": "sobre.html" } },
+          { "id": "cv", "label": "Baixar currículo (PDF)", "action": { "type": "download-cv" } },
+          { "id": "voltar", "label": "Voltar", "action": { "type": "restart" } }
+        ]
+      },
+      "ia": {
+        "response": "IA faz parte de vários projetos deste portfólio. Tem o copiloto de voz de marca, o framework de Content First e a Aurora, um sistema de agentes que a Samantha criou para organizar a própria vida.",
+        "action": { "type": "filter-cases", "value": "ia", "then": { "type": "scroll", "target": "#cases" } },
+        "quickReplies": [
+          { "id": "comofoi", "label": "Como você foi criada?", "action": { "type": "link", "target": "cases/case-08.html" } },
+          { "id": "voltar", "label": "Voltar", "action": { "type": "restart" } }
+        ]
+      },
+      "cases": {
+        "response": "Então vou abrir os cases. Você vai encontrar projetos de design conversacional, UX writing e estratégia de conteúdo, com contexto, processo e resultados.",
+        "action": { "type": "filter-cases", "value": "all", "then": { "type": "scroll", "target": "#cases" } },
+        "quickReplies": []
+      },
+      "contato": {
+        "response": "Você encontra a Samantha por WhatsApp, e-mail ou LinkedIn. Escolha o canal que preferir.",
+        "action": { "type": "scroll", "target": "#contato" },
+        "quickReplies": []
+      },
+      "explorar": {
+        "response": "Combinado. Vou ficar por aqui caso precise de ajuda.",
+        "action": { "type": "reveal-traditional" },
+        "quickReplies": []
+      }
+    }
+  },
+  "en": {
+    "greeting": "Hi. I'm Aurora, this portfolio's assistant. Samantha designed me the way she designs everything: starting with intent. What brings you here?",
+    "back": "What would you like to explore now?",
+    "rootQuickReplies": [
+      { "id": "recrutando", "label": "I'm recruiting" },
+      { "id": "ia", "label": "I'm interested in AI" },
+      { "id": "cases", "label": "I want to see the cases" },
+      { "id": "contato", "label": "I want to talk to Samantha" },
+      { "id": "explorar", "label": "I'll explore on my own" }
+    ],
+    "branches": {
+      "recrutando": {
+        "response": "Perfect, I'll start with some of the projects with the most impact on business and experience.",
+        "action": { "type": "scroll", "target": "#cases" },
+        "quickReplies": [
+          { "id": "trajetoria", "label": "See the full career path", "action": { "type": "link", "target": "sobre.html" } },
+          { "id": "cv", "label": "Download resume (PDF)", "action": { "type": "download-cv" } },
+          { "id": "voltar", "label": "Back", "action": { "type": "restart" } }
+        ]
+      },
+      "ia": {
+        "response": "AI runs through several projects in this portfolio. There's the brand voice copilot, the Content First framework, and Aurora, an agent system Samantha created to organize her own life.",
+        "action": { "type": "filter-cases", "value": "ia", "then": { "type": "scroll", "target": "#cases" } },
+        "quickReplies": [
+          { "id": "comofoi", "label": "How were you built?", "action": { "type": "link", "target": "cases/case-08.html" } },
+          { "id": "voltar", "label": "Back", "action": { "type": "restart" } }
+        ]
+      },
+      "cases": {
+        "response": "Then I'll open the cases. You'll find conversational design, UX writing and content strategy projects, with context, process and results.",
+        "action": { "type": "filter-cases", "value": "all", "then": { "type": "scroll", "target": "#cases" } },
+        "quickReplies": []
+      },
+      "contato": {
+        "response": "You can reach Samantha on WhatsApp, email or LinkedIn. Pick whichever channel you prefer.",
+        "action": { "type": "scroll", "target": "#contato" },
+        "quickReplies": []
+      },
+      "explorar": {
+        "response": "Got it. I'll be right here if you need a hand.",
+        "action": { "type": "reveal-traditional" },
+        "quickReplies": []
+      }
+    }
+  }
+}
