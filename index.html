@@ -107,6 +107,135 @@
 
 .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
+/* ── Aurora: conversa do hero ──────────────────────────────────── */
+.hero-roles.aurora-hidden { display: none; }
+
+.aurora-chat {
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+.aurora-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.aurora-msg {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  padding: 0.65rem 1rem;
+  border-radius: var(--r-md);
+  max-width: 92%;
+  font-weight: 300;
+}
+.aurora-msg-bot {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  border-radius: 4px var(--r-md) var(--r-md) var(--r-md);
+}
+.aurora-msg-user {
+  background: rgba(26,155,118,0.14);
+  border: 1px solid rgba(26,155,118,0.3);
+  color: rgba(255,255,255,0.9);
+  margin-left: auto;
+  border-radius: var(--r-md) 4px var(--r-md) var(--r-md);
+}
+.aurora-typing {
+  display: inline-flex;
+  gap: 4px;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px var(--r-md) var(--r-md) var(--r-md);
+  width: fit-content;
+}
+.aurora-typing span {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  animation: aurora-blink 1s infinite ease-in-out;
+}
+.aurora-typing span:nth-child(2) { animation-delay: 0.15s; }
+.aurora-typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes aurora-blink { 0%, 80%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
+
+.aurora-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.aurora-qr-btn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.6rem 1.1rem;
+  min-height: 44px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.18);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+.aurora-qr-btn:hover {
+  background: rgba(26,155,118,0.18);
+  color: var(--white);
+  border-color: rgba(26,155,118,0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-typing span { animation: none; opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .aurora-chat { max-width: 100%; }
+  .aurora-msg { max-width: 100%; font-size: 0.88rem; }
+  .aurora-qr-btn { font-size: 0.78rem; padding: 0.55rem 0.9rem; }
+}
+
+/* ── Filtro de cases (acionado pela Aurora ou pelos botões de tema) ── */
+#cases[data-aurora-filter="ia"] .case-featured:not([data-case-cat~="ia"]),
+#cases[data-aurora-filter="ia"] .case-card:not([data-case-cat~="ia"]),
+#cases[data-aurora-filter="conversacional"] .case-featured:not([data-case-cat~="conversacional"]),
+#cases[data-aurora-filter="conversacional"] .case-card:not([data-case-cat~="conversacional"]),
+#cases[data-aurora-filter="ux-writing"] .case-featured:not([data-case-cat~="ux-writing"]),
+#cases[data-aurora-filter="ux-writing"] .case-card:not([data-case-cat~="ux-writing"]),
+#cases[data-aurora-filter="tom-de-voz"] .case-featured:not([data-case-cat~="tom-de-voz"]),
+#cases[data-aurora-filter="tom-de-voz"] .case-card:not([data-case-cat~="tom-de-voz"]) {
+  display: none;
+}
+
+/* ── Filtro de tema (botões acima do grid de cases) ────────────── */
+.cases-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.case-filter-btn {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--navy);
+  background: var(--gray-light);
+  border: 1px solid var(--gray-line);
+  border-radius: var(--r-full);
+  padding: 0.6rem 1.1rem;
+  min-height: 44px;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+.case-filter-btn:hover {
+  border-color: var(--green);
+}
+.case-filter-btn.active {
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+}
+
 .hero-right {
   display: flex;
   align-items: stretch;
@@ -235,6 +364,116 @@
 .company-name:last-child { border-right: none; }
 .company-name:hover { opacity: 1; color: var(--green); }
 
+/* ── TIMELINE (trajetória) ─────────────────────────────────────── */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+}
+.timeline-item + .timeline-item {
+  border-top: 1px solid var(--gray-line);
+}
+.timeline-period {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--green);
+  letter-spacing: -0.01em;
+}
+.timeline-company {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+.timeline-desc {
+  font-size: 0.875rem;
+  color: var(--gray);
+  line-height: 1.65;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* ── TESTIMONIALS ───────────────────────────────────────────────── */
+.testimonials-sec { background: var(--gray-light); }
+.testimonials-note {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-style: italic;
+  font-weight: 300;
+  max-width: 560px;
+  margin-bottom: 2rem;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--gray-line);
+  border-radius: var(--r-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-card blockquote {
+  margin: 0 0 1.25rem;
+}
+.testimonial-card blockquote p {
+  font-size: 0.95rem;
+  color: var(--navy);
+  line-height: 1.75;
+  font-weight: 300;
+  font-style: italic;
+  margin: 0;
+}
+.testimonial-card figcaption {
+  margin-top: auto;
+  border-top: 1px solid var(--gray-line);
+  padding-top: 1rem;
+}
+.testimonial-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+.testimonial-role {
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-weight: 300;
+  line-height: 1.55;
+  margin-top: 0.25rem;
+}
+.testimonial-context {
+  font-size: 0.75rem;
+  color: var(--green);
+  font-weight: 500;
+  margin-top: 0.4rem;
+}
+.testimonial-link {
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+.testimonial-link:hover { color: var(--green-2); }
+
 /* ── ABOUT ──────────────────────────────────────────────────────── */
 .about-sec {
   display: grid;
@@ -341,6 +580,63 @@
   border-color: rgba(15,110,86,0.25);
 }
 
+/* ── MANIFESTO ──────────────────────────────────────────────────── */
+.manifesto-sec {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--white);
+}
+.manifesto-left,
+.manifesto-right {
+  padding: 6rem 4rem;
+}
+.manifesto-title-line {
+  display: block;
+}
+.manifesto-list {
+  list-style: none;
+  counter-reset: manifesto;
+  margin: 0;
+  padding: 0;
+  max-width: 760px;
+}
+.manifesto-item {
+  counter-increment: manifesto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--gray-line);
+}
+.manifesto-item:last-child { border-bottom: none; }
+.manifesto-item::before {
+  content: counter(manifesto, decimal-leading-zero);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  flex-shrink: 0;
+  padding-top: 0.45rem;
+}
+.manifesto-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+.skills-intro {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  max-width: 420px;
+}
+
 /* ── CASES ──────────────────────────────────────────────────────── */
 .cases-sec { background: var(--white); }
 
@@ -412,7 +708,7 @@
 }
 .cases-grid .case-card:first-child { border-radius: var(--r-lg) 0 0 0; }
 .cases-grid .case-card:nth-child(3) { border-radius: 0 var(--r-lg) 0 0; }
-.cases-grid .case-card:nth-child(4) { border-radius: 0 0 0 var(--r-lg); }
+.cases-grid .case-card:nth-child(7) { border-radius: 0 0 0 var(--r-lg); }
 .cases-grid .case-card:last-child { border-radius: 0 0 var(--r-lg) 0; }
 
 .cases-cta {
@@ -596,12 +892,13 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     <li><a href="sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
     <li><a href="#cases" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
     <li><a href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
-      <button class="lang-btn active" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
     </div>
   </div>
 </nav>
@@ -620,6 +917,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       <span class="hero-role hi" data-pt="Conversational AI Designer" data-en="Conversational AI Designer">Conversational AI Designer</span>
       <span class="hero-role" data-pt="IA Generativa · Fintech · 6+ anos" data-en="Generative AI · Fintech · 6+ years">IA Generativa · Fintech · 6+ anos</span>
     </div>
+    <div id="aurora-conversation" class="aurora-chat" hidden></div>
     <div class="hero-cta">
       <a href="#cases" class="btn btn-primary" data-pt="Explorar cases" data-en="See work">Explorar cases</a>
       <a href="#contato" class="btn btn-ghost" data-pt="Vamos conversar" data-en="Let's talk">Vamos conversar</a>
@@ -832,12 +1130,18 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 @media (max-width: 768px) {
   .about-sec { grid-template-columns: 1fr; }
   .about-left, .about-right { padding: 3rem 1.25rem; }
+  .manifesto-sec { grid-template-columns: 1fr; }
+  .manifesto-title-line { display: inline; }
+  .manifesto-left, .manifesto-right { padding: 3rem 1.25rem; }
+  .manifesto-item { gap: 1rem; padding: 1.25rem 0; }
   .process-layout { grid-template-columns: 1fr; gap: 2rem; }
   .process-step { grid-template-columns: 1fr; gap: 1rem; }
   .skill-row { grid-template-columns: 1fr; }
   .cases-grid { grid-template-columns: 1fr; }
   .case-featured { grid-template-columns: 1fr; }
   .case-featured-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
+  .timeline-item { grid-template-columns: 1fr; gap: 0.35rem; }
+  .testimonials-grid { grid-template-columns: 1fr; }
   /* Hero mobile: texto em cima, foto embaixo */
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { order: 1; padding: 6.5rem 1.25rem 2rem; width: 100%; }
@@ -906,15 +1210,65 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   </div>
 </section>
 
-<!-- COMPANIES -->
-<section class="companies-sec" id="main-content">
-  <p class="companies-label" data-pt="Onde trabalhei" data-en="Where I've worked">Onde trabalhei</p>
-  <div class="companies-row">
-    <span class="company-name">Avenue Securities</span>
-    <span class="company-name">Stone & Co</span>
-    <span class="company-name">IBM Brasil</span>
-    <span class="company-name">Banco Itaú</span>
-    <span class="company-name">Cognizant</span>
+<!-- TRAJETÓRIA -->
+<section class="companies-sec" id="main-content" aria-label="Trajetória profissional">
+  <p class="companies-label" data-pt="Trajetória" data-en="Career">Trajetória</p>
+  <ol class="timeline fade">
+    <li class="timeline-item">
+      <div class="timeline-period">2025 – <span data-pt="presente" data-en="present">presente</span></div>
+      <div>
+        <div class="timeline-company">Avenue Securities</div>
+        <p class="timeline-desc" data-pt="IA generativa, governança de conteúdo e voz de marca." data-en="Generative AI, content governance and brand voice.">IA generativa, governança de conteúdo e voz de marca.</p>
+      </div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-period">2023 – 2025</div>
+      <div>
+        <div class="timeline-company">Stone &amp; Co</div>
+        <p class="timeline-desc" data-pt="Design conversacional orientado a resultados e métricas." data-en="Conversational design driven by outcomes and metrics.">Design conversacional orientado a resultados e métricas.</p>
+      </div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-period">2019 – 2023</div>
+      <div>
+        <div class="timeline-company" data-pt="Banco Itaú (via IBM e Cognizant)" data-en="Itaú Bank (via IBM and Cognizant)">Banco Itaú (via IBM e Cognizant)</div>
+        <p class="timeline-desc" data-pt="UX Writing, chatbots e assistentes virtuais em escala." data-en="UX Writing, chatbots and virtual assistants at scale.">UX Writing, chatbots e assistentes virtuais em escala.</p>
+      </div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-period">2017 – 2019</div>
+      <div>
+        <div class="timeline-company">Cognizant</div>
+        <p class="timeline-desc" data-pt="Conteúdo digital e revisão de conteúdo para plataformas globais." data-en="Digital content and content review for global platforms.">Conteúdo digital e revisão de conteúdo para plataformas globais.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto-sec" id="manifesto" aria-label="Manifesto">
+  <div class="manifesto-left fade">
+    <div class="sec-label" data-pt="Como eu penso" data-en="How I think">Como eu penso</div>
+    <h2 class="sec-title manifesto-title"><span class="manifesto-title-line" data-pt="Princípios" data-en="Principles">Princípios</span> <span class="manifesto-title-line" data-pt="antes das" data-en="before">antes das</span> <span class="manifesto-title-line" data-pt="ferramentas." data-en="tools.">ferramentas.</span></h2>
+  </div>
+  <div class="manifesto-right">
+    <ol class="manifesto-list fade" data-delay="80">
+      <li class="manifesto-item">
+        <span class="manifesto-text" data-pt="Clareza também é uma forma de cuidado." data-en="Clarity is a form of care.">Clareza também é uma forma de cuidado.</span>
+      </li>
+      <li class="manifesto-item">
+        <span class="manifesto-text" data-pt="Quase nunca é a primeira pergunta que revela o problema." data-en="The first question is rarely the one that reveals the problem.">Quase nunca é a primeira pergunta que revela o problema.</span>
+      </li>
+      <li class="manifesto-item">
+        <span class="manifesto-text" data-pt="Comunicar é importante. Resolver é melhor." data-en="Communicating matters. Solving matters more.">Comunicar é importante. Resolver é melhor.</span>
+      </li>
+      <li class="manifesto-item">
+        <span class="manifesto-text" data-pt="Antes de defender uma opinião, eu prefiro entender o que os dados estão tentando dizer." data-en="Before I defend an opinion, I'd rather understand what the data is trying to say.">Antes de defender uma opinião, eu prefiro entender o que os dados estão tentando dizer.</span>
+      </li>
+      <li class="manifesto-item">
+        <span class="manifesto-text" data-pt="Eu não me apaixono por palavras bonitas. Eu me apaixono por palavras que funcionam." data-en="I don't fall for beautiful words. I fall for words that work.">Eu não me apaixono por palavras bonitas. Eu me apaixono por palavras que funcionam.</span>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -938,6 +1292,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   </div>
   <div class="about-right fade" data-delay="100">
     <div class="sec-label" data-pt="Habilidades" data-en="Skills">Habilidades</div>
+    <p class="skills-intro" data-pt="Os princípios acima orientam a escolha das ferramentas abaixo: com o que eu trabalho no dia a dia." data-en="The principles above guide the choice of tools below: what I work with day to day.">Os princípios acima orientam a escolha das ferramentas abaixo: com o que eu trabalho no dia a dia.</p>
     <div class="skills-grid">
       <div class="skill-row">
         <span class="skill-cat" data-pt="Conversacional" data-en="Conversational">Conversacional</span>
@@ -1029,37 +1384,38 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     <a href="#cases" class="btn btn-outline" data-pt="Ver todos os cases →" data-en="See all cases →">Ver todos os cases →</a>
   </div>
 
-  <!-- Featured: Niara -->
-  <a href="cases/case-01.html" class="case-featured fade">
+  <!-- Filtro por tema (mesmo mecanismo da Aurora: #cases[data-aurora-filter]) -->
+  <div class="cases-filter fade" role="group" aria-labelledby="cases-filter-label">
+    <span id="cases-filter-label" class="sr-only" data-pt="Filtrar cases por tema" data-en="Filter cases by theme">Filtrar cases por tema</span>
+    <button type="button" class="case-filter-btn active" data-filter="all" aria-pressed="true" data-pt="Todos" data-en="All">Todos</button>
+    <button type="button" class="case-filter-btn" data-filter="ia" aria-pressed="false" data-pt="IA Generativa" data-en="Generative AI">IA Generativa</button>
+    <button type="button" class="case-filter-btn" data-filter="conversacional" aria-pressed="false" data-pt="Conversacional" data-en="Conversational">Conversacional</button>
+    <button type="button" class="case-filter-btn" data-filter="ux-writing" aria-pressed="false" data-pt="UX Writing" data-en="UX Writing">UX Writing</button>
+    <button type="button" class="case-filter-btn" data-filter="tom-de-voz" aria-pressed="false" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</button>
+    <span class="sr-only" role="status" aria-live="polite" data-cases-filter-status data-pt="Mostrando todos os cases." data-en="Showing all cases.">Mostrando todos os cases.</span>
+  </div>
+
+  <!-- Case âncora: Crédito PJ -->
+  <a href="cases/case-05.html" class="case-featured fade" data-case-cat="ux-writing conversacional">
     <div class="case-featured-left">
-      <div class="case-card-number" data-pt="Case 01 · Personalidade & Tom de Voz" data-en="Case 01 · Personality & Tone of Voice">Case 01 · Personalidade & Tom de Voz</div>
-<div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
-      <h3 class="case-card-title" data-pt="Niara: Criando a alma de um assistente virtual de RH" data-en="Niara: Building the soul of an HR virtual assistant">Niara: Criando a alma de um assistente virtual de RH</h3>
-      <p class="case-card-desc" data-pt="+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot." data-en="+600 employees interviewed, 40h of content testing, 24h of Design Sprint. From scratch to a personality that changed the bot's numbers.">+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot.</p>
+      <div class="case-card-number" data-pt="Case 05 · UX Writing" data-en="Case 05 · UX Writing">Case 05 · UX Writing</div>
+      <div class="case-card-co" data-pt="grande instituição brasileira de pagamentos · 2023/2025" data-en="leading brazilian payments company · 2023/2025">grande instituição brasileira de pagamentos · 2023/2025</div>
+      <h3 class="case-card-title" data-pt="+10 pontos de CSAT no principal atrito da experiência" data-en="+10 CSAT points on the experience's biggest friction point">+10 pontos de CSAT no principal atrito da experiência</h3>
+      <p class="case-card-desc" data-pt="O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo." data-en="Information hierarchy and unmapped scenarios. Biggest CSAT offender turned into real improvement.">O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo.</p>
       <div class="case-card-tags">
-        <span class="tag" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</span>
-        <span class="tag" data-pt="Persona" data-en="Persona">Persona</span>
-        <span class="tag">Design Sprint</span>
-        <span class="tag">UX Research</span>
+        <span class="tag" data-pt="Redesign Conversacional" data-en="Conversational Redesign">Redesign Conversacional</span>
+        <span class="tag">UX Writing</span>
       </div>
     </div>
     <div class="case-featured-right">
       <div class="case-card-metrics" style="flex-direction:column; gap:1.25rem; border:none; padding:0; margin:0;">
         <div>
-          <div class="case-metric-val">+64%</div>
-          <div class="case-metric-label" data-pt="volume de conversas" data-en="conversation volume">volume de conversas</div>
+          <div class="case-metric-val">+10pp</div>
+          <div class="case-metric-label">CSAT</div>
         </div>
         <div>
-          <div class="case-metric-val">+25%</div>
-          <div class="case-metric-label" data-pt="share de atendimento digital" data-en="digital support share">share de atendimento digital</div>
-        </div>
-        <div>
-          <div class="case-metric-val">−11,5pp</div>
-          <div class="case-metric-label" data-pt="falso positivo" data-en="false positive">falso positivo</div>
-        </div>
-        <div>
-          <div class="case-metric-val">+9pp</div>
-          <div class="case-metric-label" data-pt="acurácia" data-en="accuracy">acurácia</div>
+          <div class="case-metric-val">+3pp</div>
+          <div class="case-metric-label" data-pt="Retenção" data-en="Retention">Retenção</div>
         </div>
       </div>
     </div>
@@ -1068,11 +1424,30 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   <!-- Grid: 6 cases -->
   <div class="cases-grid fade" data-delay="120">
 
-    <a href="cases/case-02.html" class="case-card">
+    <a href="cases/case-01.html" class="case-card" data-case-cat="ia conversacional tom-de-voz">
+      <div class="case-card-body">
+        <div class="case-card-number" data-pt="Case 01 · Personalidade & Tom de Voz" data-en="Case 01 · Personality & Tone of Voice">Case 01 · Personalidade & Tom de Voz</div>
+        <div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
+        <h3 class="case-card-title" data-pt="Quando uma mudança de tom gerou 64% mais conversas" data-en="When a change in tone led to 64% more conversations">Quando uma mudança de tom gerou 64% mais conversas</h3>
+        <p class="case-card-desc" data-pt="+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot." data-en="+600 employees interviewed, 40h of content testing, 24h of Design Sprint. From scratch to a personality that changed the bot's numbers.">+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot.</p>
+        <div class="case-card-metrics">
+          <div>
+            <div class="case-metric-val">+64%</div>
+            <div class="case-metric-label" data-pt="conversas" data-en="conversations">conversas</div>
+          </div>
+          <div>
+            <div class="case-metric-val">+25%</div>
+            <div class="case-metric-label" data-pt="atend. digital" data-en="digital support">atend. digital</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-02.html" class="case-card" data-case-cat="ia conversacional">
       <div class="case-card-body">
         <div class="case-card-number" data-pt="Case 02 · Alta pressão" data-en="Case 02 · High pressure">Case 02 · Alta pressão</div>
         <div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
-        <h3 class="case-card-title" data-pt="Assistente de Gerentes PF e PJ: do zero ao segundo começo" data-en="Branch Manager PF &amp; PJ Assistant: from scratch to a second start">Assistente de Gerentes PF e PJ: do zero ao segundo começo</h3>
+        <h3 class="case-card-title" data-pt="Projetando para quem usa e para quem observa" data-en="Designing for the user and the person watching">Projetando para quem usa e para quem observa</h3>
         <p class="case-card-desc" data-pt="O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto." data-en="Chatbot for branch managers with the customer right in front. High-pressure context changes everything in conversational design.">O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto.</p>
         <div class="case-card-tags">
           <span class="tag">Conversational Design</span>
@@ -1080,11 +1455,11 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       </div>
     </a>
 
-    <a href="cases/case-03.html" class="case-card">
+    <a href="cases/case-03.html" class="case-card" data-case-cat="conversacional ux-writing">
       <div class="case-card-body">
         <div class="case-card-number">Case 03 · Content First</div>
         <div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
-        <h3 class="case-card-title" data-pt="Seguros: Content First do Zero" data-en="Insurance: Content First from Scratch">Seguros: Content First do Zero</h3>
+        <h3 class="case-card-title" data-pt="O produto ainda não existia. A conversa já." data-en="The product didn't exist yet. The conversation did.">O produto ainda não existia. A conversa já.</h3>
         <p class="case-card-desc" data-pt="Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa." data-en="New insurance assistant designed before any screen: intention, expected outcome, enactment, and journey.">Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa.</p>
         <div class="case-card-tags">
           <span class="tag">Content First</span>
@@ -1093,11 +1468,11 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       </div>
     </a>
 
-    <a href="cases/case-04.html" class="case-card">
+    <a href="cases/case-04.html" class="case-card" data-case-cat="conversacional ux-writing">
       <div class="case-card-body">
         <div class="case-card-number">Case 04 · API & Jornada</div>
         <div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
-        <h3 class="case-card-title" data-pt="Cartão de Crédito: a pergunta que não foi respondida" data-en="Credit Card: the question that wasn't answered">Cartão de Crédito: a pergunta que não foi respondida</h3>
+        <h3 class="case-card-title" data-pt="A pergunta que o bot não respondia" data-en="The question the bot couldn't answer">A pergunta que o bot não respondia</h3>
         <p class="case-card-desc" data-pt="O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API." data-en="The customer asked when the card arrives, not what the deadline is. Three solution scenarios with and without API.">O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API.</p>
         <div class="case-card-tags">
           <span class="tag">API</span>
@@ -1106,30 +1481,11 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       </div>
     </a>
 
-    <a href="cases/case-05.html" class="case-card">
-      <div class="case-card-body">
-        <div class="case-card-number">Case 05 · UX Writing</div>
-        <div class="case-card-co"data-pt="grande instituição brasileira de pagamentos · 2023/2025" data-en="leading brazilian payments company · 2023/2025">grande instituição brasileira de pagamentos · 2023/2025</div>
-        <h3 class="case-card-title" data-pt="Redesign Conversacional: Crédito PJ" data-en="Conversational Redesign: Business Credit">Redesign Conversacional: Crédito PJ</h3>
-        <p class="case-card-desc" data-pt="O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo." data-en="Information hierarchy and unmapped scenarios. Biggest CSAT offender turned into real improvement.">O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo.</p>
-        <div class="case-card-metrics">
-          <div>
-            <div class="case-metric-val">+10pp</div>
-            <div class="case-metric-label">CSAT</div>
-          </div>
-          <div>
-            <div class="case-metric-val">+3pp</div>
-            <div class="case-metric-label" data-pt="Retenção" data-en="Retention">Retenção</div>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <a href="cases/case-06.html" class="case-card">
+    <a href="cases/case-06.html" class="case-card" data-case-cat="ia tom-de-voz conversacional">
       <div class="case-card-body">
         <div class="case-card-number">Case 06 · IA Generativa</div>
         <div class="case-card-co" data-pt="grande empresa financeira de investimentos nos estados unidos · 2026" data-en="leading US-based investment platform · 2026">grande empresa financeira de investimentos nos estados unidos · 2026</div>
-        <h3 class="case-card-title" data-pt="Assistente de Voz da Marca" data-en="Brand Voice Assistant">Assistente de Voz da Marca</h3>
+        <h3 class="case-card-title" data-pt="Uma voz, vários canais" data-en="One voice, multiple channels">Uma voz, vários canais</h3>
         <p class="case-card-desc" data-pt="Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada." data-en="AI copilot to ensure voice consistency across all channels, adapted by segment and journey moment.">Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.</p>
         <div class="case-card-tags">
           <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-pt="Em piloto" data-en="In pilot">Em piloto</span>
@@ -1138,15 +1494,54 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       </div>
     </a>
 
-    <a href="cases/case-07.html" class="case-card">
+    <a href="cases/case-07.html" class="case-card" data-case-cat="ia ux-writing">
       <div class="case-card-body">
         <div class="case-card-number" data-pt="Case 07 · Framework próprio" data-en="Case 07 · Custom framework">Case 07 · Framework próprio</div>
-        <div class="case-card-co"data-pt="grande empresa financeira de investimentos nos estados unidos · 2026" data-en="leading US-based investment platform · 2026">grande empresa financeira de investimentos nos estados unidos · 2026</div>
-        <h3 class="case-card-title" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</h3>
+        <div class="case-card-co" data-pt="grande empresa financeira de investimentos nos estados unidos · 2026" data-en="leading US-based investment platform · 2026">grande empresa financeira de investimentos nos estados unidos · 2026</div>
+        <h3 class="case-card-title" data-pt="Começando pela intenção, não pelo canal" data-en="Starting with intent, not the channel">Começando pela intenção, não pelo canal</h3>
         <p class="case-card-desc" data-pt="Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando." data-en="Own initiative to optimize the process: intention before channel. Prototyped and testing.">Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando.</p>
         <div class="case-card-tags">
           <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-pt="Em testes" data-en="In testing">Em testes</span>
           <span class="tag">Content Strategy</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-08.html" class="case-card" data-case-cat="ia">
+      <div class="case-card-body">
+        <div class="case-card-number" data-pt="Case 08 · IA Generativa" data-en="Case 08 · Generative AI">Case 08 · IA Generativa</div>
+        <div class="case-card-co" data-pt="projeto pessoal · 2026" data-en="personal project · 2026">projeto pessoal · 2026</div>
+        <h3 class="case-card-title" data-pt="Aurora: quando a designer virou usuária" data-en="Aurora: when the designer became the user">Aurora: quando a designer virou usuária</h3>
+        <p class="case-card-desc" data-pt="De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana." data-en="From a Telegram message to an organized spreadsheet, a weekly report and a reminder at the right time. A real system, used every day, that classifies information with AI and generates reports automatically every week.">De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana.</p>
+        <div class="case-card-tags">
+          <span class="tag" data-pt="Projeto pessoal" data-en="Personal project">Projeto pessoal</span>
+          <span class="tag">Gen AI</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-09.html" class="case-card" data-case-cat="meta">
+      <div class="case-card-body">
+        <div class="case-card-number" data-pt="Case 09 · Meta-case" data-en="Case 09 · Meta-case">Case 09 · Meta-case</div>
+        <div class="case-card-co" data-pt="projeto pessoal · 2026" data-en="personal project · 2026">projeto pessoal · 2026</div>
+        <h3 class="case-card-title" data-pt="Este portfólio também é um projeto de conteúdo" data-en="This portfolio is also a content project">Este portfólio também é um projeto de conteúdo</h3>
+        <p class="case-card-desc" data-pt="Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela." data-en="This site is my most honest case: every content, architecture and accessibility decision documented, from the palette to the conversation that greeted you on the first screen.">Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela.</p>
+        <div class="case-card-tags">
+          <span class="tag" data-pt="Meta-case" data-en="Meta-case">Meta-case</span>
+          <span class="tag">Content Strategy</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="cases/case-10.html" class="case-card" data-case-cat="ia tom-de-voz">
+      <div class="case-card-body">
+        <div class="case-card-number" data-pt="Case 10 · Tom de Voz" data-en="Case 10 · Tone of Voice">Case 10 · Tom de Voz</div>
+        <div class="case-card-co" data-pt="projeto pessoal · 2026" data-en="personal project · 2026">projeto pessoal · 2026</div>
+        <h3 class="case-card-title" data-pt="Da Niara à Aurora: desenhando para marcas e para mim" data-en="From Niara to Aurora: designing for brands and for myself">Da Niara à Aurora: desenhando para marcas e para mim</h3>
+        <p class="case-card-desc" data-pt="Em 2020, criei a personalidade de um assistente para 600 colaboradores. Em 2026, apliquei o mesmo método na minha própria assistente de IA, que vive em dois contextos com dois registros." data-en="In 2020, I created an assistant's personality for 600 employees. In 2026, I applied the same method to my own AI assistant, which lives in two contexts with two registers.">Em 2020, criei a personalidade de um assistente para 600 colaboradores. Em 2026, apliquei o mesmo método na minha própria assistente de IA, que vive em dois contextos com dois registros.</p>
+        <div class="case-card-tags">
+          <span class="tag" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</span>
+          <span class="tag">Gen AI</span>
         </div>
       </div>
     </a>
@@ -1306,6 +1701,59 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="testimonials-sec sec" id="depoimentos" aria-label="Depoimentos">
+  <div class="sec-label fade" data-pt="Depoimentos" data-en="Testimonials">Depoimentos</div>
+  <h2 class="sec-title fade" data-pt="O que dizem sobre trabalhar comigo" data-en="What people say about working with me">O que dizem sobre trabalhar comigo</h2>
+  <p class="testimonials-note fade" data-pt="Os depoimentos abaixo estão em português, no idioma em que foram escritos originalmente." data-en="The testimonials below are kept in Portuguese, the language in which they were originally written.">Os depoimentos abaixo estão em português, no idioma em que foram escritos originalmente.</p>
+  <div class="testimonials-grid fade" data-delay="80">
+    <figure class="testimonial-card">
+      <blockquote lang="pt-BR">
+        <p>“Trabalhamos por quase 3 anos em projetos de chatbots, e ela sempre deu o melhor em todas as entregas, focando na centralidade no cliente, na solução de problemas e no aprendizado contínuo. Além de ótima UX Writer, ajuda muito também na frente de UX Research.”</p>
+      </blockquote>
+      <figcaption>
+        <div class="testimonial-name">Elísia Amaral</div>
+        <div class="testimonial-role" data-pt="Designer de IA Conversacional, Knowledge Engineer, Content Ops" data-en="Conversational AI Designer, Knowledge Engineer, Content Ops">Designer de IA Conversacional, Knowledge Engineer, Content Ops</div>
+        <div class="testimonial-context" data-pt="Quase 3 anos no mesmo time" data-en="Nearly 3 years on the same team">Quase 3 anos no mesmo time</div>
+        <a class="testimonial-link" href="https://www.linkedin.com/in/elísiaamaral" target="_blank" rel="noopener" data-pt="Ver perfil no LinkedIn →" data-en="View LinkedIn profile →">Ver perfil no LinkedIn →</a>
+      </figcaption>
+    </figure>
+    <figure class="testimonial-card">
+      <blockquote lang="pt-BR">
+        <p>“Samantha é uma profissional dedicada e comprometida com as suas entregas. Se envolvia na jornada das pessoas usuárias de ponta a ponta, identificando pontos de dor e melhorias para os fluxos. Além disso, estava envolvida na construção de conteúdos consistentes, simples e acessíveis.”</p>
+      </blockquote>
+      <figcaption>
+        <div class="testimonial-name">Karina Miguel</div>
+        <div class="testimonial-role" data-pt="Content Designer Sênior, Product Designer, Design Conversacional" data-en="Senior Content Designer, Product Designer, Conversational Design">Content Designer Sênior, Product Designer, Design Conversacional</div>
+        <div class="testimonial-context" data-pt="Trabalhou no mesmo time" data-en="Worked on the same team">Trabalhou no mesmo time</div>
+        <a class="testimonial-link" href="https://www.linkedin.com/in/karinamiguelkm" target="_blank" rel="noopener" data-pt="Ver perfil no LinkedIn →" data-en="View LinkedIn profile →">Ver perfil no LinkedIn →</a>
+      </figcaption>
+    </figure>
+    <figure class="testimonial-card">
+      <blockquote lang="pt-BR">
+        <p>“Super recomendo essa profissional comprometida, responsável, esforçada, organizada e que possui grande agilidade em suas entregas. Além de todos os elogios profissionais, ela consegue cativar a todos por onde passa.”</p>
+      </blockquote>
+      <figcaption>
+        <div class="testimonial-name">Valéria Azevedo da Silveira</div>
+        <div class="testimonial-role" data-pt="Coordenadora de Projetos de TI, PMO, Project Manager" data-en="IT Project Coordinator, PMO, Project Manager">Coordenadora de Projetos de TI, PMO, Project Manager</div>
+        <div class="testimonial-context" data-pt="Supervisionou a Samantha diretamente" data-en="Directly supervised Samantha">Supervisionou a Samantha diretamente</div>
+        <a class="testimonial-link" href="https://www.linkedin.com/in/valeria-azevedo" target="_blank" rel="noopener" data-pt="Ver perfil no LinkedIn →" data-en="View LinkedIn profile →">Ver perfil no LinkedIn →</a>
+      </figcaption>
+    </figure>
+    <figure class="testimonial-card">
+      <blockquote lang="pt-BR">
+        <p>“Trabalhar com a Samy é incrível, ela é uma pessoa muito dedicada e topa qualquer desafio. Aprende super rápido e busca melhorar todos os dias, além de sempre pensar no que é melhor para os nossos clientes.”</p>
+      </blockquote>
+      <figcaption>
+        <div class="testimonial-name">Elisa Ribeiro</div>
+        <div class="testimonial-role" data-pt="Líder de Design de Conteúdo em grande banco" data-en="Content Design Lead at a major bank">Líder de Design de Conteúdo em grande banco</div>
+        <div class="testimonial-context" data-pt="Trabalhou no mesmo time" data-en="Worked on the same team">Trabalhou no mesmo time</div>
+        <a class="testimonial-link" href="https://www.linkedin.com/in/elisa-ribeiro" target="_blank" rel="noopener" data-pt="Ver perfil no LinkedIn →" data-en="View LinkedIn profile →">Ver perfil no LinkedIn →</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-sec" id="contato" aria-label="Contato">
   <div class="contact-availability fade">
@@ -1318,6 +1766,8 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     <a href="mailto:silvabsamantha@gmail.com" class="btn btn-primary">silvabsamantha@gmail.com</a>
     <a href="https://www.linkedin.com/in/samanthabarretoux/" class="btn btn-outline" target="_blank">LinkedIn</a>
     <a href="https://wa.me/5511952054102?text=Oi%2C%20Samantha!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="assets/cv-samantha-barreto-pt.pdf" download class="btn btn-outline" data-lang-block="pt">Baixar currículo</a>
+    <a href="assets/cv-samantha-barreto-en.pdf" download class="btn btn-outline" data-lang-block="en" style="display:none">Download resume</a>
   </div>
 </section>
 
@@ -1329,6 +1779,8 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 </footer>
 
 <script src="assets/shared.js"></script>
+<script src="assets/aurora.js"></script>
+<script src="assets/cases-filter.js"></script>
 <script>
   // Counter trigger on intersection
   const counterEls = document.querySelectorAll('.counter');
