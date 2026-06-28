@@ -57,6 +57,7 @@ button:focus-visible {
   .aurora-band, .aurora-star, .aurora-node {
     animation: none !important;
   }
+  .theme-toggle { transition: none; }
 }
 
 /* ── Reset & base ───────────────────────────────────────────────── */
@@ -92,13 +93,60 @@ a { text-decoration: none; color: inherit; }
   --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* fallbacks modo claro — sobrescritos pelo dark mode */
+  --bg-primary:    var(--white);
+  --bg-secondary:  var(--gray-light);
+  --bg-tertiary:   var(--cream-warm);
+  --bg-surface:    var(--white);
+  --bg-surface-hover: var(--gray-light);
+  --text-primary:  var(--navy);
+  --text-secondary: var(--gray);
+  --text-muted:    rgba(26,26,46,0.45);
+  --border-subtle: var(--gray-line);
+  --border-hover:  rgba(26,26,46,0.2);
+  --green-dm:      var(--green);
+  --green-dm-2:    var(--green-2);
+}
+
+/* ── MODO ESCURO ─────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary:    #0E1124;
+    --bg-secondary:  #16213E;
+    --bg-tertiary:   #1E2A45;
+    --bg-surface:    rgba(255,255,255,0.04);
+    --bg-surface-hover: rgba(255,255,255,0.07);
+    --text-primary:  #F0EDE6;
+    --text-secondary: rgba(240,237,230,0.65);
+    --text-muted:    rgba(240,237,230,0.4);
+    --border-subtle: rgba(255,255,255,0.08);
+    --border-hover:  rgba(255,255,255,0.16);
+    --green-dm:      #4ECBA8;
+    --green-dm-2:    #9fe9d2;
+  }
+}
+
+html.dark-mode {
+  --bg-primary:    #0E1124;
+  --bg-secondary:  #16213E;
+  --bg-tertiary:   #1E2A45;
+  --bg-surface:    rgba(255,255,255,0.04);
+  --bg-surface-hover: rgba(255,255,255,0.07);
+  --text-primary:  #F0EDE6;
+  --text-secondary: rgba(240,237,230,0.65);
+  --text-muted:    rgba(240,237,230,0.4);
+  --border-subtle: rgba(255,255,255,0.08);
+  --border-hover:  rgba(255,255,255,0.16);
+  --green-dm:      #4ECBA8;
+  --green-dm-2:    #9fe9d2;
 }
 
 /* ── Typography ─────────────────────────────────────────────────── */
 body {
   font-family: var(--font-body);
   color: var(--navy);
-  background: var(--white);
+  background: var(--bg-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -127,7 +175,7 @@ nav {
   transition: background 0.3s, box-shadow 0.3s;
 }
 nav.scrolled {
-  background: rgba(255,255,255,0.96);
+  background: color-mix(in srgb, var(--bg-primary) 96%, transparent);
   backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 var(--gray-line);
 }
@@ -200,6 +248,34 @@ nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(-
   color: var(--white);
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 6px 8px;
+  border-radius: var(--r-sm);
+  color: inherit;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.08);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+nav.scrolled .theme-toggle:hover {
+  background: rgba(26,26,46,0.08);
+}
+
 /* ── Buttons ────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -234,12 +310,12 @@ nav.nav-dark.scrolled .lang-btn.active { color: var(--navy); border-color: var(-
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--green-dm);
   margin-bottom: 0.75rem;
 }
 .sec-title {
   font-size: clamp(2rem, 3.5vw, 2.8rem);
-  color: var(--navy);
+  color: var(--text-primary);
   margin-bottom: 1rem;
   font-weight: 300;
   letter-spacing: -0.02em;

@@ -1,0 +1,46 @@
+(function () {
+  const KEY = 'sb_theme';
+  const BTN_ID = 'theme-toggle-btn';
+  const html = document.documentElement;
+
+  function getPreferred() {
+    const saved = localStorage.getItem(KEY);
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    const isDark = theme === 'dark';
+    html.classList.toggle('dark-mode', isDark);
+    const btn = document.getElementById(BTN_ID);
+    if (!btn) return;
+    btn.textContent = isDark ? '☀' : '☾';
+    const labelPt = isDark ? 'Ativar modo claro' : 'Ativar modo escuro';
+    const labelEn = isDark ? 'Enable light mode' : 'Enable dark mode';
+    btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    btn.setAttribute('data-pt', labelPt);
+    btn.setAttribute('data-en', labelEn);
+    const lang = localStorage.getItem('ss_lang') || 'pt';
+    btn.setAttribute('aria-label', lang === 'en' ? labelEn : labelPt);
+  }
+
+  function toggle() {
+    const next = html.classList.contains('dark-mode') ? 'light' : 'dark';
+    localStorage.setItem(KEY, next);
+    applyTheme(next);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    applyTheme(getPreferred());
+    const btn = document.getElementById(BTN_ID);
+    if (btn) btn.addEventListener('click', toggle);
+
+    window.matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', function (e) {
+        if (!localStorage.getItem(KEY)) {
+          applyTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+  });
+})();
