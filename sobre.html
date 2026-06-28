@@ -138,7 +138,7 @@
 
 /* ── PERSONAL BLOCK ──────────────────────────────────────────── */
 .sobre-personal {
-  background: var(--gray-light);
+  background: var(--bg-secondary);
   padding: 5rem 4rem;
 }
 .sobre-personal-inner {
@@ -152,20 +152,20 @@
 .personal-text .sec-label {
   font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--green); margin-bottom: 1.25rem;
+  color: var(--green-dm); margin-bottom: 1.25rem;
   display: block;
 }
 .personal-text h2 {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  color: var(--navy);
+  color: var(--text-primary);
   font-weight: 500;
   margin-bottom: 1.25rem;
   line-height: 1.2;
 }
-.personal-text h2 em { font-style: italic; color: var(--green); }
+.personal-text h2 em { font-style: italic; color: var(--green-dm); }
 .personal-text p {
-  font-size: 1rem; color: var(--gray);
+  font-size: 1rem; color: var(--text-secondary);
   line-height: 1.8; font-weight: 300;
   margin-bottom: 1.25rem;
 }
@@ -179,10 +179,10 @@
   display: inline-flex; align-items: center; gap: 5px;
   padding: 0.4rem 0.875rem;
   border-radius: var(--r-full);
-  background: var(--white);
-  border: 1px solid var(--gray-line);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   font-size: 0.8rem;
-  color: var(--navy);
+  color: var(--text-primary);
   font-weight: 400;
 }
 
@@ -225,7 +225,7 @@
 
 /* ── EDUCATION BLOCK ─────────────────────────────────────────── */
 .sobre-edu {
-  background: var(--white);
+  background: var(--bg-primary);
   padding: 5rem 4rem;
 }
 .sobre-edu-inner {
@@ -235,13 +235,13 @@
 .sobre-edu .sec-label {
   font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--green); margin-bottom: 1.25rem;
+  color: var(--green-dm); margin-bottom: 1.25rem;
   display: block;
 }
 .sobre-edu h2 {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.2vw, 2rem);
-  color: var(--navy);
+  color: var(--text-primary);
   font-weight: 500;
   margin-bottom: 2.5rem;
 }
@@ -255,16 +255,16 @@
   grid-template-columns: 3fr 1fr;
   gap: 1rem;
   padding: 1.5rem 0;
-  border-bottom: 1px solid var(--gray-line);
+  border-bottom: 1px solid var(--border-subtle);
   align-items: start;
 }
-.edu-item:first-child { border-top: 1px solid var(--gray-line); }
+.edu-item:first-child { border-top: 1px solid var(--border-subtle); }
 .edu-name {
-  font-size: 1rem; color: var(--navy);
+  font-size: 1rem; color: var(--text-primary);
   font-weight: 500; margin-bottom: 0.25rem;
 }
 .edu-inst {
-  font-size: 0.875rem; color: var(--gray);
+  font-size: 0.875rem; color: var(--text-secondary);
   font-weight: 300; line-height: 1.5;
 }
 .edu-badge {
@@ -280,8 +280,8 @@
   margin-top: 4px;
 }
 .edu-badge.done {
-  background: var(--gray-light); color: var(--gray);
-  border-color: var(--gray-line);
+  background: var(--gray-light); color: var(--text-muted);
+  border-color: var(--border-subtle);
 }
 
 @media (max-width: 900px) {
@@ -357,7 +357,7 @@
 
 /* ── CAUSES BLOCK ────────────────────────────────────────────── */
 .sobre-causes {
-  background: var(--white);
+  background: var(--bg-primary);
   padding: 5rem 4rem;
 }
 .sobre-causes-inner {
@@ -367,13 +367,13 @@
 .sobre-causes .sec-label {
   font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--green); margin-bottom: 1.25rem;
+  color: var(--green-dm); margin-bottom: 1.25rem;
   display: block;
 }
 .sobre-causes h2 {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.2vw, 2rem);
-  color: var(--navy);
+  color: var(--text-primary);
   font-weight: 500;
   margin-bottom: 2rem;
 }
@@ -387,12 +387,12 @@
   padding: 0.5rem 1rem;
   border-radius: var(--r-full);
   background: var(--green-mist);
-  border: 1px solid rgba(15,110,86,0.2);
-  font-size: 0.85rem; color: var(--green);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.85rem; color: var(--green-dm);
   font-weight: 400;
   transition: background 0.2s, border-color 0.2s;
 }
-.cause-pill:hover { background: rgba(15,110,86,0.12); border-color: var(--green); }
+.cause-pill:hover { background: rgba(15,110,86,0.12); border-color: var(--green-dm); }
 
 @media (max-width: 900px) { .sobre-causes { padding: 3.5rem 2rem; } }
 @media (max-width: 600px) { .sobre-causes { padding: 2.5rem 1.5rem; } }
@@ -491,6 +491,15 @@
     <li><a href="index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="nav-right">
+    <button
+        class="theme-toggle"
+        id="theme-toggle-btn"
+        aria-label="Ativar modo escuro"
+        data-pt="Ativar modo escuro"
+        data-en="Enable dark mode"
+        aria-pressed="false">
+        ☾
+      </button>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="pt" aria-pressed="true">
         <span aria-hidden="true">🇧🇷</span>
@@ -720,6 +729,7 @@
   <p><a href="index.html#cases" data-pt="Ver todos os cases" data-en="See all cases">Ver todos os cases</a></p>
 </footer>
 
+<script src="assets/theme.js"></script>
 <script src="assets/shared.js"></script>
 <script>
   // Nav dark based on intro section
