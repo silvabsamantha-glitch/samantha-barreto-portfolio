@@ -13,14 +13,15 @@
   function applyTheme(theme) {
     const isDark = theme === 'dark';
     html.classList.toggle('dark-mode', isDark);
+    html.classList.toggle('light-mode', !isDark);
     const btn = document.getElementById(BTN_ID);
     if (!btn) return;
     btn.textContent = isDark ? '☀' : '☾';
     const labelPt = isDark ? 'Ativar modo claro' : 'Ativar modo escuro';
     const labelEn = isDark ? 'Enable light mode' : 'Enable dark mode';
     btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-    btn.setAttribute('data-pt', labelPt);
-    btn.setAttribute('data-en', labelEn);
+    btn.setAttribute('data-label-pt', labelPt);
+    btn.setAttribute('data-label-en', labelEn);
     const lang = localStorage.getItem('ss_lang') || 'pt';
     btn.setAttribute('aria-label', lang === 'en' ? labelEn : labelPt);
   }
