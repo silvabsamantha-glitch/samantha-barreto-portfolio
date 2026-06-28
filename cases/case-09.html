@@ -27,30 +27,30 @@
 .ml{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4}
 .cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
 .sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
-.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-top:3rem;margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-line)}
-.sec h2{font-size:1.4rem;color:var(--navy);margin-bottom:.75rem;font-weight:500}
-.sec p{font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-dm);margin-top:3rem;margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--border-subtle)}
+.sec h2{font-size:1.4rem;color:var(--text-primary);margin-bottom:.75rem;font-weight:500}
+.sec p{font-size:1rem;color:var(--text-secondary);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
 .sec p:last-child{margin-bottom:0}
-.sec p strong{color:var(--navy);font-weight:500}
+.sec p strong{color:var(--text-primary);font-weight:500}
 .sec ul{margin:0 0 1.25rem;padding-left:1.25rem}
 .sec ul:last-child{margin-bottom:0}
-.sec li{font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:.5rem}
-.sec li strong{color:var(--navy);font-weight:500}
+.sec li{font-size:1rem;color:var(--text-secondary);line-height:1.8;font-weight:300;margin-bottom:.5rem}
+.sec li strong{color:var(--text-primary);font-weight:500}
 .pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
-.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
-.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
-.learned{background:var(--gray-light);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
-.learned p{font-size:1rem;color:var(--gray);line-height:1.75;font-style:italic;margin:0}
-.learned cite{font-size:.8rem;color:var(--navy);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
-.restart-link{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:.95rem;font-weight:500;color:var(--green);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;transition:color .2s}
-.restart-link:hover{color:var(--green-2)}
-.cnav{border-top:1px solid var(--gray-line);display:grid;grid-template-columns:1fr 1fr;background:var(--gray-light)}
+.pq p{font-size:1rem;color:var(--green-dm);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--text-secondary);font-style:normal;display:block;margin-top:.4rem}
+.learned{background:var(--bg-secondary);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
+.learned p{font-size:1rem;color:var(--text-secondary);line-height:1.75;font-style:italic;margin:0}
+.learned cite{font-size:.8rem;color:var(--text-primary);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
+.restart-link{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:.95rem;font-weight:500;color:var(--green-dm);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;transition:color .2s}
+.restart-link:hover{color:var(--green-dm)}
+.cnav{border-top:1px solid var(--border-subtle);display:grid;grid-template-columns:1fr 1fr;background:var(--bg-secondary)}
 .cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
 .cni:hover{background:#ECEEF2}
 .cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
-.cni-right{border-left:1px solid var(--gray-line);align-items:flex-end}
-.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
-.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
+.cni-right{border-left:1px solid var(--border-subtle);align-items:flex-end}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--text-primary);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
 .cni:hover .cnt{opacity:1}
 .cni:focus-visible .cnt{opacity:1}
 @media(max-width:1024px){.case-hero{padding:calc(var(--nav-height) + 2rem) 2rem 2rem}.cbody,.body{padding:3.5rem 2rem}}
@@ -73,6 +73,15 @@
 </nav>
 <section class="case-hero" aria-label="Case 09: Este portfólio também é um projeto de conteúdo">
   <div class="hero-lang">
+    <button
+        class="theme-toggle"
+        id="theme-toggle-btn"
+        aria-label="Ativar modo escuro"
+        data-pt="Ativar modo escuro"
+        data-en="Enable dark mode"
+        aria-pressed="false">
+        ☾
+      </button>
     <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
       <button class="lang-btn active" data-lang="pt" aria-pressed="true">
         <span aria-hidden="true">🇧🇷</span>
@@ -155,6 +164,7 @@
   <p>© 2026 Samantha Barreto</p>
   <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
 </footer>
+<script src="../assets/theme.js"></script>
 <script src="../assets/shared.js"></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
