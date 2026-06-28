@@ -69,7 +69,7 @@
 }
 .nota-text p {
   font-size: 1.1rem;
-  color: var(--navy);
+  color: var(--text-primary);
   line-height: 1.9;
   font-weight: 300;
   margin: 0 0 1.75rem;
@@ -83,12 +83,12 @@
   max-width: 62ch;
   margin: 4rem auto 0;
   padding-top: 2.5rem;
-  border-top: 1px solid var(--gray-line);
+  border-top: 1px solid var(--border-subtle);
 }
 .nota-footer-link a {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--green);
+  color: var(--green-dm);
   text-decoration: none;
   border-bottom: 1px solid currentColor;
   padding-bottom: 1px;
@@ -125,6 +125,15 @@
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="nav-right">
+    <button
+        class="theme-toggle"
+        id="theme-toggle-btn"
+        aria-label="Ativar modo escuro"
+        data-pt="Ativar modo escuro"
+        data-en="Enable dark mode"
+        aria-pressed="false">
+        ☾
+      </button>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="pt" aria-pressed="true">
         <span aria-hidden="true">🇧🇷</span>
@@ -223,6 +232,7 @@
   <p><a href="../index.html#cases" data-pt="Ver todos os cases" data-en="See all cases">Ver todos os cases</a></p>
 </footer>
 
+<script src="../assets/theme.js"></script>
 <script src="../assets/shared.js"></script>
 <script>
   const navEl = document.getElementById('main-nav');
