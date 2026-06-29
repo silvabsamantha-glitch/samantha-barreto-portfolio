@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case 07: Bot de Content First · Samantha Barreto</title>
+<meta name="description" content="Como otimizei o processo de criação de comunicações colocando intenção antes de canal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+.case-hero{padding:calc(var(--nav-height) + 3.5rem) 4rem 3.5rem;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.case-hero-inner{position:relative;z-index:1;max-width:800px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.72);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
+.cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#4ECBA8;background:rgba(26,155,118,.18);border:1px solid rgba(26,155,118,.35);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem}
+.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
+.hsub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
+.ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.disc{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.6}
+.mbar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
+.mitem{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.mitem:last-child{border-right:none;margin-right:0}
+.mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4}
+.pbadge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#F5C058;background:rgba(186,117,23,.2);border:1px solid rgba(186,117,23,.4);padding:5px 12px;border-radius:var(--r-full);margin-top:1.5rem}
+.pdot{width:6px;height:6px;border-radius:50%;background:#C4820A;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
+.sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
+.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-dm);margin-top:3rem;margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--border-subtle)}
+.sec h2{font-size:1.4rem;color:var(--text-primary);margin-bottom:.75rem;font-weight:500}
+.sec p{font-size:1rem;color:var(--text-secondary);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+.sec p:last-child{margin-bottom:0}
+.sec p strong{color:var(--text-primary);font-weight:500}
+.pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
+.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--border-subtle);align-items:start}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.sn{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--green-dm);padding-top:2px}
+.st{font-size:.95rem;font-weight:500;color:var(--text-primary);margin-bottom:.25rem}
+.sd{font-size:.875rem;color:var(--text-secondary);line-height:1.65;font-weight:300}
+.qas{display:flex;flex-direction:column;gap:1rem;margin-top:.5rem}
+.qa{border-left:2px solid var(--green);padding:1rem 1.25rem;background:var(--bg-secondary)}
+.qq{font-size:.875rem;font-weight:500;color:var(--green-dm);margin-bottom:.4rem}
+.qa-a{font-size:.875rem;color:var(--text-secondary);line-height:1.7;font-weight:300}
+.rms{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.rm{background:var(--green-mist);border:0.5px solid rgba(15,110,86,.2);border-radius:var(--r-md);padding:1rem 1.25rem;flex:1;min-width:120px;text-align:center}
+.rmv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:4px}
+.rml{font-size:.72rem;color:var(--gray);line-height:1.4}
+.learned{background:var(--bg-secondary);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
+.learned p{font-size:1rem;color:var(--text-secondary);line-height:1.75;font-style:italic;margin:0}
+.learned cite{font-size:.8rem;color:var(--text-primary);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
+.scard{background:var(--bg-secondary);border-radius:var(--r-md);padding:1rem}
+.sv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--text-primary);line-height:1;margin-bottom:3px}
+.sl{font-size:.78rem;color:var(--text-secondary);line-height:1.4}
+.diags{display:flex;flex-direction:column}
+.diag{display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 0;border-bottom:1px solid var(--border-subtle)}
+.diag:last-child{border-bottom:none;padding-bottom:0}
+.dd{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.dd.r{background:#A32D2D}.dd.g{background:var(--green)}
+.dt{font-size:.875rem;color:var(--text-secondary);line-height:1.65;font-weight:300}
+.dt strong{color:var(--text-primary);font-weight:500}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.pcard{background:var(--bg-secondary);border-radius:var(--r-md);padding:1rem}
+.pnum{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--green-dm);line-height:1;margin-bottom:.4rem}
+.ptit{font-size:.95rem;font-weight:500;color:var(--text-primary);margin-bottom:.25rem}
+.pdesc{font-size:.875rem;color:var(--text-secondary);line-height:1.55;font-weight:300}
+.ps-status{background:#FAEEDA;border:0.5px solid rgba(186,117,23,.25);border-radius:var(--r-md);padding:1rem 1.25rem}
+.ps-title{font-size:.875rem;font-weight:500;color:#854F0B;margin-bottom:.4rem}
+.ps-text{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300}
+.regs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.reg{border-radius:var(--r-md);padding:1rem;border:0.5px solid}
+.reg.d{background:#EAF3DE;border-color:rgba(59,109,17,.2)}
+.reg.a{background:#E6F1FB;border-color:rgba(24,95,165,.2)}
+.reg.e{background:#FAEEDA;border-color:rgba(133,79,11,.2)}
+.rn{font-size:.875rem;font-weight:500;margin-bottom:.35rem}
+.reg.d .rn{color:#27500A}.reg.a .rn{color:#0C447C}.reg.e .rn{color:#633806}
+.rd{font-size:.8rem;line-height:1.55;margin-bottom:.625rem}
+.reg.d .rd{color:#3B6D11}.reg.a .rd{color:#185FA5}.reg.e .rd{color:#854F0B}
+.rex{font-size:.75rem;font-style:italic;line-height:1.5;padding:.4rem .625rem;border-radius:4px}
+.reg.d .rex{background:rgba(59,109,17,.1);color:#3B6D11}
+.reg.a .rex{background:rgba(24,95,165,.1);color:#185FA5}
+.reg.e .rex{background:rgba(133,79,11,.1);color:#854F0B}
+.segs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-subtle);border-radius:var(--r-md);overflow:hidden;margin-bottom:1rem}
+.seg{background:var(--bg-primary);padding:1rem}
+.segn{font-size:.875rem;font-weight:500;color:var(--text-primary);margin-bottom:.3rem}
+.segd{font-size:.8rem;color:var(--text-secondary);line-height:1.5;margin-bottom:.5rem}
+.segt{display:flex;flex-wrap:wrap;gap:4px}
+.stag{font-size:.72rem;padding:2px 7px;border-radius:var(--r-full);background:var(--bg-secondary);color:var(--text-secondary);border:0.5px solid var(--border-subtle)}
+.fw5{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border-subtle);border-radius:var(--r-md);overflow:hidden;margin-bottom:1rem}
+.fwc{background:var(--bg-primary);padding:.875rem .625rem;text-align:center}
+.fwc.last{background:var(--bg-secondary)}
+.fwn{font-family:var(--font-display);font-size:1.25rem;font-weight:500;color:var(--green-dm);line-height:1;margin-bottom:.25rem}
+.fwc.last .fwn{color:var(--text-secondary)}
+.fwt{font-size:.8rem;font-weight:500;color:var(--text-primary);margin-bottom:.2rem}
+.fwc.last .fwt{color:var(--text-secondary)}
+.fwd{font-size:.72rem;color:var(--text-secondary);line-height:1.4}
+.fwn2{font-size:.68rem;color:var(--text-secondary);font-style:italic;margin-top:.375rem}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-subtle);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.bap{padding:1.5rem}
+.ba-b{background:#FEF2F2}.ba-a{background:#F0FDF4}
+.bah{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:5px}
+.ba-b .bah{color:#991B1B}.ba-a .bah{color:#166534}
+.bdt{width:5px;height:5px;border-radius:50%}
+.ba-b .bdt{background:#991B1B}.ba-a .bdt{background:#166534}
+.bat{font-size:.875rem;line-height:1.65;margin-bottom:.5rem}
+.ba-b .bat{color:#7F1D1D}.ba-a .bat{color:#14532D}
+.intgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.intcard{background:var(--bg-secondary);border-radius:var(--r-md);padding:1rem}
+.intl{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:.5rem}
+.intt{font-size:.95rem;font-weight:500;color:var(--text-primary);margin-bottom:.375rem}
+.intd{font-size:.8rem;color:var(--text-secondary);line-height:1.55;font-weight:300}
+.objgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.objcard{border-radius:var(--r-md);padding:1rem}
+.objcard.seg{background:#E6F1FB;border:0.5px solid rgba(24,95,165,.2)}
+.objcard.seg2{background:#E1F5EE;border:0.5px solid rgba(15,110,86,.2)}
+.objl{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.625rem}
+.objcard.seg .objl{color:#0C447C}.objcard.seg2 .objl{color:#085041}
+.obji{display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.375rem}
+.objd{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.objcard.seg .objd{background:#185FA5}.objcard.seg2 .objd{background:var(--green)}
+.objt{font-size:.8rem;line-height:1.5}
+.objcard.seg .objt{color:#185FA5}.objcard.seg2 .objt{color:var(--green)}
+.scen{border-radius:var(--r-md);overflow:hidden;border:0.5px solid var(--border-subtle);margin-bottom:8px}
+.scheader{padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem}
+.scheader.api{background:#E1F5EE}.scheader.semi{background:#FAEEDA}.scheader.noapi{background:var(--gray-light)}
+.scn{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.scheader.api .scn{color:#085041}.scheader.semi .scn{color:#633806}.scheader.noapi .scn{color:var(--gray)}
+.sct{font-size:.875rem;font-weight:500}
+.scheader.api .sct{color:#085041}.scheader.semi .sct{color:#633806}.scheader.noapi .sct{color:var(--navy)}
+.scbadge{margin-left:auto;font-size:.7rem;padding:2px 8px;border-radius:var(--r-full);font-weight:500}
+.scheader.api .scbadge{background:rgba(15,110,86,.15);color:#085041}
+.scheader.semi .scbadge{background:rgba(133,79,11,.15);color:#633806}
+.scheader.noapi .scbadge{background:var(--gray-light);color:var(--gray)}
+.scbody{padding:.875rem 1rem}
+.scitem{display:flex;gap:.625rem;align-items:flex-start;margin-bottom:.375rem}
+.scdot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.scheader.api+.scbody .scdot{background:var(--green)}
+.scheader.semi+.scbody .scdot{background:#C4820A}
+.scheader.noapi+.scbody .scdot{background:var(--gray)}
+.sctext{font-size:.875rem;color:var(--text-secondary);line-height:1.55;font-weight:300}
+.sctext strong{color:var(--text-primary);font-weight:500}
+.scex{font-size:.8rem;background:var(--bg-secondary);border-left:2px solid var(--border-subtle);padding:.5rem .75rem;margin-top:.5rem;color:var(--text-secondary);font-style:italic;line-height:1.55}
+.journey{display:flex;overflow:hidden;border-radius:var(--r-md);border:0.5px solid var(--border-subtle)}
+.jstep{flex:1;padding:.75rem .5rem;background:var(--bg-primary);text-align:center;position:relative;border-right:0.5px solid var(--border-subtle)}
+.jstep:last-child{border-right:none}
+.jn{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-dm);margin-bottom:.2rem}
+.jt{font-size:.8rem;font-weight:500;color:var(--text-primary);line-height:1.3}
+.constr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.constpill{font-size:.78rem;padding:4px 10px;border-radius:var(--r-md);background:#FAEEDA;color:#854F0B}
+.pins{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.pin{background:var(--bg-secondary);border-radius:var(--r-md);padding:1rem}
+.pinnum{font-family:var(--font-display);font-size:1.25rem;font-weight:500;color:#C4820A;line-height:1;margin-bottom:.4rem}
+.pint{font-size:.875rem;font-weight:500;color:var(--text-primary);margin-bottom:.25rem}
+.pind{font-size:.8rem;color:var(--text-secondary);line-height:1.55;font-weight:300}
+.tenbox{background:#FAEEDA;border-left:3px solid #C4820A;padding:1rem 1.25rem;margin:1.5rem 0}
+.tentext{font-size:1.05rem;font-weight:500;color:#633806;line-height:1.5;font-style:italic}
+.cnav{border-top:1px solid var(--border-subtle);display:grid;grid-template-columns:1fr 1fr;background:var(--bg-secondary)}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni:hover{background:#ECEEF2}
+.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cni-right{border-left:1px solid var(--border-subtle);align-items:flex-end}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
+.cni:hover .cnt{opacity:1}
+.cni:focus-visible .cnt{opacity:1}.rms{flex-direction:column}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}.pins{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(3,1fr)}.journey{flex-wrap:wrap}}
+
+
+
+
+
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--border-subtle)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--text-secondary);text-align:center;padding:.6rem 1rem;background:var(--bg-secondary);border-top:1px solid var(--border-subtle);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--border-subtle)}.case-anim-block iframe{display:block;width:100%;border:none}
+@media(max-width:1024px){.case-hero{padding:calc(var(--nav-height) + 2rem) 2rem 2rem}.cbody,.body{padding:3.5rem 2rem}.case-anim-block{overflow:hidden;max-width:100%}.case-img-block{overflow:hidden;max-width:100%}.case-anim-block iframe{display:none!important}.case-img-block img{display:none!important}.case-anim-block .desktop-note,.case-img-block .desktop-note{display:block!important}}
+@media(max-width:900px){.case-hero{padding:calc(var(--nav-height) + 2.5rem) 2rem 2.5rem}.cbody,.body{padding:4rem 2rem}.cni{padding:1.5rem 2rem}}
+@media(max-width:600px){.case-hero{padding:calc(var(--nav-height) + 1.75rem) 1.25rem 1.75rem}.cbody,.body{padding:3rem 1.25rem}.cni{padding:1.25rem 1.25rem}.regs{grid-template-columns:1fr}.segs{grid-template-columns:1fr}.sgrid,.pgrid,.pins,.intgrid,.objgrid,.ba,.ctxgrid{grid-template-columns:1fr}.fw5{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
+  <a href="../index.html" class="nav-logo">Samantha</a>
+  <ul class="nav-center">
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+</nav>
+<section class="case-hero" aria-label="Case 02: Bot de Content First na Meridian">
+  <div class="hero-lang">
+    <button
+        class="theme-toggle"
+        id="theme-toggle-btn"
+        aria-label="Ativar modo escuro"
+        data-label-pt="Ativar modo escuro"
+        data-label-en="Enable dark mode"
+        aria-pressed="false">
+        ☾
+      </button>
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">
+        <span aria-hidden="true">🇧🇷</span>
+        <span>PT</span>
+      </button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">
+        <span aria-hidden="true">🇺🇸</span>
+        <span>EN</span>
+      </button>
+    </div>
+  </div>
+  <div class="case-hero-inner">
+    <a class="case-back" href="../index.html" aria-label="Voltar à página inicial" data-pt="← Voltar ao início" data-en="← Back to home">← Voltar ao início</a>
+    <div class="cpill" data-pt="Case 07 · IA Generativa · Content Strategy · Framework próprio" data-en="Case 07 · Generative AI · Content Strategy · Own Framework">Case 07 · IA Generativa · Content Strategy · Framework próprio</div>
+    <div class="cco" data-pt="Meridian Investimentos · Iniciativa própria · 2026" data-en="Meridian Investimentos · Own initiative · 2026">Meridian Investimentos · Iniciativa própria · 2026</div>
+    <h1 data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</h1>
+    <p class="hsub" data-pt="Como otimizei o processo de criação de comunicações colocando intenção antes de canal e transformei esse raciocínio em um assistente que qualquer pessoa do time consegue usar." data-en="How I optimized the communication creation process by putting intention before channel, and turned that reasoning into an assistant any team member can use.">Como otimizei o processo de criação de comunicações colocando intenção antes de canal e transformei esse raciocínio em um assistente que qualquer pessoa do time consegue usar.</p>
+    <div class="ctags"><span class="tag" data-pt="Content Strategy" data-en="Content Strategy">Content Strategy</span><span class="tag" data-pt="IA Generativa" data-en="Generative AI">IA Generativa</span><span class="tag" data-pt="Framework próprio" data-en="Own Framework">Framework próprio</span><span class="tag" data-pt="Design Conversacional" data-en="Conversational Design">Design Conversacional</span></div>
+    <div class="disc" data-pt="Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos). O framework, o processo e a lógica de design são integralmente originais." data-en="Fictionalized elements to protect confidentiality: company name (Meridian Investimentos). The framework, process, and design logic are entirely original.">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos). O framework, o processo e a lógica de design são integralmente originais.</div>
+    <div class="pbadge"><span class="pdot"></span><span data-pt="Prototipado · Em testes" data-en="Prototyped · In testing">Prototipado · Em testes</span></div>
+  </div>
+</section>
+<main id="case-content" class="cbody">
+  <div class="sec fade">
+    <div class="slabel" data-pt="01: O problema que eu via todo dia" data-en="01: The problem I saw every day">01: O problema que eu via todo dia</div>
+    <p data-pt="Na Meridian, as comunicações frequentemente começavam pela pergunta errada. Não era algo que alguém fazia de propósito. Era o padrão estabelecido, a forma natural de trabalhar." data-en="At Meridian, communications frequently started with the wrong question. It wasn't something anyone did on purpose. It was the established pattern, the natural way of working.">Na Meridian, as comunicações frequentemente começavam pela pergunta errada. Não era algo que alguém fazia de propósito. Era o padrão estabelecido, a forma natural de trabalhar.</p>
+    <div class="pq">
+      <p data-pt='"Vamos fazer um push para reengajar clientes inativos."' data-en='"We should send pushes to re-engage inactive customers."'>"Vamos fazer um push para reengajar clientes inativos."</p>
+    </div>
+    <p data-pt="O canal foi definido antes de qualquer pergunta sobre o cliente. Quem é essa pessoa? Onde está na jornada? O que sente? O que precisa saber? Nenhuma dessas perguntas foi feita." data-en="The channel was defined before any question about the customer. Who is this person? Where are they in the journey? What do they feel? What do they need to know? None of these questions were asked.">O canal foi definido antes de qualquer pergunta sobre o cliente. Quem é essa pessoa? Onde está na jornada? O que sente? O que precisa saber? Nenhuma dessas perguntas foi feita.</p>
+    <div class="pq" style="border-color:var(--green);background:var(--green-mist)">
+      <p style="color:var(--green)" data-pt='"Clientes que abriram conta mas não fizeram o primeiro aporte estão com medo de errar o primeiro passo. Precisam de clareza e encorajamento, não de pressão."' data-en='"Customers who opened an account but have not made their first deposit are afraid of getting the first step wrong. They need clarity and encouragement, not pressure."'>"Clientes que abriram conta mas não fizeram o primeiro aporte estão com medo de errar o primeiro passo. Precisam de clareza e encorajamento, não de pressão."</p>
+    </div>
+    <p data-pt="A intenção e o contexto do cliente definem o conteúdo. O canal vem por último, não no começo." data-en="The customer's intention and context define the content. The channel comes last, not at the start.">A intenção e o contexto do cliente definem o conteúdo. O canal vem por último, não no começo.</p>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="02: O framework Content First" data-en="02: The Content First framework">02: O framework Content First</div>
+    <h2 data-pt="5 perguntas em sequência obrigatória" data-en="5 questions in mandatory sequence">5 perguntas em sequência obrigatória</h2>
+    <p data-pt="A ordem não é sugestão. É a lógica do processo. Cada resposta alimenta a próxima." data-en="The order is not a suggestion. It's the process logic. Each answer feeds the next.">A ordem não é sugestão. É a lógica do processo. Cada resposta alimenta a próxima.</p>
+    <div class="fw5">
+      <div class="fwc"><div class="fwn">01</div><div class="fwt" data-pt="O quê" data-en="What">O quê</div><div class="fwd" data-pt="Qual é a informação central? Não o canal. O conteúdo." data-en="What is the core information? Not the channel. The content.">Qual é a informação central? Não o canal. O conteúdo.</div></div>
+      <div class="fwc"><div class="fwn">02</div><div class="fwt" data-pt="Como" data-en="How">Como</div><div class="fwd" data-pt="Qual registro? Desafiador, Acolhedor ou Educativo?" data-en="Which register? Challenger, Supportive, or Educational?">Qual registro? Desafiador, Acolhedor ou Educativo?</div></div>
+      <div class="fwc"><div class="fwn">03</div><div class="fwt" data-pt="Contexto" data-en="Context">Contexto</div><div class="fwd" data-pt="O que o cliente já sabe? O que acabou de acontecer?" data-en="What does the customer already know? What just happened?">O que o cliente já sabe? O que acabou de acontecer?</div></div>
+      <div class="fwc"><div class="fwn">04</div><div class="fwt" data-pt="Momento" data-en="Moment">Momento</div><div class="fwd" data-pt="Onde está na jornada? Pré-decisão, ação ou pós?" data-en="Where are they in the journey? Pre-decision, action, or post?">Onde está na jornada? Pré-decisão, ação ou pós?</div></div>
+      <div class="fwc last"><div class="fwn">05</div><div class="fwt" data-pt="Canal" data-en="Channel">Canal</div><div class="fwd" data-pt="Só aqui: onde esse conteúdo faz mais sentido?" data-en="Only here: where does this content make the most sense?">Só aqui: onde esse conteúdo faz mais sentido?</div><div class="fwn2" data-pt="Vem por último, intencionalmente." data-en="Last, intentionally.">Vem por último, intencionalmente.</div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="03: Por que um bot e não um documento" data-en="03: Why a bot and not a document">03: Por que um bot e não um documento</div>
+  <div class="case-anim-block"><iframe src="../assets/images/case-02-contentfirst-animado.html" data-src-pt="../assets/images/case-02-contentfirst-animado.html" data-src-en="../assets/images/case-02-contentfirst-animado-en.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="ContentFirst Bot no Slack" style="display:block;width:100%;border:none;min-height:200px"></iframe><div class="mobile-fallback" style="display:none;padding:1.5rem;background:var(--gray-light);border-radius:8px;font-size:0.9rem;color:var(--gray);line-height:1.7;" data-pt="A PM pergunta qual canal usar. O bot não responde com o canal direto, faz três perguntas de intenção primeiro e só então recomenda: e-mail contextual no D+2 com tom motivacional." data-en="The PM asks which channel to use. The bot doesn't answer with the channel directly — it asks three intention questions first, then recommends: contextual email on D+2 with a motivational tone.">A PM pergunta qual canal usar. O bot não responde com o canal direto, faz três perguntas de intenção primeiro e só então recomenda: e-mail contextual no D+2 com tom motivacional.</div><p class="desktop-note" style="display:none;padding:1rem;background:var(--gray-light);border-radius:8px;font-size:0.875rem;color:var(--gray);line-height:1.6;text-align:center;" data-pt="Para ver a experiência completa com animações e imagens interativas, acesse pelo computador." data-en="To see the full experience with animations and interactive images, open on desktop.">Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.</p><p class="case-img-caption" data-pt="O ContentFirst Bot em ação" data-en="The ContentFirst Bot in action">O ContentFirst Bot em ação</p></div>
+    <div class="qas">
+      <div class="qa"><div class="qq" data-pt="Por que um bot e não um checklist ou guia?" data-en="Why a bot and not a checklist or guide?">Por que um bot e não um checklist ou guia?</div><div class="qa-a" data-pt="Um documento exige que a pessoa lembre de consultá-lo. Um checklist não conecta as respostas entre si. O bot força a sequência certa: você não chega ao canal antes de definir a intenção, e entrega uma saída estruturada pronta para refinar. A lógica está embutida no processo, não na disciplina de quem usa." data-en="A document requires people to remember to consult it. A checklist doesn't connect the answers. The bot enforces the right sequence: you can't reach the channel before defining the intention, and it delivers a structured output ready to refine. The logic is embedded in the process, not in the user's discipline.">Um documento exige que a pessoa lembre de consultá-lo. Um checklist não conecta as respostas entre si. O bot força a sequência certa: você não chega ao canal antes de definir a intenção, e entrega uma saída estruturada pronta para refinar. A lógica está embutida no processo, não na disciplina de quem usa.</div></div>
+      <div class="qa"><div class="qq" data-pt="Por que o canal vem por último?" data-en="Why does the channel come last?">Por que o canal vem por último?</div><div class="qa-a" data-pt="Começar pelo canal é o padrão mais comum em comunicação digital. Ele força o conteúdo a se adaptar às limitações do canal antes de definir o que precisa ser dito. Inverter essa lógica muda o resultado: o canal passa a ser uma consequência da intenção, não uma restrição de partida." data-en="Starting with the channel is the most common pattern in digital communication. It forces content to adapt to channel limitations before defining what needs to be said. Reversing this logic changes the result: the channel becomes a consequence of the intention, not a starting constraint.">Começar pelo canal é o padrão mais comum em comunicação digital. Ele força o conteúdo a se adaptar às limitações do canal antes de definir o que precisa ser dito. Inverter essa lógica muda o resultado: o canal passa a ser uma consequência da intenção, não uma restrição de partida.</div></div>
+      <div class="qa"><div class="qq" data-pt="Por que é uma iniciativa própria?" data-en="Why is it a personal initiative?">Por que é uma iniciativa própria?</div><div class="qa-a" data-pt="Nasceu de uma fricção real que eu observava no dia a dia. Estruturei a solução, prototipei o bot e estou validando antes de propor como processo oficial do time. É design orientado por problema, não por demanda." data-en="It emerged from a real friction I observed daily. I structured the solution, prototyped the bot, and am validating it before proposing it as an official team process. It's problem-driven design, not demand-driven.">Nasceu de uma fricção real que eu observava no dia a dia. Estruturei a solução, prototipei o bot e estou validando antes de propor como processo oficial do time. É design orientado por problema, não por demanda.</div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="04: Status atual" data-en="04: Current status">04: Status atual</div>
+    <div class="ps-status">
+      <div class="ps-title" data-pt="Prototipado e em testes em 2026" data-en="Prototyped and in testing in 2026">Prototipado e em testes em 2026</div>
+      <p class="ps-text" data-pt="Iniciativa própria, ainda não é um processo oficial do time. Estou aplicando em comunicações reais para validar o framework, identificar casos-limite e iterar nas perguntas-guia. Próximo passo: propor como processo padrão de briefing de comunicações para o time de Content." data-en="Personal initiative, not yet an official team process. I'm applying it to real communications to validate the framework, identify edge cases, and iterate on the guiding questions. Next step: propose it as the standard communications briefing process for the Content team.">Iniciativa própria, ainda não é um processo oficial do time. Estou aplicando em comunicações reais para validar o framework, identificar casos-limite e iterar nas perguntas-guia. Próximo passo: propor como processo padrão de briefing de comunicações para o time de Content.</p>
+    </div>
+  </div>
+</main>
+<nav class="cnav" aria-label="Navegação entre cases">
+  <a href="case-06.html" class="cni"><div class="cnd" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div><div class="cnt" data-pt="Assistente de Voz da Marca" data-en="Brand Voice Assistant">Assistente de Voz da Marca</div></a>
+  <a href="case-08.html" class="cni cni-right"><div class="cnd" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div><div class="cnt" data-pt="Aurora: quando a designer virou usuária" data-en="Aurora: when the designer became the user">Aurora: quando a designer virou usuária</div></a>
+</nav>
+<footer>
+  <p>© 2026 Samantha Barreto</p>
+  <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+</footer>
+<script src="../assets/theme.js"></script>
+<script src="../assets/shared.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.sec').forEach(s => obs.observe(s));
+</script>
+<script>
+window.addEventListener('message',function(e){if(e.data&&typeof e.data.iframeHeight==='number'){var f=document.querySelector('.case-anim-block iframe');if(f)f.style.height=Math.max(e.data.iframeHeight,200)+'px';}});
+</script>
+</body>
+</html>
