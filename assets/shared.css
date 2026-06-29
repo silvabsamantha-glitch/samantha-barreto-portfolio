@@ -188,6 +188,7 @@ nav.nav-dark .lang-btn.active { color: var(--white); border-color: rgba(255,255,
 nav.nav-dark .theme-toggle { color: var(--white); }
 nav.nav-dark.scrolled .lang-toggle { background: var(--gray-light); }
 nav.nav-dark.scrolled .theme-toggle { color: var(--navy); }
+html.dark-mode nav.nav-dark.scrolled .theme-toggle { color: var(--text-primary); }
 nav.nav-dark.scrolled .nav-logo { color: var(--navy); }
 nav.nav-dark.scrolled .nav-logo span { color: var(--green); }
 nav.nav-dark.scrolled .nav-center a { color: var(--gray); }
@@ -542,6 +543,12 @@ footer a:hover { color: var(--green-2); }
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+.hero-lang .theme-toggle {
+  color: rgba(255,255,255,0.8);
+}
+.hero-lang .theme-toggle:hover {
+  background: rgba(255,255,255,0.12);
 }
 .hero-lang .lang-toggle { background: rgba(255,255,255,0.1); }
 .hero-lang .lang-btn { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.2); min-height: 44px; min-width: 44px; }

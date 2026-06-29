@@ -897,6 +897,14 @@
   line-height: 1.7;
 }
 .contact-links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+html.dark-mode .contact-sec .btn-outline {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+html.dark-mode .contact-sec .btn-outline:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
 
 /* ── NAV override for hero (light nav on dark bg) ─────────────── */
 .nav-on-dark .nav-logo { color: var(--white); }
