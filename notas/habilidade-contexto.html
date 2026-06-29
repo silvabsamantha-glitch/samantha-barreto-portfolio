@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O que acontece quando uma habilidade muda de contexto sem mudar de essência? · Samantha Barreto</title>
+<meta name="description" content="Sobre IA generativa, escrita e a habilidade que eu estava subestimando.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+/* ── NOTA HERO ───────────────────────────────────────────────── */
+.nota-hero {
+  background: var(--navy-mid);
+  padding: calc(var(--nav-height) + 4rem) 4rem 4rem;
+}
+.nota-hero-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.nota-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+  letter-spacing: 0.01em;
+}
+.nota-back:hover { color: rgba(255,255,255,0.85); }
+.nota-back:focus-visible {
+  outline: 2px solid var(--green-2);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.nota-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-2);
+  margin-bottom: 1.25rem;
+}
+.nota-hero h1 {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.nota-hero-meta {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+}
+
+/* ── NOTA BODY (coluna editorial) ────────────────────────────── */
+.nota-body {
+  padding: 5rem 4rem;
+}
+.nota-text {
+  max-width: 62ch;
+  margin: 0 auto;
+}
+.nota-text p {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.9;
+  font-weight: 300;
+  margin: 0 0 1.75rem;
+}
+.nota-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── VOLTA ───────────────────────────────────────────────────── */
+.nota-footer-link {
+  max-width: 62ch;
+  margin: 4rem auto 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.nota-footer-link a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--green-dm);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+.nota-footer-link a:hover { color: var(--green-2); }
+.nota-footer-link a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nota-hero { padding: calc(var(--nav-height) + 3rem) 2rem 3rem; }
+  .nota-body { padding: 4rem 2rem; }
+}
+@media (max-width: 600px) {
+  .nota-hero { padding: calc(var(--nav-height) + 2rem) 1.25rem 2rem; }
+  .nota-body { padding: 3rem 1.25rem; }
+  .nota-text p { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+<a href="#nota-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
+  <a href="../index.html" class="nav-logo">Samantha</a>
+  <ul class="nav-center">
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <button
+        class="theme-toggle"
+        id="theme-toggle-btn"
+        aria-label="Ativar modo escuro"
+        data-label-pt="Ativar modo escuro"
+        data-label-en="Enable dark mode"
+        aria-pressed="false">
+        ☾
+      </button>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">
+        <span aria-hidden="true">🇧🇷</span>
+        <span>PT</span>
+      </button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">
+        <span aria-hidden="true">🇺🇸</span>
+        <span>EN</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<section class="nota-hero" aria-label="Cabeçalho da nota">
+  <div class="nota-hero-inner fade">
+    <a class="nota-back" href="index.html" data-pt="← Notas" data-en="← Notes">← Notas</a>
+    <p class="nota-pill" data-pt="Nota 01 · Junho 2026" data-en="Note 01 · June 2026">Nota 01 · Junho 2026</p>
+    <h1 data-pt="O que acontece quando uma habilidade muda de contexto sem mudar de essência?" data-en="What happens when a skill changes context without changing its essence?">O que acontece quando uma habilidade muda de contexto sem mudar de essência?</h1>
+    <p class="nota-hero-meta" data-pt="Por Samantha Barreto" data-en="By Samantha Barreto">Por Samantha Barreto</p>
+  </div>
+</section>
+
+<main id="nota-content">
+  <article class="nota-body" aria-label="Texto da nota">
+    <div class="nota-text fade">
+
+      <p data-pt="Quando a IA generativa começou a ganhar espaço, eu tive medo." data-en="When generative AI started gaining traction, I was afraid.">Quando a IA generativa começou a ganhar espaço, eu tive medo.</p>
+
+      <p data-pt='Trabalho com uma área que já passa boa parte do tempo justificando a própria existência. Conteúdo. Escrita. Aquela área que frequentemente escuta que "é só escrever" ou que "qualquer um faz".' data-en='I work in a field that spends a surprising amount of time justifying its own existence. Content. Writing. The kind of work people often dismiss with comments like "it&apos;s just writing" or "anyone can do that."'>Trabalho com uma área que já passa boa parte do tempo justificando a própria existência. Conteúdo. Escrita. Aquela área que frequentemente escuta que "é só escrever" ou que "qualquer um faz".</p>
+
+      <p data-pt="Então a lógica parecia simples." data-en="So the logic seemed straightforward.">Então a lógica parecia simples.</p>
+
+      <p data-pt="Se escrever já era uma habilidade subestimada e agora existia uma tecnologia capaz de escrever em segundos, onde isso me deixava?" data-en="If writing was already an undervalued skill, and now there was a technology capable of writing in seconds, where did that leave me?">Se escrever já era uma habilidade subestimada e agora existia uma tecnologia capaz de escrever em segundos, onde isso me deixava?</p>
+
+      <p data-pt="Lembro de pensar, mais de uma vez:" data-en="I remember thinking, more than once:">Lembro de pensar, mais de uma vez:</p>
+
+      <p data-pt="Eu só sei escrever." data-en="Writing is all I know.">Eu só sei escrever.</p>
+
+      <p data-pt="Mas, quando a IA finalmente passou a fazer parte do meu trabalho, uma sensação estranha apareceu." data-en="But when AI eventually became part of my day-to-day work, something unexpected happened.">Mas, quando a IA finalmente passou a fazer parte do meu trabalho, uma sensação estranha apareceu.</p>
+
+      <p data-pt="Enquanto muita gente tratava prompts como uma habilidade completamente nova, eu tinha a impressão de já conhecer aquele território." data-en="While many people were treating prompt writing as an entirely new skill, I had the strange feeling that I already knew this territory.">Enquanto muita gente tratava prompts como uma habilidade completamente nova, eu tinha a impressão de já conhecer aquele território.</p>
+
+      <p data-pt="Não porque entendesse mais de IA." data-en="Not because I knew more about AI.">Não porque entendesse mais de IA.</p>
+
+      <p data-pt="As perguntas eram familiares." data-en="The questions felt familiar.">As perguntas eram familiares.</p>
+
+      <p data-pt="Como alguém vai interpretar isso?" data-en="How will someone interpret this?">Como alguém vai interpretar isso?</p>
+
+      <p data-pt="O que está faltando de contexto?" data-en="What context is missing?">O que está faltando de contexto?</p>
+
+      <p data-pt="Onde existe espaço para ambiguidade?" data-en="Where is there room for ambiguity?">Onde existe espaço para ambiguidade?</p>
+
+      <p data-pt="O que acontece se a resposta não resolver o problema?" data-en="What happens if the answer doesn't solve the problem?">O que acontece se a resposta não resolver o problema?</p>
+
+      <p data-pt="Eu fazia essas perguntas ao escrever para pessoas. Fazia essas perguntas ao projetar conversas. Agora fazia as mesmas perguntas para orientar um modelo." data-en="I asked those questions when writing for people. I asked them when designing conversations. Now I was asking the same questions to guide a model.">Eu fazia essas perguntas ao escrever para pessoas. Fazia essas perguntas ao projetar conversas. Agora fazia as mesmas perguntas para orientar um modelo.</p>
+
+      <p data-pt="Foi quando comecei a suspeitar que não estava aprendendo uma habilidade nova." data-en="That's when I started to suspect I wasn't learning a new skill.">Foi quando comecei a suspeitar que não estava aprendendo uma habilidade nova.</p>
+
+      <p data-pt="Estava reutilizando uma antiga." data-en="I was reusing an old one.">Estava reutilizando uma antiga.</p>
+
+      <p data-pt="Por algum tempo, achei que essa habilidade era a escrita. Depois, achei que era a conversação." data-en="For a while, I thought that skill was writing. Later, I thought it was conversation.">Por algum tempo, achei que essa habilidade era a escrita. Depois, achei que era a conversação.</p>
+
+      <p data-pt="Hoje já não tenho tanta certeza." data-en="Today, I'm not so sure.">Hoje já não tenho tanta certeza.</p>
+
+      <p data-pt="Experiências não começam nem terminam em uma tela, em um chatbot ou em um prompt. Elas atravessam canais, momentos, emoções e objetivos. Conectam a intenção de empresas, produtos e pessoas." data-en="Experiences don't begin or end in a screen, a chatbot, or a prompt. They move across channels, moments, emotions, and goals. They connect the intentions of businesses, products, and people.">Experiências não começam nem terminam em uma tela, em um chatbot ou em um prompt. Elas atravessam canais, momentos, emoções e objetivos. Conectam a intenção de empresas, produtos e pessoas.</p>
+
+      <p data-pt="Talvez por isso a habilidade tenha sobrevivido à mudança de contexto." data-en="Maybe that's why the skill survived the change in context.">Talvez por isso a habilidade tenha sobrevivido à mudança de contexto.</p>
+
+      <p data-pt="Porque ela nunca pertenceu ao contexto." data-en="Because it never belonged to the context in the first place.">Porque ela nunca pertenceu ao contexto.</p>
+
+      <p data-pt="A escrita era apenas uma das formas de exercê-la." data-en="Writing was simply one way of practicing it.">A escrita era apenas uma das formas de exercê-la.</p>
+
+      <p data-pt="Demorei para perceber isso." data-en="It took me a long time to realize that.">Demorei para perceber isso.</p>
+
+      <p data-pt="Por muito tempo, dei um nome pequeno demais para algo maior." data-en="For years, I gave a small name to something much bigger.">Por muito tempo, dei um nome pequeno demais para algo maior.</p>
+
+      <p data-pt="A minha resposta para essa descoberta foi entender que trabalho traduzindo contexto, intenção e objetivos entre pessoas, produtos, empresas e sistemas." data-en="My answer was realizing that what I actually do is translate context, intention, and objectives between people, products, companies, and systems.">A minha resposta para essa descoberta foi entender que trabalho traduzindo contexto, intenção e objetivos entre pessoas, produtos, empresas e sistemas.</p>
+
+      <p data-pt="Mas essa é apenas a minha resposta." data-en="But that's just my answer.">Mas essa é apenas a minha resposta.</p>
+
+      <p data-pt="Talvez você esteja fazendo o mesmo." data-en="Maybe you're doing the same.">Talvez você esteja fazendo o mesmo.</p>
+
+      <p data-pt="Que habilidade você pode estar subestimando porque ainda a descreve pela ferramenta onde aprendeu a exercê-la?" data-en="What skill might you be underestimating because you're still describing it by the tool where you first learned to practice it?">Que habilidade você pode estar subestimando porque ainda a descreve pela ferramenta onde aprendeu a exercê-la?</p>
+
+    </div>
+
+    <div class="nota-footer-link fade">
+      <a href="index.html" data-pt="← Voltar às notas" data-en="← Back to notes">← Voltar às notas</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 Samantha Barreto · Diadema, SP</p>
+  <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
+  <p><a href="../index.html#cases" data-pt="Ver todos os cases" data-en="See all cases">Ver todos os cases</a></p>
+</footer>
+
+<script src="../assets/theme.js"></script>
+<script src="../assets/shared.js"></script>
+<script>
+  const navEl = document.getElementById('main-nav');
+  const heroEl = document.querySelector('.nota-hero');
+  if (heroEl && navEl) {
+    const navObs = new IntersectionObserver(([entry]) => {
+      navEl.classList.toggle('nav-on-dark', entry.isIntersecting);
+    }, { threshold: 0.1 });
+    navObs.observe(heroEl);
+  }
+</script>
+</body>
+</html>
