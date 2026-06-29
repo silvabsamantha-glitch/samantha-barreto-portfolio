@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aurora — uma persona, dois registros</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0D1B2A;padding:20px;font-family:'Courier New',monospace}
+.wrap{max-width:720px;margin:0 auto;background:#111B28;border-radius:12px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.wrap{grid-template-columns:1fr}}
+.col{display:flex;flex-direction:column;gap:8px}
+.lbl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:6px;padding:0 2px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.personal .dot{background:#C8772E}.personal .lbl{color:#D89A5E}
+.pro .dot{background:#0F6E56}.pro .lbl{color:#4DB896}
+.panel{background:#0E1621;border-radius:12px;overflow:hidden;flex:1;display:flex;flex-direction:column;border:1.5px solid #1A2830}
+.panel-top{padding:8px 12px;display:flex;align-items:center;gap:8px;background:#17212B}
+.av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;background:linear-gradient(135deg,#C8772E,#0F6E56)}
+.ctx{font-size:10px;color:rgba(255,255,255,0.5)}
+.ctx b{color:#fff;font-weight:500;display:block;font-size:11px}
+.chat{flex:1;padding:12px 10px;display:flex;flex-direction:column;gap:7px;min-height:300px}
+.b{max-width:88%;padding:7px 11px;font-size:11.5px;line-height:1.5;border-radius:11px;opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s}
+.b.show{opacity:1;transform:none}
+.me{align-self:flex-end;background:#2B5278;color:#E9EDEF;border-radius:11px 11px 3px 11px}
+.au-personal{align-self:flex-start;background:#1F1A14;color:#E9EDEF;border-radius:11px 11px 11px 3px;border-left:2px solid #C8772E}
+.au-pro{align-self:flex-start;background:#182533;color:#E9EDEF;border-radius:11px 11px 11px 3px;border-left:2px solid #0F6E56}
+.note{border-radius:0 6px 6px 0;padding:7px 11px;font-size:10px;line-height:1.5;opacity:0;transition:opacity .4s;margin-top:3px}
+.note.show{opacity:1}
+.note-personal{background:#1A120A;border-left:2px solid #C8772E;color:#D89A5E}
+.note-pro{background:#0A2018;border-left:2px solid #0F6E56;color:#4DB896}
+.note span{color:rgba(255,255,255,0.4);display:block;margin-top:3px;font-size:9px}
+@media(prefers-reduced-motion:reduce){.b,.note{transition:none}}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="col personal">
+    <div class="lbl"><div class="dot"></div><span id="txt-lbl1">registro pessoal · telegram</span></div>
+    <div class="panel">
+      <div class="panel-top"><div class="av">Au</div><div class="ctx"><b>Aurora</b><span id="txt-ctx1">com a Samantha</span></div></div>
+      <div class="chat">
+        <div class="b me" id="p1"></div>
+        <div class="b au-personal" id="p2"></div>
+        <div class="note note-personal" id="pn"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col pro">
+    <div class="lbl"><div class="dot"></div><span id="txt-lbl2">registro profissional · portfólio</span></div>
+    <div class="panel">
+      <div class="panel-top"><div class="av">Au</div><div class="ctx"><b>Aurora</b><span id="txt-ctx2">com quem visita o site</span></div></div>
+      <div class="chat">
+        <div class="b me" id="q1"></div>
+        <div class="b au-pro" id="q2"></div>
+        <div class="note note-pro" id="qn"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+var strings = {
+  pt: {
+    lbl1: 'registro pessoal · telegram',
+    lbl2: 'registro profissional · portfólio',
+    ctx1: 'com a Samantha',
+    ctx2: 'com quem visita o site',
+    p1: 'oi aurora, tudo bem?',
+    p2: 'Oii! Tô por aqui, sempre pronta pra te ajudar ✨ Bora resolver o dia?',
+    pn: 'Efusiva, íntima, com emoji',
+    pnSub: 'O público é uma pessoa só: a Samantha',
+    q1: 'oi aurora, tudo bem?',
+    q2: 'Oi. Tudo bem por aqui. Como posso ajudar na sua visita?',
+    qn: 'Sóbria, acolhedora, sem emoji',
+    qnSub: 'O público é recrutador e cliente em potencial'
+  },
+  en: {
+    lbl1: 'personal register · telegram',
+    lbl2: 'professional register · portfolio',
+    ctx1: 'with Samantha',
+    ctx2: 'with site visitors',
+    p1: 'hey aurora, how are you?',
+    p2: "Heyy! I'm right here, always ready to help ✨ Shall we tackle the day?",
+    pn: 'Effusive, intimate, with emoji',
+    pnSub: 'The audience is one person: Samantha',
+    q1: 'hey aurora, how are you?',
+    q2: "Hi. All good here. How can I help with your visit?",
+    qn: 'Sober, warm, no emoji',
+    qnSub: 'The audience is recruiters and potential clients'
+  }
+};
+var currentLang = 'en';
+function applyAnimLang(lang){
+  currentLang = lang;
+  var s = strings[lang] || strings.pt;
+  document.getElementById('txt-lbl1').textContent = s.lbl1;
+  document.getElementById('txt-lbl2').textContent = s.lbl2;
+  document.getElementById('txt-ctx1').textContent = s.ctx1;
+  document.getElementById('txt-ctx2').textContent = s.ctx2;
+  document.getElementById('p1').textContent = s.p1;
+  document.getElementById('p2').textContent = s.p2;
+  document.getElementById('pn').innerHTML = s.pn + '<span>' + s.pnSub + '</span>';
+  document.getElementById('q1').textContent = s.q1;
+  document.getElementById('q2').textContent = s.q2;
+  document.getElementById('qn').innerHTML = s.qn + '<span>' + s.qnSub + '</span>';
+}
+window.addEventListener('message', function(e){
+  if(e.data && e.data.type === 'setLang'){ applyAnimLang(e.data.lang); }
+});
+applyAnimLang(currentLang);
+
+function s(id){var el=document.getElementById(id);if(el)el.classList.add('show');}
+var seq=[
+  function(){s('p1');s('q1');},
+  function(){s('p2');},
+  function(){s('q2');},
+  function(){s('pn');s('qn');}
+];
+var delays=[400,1300,2200,3300];
+function run(){seq.forEach(function(fn,i){setTimeout(fn,delays[i]);});setTimeout(reset,8500);}
+function reset(){['p1','p2','pn','q1','q2','qn'].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.remove('show');});setTimeout(run,700);}
+run();
+</script>
+<script>
+function nh(){var h=document.documentElement.scrollHeight||document.body.scrollHeight;window.parent.postMessage({iframeHeight:h},'*');}
+window.addEventListener('load',nh);window.addEventListener('resize',nh);setTimeout(nh,500);setTimeout(nh,1500);
+</script>
+</body></html>
