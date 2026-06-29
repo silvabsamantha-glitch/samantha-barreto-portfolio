@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case 08: Aurora, quando a designer virou usuária · Samantha Barreto</title>
+<meta name="description" content="Como um sistema multiagente no Telegram, construído com Make, Google Sheets e a API do Claude, transformou design conversacional em engenharia de produto pessoal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+.case-hero{padding:calc(var(--nav-height) + 3.5rem) 4rem 3.5rem;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.case-hero-inner{position:relative;z-index:1;max-width:800px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.72);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
+.cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#4ECBA8;background:rgba(26,155,118,.18);border:1px solid rgba(26,155,118,.35);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem}
+.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
+.hsub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
+.ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.disc{background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.12);padding:.75rem 1rem;margin-bottom:2rem;font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.6}
+.mbar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
+.mitem{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.mitem:last-child{border-right:none;margin-right:0}
+.mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4}
+.cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
+.sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
+.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-dm);margin-top:3rem;margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--border-subtle)}
+.sec h2{font-size:1.4rem;color:var(--text-primary);margin-bottom:.75rem;font-weight:500}
+.sec p{font-size:1rem;color:var(--text-secondary);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+.sec p:last-child{margin-bottom:0}
+.sec p strong{color:var(--text-primary);font-weight:500}
+.pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
+.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--border-subtle);align-items:start}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.sn{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--green-dm);padding-top:2px}
+.st{font-size:.95rem;font-weight:500;color:var(--text-primary);margin-bottom:.25rem}
+.sd{font-size:.875rem;color:var(--text-secondary);line-height:1.65;font-weight:300}
+.rms{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.rm{background:var(--green-mist);border:0.5px solid rgba(15,110,86,.2);border-radius:var(--r-md);padding:1rem 1.25rem;flex:1;min-width:120px;text-align:center}
+.rmv{font-family:var(--font-display);font-size:1.75rem;font-weight:500;color:var(--green);line-height:1;margin-bottom:4px}
+.rml{font-size:.72rem;color:var(--gray);line-height:1.4}
+.learned{background:var(--bg-secondary);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
+.learned p{font-size:1rem;color:var(--text-secondary);line-height:1.75;font-style:italic;margin:0}
+.learned cite{font-size:.8rem;color:var(--text-primary);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
+.journey{display:flex;overflow:hidden;border-radius:var(--r-md);border:0.5px solid var(--border-subtle)}
+.jstep{flex:1;padding:.75rem .5rem;background:var(--bg-primary);text-align:center;position:relative;border-right:0.5px solid var(--border-subtle)}
+.jstep:last-child{border-right:none}
+.jn{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-dm);margin-bottom:.2rem}
+.jt{font-size:.8rem;font-weight:500;color:var(--text-primary);line-height:1.3}
+.case-img-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--border-subtle)}.case-img{width:100%;height:auto;display:block}.case-img-caption{font-size:.75rem;color:var(--text-secondary);text-align:center;padding:.6rem 1rem;background:var(--bg-secondary);border-top:1px solid var(--border-subtle);margin:0}.case-anim-block{margin:2rem 0 2.5rem;border-radius:10px;overflow:hidden;border:1px solid var(--border-subtle)}.case-anim-block iframe{display:block;width:100%;border:none}
+.cnav{border-top:1px solid var(--border-subtle);display:grid;grid-template-columns:1fr 1fr;background:var(--bg-secondary)}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni:hover{background:#ECEEF2}
+.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cni-right{border-left:1px solid var(--border-subtle);align-items:flex-end}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--text-primary);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
+.cni:hover .cnt{opacity:1}
+.cni:focus-visible .cnt{opacity:1}
+@media(max-width:1024px){.case-hero{padding:calc(var(--nav-height) + 2rem) 2rem 2rem}.cbody,.body{padding:3.5rem 2rem}.case-anim-block{overflow:hidden;max-width:100%}.case-img-block{overflow:hidden;max-width:100%}.case-anim-block iframe{display:none!important}.case-img-block img{display:none!important}.case-anim-block .desktop-note,.case-img-block .desktop-note{display:block!important}}
+@media(max-width:900px){.case-hero{padding:calc(var(--nav-height) + 2.5rem) 2rem 2.5rem}.cbody,.body{padding:4rem 2rem}.cni{padding:1.5rem 2rem}}
+@media(max-width:600px){.case-hero{padding:calc(var(--nav-height) + 1.75rem) 1.25rem 1.75rem}.cbody,.body{padding:3rem 1.25rem}.cni{padding:1.25rem 1.25rem}.rms{flex-direction:column}.journey{flex-wrap:wrap}.jstep{flex:1 1 50%;border-bottom:0.5px solid var(--border-subtle)}}
+</style>
+</head>
+<body>
+<a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
+  <a href="../index.html" class="nav-logo">Samantha</a>
+  <ul class="nav-center">
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+</nav>
+<section class="case-hero" aria-label="Case 08: Aurora, sistema multiagente pessoal no Telegram">
+  <div class="hero-lang">
+    <button
+        class="theme-toggle"
+        id="theme-toggle-btn"
+        aria-label="Ativar modo escuro"
+        data-label-pt="Ativar modo escuro"
+        data-label-en="Enable dark mode"
+        aria-pressed="false">
+        ☾
+      </button>
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">
+        <span aria-hidden="true">🇧🇷</span>
+        <span>PT</span>
+      </button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">
+        <span aria-hidden="true">🇺🇸</span>
+        <span>EN</span>
+      </button>
+    </div>
+  </div>
+  <div class="case-hero-inner">
+    <a class="case-back" href="../index.html" aria-label="Voltar à página inicial" data-pt="← Voltar ao início" data-en="← Back to home">← Voltar ao início</a>
+    <div class="cpill" data-pt="Case 08 · IA Generativa · Projeto Pessoal · 2026" data-en="Case 08 · Generative AI · Personal Project · 2026">Case 08 · IA Generativa · Projeto Pessoal · 2026</div>
+    <div class="cco" data-pt="projeto pessoal · Conversational AI Designer · 2026" data-en="personal project · Conversational AI Designer · 2026">projeto pessoal · Conversational AI Designer · 2026</div>
+    <h1 data-pt="Aurora: quando a designer virou usuária" data-en="Aurora: when the designer became the user">Aurora: quando a designer virou usuária</h1>
+    <p class="hsub" data-pt="De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana." data-en="From a Telegram message to an organized spreadsheet, a weekly report and a reminder at the right time. A real system, used every day, that classifies information with AI and generates reports automatically every week.">De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana.</p>
+    <div class="ctags"><span class="tag" data-pt="IA Generativa" data-en="Generative AI">IA Generativa</span><span class="tag" data-pt="Projeto Pessoal" data-en="Personal Project">Projeto Pessoal</span><span class="tag" data-pt="Multiagente" data-en="Multi-agent">Multiagente</span><span class="tag" data-pt="Automação" data-en="Automation">Automação</span><span class="tag" data-pt="Design Conversacional" data-en="Conversational Design">Design Conversacional</span></div>
+    <div class="disc" data-pt="Detalhes de rotina e bem-estar pessoal são citados aqui apenas em nível abstrato, sem campos, conteúdos ou destinatários específicos. As ferramentas e o funcionamento técnico do sistema são reais." data-en="Details about personal routine and well-being are mentioned here only at an abstract level, without specific fields, content or recipients. The tools and the system's technical workings are real.">Detalhes de rotina e bem-estar pessoal são citados aqui apenas em nível abstrato, sem campos, conteúdos ou destinatários específicos. As ferramentas e o funcionamento técnico do sistema são reais.</div>
+    <div class="mbar">
+      <div class="mitem"><div class="mv">2</div><div class="ml" data-pt="agentes em produção" data-en="agents in production">agentes em produção</div></div>
+      <div class="mitem"><div class="mv">3</div><div class="ml" data-pt="cenários automatizados" data-en="automated scenarios">cenários automatizados</div></div>
+      <div class="mitem"><div class="mv" data-pt="Sem código" data-en="No-code">Sem código</div><div class="ml" data-pt="construído sem programação tradicional" data-en="built without traditional programming">construído sem programação tradicional</div></div>
+    </div>
+  </div>
+</section>
+<main id="case-content" class="cbody">
+  <div class="sec fade">
+    <div class="slabel" data-pt="01: A virada" data-en="01: The turning point">01: A virada</div>
+    <p data-pt="Passo boa parte do meu tempo desenhando conversas para outras pessoas. A Aurora foi a primeira vez que desenhei uma para mim." data-en="I spend a good part of my time designing conversations for other people. Aurora was the first time I designed one for myself.">Passo boa parte do meu tempo desenhando conversas para outras pessoas. A Aurora foi a primeira vez que desenhei uma para mim.</p>
+    <div class="case-anim-block"><iframe src="../assets/images/case-08-telegram-animado.html" data-src-pt="../assets/images/case-08-telegram-animado.html" data-src-en="../assets/images/case-08-telegram-animado-en.html" width="100%" height="1" frameborder="0" scrolling="no" loading="lazy" title="Simulação de conversa com a Aurora no Telegram" style="display:block;width:100%;border:none;min-height:200px"></iframe><div class="mobile-fallback" style="display:none;padding:1.5rem;background:var(--gray-light);border-radius:8px;font-size:0.9rem;color:var(--gray);line-height:1.7;" data-pt="Mensagem no Telegram é recebida pela Aurora, classificada por um agente de IA e registrada automaticamente na planilha certa." data-en="A Telegram message is received by Aurora, classified by an AI agent and automatically logged in the right spreadsheet.">Mensagem no Telegram é recebida pela Aurora, classificada por um agente de IA e registrada automaticamente na planilha certa.</div><p class="desktop-note" style="display:none;padding:1rem;background:var(--gray-light);border-radius:8px;font-size:0.875rem;color:var(--gray);line-height:1.6;text-align:center;" data-pt="Para ver a experiência completa com animações e imagens interativas, acesse pelo computador." data-en="For the full experience with animations and interactive images, open on desktop.">Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.</p><p class="case-img-caption" data-pt="A Aurora em ação no Telegram" data-en="Aurora in action on Telegram">A Aurora em ação no Telegram</p></div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="02: O problema" data-en="02: The problem">02: O problema</div>
+    <p data-pt="Eu queria um sistema que organizasse tarefas, finanças e rotina sem depender de eu abrir mais um app. A interface precisava ser a que eu já uso o dia inteiro: uma conversa." data-en="I wanted a system that organized tasks, finances and routine without depending on me opening yet another app. The interface needed to be the one I already use all day: a conversation.">Eu queria um sistema que organizasse tarefas, finanças e rotina sem depender de eu abrir mais um app. A interface precisava ser a que eu já uso o dia inteiro: uma conversa.</p>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="03: A solução" data-en="03: The solution">03: A solução</div>
+    <p data-pt="Aurora é um sistema multiagente construído com Make, Google Sheets, a API do Claude e Telegram. Eu mando uma mensagem em linguagem natural e um agente classifica a intenção, estrutura a informação em JSON e grava na planilha certa. Sem app novo, sem formulário, sem fricção." data-en="Aurora is a multi-agent system built with Make, Google Sheets, the Claude API and Telegram. I send a message in natural language and an agent classifies the intent, structures the information as JSON and writes it to the right spreadsheet. No new app, no form, no friction.">Aurora é um sistema multiagente construído com Make, Google Sheets, a API do Claude e Telegram. Eu mando uma mensagem em linguagem natural e um agente classifica a intenção, estrutura a informação em JSON e grava na planilha certa. Sem app novo, sem formulário, sem fricção.</p>
+    <p data-pt="Em linhas gerais, a arquitetura segue este caminho:" data-en="Broadly, the architecture follows this path:">Em linhas gerais, a arquitetura segue este caminho:</p>
+    <div class="journey" role="group" aria-label="Arquitetura do sistema: Telegram, Make, API do Claude, Google Sheets, automações de retorno">
+      <div class="jstep"><div class="jn" data-pt="Entrada" data-en="Input">Entrada</div><div class="jt">Telegram</div></div>
+      <div class="jstep"><div class="jn" data-pt="Orquestração" data-en="Orchestration">Orquestração</div><div class="jt">Make</div></div>
+      <div class="jstep"><div class="jn" data-pt="Classificação" data-en="Classification">Classificação</div><div class="jt" data-pt="API do Claude" data-en="Claude API">API do Claude</div></div>
+      <div class="jstep"><div class="jn" data-pt="Memória" data-en="Memory">Memória</div><div class="jt">Google Sheets</div></div>
+      <div class="jstep"><div class="jn" data-pt="Retorno" data-en="Return">Retorno</div><div class="jt" data-pt="Automações" data-en="Automations">Automações</div></div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="04: Onde o Conversational Design entra" data-en="04: Where Conversational Design comes in">04: Onde o Conversational Design entra</div>
+    <p data-pt="A parte mais difícil não foi a automação, foi o design da conversa e do contrato de conteúdo entre os agentes. Desenhei o prompt de cada agente como desenho um bot profissional: intenções, entidades, formato de saída e fallbacks definidos antes de qualquer fluxo." data-en="The hardest part wasn't the automation, it was designing the conversation and the content contract between agents. I designed each agent's prompt the way I design a professional bot: intents, entities, output format and fallbacks defined before any flow.">A parte mais difícil não foi a automação, foi o design da conversa e do contrato de conteúdo entre os agentes. Desenhei o prompt de cada agente como desenho um bot profissional: intenções, entidades, formato de saída e fallbacks definidos antes de qualquer fluxo.</p>
+    <div class="pq">
+      <p data-pt="Forçar um modelo de linguagem a responder em JSON estrito exigiu técnica de pre-fill e regras explícitas de formato. Na prática, um guia de tom de voz para máquinas." data-en="Forcing a language model to respond in strict JSON required pre-fill technique and explicit format rules. In practice, a voice and tone guide for machines.">Forçar um modelo de linguagem a responder em JSON estrito exigiu técnica de pre-fill e regras explícitas de formato. Na prática, um guia de tom de voz para máquinas.</p>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="05: Desafios resolvidos" data-en="05: Challenges solved">05: Desafios resolvidos</div>
+    <div class="steps">
+      <div class="step">
+        <div class="sn">01</div>
+        <div>
+          <div class="st" data-pt="Redesign da planilha" data-en="Spreadsheet redesign">Redesign da planilha</div>
+          <div class="sd" data-pt="A primeira estrutura não escalou. Foi uma decisão de arquitetura, não um ajuste pontual." data-en="The first structure didn't scale. It was an architecture decision, not a minor tweak.">A primeira estrutura não escalou. Foi uma decisão de arquitetura, não um ajuste pontual.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn">02</div>
+        <div>
+          <div class="st" data-pt="Sanitização de conteúdo" data-en="Content sanitization">Sanitização de conteúdo</div>
+          <div class="sd" data-pt="Certos caracteres quebravam o corpo JSON enviado pelo Make. Foi preciso tratar o conteúdo na integração antes do envio." data-en="Certain characters broke the JSON body sent by Make. The content had to be sanitized in the integration before sending.">Certos caracteres quebravam o corpo JSON enviado pelo Make. Foi preciso tratar o conteúdo na integração antes do envio.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn">03</div>
+        <div>
+          <div class="st" data-pt="Configuração de webhook" data-en="Webhook setup">Configuração de webhook</div>
+          <div class="sd" data-pt="Conexão entre Telegram e Make ajustada para manter o fluxo estável, sem mensagens perdidas ou duplicadas." data-en="Connection between Telegram and Make adjusted to keep the flow stable, without lost or duplicated messages.">Conexão entre Telegram e Make ajustada para manter o fluxo estável, sem mensagens perdidas ou duplicadas.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="06: O resultado" data-en="06: The result">06: O resultado</div>
+    <div class="rms">
+      <div class="rm"><div class="rmv">2</div><div class="rml" data-pt="agentes em produção" data-en="agents in production">agentes em produção</div></div>
+      <div class="rm"><div class="rmv">3</div><div class="rml" data-pt="cenários automatizados" data-en="automated scenarios">cenários automatizados</div></div>
+      <div class="rm"><div class="rmv" data-pt="Sem código" data-en="No-code">Sem código</div><div class="rml" data-pt="construído sem programação tradicional" data-en="built without traditional programming">construído sem programação tradicional</div></div>
+    </div>
+    <p data-pt="Um sistema em uso real, todos os dias, que transformou conhecimento de design conversacional em engenharia de produto pessoal. Virou meu laboratório para entender agentes de IA na prática: modelo, memória, ferramentas e orquestração deixaram de ser teoria." data-en="A system in real use, every day, that turned conversational design knowledge into personal product engineering. It became my lab for understanding AI agents in practice: model, memory, tools and orchestration stopped being theory.">Um sistema em uso real, todos os dias, que transformou conhecimento de design conversacional em engenharia de produto pessoal. Virou meu laboratório para entender agentes de IA na prática: modelo, memória, ferramentas e orquestração deixaram de ser teoria.</p>
+    <div class="learned">
+      <p data-pt="Desenhar conversa para humanos e desenhar conversa entre sistemas usa o mesmo músculo: intenção primeiro, formato depois, sempre com fallback." data-en="Designing conversation for humans and designing conversation between systems uses the same muscle: intent first, format second, always with a fallback.">Desenhar conversa para humanos e desenhar conversa entre sistemas usa o mesmo músculo: intenção primeiro, formato depois, sempre com fallback.</p>
+      <cite>Samantha Barreto</cite>
+    </div>
+  </div>
+</main>
+<nav class="cnav" aria-label="Navegação entre cases">
+  <a href="case-07.html" class="cni"><div class="cnd" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div><div class="cnt" data-pt="Bot de Content First" data-en="Content First Bot">Bot de Content First</div></a>
+  <a href="case-09.html" class="cni cni-right"><div class="cnd" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div><div class="cnt" data-pt="Este portfólio também é um projeto de conteúdo" data-en="This portfolio is also a content project">Este portfólio também é um projeto de conteúdo</div></a>
+</nav>
+<footer>
+  <p>© 2026 Samantha Barreto</p>
+  <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+</footer>
+<script src="../assets/theme.js"></script>
+<script src="../assets/shared.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.sec').forEach(s => obs.observe(s));
+</script>
+<script>
+window.addEventListener('message',function(e){if(e.data&&typeof e.data.iframeHeight==='number'){var f=document.querySelector('.case-anim-block iframe');if(f)f.style.height=Math.max(e.data.iframeHeight,200)+'px';}});
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case 09: Este portfólio também é um projeto de conteúdo · Samantha Barreto</title>
+<meta name="description" content="Como tratei este portfólio como um produto de content design: intenção, arquitetura, conteúdo e acessibilidade, todas as decisões documentadas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+.case-hero{padding:calc(var(--nav-height) + 3.5rem) 4rem 3.5rem;background:var(--navy-mid);position:relative;overflow:hidden}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(15,110,86,.12) 0%,transparent 60%);pointer-events:none}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.case-hero-inner{position:relative;z-index:1;max-width:800px}
+.case-back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.72);text-decoration:none;margin-bottom:1.75rem;transition:color .2s;letter-spacing:.01em}
+.case-back:hover{color:rgba(255,255,255,.8)}.case-back:focus-visible{outline:2px solid var(--green-2);outline-offset:3px;border-radius:4px}
+.cpill{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#4ECBA8;background:rgba(26,155,118,.18);border:1px solid rgba(26,155,118,.35);padding:4px 12px;border-radius:var(--r-full);margin-bottom:1.25rem}
+.cco{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem}
+.case-hero h1{font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);margin-bottom:1rem;font-weight:500}
+.hsub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;max-width:600px;line-height:1.75;margin-bottom:2rem}
+.ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.mbar{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;flex-wrap:wrap}
+.mitem{padding:1.5rem 2rem 1.5rem 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.mitem:last-child{border-right:none;margin-right:0}
+.mv{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--green-2);letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.ml{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.4}
+.cbody{max-width:960px;margin:0 auto;padding:5rem 4rem 5rem}
+.sec{margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.sec.visible{opacity:1;transform:none}
+.slabel{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-dm);margin-top:3rem;margin-bottom:.875rem;padding-bottom:.75rem;border-bottom:1px solid var(--border-subtle)}
+.sec h2{font-size:1.4rem;color:var(--text-primary);margin-bottom:.75rem;font-weight:500}
+.sec p{font-size:1rem;color:var(--text-secondary);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+.sec p:last-child{margin-bottom:0}
+.sec p strong{color:var(--text-primary);font-weight:500}
+.sec ul{margin:0 0 1.25rem;padding-left:1.25rem}
+.sec ul:last-child{margin-bottom:0}
+.sec li{font-size:1rem;color:var(--text-secondary);line-height:1.8;font-weight:300;margin-bottom:.5rem}
+.sec li strong{color:var(--text-primary);font-weight:500}
+.pq{border-left:2px solid var(--green);padding:.875rem 1.25rem;background:var(--green-mist);margin:1.5rem 0}
+.pq p{font-size:1rem;color:var(--green);font-style:italic;line-height:1.65;margin:0}
+.pq cite{font-size:.8rem;color:var(--gray);font-style:normal;display:block;margin-top:.4rem}
+.learned{background:var(--bg-secondary);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin-top:1rem}
+.learned p{font-size:1rem;color:var(--text-secondary);line-height:1.75;font-style:italic;margin:0}
+.learned cite{font-size:.8rem;color:var(--text-primary);font-style:normal;font-weight:500;display:block;margin-top:.5rem}
+.restart-link{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:.95rem;font-weight:500;color:var(--green-dm);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;transition:color .2s}
+.restart-link:hover{color:var(--green-dm)}
+.cnav{border-top:1px solid var(--border-subtle);display:grid;grid-template-columns:1fr 1fr;background:var(--bg-secondary)}
+.cni{padding:2rem 4rem;text-decoration:none;transition:background .2s;display:flex;flex-direction:column;justify-content:center;gap:.375rem;min-height:80px}
+.cni:hover{background:#ECEEF2}
+.cni:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cni-right{border-left:1px solid var(--border-subtle);align-items:flex-end}
+.cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+.cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--text-primary);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
+.cni:hover .cnt{opacity:1}
+.cni:focus-visible .cnt{opacity:1}
+@media(max-width:1024px){.case-hero{padding:calc(var(--nav-height) + 2rem) 2rem 2rem}.cbody,.body{padding:3.5rem 2rem}}
+@media(max-width:900px){.case-hero{padding:calc(var(--nav-height) + 2.5rem) 2rem 2.5rem}.cbody,.body{padding:4rem 2rem}.cni{padding:1.5rem 2rem}}
+@media(max-width:600px){.case-hero{padding:calc(var(--nav-height) + 1.75rem) 1.25rem 1.75rem}.cbody,.body{padding:3rem 1.25rem}.cni{padding:1.25rem 1.25rem}}
+@media(max-width:768px){.cni{min-height:44px}}
+</style>
+</head>
+<body>
+<a href="#case-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
+  <a href="../index.html" class="nav-logo">Samantha</a>
+  <ul class="nav-center">
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+</nav>
+<section class="case-hero" aria-label="Case 09: Este portfólio também é um projeto de conteúdo">
+  <div class="hero-lang">
+    <button
+        class="theme-toggle"
+        id="theme-toggle-btn"
+        aria-label="Ativar modo escuro"
+        data-label-pt="Ativar modo escuro"
+        data-label-en="Enable dark mode"
+        aria-pressed="false">
+        ☾
+      </button>
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">
+        <span aria-hidden="true">🇧🇷</span>
+        <span>PT</span>
+      </button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">
+        <span aria-hidden="true">🇺🇸</span>
+        <span>EN</span>
+      </button>
+    </div>
+  </div>
+  <div class="case-hero-inner">
+    <a class="case-back" href="../index.html" aria-label="Voltar à página inicial" data-pt="← Voltar ao início" data-en="← Back to home">← Voltar ao início</a>
+    <div class="cpill" data-pt="Case 09 · Meta-case · Content Strategy · 2026" data-en="Case 09 · Meta-case · Content Strategy · 2026">Case 09 · Meta-case · Content Strategy · 2026</div>
+    <div class="cco" data-pt="projeto pessoal · Content Designer · 2026" data-en="personal project · Content Designer · 2026">projeto pessoal · Content Designer · 2026</div>
+    <h1 data-pt="Este portfólio também é um projeto de conteúdo" data-en="This portfolio is also a content project">Este portfólio também é um projeto de conteúdo</h1>
+    <p class="hsub" data-pt="Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela." data-en="This site is my most honest case: every content, architecture and accessibility decision documented, from the palette to the conversation that greeted you on the first screen.">Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela.</p>
+    <div class="ctags"><span class="tag" data-pt="Meta-case" data-en="Meta-case">Meta-case</span><span class="tag">Content Strategy</span><span class="tag" data-pt="Acessibilidade" data-en="Accessibility">Acessibilidade</span><span class="tag" data-pt="Design Conversacional" data-en="Conversational Design">Design Conversacional</span></div>
+    <div class="mbar">
+      <div class="mitem"><div class="mv">AA</div><div class="ml" data-pt="WCAG 2.1 como piso" data-en="WCAG 2.1 as the baseline">WCAG 2.1 como piso</div></div>
+      <div class="mitem"><div class="mv">PT/EN</div><div class="ml" data-pt="paridade total entre idiomas" data-en="full parity between languages">paridade total entre idiomas</div></div>
+      <div class="mitem"><div class="mv" data-pt="ABNT" data-en="ABNT">ABNT</div><div class="ml" data-pt="NBR ISO 24495-1, Linguagem Simples" data-en="NBR ISO 24495-1, Plain Language">NBR ISO 24495-1, Linguagem Simples</div></div>
+    </div>
+  </div>
+</section>
+<main id="case-content" class="cbody">
+  <div class="sec fade">
+    <div class="slabel" data-pt="01: A intenção" data-en="01: The intent">01: A intenção</div>
+    <p data-pt="Um portfólio de Content Designer deveria ser, ele mesmo, uma peça de content design. Tratei este site como trato qualquer produto: intenção primeiro, conteúdo antes de tela, decisões documentadas." data-en="A Content Designer's portfolio should itself be a piece of content design. I treated this site like I treat any product: intent first, content before screens, decisions documented.">Um portfólio de Content Designer deveria ser, ele mesmo, uma peça de content design. Tratei este site como trato qualquer produto: intenção primeiro, conteúdo antes de tela, decisões documentadas.</p>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="02: Decisões de arquitetura" data-en="02: Architecture decisions">02: Decisões de arquitetura</div>
+    <ul>
+      <li data-pt="A home abre com uma conversa porque conversa é a minha especialidade." data-en="The home page opens with a conversation, because conversation is my specialty.">A home abre com uma conversa porque conversa é a minha especialidade.</li>
+      <li data-pt="Cases nomeados pelo resultado, não pela disciplina." data-en="Cases are named after the outcome, not the discipline.">Cases nomeados pelo resultado, não pela disciplina.</li>
+      <li data-pt="Manifesto antes do grid de habilidades, porque princípios revelam critério e ferramentas revelam operação." data-en="Manifesto before the skills grid, because principles reveal judgment and tools reveal operation.">Manifesto antes do grid de habilidades, porque princípios revelam critério e ferramentas revelam operação.</li>
+      <li data-pt="Um case âncora com tratamento profundo, porque hierarquia também é conteúdo." data-en="One anchor case with deep treatment, because hierarchy is content too.">Um case âncora com tratamento profundo, porque hierarquia também é conteúdo.</li>
+    </ul>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="03: Decisões de conteúdo" data-en="03: Content decisions">03: Decisões de conteúdo</div>
+    <ul>
+      <li data-pt="Todo o conteúdo segue o Método Comunica Simples e a norma ABNT NBR ISO 24495-1: frases curtas em ordem direta, palavras frequentes, voz ativa." data-en="All content follows the Comunica Simples Method and the ABNT NBR ISO 24495-1 standard: short sentences in direct order, common words, active voice.">Todo o conteúdo segue o Método Comunica Simples e a norma ABNT NBR ISO 24495-1: frases curtas em ordem direta, palavras frequentes, voz ativa.</li>
+      <li data-pt="Linguagem inclusiva por reescrita, sem barras nem símbolos." data-en="Inclusive language through rewriting, with no slashes or symbols.">Linguagem inclusiva por reescrita, sem barras nem símbolos.</li>
+      <li data-pt="Tom em primeira pessoa." data-en="First-person tone.">Tom em primeira pessoa.</li>
+      <li data-pt="Evito travessões no texto narrativo: prefiro controlar o ritmo pela estrutura das frases e pela ordem das ideias, em vez de interromper a leitura com pausas adicionais." data-en="I avoid em dashes in narrative text: I prefer to control rhythm through sentence structure and the order of ideas, instead of interrupting the reading with extra pauses.">Evito travessões no texto narrativo: prefiro controlar o ritmo pela estrutura das frases e pela ordem das ideias, em vez de interromper a leitura com pausas adicionais.</li>
+      <li data-pt="Empresas ficcionalizadas para proteger informação sensível sem perder a verdade dos resultados." data-en="Companies are fictionalized to protect sensitive information without losing the truth of the results.">Empresas ficcionalizadas para proteger informação sensível sem perder a verdade dos resultados.</li>
+      <li data-pt="Sistema bilíngue PT/EN em paridade total." data-en="Bilingual PT/EN system in full parity.">Sistema bilíngue PT/EN em paridade total.</li>
+    </ul>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="04: Decisões de acessibilidade" data-en="04: Accessibility decisions">04: Decisões de acessibilidade</div>
+    <ul>
+      <li data-pt="WCAG 2.1 AA como piso." data-en="WCAG 2.1 AA as the baseline.">WCAG 2.1 AA como piso.</li>
+      <li data-pt="A conversa do hero anuncia mensagens via aria-live e funciona inteira por teclado." data-en="The hero conversation announces messages via aria-live and works entirely by keyboard.">A conversa do hero anuncia mensagens via aria-live e funciona inteira por teclado.</li>
+      <li data-pt="Animações respeitam prefers-reduced-motion." data-en="Animations respect prefers-reduced-motion.">Animações respeitam prefers-reduced-motion.</li>
+      <li data-pt="O site funciona sem JavaScript." data-en="The site works without JavaScript.">O site funciona sem JavaScript.</li>
+    </ul>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="05: A conversa como artefato" data-en="05: The conversation as an artifact">05: A conversa como artefato</div>
+    <p data-pt="A abertura conversacional foi desenhada com o método dos meus bots profissionais: persona, mapa de intenções, roteiro com profundidade máxima de dois níveis e saída de escape sempre visível." data-en="The conversational opening was designed with the same method I use for my professional bots: persona, intent map, a script with a maximum depth of two levels and an always-visible escape route.">A abertura conversacional foi desenhada com o método dos meus bots profissionais: persona, mapa de intenções, roteiro com profundidade máxima de dois níveis e saída de escape sempre visível.</p>
+    <p data-pt="O roteiro vive num arquivo separado do código, porque conteúdo se edita sem recompilar." data-en="The script lives in a file separate from the code, because content gets edited without recompiling.">O roteiro vive num arquivo separado do código, porque conteúdo se edita sem recompilar.</p>
+    <a class="restart-link" href="../index.html#hero" data-pt="↻ Voltar ao início e recomeçar a conversa com a Aurora" data-en="↻ Back to the start and restart the conversation with Aurora">↻ Voltar ao início e recomeçar a conversa com a Aurora</a>
+  </div>
+  <div class="sec fade">
+    <div class="slabel" data-pt="06: O aprendizado" data-en="06: The learning">06: O aprendizado</div>
+    <p data-pt="Documentar as próprias decisões é desconfortável e revelador. Foi o projeto em que mais apliquei o que prego." data-en="Documenting your own decisions is uncomfortable and revealing. It was the project where I most practiced what I preach.">Documentar as próprias decisões é desconfortável e revelador. Foi o projeto em que mais apliquei o que prego.</p>
+    <div class="learned">
+      <p data-pt="Clareza também é uma forma de cuidado." data-en="Clarity is also a form of care.">Clareza também é uma forma de cuidado.</p>
+      <cite>Samantha Barreto</cite>
+    </div>
+  </div>
+</main>
+<nav class="cnav" aria-label="Navegação entre cases">
+  <a href="case-08.html" class="cni"><div class="cnd" data-pt="← Case anterior" data-en="← Previous case">← Case anterior</div><div class="cnt" data-pt="Aurora: quando a designer virou usuária" data-en="Aurora: when the designer became the user">Aurora: quando a designer virou usuária</div></a>
+  <a href="case-10.html" class="cni cni-right"><div class="cnd" data-pt="Próximo case →" data-en="Next case →">Próximo case →</div><div class="cnt" data-pt="Da Niara à Aurora: desenhando para marcas e para mim" data-en="From Niara to Aurora: designing for brands and for myself">Da Niara à Aurora: desenhando para marcas e para mim</div></a>
+</nav>
+<footer>
+  <p>© 2026 Samantha Barreto</p>
+  <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+</footer>
+<script src="../assets/theme.js"></script>
+<script src="../assets/shared.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.sec').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
