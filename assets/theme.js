@@ -3,13 +3,6 @@
   const BTN_ID = 'theme-toggle-btn';
   const html = document.documentElement;
 
-  function getPreferred() {
-    const saved = localStorage.getItem(KEY);
-    if (saved) return saved;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark' : 'light';
-  }
-
   function applyTheme(theme) {
     const isDark = theme === 'dark';
     html.classList.toggle('dark-mode', isDark);
@@ -33,15 +26,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    applyTheme(getPreferred());
+    const saved = localStorage.getItem(KEY);
+    applyTheme(saved === 'dark' ? 'dark' : 'light');
     const btn = document.getElementById(BTN_ID);
     if (btn) btn.addEventListener('click', toggle);
-
-    window.matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', function (e) {
-        if (!localStorage.getItem(KEY)) {
-          applyTheme(e.matches ? 'dark' : 'light');
-        }
-      });
   });
 })();

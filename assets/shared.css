@@ -110,23 +110,6 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ── MODO ESCURO ─────────────────────────────────────────────── */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary:    #0E1124;
-    --bg-secondary:  #16213E;
-    --bg-tertiary:   #1E2A45;
-    --bg-surface:    rgba(255,255,255,0.04);
-    --bg-surface-hover: rgba(255,255,255,0.07);
-    --text-primary:  #F0EDE6;
-    --text-secondary: rgba(240,237,230,0.65);
-    --text-muted:    rgba(240,237,230,0.4);
-    --border-subtle: rgba(255,255,255,0.08);
-    --border-hover:  rgba(255,255,255,0.16);
-    --green-dm:      #4ECBA8;
-    --green-dm-2:    #9fe9d2;
-  }
-}
-
 html.dark-mode {
   --bg-primary:    #0E1124;
   --bg-secondary:  #16213E;
@@ -142,21 +125,19 @@ html.dark-mode {
   --green-dm-2:    #9fe9d2;
 }
 
-/* Força o modo claro quando escolhido manualmente, mesmo com o
-   sistema em modo escuro (sobrescreve o @media prefers-color-scheme) */
 html.light-mode {
-  --bg-primary:    var(--white);
-  --bg-secondary:  var(--gray-light);
-  --bg-tertiary:   var(--cream-warm);
-  --bg-surface:    var(--white);
-  --bg-surface-hover: var(--gray-light);
-  --text-primary:  var(--navy);
-  --text-secondary: var(--gray);
-  --text-muted:    rgba(26,26,46,0.45);
-  --border-subtle: var(--gray-line);
-  --border-hover:  rgba(26,26,46,0.2);
-  --green-dm:      var(--green);
-  --green-dm-2:    var(--green-2);
+  --bg-primary:       #FFFFFF;
+  --bg-secondary:     #FBF9F4;
+  --bg-tertiary:      #F2EFE8;
+  --bg-surface:       #FFFFFF;
+  --bg-surface-hover: #FBF9F4;
+  --text-primary:     #1A1A2E;
+  --text-secondary:   #5C5C6E;
+  --text-muted:       rgba(26,26,46,0.45);
+  --border-subtle:    rgba(26,26,46,0.08);
+  --border-hover:     rgba(26,26,46,0.2);
+  --green-dm:         #0F6E56;
+  --green-dm-2:       #1A9B76;
 }
 
 /* ── Typography ─────────────────────────────────────────────────── */
