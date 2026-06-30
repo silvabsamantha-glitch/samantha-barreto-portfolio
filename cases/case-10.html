@@ -63,6 +63,9 @@
 .cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
 .cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
 .cni:hover .cnt{opacity:1}
+html.dark-mode .cni:hover { background: var(--bg-surface-hover); }
+html.dark-mode .cni:hover .cnt { color: var(--text-primary); }
+html.dark-mode .cni:hover .cnd { color: var(--text-secondary); }
 .cni:focus-visible .cnt{opacity:1}
 @media(max-width:1024px){.case-hero{padding:calc(var(--nav-height) + 2rem) 2rem 2rem}.cbody,.body{padding:3.5rem 2rem}.case-anim-block{overflow:hidden;max-width:100%}.case-img-block{overflow:hidden;max-width:100%}.case-anim-block iframe{display:none!important}.case-img-block img{display:none!important}.case-anim-block .desktop-note,.case-img-block .desktop-note{display:block!important}}
 @media(max-width:900px){.case-hero{padding:calc(var(--nav-height) + 2.5rem) 2rem 2.5rem}.cbody,.body{padding:4rem 2rem}.cni{padding:1.5rem 2rem}}
