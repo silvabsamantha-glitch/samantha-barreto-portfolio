@@ -37,10 +37,13 @@
 /* Tension box — amber acessível */
 .tenbox{background:#FFF8EC;border-left:3px solid #B7650A;padding:1.25rem 1.5rem;margin:1.5rem 0;border-radius:0 var(--r-sm) var(--r-sm) 0}
 .tentext{font-size:1.05rem;font-weight:500;color:#5C3A0A;line-height:1.55;font-style:italic}
+html.dark-mode .tenbox{background:rgba(196,130,10,.1)}
+html.dark-mode .tentext{color:#F0C674}
 
 /* Constraint pills — amber acessível */
 .constr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
 .constpill{font-size:.8rem;padding:5px 12px;border-radius:var(--r-md);background:#FFF0D6;color:#6B3D0A;border:1px solid rgba(183,101,10,.2);font-weight:400}
+html.dark-mode .constpill{background:rgba(196,130,10,.15);color:#F0C674}
 
 /* Context grid */
 .ctxgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.25rem}
@@ -107,6 +110,9 @@
 .cnd{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
 .cnt{font-family:var(--font-display);font-size:1rem;font-weight:500;color:var(--navy);letter-spacing:-.02em;line-height:1.25;max-width:340px;opacity:0;transition:opacity .2s}
 .cni:hover .cnt{opacity:1}
+html.dark-mode .cni:hover { background: var(--bg-surface-hover); }
+html.dark-mode .cni:hover .cnt { color: var(--text-primary); }
+html.dark-mode .cni:hover .cnd { color: var(--text-secondary); }
 .cni:focus-visible .cnt{opacity:1}
 }
 
