@@ -1,0 +1,251 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: cases
+    label: "Cases"
+    label_singular: "Case"
+    folder: "content/cases"
+    create: false
+    delete: false
+    extension: json
+    format: json
+    identifier_field: slug
+    summary: "{{card.title.pt}}"
+    fields:
+      - { name: slug, label: Slug, widget: hidden }
+
+      - name: card
+        label: "Card (aparece na home)"
+        widget: object
+        fields:
+          - name: eyebrow
+            label: "Selo (ex: Case 01 · Tema)"
+            widget: object
+            fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+          - name: company
+            label: "Empresa · período"
+            widget: object
+            fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+          - name: title
+            label: "Título do card"
+            widget: object
+            fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+          - name: desc
+            label: "Descrição curta"
+            widget: object
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: tags
+            label: "Tags"
+            widget: list
+            required: false
+            hint: "O número de tags exibidas é limitado pelos espaços já existentes no HTML deste card. Adicionar mais itens aqui do que os espaços existentes não os fará aparecer no site — avise o desenvolvedor se precisar de mais espaços."
+            fields:
+              - { name: pt, widget: string }
+              - { name: en, widget: string }
+          - name: metrics
+            label: "Métricas"
+            widget: list
+            required: false
+            hint: "O número de métricas exibidas é limitado pelos espaços já existentes no HTML deste card."
+            fields:
+              - name: value
+                label: "Valor (ex: +64%)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: label
+                label: "Legenda da métrica"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+      - name: page
+        label: "Página do case (hero)"
+        widget: object
+        fields:
+          - name: pill
+            label: "Selo do topo"
+            widget: object
+            fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+          - name: context
+            label: "Empresa · cargo · período"
+            widget: object
+            required: false
+            fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+          - name: title
+            label: "Título (H1)"
+            widget: object
+            fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+          - name: subtitle
+            label: "Subtítulo"
+            widget: object
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: tags
+            label: "Tags"
+            widget: list
+            required: false
+            hint: "O número de tags exibidas é limitado pelos espaços já existentes no HTML desta página."
+            fields:
+              - { name: pt, widget: string }
+              - { name: en, widget: string }
+          - name: disclaimer
+            label: "Aviso de ficcionalização"
+            widget: object
+            required: false
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: metrics
+            label: "Métricas"
+            widget: list
+            required: false
+            hint: "O número de métricas exibidas é limitado pelos espaços já existentes no HTML desta página."
+            fields:
+              - name: value
+                label: "Valor (ex: +64%)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: label
+                label: "Legenda da métrica"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+          - name: heroImages
+            label: "Imagens do hero"
+            widget: list
+            required: false
+            hint: "Só use se a própria página do case (não o corpo do texto) tiver uma imagem no topo."
+            fields:
+              - { name: srcPt, label: "Imagem (PT)", widget: image }
+              - { name: srcEn, label: "Imagem (EN)", widget: image, required: false }
+              - { name: altPt, label: "Texto alternativo (PT)", widget: string }
+              - { name: altEn, label: "Texto alternativo (EN)", widget: string }
+
+  - name: home
+    label: "Página inicial"
+    files:
+      - name: index
+        label: "Home (index.html)"
+        file: "content/index.json"
+        fields:
+          - name: currentCompany
+            label: "Empresa atual"
+            hint: "Usado automaticamente em várias frases da home (saudação do topo, seção de contato). Editar aqui atualiza todas elas."
+            widget: string
+
+          - name: hero
+            label: "Topo (hero)"
+            widget: object
+            fields:
+              - name: greet
+                label: "Saudação (ex: Content Designer na {{company}})"
+                hint: "Use {{company}} onde quiser que o nome da empresa atual apareça."
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: roles
+                label: "Chips de papéis profissionais"
+                widget: list
+                hint: "Exatamente 4 itens — o layout do hero espera 4 chips."
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+          - name: timeline
+            label: "Trajetória profissional"
+            widget: list
+            hint: "Exatamente 4 itens, do mais recente ao mais antigo — o layout da timeline espera 4 posições."
+            fields:
+              - name: period
+                label: "Período"
+                hint: "Texto simples (ex: 2023 – 2025) ou PT/EN quando precisar traduzir uma palavra (ex: presente/present)."
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: company
+                label: "Empresa"
+                hint: "Nomes de empresa normalmente não são traduzidos — pode repetir o mesmo texto em PT e EN. Use {{company}} para vincular à Empresa atual."
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: desc
+                label: "Descrição"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+          - name: contact
+            label: "Seção de contato"
+            widget: object
+            fields:
+              - name: availability
+                label: "Disponibilidade (ex: Atualmente na {{company}})"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: title
+                label: "Título da seção"
+                hint: "Pode conter <em>ênfase</em> em uma palavra."
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: sub
+                label: "Texto de apoio"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: links
+                label: "Links de contato"
+                widget: object
+                fields:
+                  - { name: email, label: "E-mail", widget: string }
+                  - { name: linkedin, label: "LinkedIn (URL)", widget: string }
+                  - { name: whatsapp, label: "WhatsApp (URL wa.me)", widget: string }
+                  - name: cvPt
+                    label: "Caminho do currículo em PDF (PT)"
+                    hint: "Caminho do arquivo dentro do repositório, ex: assets/cv-samantha-barreto-pt.pdf. Para trocar o PDF, primeiro suba o novo arquivo em assets/ pelo GitHub."
+                    widget: string
+                  - name: cvEn
+                    label: "Caminho do currículo em PDF (EN)"
+                    hint: "Caminho do arquivo dentro do repositório, ex: assets/cv-samantha-barreto-en.pdf."
+                    widget: string
+
+  - name: about
+    label: "Página Sobre"
+    files:
+      - name: sobre
+        label: "Sobre (sobre.html)"
+        file: "content/sobre.json"
+        fields:
+          - name: hero
+            label: "Topo"
+            widget: object
+            fields:
+              - name: roles
+                label: "Chips de papéis profissionais"
+                widget: list
+                hint: "Exatamente 4 itens."
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: bio
+                label: "Bio"
+                hint: "Pode conter <strong>destaque</strong> em um trecho."
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: location
+                label: "Localização"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: languages
+                label: "Idiomas"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+          - name: interests
+            label: "Fora do trabalho"
+            widget: object
+            fields:
+              - name: para1
+                label: "Parágrafo 1"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: para2
+                label: "Parágrafo 2"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: pills
+                label: "Pills de interesses"
+                widget: list
+                hint: "Exatamente 13 itens — inclua o emoji no início do texto, como nos exemplos."
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]

@@ -1,0 +1,35 @@
+{
+  "slug": "case-05",
+  "card": {
+    "eyebrow": { "pt": "Case 05 · UX Writing", "en": "Case 05 · UX Writing" },
+    "company": { "pt": "grande instituição brasileira de pagamentos · 2023/2025", "en": "leading brazilian payments company · 2023/2025" },
+    "title": { "pt": "+10 pontos de CSAT no principal atrito da experiência", "en": "+10 CSAT points on the experience's biggest friction point" },
+    "desc": { "pt": "O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo.", "en": "Information hierarchy and unmapped scenarios. Biggest CSAT offender turned into real improvement." },
+    "tags": [
+      { "pt": "Redesign Conversacional", "en": "Conversational Redesign" },
+      { "pt": "UX Writing", "en": "UX Writing" }
+    ],
+    "metrics": [
+      { "value": { "pt": "+10pp", "en": "+10pp" }, "label": { "pt": "CSAT", "en": "CSAT" } },
+      { "value": { "pt": "+3pp", "en": "+3pp" }, "label": { "pt": "Retenção", "en": "Retention" } }
+    ]
+  },
+  "page": {
+    "pill": { "pt": "Case 05 · UX Writing · Design Conversacional", "en": "Case 05 · UX Writing · Conversational Design" },
+    "context": { "pt": "grande instituição brasileira de pagamentos · Content Designer III · 2023/2025", "en": "large Brazilian payments institution · Content Designer III · 2023/2025" },
+    "title": { "pt": "A pergunta que o chatbot nunca respondeu", "en": "The question the chatbot never answered" },
+    "subtitle": { "pt": "Como reescrever fluxos com hierarquia da informação gerou mais 10 pontos percentuais de CSAT e mais 3 pontos percentuais de retenção, e o que os dados não estavam mostrando.", "en": "How rewriting flows with information hierarchy generated 10 more CSAT percentage points and 3 more retention percentage points, and what the data wasn't showing." },
+    "tags": [
+      { "pt": "UX Writing", "en": "UX Writing" },
+      { "pt": "Design Conversacional", "en": "Conversational Design" },
+      { "pt": "Hierarquia da informação", "en": "Information hierarchy" },
+      { "pt": "Análise de dados", "en": "Data analysis" }
+    ],
+    "disclaimer": { "pt": "Elementos ficcionalizados para proteger a confidencialidade: nome do produto interno e detalhes do sistema. O processo, as decisões e os resultados são reais.", "en": "Fictionalized elements to protect confidentiality: internal product name and system details. The process, decisions, and results are real." },
+    "metrics": [
+      { "value": { "pt": "+10pp", "en": "+10pp" }, "label": { "pt": "CSAT (66% para 76%)", "en": "CSAT (66% to 76%)" } },
+      { "value": { "pt": "+3pp", "en": "+3pp" }, "label": { "pt": "Retenção (76% para 79%)", "en": "Retention (76% to 79%)" } },
+      { "value": { "pt": "3k+", "en": "3k+" }, "label": { "pt": "acessos mensais no fluxo", "en": "monthly accesses" } }
+    ]
+  }
+}

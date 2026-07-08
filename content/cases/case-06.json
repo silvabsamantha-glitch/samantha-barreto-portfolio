@@ -1,0 +1,27 @@
+{
+  "slug": "case-06",
+  "card": {
+    "eyebrow": { "pt": "Case 06 · IA Generativa", "en": "Case 06 · IA Generativa" },
+    "company": { "pt": "grande empresa financeira de investimentos nos estados unidos · 2026", "en": "leading US-based investment platform · 2026" },
+    "title": { "pt": "Uma voz, vários canais", "en": "One voice, multiple channels" },
+    "desc": { "pt": "Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.", "en": "AI copilot to ensure voice consistency across all channels, adapted by segment and journey moment." },
+    "tags": [
+      { "pt": "Em piloto", "en": "In pilot" },
+      { "pt": "Gen AI", "en": "Gen AI" }
+    ]
+  },
+  "page": {
+    "pill": { "pt": "Case 06 · IA Generativa · Governança de Conteúdo", "en": "Case 06 · Generative AI · Content Governance" },
+    "context": { "pt": "Meridian Investimentos · Content Designer II · 2025", "en": "Meridian Investimentos · Content Designer II · 2025" },
+    "title": { "pt": "Assistente de Voz da Marca", "en": "Brand Voice Assistant" },
+    "subtitle": { "pt": "Como criamos um copiloto com IA para que qualquer time conseguisse escrever com a voz da Meridian, no canal certo, para o cliente certo, no momento certo.", "en": "How we built an AI copilot to ensure any team could write in Meridian's voice, in the right channel, for the right customer, at the right moment." },
+    "tags": [
+      { "pt": "IA Generativa", "en": "Generative AI" },
+      { "pt": "Governança de Conteúdo", "en": "Content Governance" },
+      { "pt": "Tom de Voz", "en": "Tone of Voice" },
+      { "pt": "Content Strategy", "en": "Content Strategy" }
+    ],
+    "disclaimer": { "pt": "Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos), nomes de segmentos e registros de comunicação. O processo, as decisões e os resultados são reais.", "en": "Fictionalized elements to protect confidentiality: company name (Meridian Investimentos), segment names and communication registers. The process, decisions, and results are real." },
+    "metrics": []
+  }
+}
