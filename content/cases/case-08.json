@@ -1,0 +1,32 @@
+{
+  "slug": "case-08",
+  "card": {
+    "eyebrow": { "pt": "Case 08 · IA Generativa", "en": "Case 08 · Generative AI" },
+    "company": { "pt": "projeto pessoal · 2026", "en": "personal project · 2026" },
+    "title": { "pt": "Aurora: quando a designer virou usuária", "en": "Aurora: when the designer became the user" },
+    "desc": { "pt": "De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana.", "en": "From a Telegram message to an organized spreadsheet, a weekly report and a reminder at the right time. A real system, used every day, that classifies information with AI and generates reports automatically every week." },
+    "tags": [
+      { "pt": "Projeto pessoal", "en": "Personal project" },
+      { "pt": "Gen AI", "en": "Gen AI" }
+    ]
+  },
+  "page": {
+    "pill": { "pt": "Case 08 · IA Generativa · Projeto Pessoal · 2026", "en": "Case 08 · Generative AI · Personal Project · 2026" },
+    "context": { "pt": "projeto pessoal · Conversational AI Designer · 2026", "en": "personal project · Conversational AI Designer · 2026" },
+    "title": { "pt": "Aurora: quando a designer virou usuária", "en": "Aurora: when the designer became the user" },
+    "subtitle": { "pt": "De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana.", "en": "From a Telegram message to an organized spreadsheet, a weekly report and a reminder at the right time. A real system, used every day, that classifies information with AI and generates reports automatically every week." },
+    "tags": [
+      { "pt": "IA Generativa", "en": "Generative AI" },
+      { "pt": "Projeto Pessoal", "en": "Personal Project" },
+      { "pt": "Multiagente", "en": "Multi-agent" },
+      { "pt": "Automação", "en": "Automation" },
+      { "pt": "Design Conversacional", "en": "Conversational Design" }
+    ],
+    "disclaimer": { "pt": "Detalhes de rotina e bem-estar pessoal são citados aqui apenas em nível abstrato, sem campos, conteúdos ou destinatários específicos. As ferramentas e o funcionamento técnico do sistema são reais.", "en": "Details about personal routine and well-being are mentioned here only at an abstract level, without specific fields, content or recipients. The tools and the system's technical workings are real." },
+    "metrics": [
+      { "value": { "pt": "2", "en": "2" }, "label": { "pt": "agentes em produção", "en": "agents in production" } },
+      { "value": { "pt": "3", "en": "3" }, "label": { "pt": "cenários automatizados", "en": "automated scenarios" } },
+      { "value": { "pt": "Sem código", "en": "No-code" }, "label": { "pt": "construído sem programação tradicional", "en": "built without traditional programming" } }
+    ]
+  }
+}

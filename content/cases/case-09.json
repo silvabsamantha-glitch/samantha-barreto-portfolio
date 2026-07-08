@@ -1,0 +1,30 @@
+{
+  "slug": "case-09",
+  "card": {
+    "eyebrow": { "pt": "Case 09 · Meta-case", "en": "Case 09 · Meta-case" },
+    "company": { "pt": "projeto pessoal · 2026", "en": "personal project · 2026" },
+    "title": { "pt": "Este portfólio também é um projeto de conteúdo", "en": "This portfolio is also a content project" },
+    "desc": { "pt": "Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela.", "en": "This site is my most honest case: every content, architecture and accessibility decision documented, from the palette to the conversation that greeted you on the first screen." },
+    "tags": [
+      { "pt": "Meta-case", "en": "Meta-case" },
+      { "pt": "Content Strategy", "en": "Content Strategy" }
+    ]
+  },
+  "page": {
+    "pill": { "pt": "Case 09 · Meta-case · Content Strategy · 2026", "en": "Case 09 · Meta-case · Content Strategy · 2026" },
+    "context": { "pt": "projeto pessoal · Content Designer · 2026", "en": "personal project · Content Designer · 2026" },
+    "title": { "pt": "Este portfólio também é um projeto de conteúdo", "en": "This portfolio is also a content project" },
+    "subtitle": { "pt": "Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela.", "en": "This site is my most honest case: every content, architecture and accessibility decision documented, from the palette to the conversation that greeted you on the first screen." },
+    "tags": [
+      { "pt": "Meta-case", "en": "Meta-case" },
+      { "pt": "Content Strategy", "en": "Content Strategy" },
+      { "pt": "Acessibilidade", "en": "Accessibility" },
+      { "pt": "Design Conversacional", "en": "Conversational Design" }
+    ],
+    "metrics": [
+      { "value": { "pt": "AA", "en": "AA" }, "label": { "pt": "WCAG 2.1 como piso", "en": "WCAG 2.1 as the baseline" } },
+      { "value": { "pt": "PT/EN", "en": "PT/EN" }, "label": { "pt": "paridade total entre idiomas", "en": "full parity between languages" } },
+      { "value": { "pt": "ABNT", "en": "ABNT" }, "label": { "pt": "NBR ISO 24495-1, Linguagem Simples", "en": "NBR ISO 24495-1, Plain Language" } }
+    ]
+  }
+}
