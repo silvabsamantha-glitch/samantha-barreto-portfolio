@@ -1,0 +1,46 @@
+{
+  "currentCompany": "Avenue Securities",
+  "hero": {
+    "greet": { "pt": "Content Designer na {{company}}", "en": "Content Designer at {{company}}" },
+    "roles": [
+      { "pt": "Content Designer", "en": "Content Designer" },
+      { "pt": "Designer Conversacional", "en": "Conversational Designer" },
+      { "pt": "Conversational AI Designer", "en": "Conversational AI Designer" },
+      { "pt": "IA Generativa · Fintech · 6+ anos", "en": "Generative AI · Fintech · 6+ years" }
+    ]
+  },
+  "timeline": [
+    {
+      "period": { "pt": "presente", "en": "present" },
+      "company": "{{company}}",
+      "desc": { "pt": "IA generativa, governança de conteúdo e voz de marca.", "en": "Generative AI, content governance and brand voice." }
+    },
+    {
+      "period": "2023 – 2025",
+      "company": "Stone & Co",
+      "desc": { "pt": "Design conversacional orientado a resultados e métricas.", "en": "Conversational design driven by outcomes and metrics." }
+    },
+    {
+      "period": "2019 – 2023",
+      "company": { "pt": "Banco Itaú (via IBM e Cognizant)", "en": "Itaú Bank (via IBM and Cognizant)" },
+      "desc": { "pt": "UX Writing, chatbots e assistentes virtuais em escala.", "en": "UX Writing, chatbots and virtual assistants at scale." }
+    },
+    {
+      "period": "2017 – 2019",
+      "company": "Cognizant",
+      "desc": { "pt": "Conteúdo digital e revisão de conteúdo para plataformas globais.", "en": "Digital content and content review for global platforms." }
+    }
+  ],
+  "contact": {
+    "availability": { "pt": "Atualmente na {{company}}", "en": "Currently at {{company}}" },
+    "title": { "pt": "Vamos construir algo <em>juntos</em>?", "en": "Let's build something <em>together</em>?" },
+    "sub": { "pt": "Atualmente na {{company}}. Aberta a freelas e conversas sobre Content Design, Design Conversacional e IA Generativa, no Brasil ou internacionalmente.", "en": "Currently at {{company}}. Open to freelance work and conversations about Content Design, Conversational Design, and Generative AI, in Brazil or internationally." },
+    "links": {
+      "email": "silvabsamantha@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/samanthabarretoux/",
+      "whatsapp": "https://wa.me/5511952054102?text=Oi%2C%20Samantha!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar",
+      "cvPt": "assets/cv-samantha-barreto-pt.pdf",
+      "cvEn": "assets/cv-samantha-barreto-en.pdf"
+    }
+  }
+}

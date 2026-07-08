@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "roles": [
+      { "pt": "Content Designer", "en": "Content Designer" },
+      { "pt": "Conversational AI Designer", "en": "Conversational AI Designer" },
+      { "pt": "Designer Conversacional", "en": "Conversational Designer" },
+      { "pt": "IA Generativa · Fintech · 6+ anos", "en": "Generative AI · Fintech · 6+ years" }
+    ],
+    "bio": { "pt": "Apaixonada por tecnologia, escrita e por tudo que envolve gente de verdade. Minha especialidade está na interseção entre <strong>linguagem, comportamento e dados</strong>. É ali que eu desenho experiências que fazem sentido, que fluem e que não precisam ser explicadas duas vezes.", "en": "Passionate about technology, writing, and everything that involves real people. My specialty lies at the intersection of <strong>language, behavior, and data</strong>. That's where I design experiences that make sense, that flow, and that don't need to be explained twice." },
+    "location": { "pt": "Diadema, SP · Brasil", "en": "Diadema, SP · Brazil" },
+    "languages": { "pt": "Português nativo · Inglês fluente C2 · Espanhol intermediário", "en": "Native Portuguese · Fluent English C2 · Intermediate Spanish" }
+  },
+  "interests": {
+    "para1": { "pt": "Gatos, cachorros e qualquer animal que apareça. True crime e psicologia como formas de entender comportamento humano. Astrologia e astronomia, o micro e o macro do universo me fascinam igualmente.", "en": "Cats, dogs, and any animal that shows up. True crime and psychology as ways to understand human behavior. Astrology and astronomy, the micro and macro of the universe fascinate me equally." },
+    "para2": { "pt": "Viagens, Pilates, poesia, misticismo, espiritualidade e autoconhecimento. Acredito que entender a si mesma é o caminho mais curto para entender qualquer usuário.", "en": "Travel, Pilates, poetry, mysticism, spirituality, and self-knowledge. I believe that understanding yourself is the shortest path to understanding any user." },
+    "pills": [
+      { "pt": "🐱 Gatos", "en": "🐱 Cats" },
+      { "pt": "🐶 Cachorros", "en": "🐶 Dogs" },
+      { "pt": "🔍 True Crime", "en": "🔍 True Crime" },
+      { "pt": "🧠 Psicologia", "en": "🧠 Psychology" },
+      { "pt": "♈ Astrologia", "en": "♈ Astrology" },
+      { "pt": "🌌 Astronomia", "en": "🌌 Astronomy" },
+      { "pt": "✈️ Viagens", "en": "✈️ Travel" },
+      { "pt": "🧘 Pilates", "en": "🧘 Pilates" },
+      { "pt": "📖 Poesia", "en": "📖 Poetry" },
+      { "pt": "🔮 Misticismo", "en": "🔮 Mysticism" },
+      { "pt": "🌿 Espiritualidade", "en": "🌿 Spirituality" },
+      { "pt": "🪞 Autoconhecimento", "en": "🪞 Self-knowledge" },
+      { "pt": "♾️ Autismo", "en": "♾️ Autism" }
+    ]
+  }
+}
