@@ -139,7 +139,27 @@ html.dark-mode .cni:hover .cnd { color: var(--text-secondary); }
     <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
+  <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Abrir menu" data-label-pt="Abrir menu" data-label-en="Open menu" data-label-close-pt="Fechar menu" data-label-close-en="Close menu">
+    <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
 </nav>
+<div class="mobile-menu-panel" id="mobile-menu-panel" aria-hidden="true">
+  <ul class="mobile-menu-links">
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-controls">
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true"><span aria-hidden="true">🇧🇷</span><span>PT</span></button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false"><span aria-hidden="true">🇺🇸</span><span>EN</span></button>
+    </div>
+    <button type="button" class="theme-toggle" id="theme-toggle-btn-mobile" aria-label="Ativar modo escuro" data-label-pt="Ativar modo escuro" data-label-en="Enable dark mode" aria-pressed="false">☾</button>
+  </div>
+</div>
+
 
 <section class="case-hero" aria-label="Case 05: Assistente de Gerentes PF e PJ em grande instituição financeira nacional">
   <div class="hero-lang">
@@ -178,6 +198,28 @@ html.dark-mode .cni:hover .cnd { color: var(--text-secondary); }
     <div class="disc" data-field="case.page.disclaimer" data-pt="Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo, os princípios de design e as decisões são reais." data-en="Some elements have been fictionalized to protect confidentiality: company name and system details. The process, design principles and decisions are real.">Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo, os princípios de design e as decisões são reais.</div>
   </div>
 </section>
+<!-- Bloco de contexto do projeto — perguntas-guia para a Samantha preencher:
+     - O que só existia nesse projeto porque você estava nele?
+     - Quem estava na sala com você e o que cada função trouxe?
+     - O que você não podia fazer, e como isso moldou a solução?
+-->
+<section class="case-context fade" aria-label="Contexto do projeto">
+  <dl class="case-context-list">
+    <div class="case-context-item">
+      <dt data-pt="Meu papel" data-en="My role">Meu papel</dt>
+      <dd data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</dd>
+    </div>
+    <div class="case-context-item">
+      <dt data-pt="Time" data-en="Team">Time</dt>
+      <dd data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</dd>
+    </div>
+    <div class="case-context-item">
+      <dt data-pt="Restrições" data-en="Constraints">Restrições</dt>
+      <dd data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</dd>
+    </div>
+  </dl>
+</section>
+
 
 <main id="case-content" class="cbody">
 
@@ -511,8 +553,20 @@ html.dark-mode .cni:hover .cnd { color: var(--text-secondary); }
     </div>
   </div>
 
+  <div class="sec fade">
+    <div class="slabel" data-pt="08: O que mudou" data-en="08: What changed">08: O que mudou</div>
+    <!-- [SA: preencher] Estrutura sugerida: 1 parágrafo de desfecho + até 3 destaques qualitativos
+         (o que a encenação validou, o que evitou de retrabalho, o que ficou mais fácil para o
+         time ou para a pessoa usuária). Não inventar resultados: publicar só o que você defende. -->
+    <p data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</p>
+    <ul class="change-list">
+      <li data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</li>
+      <li data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</li>
+      <li data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</li>
+    </ul>
+  </div>
   <div class="sec">
-    <div class="slabel" data-pt="08: O aprendizado" data-en="08: The learning">08: O aprendizado</div>
+    <div class="slabel" data-pt="09: O aprendizado" data-en="09: The learning">09: O aprendizado</div>
     <div class="learned">
       <p data-pt="Um chatbot que falha no contexto de uso não falha por falta de conteúdo. Falha porque alguém projetou para o usuário imaginário, não para o usuário real, no momento real, com o peso real daquele momento." data-en="A chatbot that fails in the context of use doesn't fail for lack of content. It fails because someone designed for the imaginary user, not the real user, in the real moment, with the real weight of that moment.">Um chatbot que falha no contexto de uso não falha por falta de conteúdo. Falha porque alguém projetou para o usuário imaginário, não para o usuário real, no momento real, com o peso real daquele momento.</p>
       <cite>Samantha Barreto</cite>
@@ -528,11 +582,12 @@ html.dark-mode .cni:hover .cnd { color: var(--text-secondary); }
 
 <footer>
   <p>© 2026 Samantha Barreto</p>
-  <p><a href="../index.html#cases" data-pt="← Todos os cases" data-en="← All cases">← Todos os cases</a></p>
+  <p><a href="index.html" data-pt="← Todos os projetos" data-en="← All projects">← Todos os projetos</a></p>
 </footer>
 
 <script src="../assets/theme.js"></script>
 <script src="../assets/shared.js"></script>
+<script src="../assets/menu.js"></script>
 <script>
 // Animação de entrada das seções
 const obs = new IntersectionObserver((entries) => {
