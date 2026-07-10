@@ -2,6 +2,12 @@
   command = "python3 scripts/build_content.py"
   publish = "."
 
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  directory = "netlify/functions"
+
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"

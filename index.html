@@ -722,10 +722,12 @@
   border-radius: 0;
   border: none;
 }
-.cases-grid .case-card:first-child { border-radius: var(--r-lg) 0 0 0; }
-.cases-grid .case-card:nth-child(3) { border-radius: 0 var(--r-lg) 0 0; }
-.cases-grid .case-card:nth-child(7) { border-radius: 0 0 0 var(--r-lg); }
-.cases-grid .case-card:last-child { border-radius: 0 0 var(--r-lg) 0; }
+.cases-grid .case-card:first-child { border-radius: var(--r-lg) 0 0 var(--r-lg); }
+.cases-grid .case-card:last-child { border-radius: 0 var(--r-lg) var(--r-lg) 0; }
+@media (max-width: 900px) {
+  .cases-grid .case-card:first-child { border-radius: var(--r-lg) var(--r-lg) 0 0; }
+  .cases-grid .case-card:last-child { border-radius: 0 0 var(--r-lg) var(--r-lg); }
+}
 
 .cases-cta {
   text-align: center;
@@ -961,6 +963,10 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     <li><a href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="nav-right">
+  <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Abrir menu" data-label-pt="Abrir menu" data-label-en="Open menu" data-label-close-pt="Fechar menu" data-label-close-en="Close menu">
+    <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
+
     <button
         class="theme-toggle"
         id="theme-toggle-btn"
@@ -982,6 +988,23 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     </div>
   </div>
 </nav>
+<div class="mobile-menu-panel" id="mobile-menu-panel" aria-hidden="true">
+  <ul class="mobile-menu-links">
+    <li><a href="sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-controls">
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true"><span aria-hidden="true">🇧🇷</span><span>PT</span></button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false"><span aria-hidden="true">🇺🇸</span><span>EN</span></button>
+    </div>
+    <button type="button" class="theme-toggle" id="theme-toggle-btn-mobile" aria-label="Ativar modo escuro" data-label-pt="Ativar modo escuro" data-label-en="Enable dark mode" aria-pressed="false">☾</button>
+  </div>
+</div>
+
 
 <!-- HERO -->
 <section class="hero" id="hero" aria-label="Apresentação">
@@ -1502,18 +1525,6 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
         <span data-pt="Cada projeto começa<br>com uma dor real." data-en="Every project starts<br>with a real problem.">Cada projeto começa<br>com uma dor real.</span>
       </h2>
     </div>
-    <a href="#cases" class="btn btn-outline" data-pt="Ver todos os cases →" data-en="See all cases →">Ver todos os cases →</a>
-  </div>
-
-  <!-- Filtro por tema (mesmo mecanismo da Aurora: #cases[data-aurora-filter]) -->
-  <div class="cases-filter fade" role="group" aria-labelledby="cases-filter-label">
-    <span id="cases-filter-label" class="sr-only" data-pt="Filtrar cases por tema" data-en="Filter cases by theme">Filtrar cases por tema</span>
-    <button type="button" class="case-filter-btn active" data-filter="all" aria-pressed="true" data-pt="Todos" data-en="All">Todos</button>
-    <button type="button" class="case-filter-btn" data-filter="ia" aria-pressed="false" data-pt="IA Generativa" data-en="Generative AI">IA Generativa</button>
-    <button type="button" class="case-filter-btn" data-filter="conversacional" aria-pressed="false" data-pt="Conversacional" data-en="Conversational">Conversacional</button>
-    <button type="button" class="case-filter-btn" data-filter="ux-writing" aria-pressed="false" data-pt="UX Writing" data-en="UX Writing">UX Writing</button>
-    <button type="button" class="case-filter-btn" data-filter="tom-de-voz" aria-pressed="false" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</button>
-    <span class="sr-only" role="status" aria-live="polite" data-cases-filter-status data-pt="Mostrando todos os cases." data-en="Showing all cases.">Mostrando todos os cases.</span>
   </div>
 
   <!-- Case âncora: Crédito PJ -->
@@ -1542,8 +1553,21 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
     </div>
   </a>
 
-  <!-- Grid: 6 cases -->
+  <!-- Curadoria: 4 cases âncora (05 já exibido acima como featured) -->
   <div class="cases-grid fade" data-delay="120">
+
+    <a href="cases/case-06.html" class="case-card" data-case-cat="ia tom-de-voz conversacional">
+      <div class="case-card-body">
+        <div class="case-card-number" data-field="index.cards.case-06.card.eyebrow" data-pt="Case 06 · IA Generativa" data-en="Case 06 · IA Generativa">Case 06 · IA Generativa</div>
+        <div class="case-card-co" data-field="index.cards.case-06.card.company" data-pt="grande empresa financeira de investimentos nos estados unidos · 2026" data-en="leading US-based investment platform · 2026">grande empresa financeira de investimentos nos estados unidos · 2026</div>
+        <h3 class="case-card-title" data-field="index.cards.case-06.card.title" data-pt="Uma voz, vários canais" data-en="One voice, multiple channels">Uma voz, vários canais</h3>
+        <p class="case-card-desc" data-field="index.cards.case-06.card.desc" data-pt="Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada." data-en="AI copilot to ensure voice consistency across all channels, adapted by segment and journey moment.">Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.</p>
+        <div class="case-card-tags">
+          <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-field="index.cards.case-06.card.tags.0" data-pt="Em piloto" data-en="In pilot">Em piloto</span>
+          <span class="tag" data-field="index.cards.case-06.card.tags.1" data-pt="Gen AI" data-en="Gen AI">Gen AI</span>
+        </div>
+      </div>
+    </a>
 
     <a href="cases/case-01.html" class="case-card" data-case-cat="ia conversacional tom-de-voz">
       <div class="case-card-body">
@@ -1564,96 +1588,6 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
       </div>
     </a>
 
-    <a href="cases/case-02.html" class="case-card" data-case-cat="ia conversacional">
-      <div class="case-card-body">
-        <div class="case-card-number" data-field="index.cards.case-02.card.eyebrow" data-pt="Case 02 · Alta pressão" data-en="Case 02 · High pressure">Case 02 · Alta pressão</div>
-        <div class="case-card-co" data-field="index.cards.case-02.card.company" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
-        <h3 class="case-card-title" data-field="index.cards.case-02.card.title" data-pt="Projetando para quem usa e para quem observa" data-en="Designing for the user and the person watching">Projetando para quem usa e para quem observa</h3>
-        <p class="case-card-desc" data-field="index.cards.case-02.card.desc" data-pt="O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto." data-en="Chatbot for branch managers with the customer right in front. High-pressure context changes everything in conversational design.">O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto.</p>
-        <div class="case-card-tags">
-          <span class="tag" data-field="index.cards.case-02.card.tags.0" data-pt="Conversational Design" data-en="Conversational Design">Conversational Design</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="cases/case-03.html" class="case-card" data-case-cat="conversacional ux-writing">
-      <div class="case-card-body">
-        <div class="case-card-number" data-field="index.cards.case-03.card.eyebrow" data-pt="Case 03 · Content First" data-en="Case 03 · Content First">Case 03 · Content First</div>
-        <div class="case-card-co" data-field="index.cards.case-03.card.company" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
-        <h3 class="case-card-title" data-field="index.cards.case-03.card.title" data-pt="O produto ainda não existia. A conversa já." data-en="The product didn't exist yet. The conversation did.">O produto ainda não existia. A conversa já.</h3>
-        <p class="case-card-desc" data-field="index.cards.case-03.card.desc" data-pt="Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa." data-en="New insurance assistant designed before any screen: intention, expected outcome, enactment, and journey.">Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa.</p>
-        <div class="case-card-tags">
-          <span class="tag" data-field="index.cards.case-03.card.tags.0" data-pt="Content First" data-en="Content First">Content First</span>
-          <span class="tag" data-field="index.cards.case-03.card.tags.1" data-pt="Novo Bot" data-en="New Bot">Novo Bot</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="cases/case-04.html" class="case-card" data-case-cat="conversacional ux-writing">
-      <div class="case-card-body">
-        <div class="case-card-number" data-field="index.cards.case-04.card.eyebrow" data-pt="Case 04 · API &amp; Jornada" data-en="Case 04 · API &amp; Jornada">Case 04 · API &amp; Jornada</div>
-        <div class="case-card-co" data-field="index.cards.case-04.card.company" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
-        <h3 class="case-card-title" data-field="index.cards.case-04.card.title" data-pt="A pergunta que o bot não respondia" data-en="The question the bot couldn't answer">A pergunta que o bot não respondia</h3>
-        <p class="case-card-desc" data-field="index.cards.case-04.card.desc" data-pt="O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API." data-en="The customer asked when the card arrives, not what the deadline is. Three solution scenarios with and without API.">O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API.</p>
-        <div class="case-card-tags">
-          <span class="tag" data-field="index.cards.case-04.card.tags.0" data-pt="API" data-en="API">API</span>
-          <span class="tag" data-field="index.cards.case-04.card.tags.1" data-pt="Cenários" data-en="Scenarios">Cenários</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="cases/case-06.html" class="case-card" data-case-cat="ia tom-de-voz conversacional">
-      <div class="case-card-body">
-        <div class="case-card-number" data-field="index.cards.case-06.card.eyebrow" data-pt="Case 06 · IA Generativa" data-en="Case 06 · IA Generativa">Case 06 · IA Generativa</div>
-        <div class="case-card-co" data-field="index.cards.case-06.card.company" data-pt="grande empresa financeira de investimentos nos estados unidos · 2026" data-en="leading US-based investment platform · 2026">grande empresa financeira de investimentos nos estados unidos · 2026</div>
-        <h3 class="case-card-title" data-field="index.cards.case-06.card.title" data-pt="Uma voz, vários canais" data-en="One voice, multiple channels">Uma voz, vários canais</h3>
-        <p class="case-card-desc" data-field="index.cards.case-06.card.desc" data-pt="Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada." data-en="AI copilot to ensure voice consistency across all channels, adapted by segment and journey moment.">Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.</p>
-        <div class="case-card-tags">
-          <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-field="index.cards.case-06.card.tags.0" data-pt="Em piloto" data-en="In pilot">Em piloto</span>
-          <span class="tag" data-field="index.cards.case-06.card.tags.1" data-pt="Gen AI" data-en="Gen AI">Gen AI</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="cases/case-07.html" class="case-card" data-case-cat="ia ux-writing">
-      <div class="case-card-body">
-        <div class="case-card-number" data-field="index.cards.case-07.card.eyebrow" data-pt="Case 07 · Framework próprio" data-en="Case 07 · Custom framework">Case 07 · Framework próprio</div>
-        <div class="case-card-co" data-field="index.cards.case-07.card.company" data-pt="grande empresa financeira de investimentos nos estados unidos · 2026" data-en="leading US-based investment platform · 2026">grande empresa financeira de investimentos nos estados unidos · 2026</div>
-        <h3 class="case-card-title" data-field="index.cards.case-07.card.title" data-pt="Começando pela intenção, não pelo canal" data-en="Starting with intent, not the channel">Começando pela intenção, não pelo canal</h3>
-        <p class="case-card-desc" data-field="index.cards.case-07.card.desc" data-pt="Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando." data-en="Own initiative to optimize the process: intention before channel. Prototyped and testing.">Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando.</p>
-        <div class="case-card-tags">
-          <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-field="index.cards.case-07.card.tags.0" data-pt="Em testes" data-en="In testing">Em testes</span>
-          <span class="tag" data-field="index.cards.case-07.card.tags.1" data-pt="Content Strategy" data-en="Content Strategy">Content Strategy</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="cases/case-08.html" class="case-card" data-case-cat="ia">
-      <div class="case-card-body">
-        <div class="case-card-number" data-field="index.cards.case-08.card.eyebrow" data-pt="Case 08 · IA Generativa" data-en="Case 08 · Generative AI">Case 08 · IA Generativa</div>
-        <div class="case-card-co" data-field="index.cards.case-08.card.company" data-pt="projeto pessoal · 2026" data-en="personal project · 2026">projeto pessoal · 2026</div>
-        <h3 class="case-card-title" data-field="index.cards.case-08.card.title" data-pt="Aurora: quando a designer virou usuária" data-en="Aurora: when the designer became the user">Aurora: quando a designer virou usuária</h3>
-        <p class="case-card-desc" data-field="index.cards.case-08.card.desc" data-pt="De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana." data-en="From a Telegram message to an organized spreadsheet, a weekly report and a reminder at the right time. A real system, used every day, that classifies information with AI and generates reports automatically every week.">De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana.</p>
-        <div class="case-card-tags">
-          <span class="tag" data-field="index.cards.case-08.card.tags.0" data-pt="Projeto pessoal" data-en="Personal project">Projeto pessoal</span>
-          <span class="tag" data-field="index.cards.case-08.card.tags.1" data-pt="Gen AI" data-en="Gen AI">Gen AI</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="cases/case-09.html" class="case-card" data-case-cat="meta">
-      <div class="case-card-body">
-        <div class="case-card-number" data-field="index.cards.case-09.card.eyebrow" data-pt="Case 09 · Meta-case" data-en="Case 09 · Meta-case">Case 09 · Meta-case</div>
-        <div class="case-card-co" data-field="index.cards.case-09.card.company" data-pt="projeto pessoal · 2026" data-en="personal project · 2026">projeto pessoal · 2026</div>
-        <h3 class="case-card-title" data-field="index.cards.case-09.card.title" data-pt="Este portfólio também é um projeto de conteúdo" data-en="This portfolio is also a content project">Este portfólio também é um projeto de conteúdo</h3>
-        <p class="case-card-desc" data-field="index.cards.case-09.card.desc" data-pt="Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela." data-en="This site is my most honest case: every content, architecture and accessibility decision documented, from the palette to the conversation that greeted you on the first screen.">Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela.</p>
-        <div class="case-card-tags">
-          <span class="tag" data-field="index.cards.case-09.card.tags.0" data-pt="Meta-case" data-en="Meta-case">Meta-case</span>
-          <span class="tag" data-field="index.cards.case-09.card.tags.1" data-pt="Content Strategy" data-en="Content Strategy">Content Strategy</span>
-        </div>
-      </div>
-    </a>
-
     <a href="cases/case-10.html" class="case-card" data-case-cat="ia tom-de-voz">
       <div class="case-card-body">
         <div class="case-card-number" data-field="index.cards.case-10.card.eyebrow" data-pt="Case 10 · Tom de Voz" data-en="Case 10 · Tone of Voice">Case 10 · Tom de Voz</div>
@@ -1670,7 +1604,7 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
   </div>
 
   <div class="cases-cta fade">
-    <a href="#cases" class="btn btn-outline" data-pt="Ver todos os cases →" data-en="See all cases →">Ver todos os cases →</a>
+    <a href="cases/index.html" class="btn btn-outline" data-pt="Ver todos os projetos →" data-en="View all projects →">Ver todos os projetos →</a>
   </div>
 </section>
 
@@ -1902,13 +1836,13 @@ nav.scrolled.nav-on-dark { background: rgba(26,26,46,0.94); }
 <footer>
   <p>© 2026 Samantha Barreto · Diadema, SP</p>
   <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
-  <p><a href="#cases" data-pt="Ver todos os cases" data-en="See all cases">Ver todos os cases</a></p>
+  <p><a href="cases/index.html" data-pt="Ver todos os projetos" data-en="View all projects">Ver todos os projetos</a></p>
 </footer>
 
 <script src="assets/theme.js"></script>
 <script src="assets/shared.js"></script>
+<script src="assets/menu.js"></script>
 <script src="assets/aurora.js"></script>
-<script src="assets/cases-filter.js"></script>
 <script>
   // Counter trigger on intersection
   const counterEls = document.querySelectorAll('.counter');

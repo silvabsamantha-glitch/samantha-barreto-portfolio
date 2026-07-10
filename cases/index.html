@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-pt="Todos os projetos · Samantha Barreto" data-en="All projects · Samantha Barreto">Todos os projetos · Samantha Barreto</title>
+<meta name="description" content="Acervo completo dos projetos de Samantha Barreto: trabalho profissional e projetos pessoais em Content Design, Design Conversacional e IA Generativa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+/* ── ACERVO HERO ─────────────────────────────────────────────── */
+.archive-hero {
+  background: var(--navy-mid);
+  padding: calc(var(--nav-height) + 4rem) 4rem 4rem;
+}
+.archive-hero-inner { max-width: 760px; }
+.archive-hero .sec-label { color: var(--green-2); opacity: 0.8; margin-bottom: 1rem; }
+.archive-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.archive-hero-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* ── ACERVO BODY ─────────────────────────────────────────────── */
+.archive-body { padding: 4rem 4rem 6rem; }
+
+/* Filtro por tema (mesmo mecanismo usado na home: #cases[data-aurora-filter]) */
+.cases-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 3.5rem;
+}
+.case-filter-btn {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--r-full);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.case-filter-btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.case-filter-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+#cases[data-aurora-filter="ia"] .case-card:not([data-case-cat~="ia"]),
+#cases[data-aurora-filter="conversacional"] .case-card:not([data-case-cat~="conversacional"]),
+#cases[data-aurora-filter="ux-writing"] .case-card:not([data-case-cat~="ux-writing"]),
+#cases[data-aurora-filter="tom-de-voz"] .case-card:not([data-case-cat~="tom-de-voz"]) {
+  display: none;
+}
+
+.archive-group { margin-bottom: 4rem; }
+.archive-group:last-child { margin-bottom: 0; }
+.archive-group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.archive-group-title .sec-marker {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--green-dm);
+  opacity: 0.7;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--border-subtle);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.cases-grid .case-card { border-radius: 0; border: none; background: var(--bg-surface); }
+.cases-grid .case-card:hover { background: var(--bg-surface-hover); }
+.cases-grid .case-card-title { color: var(--text-primary); }
+.cases-grid .case-card-desc { color: var(--text-secondary); }
+.cases-grid .case-card-co { color: var(--text-muted); }
+.cases-grid .case-card-metrics { border-top-color: var(--border-subtle); }
+.cases-grid .case-metric-val { color: var(--green-dm); }
+.cases-grid .case-metric-label { color: var(--text-muted); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .archive-hero { padding: calc(var(--nav-height) + 3rem) 2rem 3rem; }
+  .archive-body { padding: 3rem 2rem 4rem; }
+  .cases-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .archive-hero { padding: calc(var(--nav-height) + 2rem) 1.25rem 2rem; }
+  .archive-body { padding: 2.5rem 1.25rem 3rem; }
+}
+</style>
+</head>
+<body>
+<a href="#archive-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
+  <a href="../index.html" class="nav-logo">Samantha</a>
+  <ul class="nav-center">
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+  <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Abrir menu" data-label-pt="Abrir menu" data-label-en="Open menu" data-label-close-pt="Fechar menu" data-label-close-en="Close menu">
+    <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
+
+    <button
+        class="theme-toggle"
+        id="theme-toggle-btn"
+        aria-label="Ativar modo escuro"
+        data-label-pt="Ativar modo escuro"
+        data-label-en="Enable dark mode"
+        aria-pressed="false">
+        ☾
+      </button>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true">
+        <span aria-hidden="true">🇧🇷</span>
+        <span>PT</span>
+      </button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">
+        <span aria-hidden="true">🇺🇸</span>
+        <span>EN</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu-panel" id="mobile-menu-panel" aria-hidden="true">
+  <ul class="mobile-menu-links">
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-controls">
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true"><span aria-hidden="true">🇧🇷</span><span>PT</span></button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false"><span aria-hidden="true">🇺🇸</span><span>EN</span></button>
+    </div>
+    <button type="button" class="theme-toggle" id="theme-toggle-btn-mobile" aria-label="Ativar modo escuro" data-label-pt="Ativar modo escuro" data-label-en="Enable dark mode" aria-pressed="false">☾</button>
+  </div>
+</div>
+
+<section class="archive-hero" aria-label="Acervo completo de projetos">
+  <div class="archive-hero-inner fade">
+    <p class="sec-label" data-pt="Acervo completo" data-en="Full archive">Acervo completo</p>
+    <!-- [SA: preencher] título autoral da página. Sugestão de escopo: nomear o acervo completo, sem repetir a curadoria da home. -->
+    <h1 data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</h1>
+    <p class="archive-hero-desc" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</p>
+  </div>
+</section>
+
+<main id="archive-content">
+  <section class="archive-body" id="cases" aria-label="Todos os cases">
+
+    <!-- Filtro por tema (mesmo mecanismo da Aurora: #cases[data-aurora-filter]) -->
+    <div class="cases-filter fade" role="group" aria-labelledby="cases-filter-label">
+      <span id="cases-filter-label" class="sr-only" data-pt="Filtrar cases por tema" data-en="Filter cases by theme">Filtrar cases por tema</span>
+      <button type="button" class="case-filter-btn active" data-filter="all" aria-pressed="true" data-pt="Todos" data-en="All">Todos</button>
+      <button type="button" class="case-filter-btn" data-filter="ia" aria-pressed="false" data-pt="IA Generativa" data-en="Generative AI">IA Generativa</button>
+      <button type="button" class="case-filter-btn" data-filter="conversacional" aria-pressed="false" data-pt="Conversacional" data-en="Conversational">Conversacional</button>
+      <button type="button" class="case-filter-btn" data-filter="ux-writing" aria-pressed="false" data-pt="UX Writing" data-en="UX Writing">UX Writing</button>
+      <button type="button" class="case-filter-btn" data-filter="tom-de-voz" aria-pressed="false" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</button>
+      <span class="sr-only" role="status" aria-live="polite" data-cases-filter-status data-pt="Mostrando todos os cases." data-en="Showing all cases.">Mostrando todos os cases.</span>
+    </div>
+
+    <div class="archive-group fade">
+      <h2 class="archive-group-title"><span class="sec-marker" aria-hidden="true">§01</span><span data-pt="Trabalho profissional" data-en="Professional work">Trabalho profissional</span></h2>
+      <div class="cases-grid">
+
+        <a href="case-01.html" class="case-card" data-case-cat="ia conversacional tom-de-voz">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 01 · Personalidade &amp; Tom de Voz" data-en="Case 01 · Personality &amp; Tone of Voice">Case 01 · Personalidade &amp; Tom de Voz</div>
+            <div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
+            <h3 class="case-card-title" data-pt="Quando uma mudança de tom gerou 64% mais conversas" data-en="When a change in tone led to 64% more conversations">Quando uma mudança de tom gerou 64% mais conversas</h3>
+            <p class="case-card-desc" data-pt="+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot." data-en="+600 employees interviewed, 40h of content testing, 24h of Design Sprint. From scratch to a personality that changed the bot's numbers.">+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot.</p>
+            <div class="case-card-metrics">
+              <div>
+                <div class="case-metric-val" data-pt="+64%" data-en="+64%">+64%</div>
+                <div class="case-metric-label" data-pt="conversas" data-en="conversations">conversas</div>
+              </div>
+              <div>
+                <div class="case-metric-val" data-pt="+25%" data-en="+25%">+25%</div>
+                <div class="case-metric-label" data-pt="atend. digital" data-en="digital support">atend. digital</div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-02.html" class="case-card" data-case-cat="ia conversacional">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 02 · Alta pressão" data-en="Case 02 · High pressure">Case 02 · Alta pressão</div>
+            <div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
+            <h3 class="case-card-title" data-pt="Projetando para quem usa e para quem observa" data-en="Designing for the user and the person watching">Projetando para quem usa e para quem observa</h3>
+            <p class="case-card-desc" data-pt="O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto." data-en="Chatbot for branch managers with the customer right in front. High-pressure context changes everything in conversational design.">O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto.</p>
+            <div class="case-card-tags">
+              <span class="tag" data-pt="Conversational Design" data-en="Conversational Design">Conversational Design</span>
+              <span class="tag-blue tag" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-03.html" class="case-card" data-case-cat="conversacional ux-writing">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 03 · Content First" data-en="Case 03 · Content First">Case 03 · Content First</div>
+            <div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
+            <h3 class="case-card-title" data-pt="O produto ainda não existia. A conversa já." data-en="The product didn't exist yet. The conversation did.">O produto ainda não existia. A conversa já.</h3>
+            <p class="case-card-desc" data-pt="Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa." data-en="New insurance assistant designed before any screen: intention, expected outcome, enactment, and journey.">Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa.</p>
+            <div class="case-card-tags">
+              <span class="tag" data-pt="Content First" data-en="Content First">Content First</span>
+              <span class="tag" data-pt="Novo Bot" data-en="New Bot">Novo Bot</span>
+              <span class="tag-blue tag" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-04.html" class="case-card" data-case-cat="conversacional ux-writing">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 04 · API &amp; Jornada" data-en="Case 04 · API &amp; Jornada">Case 04 · API &amp; Jornada</div>
+            <div class="case-card-co" data-pt="grande instituição financeira nacional · 2020/2022" data-en="leading national financial institution · 2020/2022">grande instituição financeira nacional · 2020/2022</div>
+            <h3 class="case-card-title" data-pt="A pergunta que o bot não respondia" data-en="The question the bot couldn't answer">A pergunta que o bot não respondia</h3>
+            <p class="case-card-desc" data-pt="O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API." data-en="The customer asked when the card arrives, not what the deadline is. Three solution scenarios with and without API.">O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API.</p>
+            <div class="case-card-tags">
+              <span class="tag" data-pt="API" data-en="API">API</span>
+              <span class="tag" data-pt="Cenários" data-en="Scenarios">Cenários</span>
+              <span class="tag-blue tag" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-05.html" class="case-card" data-case-cat="ux-writing conversacional">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 05 · UX Writing" data-en="Case 05 · UX Writing">Case 05 · UX Writing</div>
+            <div class="case-card-co" data-pt="grande instituição brasileira de pagamentos · 2023/2025" data-en="leading brazilian payments company · 2023/2025">grande instituição brasileira de pagamentos · 2023/2025</div>
+            <h3 class="case-card-title" data-pt="+10 pontos de CSAT no principal atrito da experiência" data-en="+10 CSAT points on the experience's biggest friction point">+10 pontos de CSAT no principal atrito da experiência</h3>
+            <p class="case-card-desc" data-pt="O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo." data-en="Information hierarchy and unmapped scenarios. Biggest CSAT offender turned into real improvement.">O maior ofensor de CSAT do produto, com mais de 3 mil acessos por mês. Hierarquia da informação e cenários invisíveis que mudaram tudo.</p>
+            <div class="case-card-metrics">
+              <div>
+                <div class="case-metric-val" data-pt="+10pp" data-en="+10pp">+10pp</div>
+                <div class="case-metric-label" data-pt="CSAT" data-en="CSAT">CSAT</div>
+              </div>
+              <div>
+                <div class="case-metric-val" data-pt="+3pp" data-en="+3pp">+3pp</div>
+                <div class="case-metric-label" data-pt="Retenção" data-en="Retention">Retenção</div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-06.html" class="case-card" data-case-cat="ia tom-de-voz conversacional">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 06 · IA Generativa" data-en="Case 06 · IA Generativa">Case 06 · IA Generativa</div>
+            <div class="case-card-co" data-pt="grande empresa financeira de investimentos nos estados unidos · 2026" data-en="leading US-based investment platform · 2026">grande empresa financeira de investimentos nos estados unidos · 2026</div>
+            <h3 class="case-card-title" data-pt="Uma voz, vários canais" data-en="One voice, multiple channels">Uma voz, vários canais</h3>
+            <p class="case-card-desc" data-pt="Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada." data-en="AI copilot to ensure voice consistency across all channels, adapted by segment and journey moment.">Copiloto com IA para garantir consistência de voz em todos os canais, adaptado por segmento e momento de jornada.</p>
+            <div class="case-card-tags">
+              <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-pt="Em piloto" data-en="In pilot">Em piloto</span>
+              <span class="tag" data-pt="Gen AI" data-en="Gen AI">Gen AI</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-07.html" class="case-card" data-case-cat="ia ux-writing">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 07 · Framework próprio" data-en="Case 07 · Custom framework">Case 07 · Framework próprio</div>
+            <div class="case-card-co" data-pt="grande empresa financeira de investimentos nos estados unidos · 2026" data-en="leading US-based investment platform · 2026">grande empresa financeira de investimentos nos estados unidos · 2026</div>
+            <h3 class="case-card-title" data-pt="Começando pela intenção, não pelo canal" data-en="Starting with intent, not the channel">Começando pela intenção, não pelo canal</h3>
+            <p class="case-card-desc" data-pt="Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando." data-en="Own initiative to optimize the process: intention before channel. Prototyped and testing.">Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando.</p>
+            <div class="case-card-tags">
+              <span class="tag-amber tag" style="background:#FAEEDA;color:#854F0B;" data-pt="Em testes" data-en="In testing">Em testes</span>
+              <span class="tag" data-pt="Content Strategy" data-en="Content Strategy">Content Strategy</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="archive-group fade">
+      <h2 class="archive-group-title"><span class="sec-marker" aria-hidden="true">§02</span><span data-pt="Projetos pessoais e experimentos" data-en="Personal projects and experiments">Projetos pessoais e experimentos</span></h2>
+      <div class="cases-grid">
+
+        <a href="case-08.html" class="case-card" data-case-cat="ia">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 08 · IA Generativa" data-en="Case 08 · Generative AI">Case 08 · IA Generativa</div>
+            <div class="case-card-co" data-pt="projeto pessoal · 2026" data-en="personal project · 2026">projeto pessoal · 2026</div>
+            <h3 class="case-card-title" data-pt="Aurora: quando a designer virou usuária" data-en="Aurora: when the designer became the user">Aurora: quando a designer virou usuária</h3>
+            <p class="case-card-desc" data-pt="De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana." data-en="From a Telegram message to an organized spreadsheet, a weekly report and a reminder at the right time. A real system, used every day, that classifies information with AI and generates reports automatically every week.">De mensagem no Telegram a planilha organizada, relatório semanal e lembrete na hora certa. Um sistema real, em uso todos os dias, que classifica informações com IA e gera relatórios automaticamente toda semana.</p>
+            <div class="case-card-tags">
+              <span class="tag" data-pt="Projeto pessoal" data-en="Personal project">Projeto pessoal</span>
+              <span class="tag" data-pt="Gen AI" data-en="Gen AI">Gen AI</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-09.html" class="case-card" data-case-cat="meta">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 09 · Meta-case" data-en="Case 09 · Meta-case">Case 09 · Meta-case</div>
+            <div class="case-card-co" data-pt="projeto pessoal · 2026" data-en="personal project · 2026">projeto pessoal · 2026</div>
+            <h3 class="case-card-title" data-pt="Este portfólio também é um projeto de conteúdo" data-en="This portfolio is also a content project">Este portfólio também é um projeto de conteúdo</h3>
+            <p class="case-card-desc" data-pt="Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela." data-en="This site is my most honest case: every content, architecture and accessibility decision documented, from the palette to the conversation that greeted you on the first screen.">Este site é o meu case mais honesto: todas as decisões de conteúdo, arquitetura e acessibilidade documentadas, da paleta à conversa que te recebeu na primeira tela.</p>
+            <div class="case-card-tags">
+              <span class="tag" data-pt="Meta-case" data-en="Meta-case">Meta-case</span>
+              <span class="tag" data-pt="Content Strategy" data-en="Content Strategy">Content Strategy</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="case-10.html" class="case-card" data-case-cat="ia tom-de-voz">
+          <div class="case-card-body">
+            <div class="case-card-number" data-pt="Case 10 · Tom de Voz" data-en="Case 10 · Tone of Voice">Case 10 · Tom de Voz</div>
+            <div class="case-card-co" data-pt="projeto pessoal · 2026" data-en="personal project · 2026">projeto pessoal · 2026</div>
+            <h3 class="case-card-title" data-pt="Da Niara à Aurora: desenhando para marcas e para mim" data-en="From Niara to Aurora: designing for brands and for myself">Da Niara à Aurora: desenhando para marcas e para mim</h3>
+            <p class="case-card-desc" data-pt="Em 2020, criei a personalidade de um assistente para 600 colaboradores. Em 2026, apliquei o mesmo método na minha própria assistente de IA, que vive em dois contextos com dois registros." data-en="In 2020, I created an assistant's personality for 600 employees. In 2026, I applied the same method to my own AI assistant, which lives in two contexts with two registers.">Em 2020, criei a personalidade de um assistente para 600 colaboradores. Em 2026, apliquei o mesmo método na minha própria assistente de IA, que vive em dois contextos com dois registros.</p>
+            <div class="case-card-tags">
+              <span class="tag" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</span>
+              <span class="tag" data-pt="Gen AI" data-en="Gen AI">Gen AI</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Samantha Barreto · Diadema, SP</p>
+  <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
+</footer>
+
+<script src="../assets/theme.js"></script>
+<script src="../assets/shared.js"></script>
+<script src="../assets/menu.js"></script>
+<script src="../assets/cases-filter.js"></script>
+<script>
+  const navEl = document.getElementById('main-nav');
+  const heroEl = document.querySelector('.archive-hero');
+  if (heroEl && navEl) {
+    const navObs = new IntersectionObserver(([entry]) => {
+      navEl.classList.toggle('nav-on-dark', entry.isIntersecting);
+    }, { threshold: 0.1 });
+    navObs.observe(heroEl);
+  }
+</script>
+</body>
+</html>

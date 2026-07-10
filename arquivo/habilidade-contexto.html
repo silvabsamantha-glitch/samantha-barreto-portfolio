@@ -121,10 +121,14 @@
     <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
     <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
     <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
-    <li><a href="index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
     <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="nav-right">
+  <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Abrir menu" data-label-pt="Abrir menu" data-label-en="Open menu" data-label-close-pt="Fechar menu" data-label-close-en="Close menu">
+    <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
+
     <button
         class="theme-toggle"
         id="theme-toggle-btn"
@@ -146,10 +150,27 @@
     </div>
   </div>
 </nav>
+<div class="mobile-menu-panel" id="mobile-menu-panel" aria-hidden="true">
+  <ul class="mobile-menu-links">
+    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-controls">
+    <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true"><span aria-hidden="true">🇧🇷</span><span>PT</span></button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false"><span aria-hidden="true">🇺🇸</span><span>EN</span></button>
+    </div>
+    <button type="button" class="theme-toggle" id="theme-toggle-btn-mobile" aria-label="Ativar modo escuro" data-label-pt="Ativar modo escuro" data-label-en="Enable dark mode" aria-pressed="false">☾</button>
+  </div>
+</div>
+
 
 <section class="nota-hero" aria-label="Cabeçalho da nota">
   <div class="nota-hero-inner fade">
-    <a class="nota-back" href="index.html" data-pt="← Notas" data-en="← Notes">← Notas</a>
+    <a class="nota-back" href="../notas/index.html" data-pt="← Notas" data-en="← Notes">← Notas</a>
     <p class="nota-pill" data-pt="Nota 01 · Junho 2026" data-en="Note 01 · June 2026">Nota 01 · Junho 2026</p>
     <h1 data-pt="O que acontece quando uma habilidade muda de contexto sem mudar de essência?" data-en="What happens when a skill changes context without changing its essence?">O que acontece quando uma habilidade muda de contexto sem mudar de essência?</h1>
     <p class="nota-hero-meta" data-pt="Por Samantha Barreto" data-en="By Samantha Barreto">Por Samantha Barreto</p>
@@ -221,7 +242,7 @@
     </div>
 
     <div class="nota-footer-link fade">
-      <a href="index.html" data-pt="← Voltar às notas" data-en="← Back to notes">← Voltar às notas</a>
+      <a href="../notas/index.html" data-pt="← Voltar às notas" data-en="← Back to notes">← Voltar às notas</a>
     </div>
   </article>
 </main>
@@ -229,11 +250,12 @@
 <footer>
   <p>© 2026 Samantha Barreto · Diadema, SP</p>
   <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
-  <p><a href="../index.html#cases" data-pt="Ver todos os cases" data-en="See all cases">Ver todos os cases</a></p>
+  <p><a href="../cases/index.html" data-pt="Ver todos os projetos" data-en="View all projects">Ver todos os projetos</a></p>
 </footer>
 
 <script src="../assets/theme.js"></script>
 <script src="../assets/shared.js"></script>
+<script src="../assets/menu.js"></script>
 <script>
   const navEl = document.getElementById('main-nav');
   const heroEl = document.querySelector('.nota-hero');

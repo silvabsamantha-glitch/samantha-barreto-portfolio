@@ -58,6 +58,8 @@ button:focus-visible {
     animation: none !important;
   }
   .theme-toggle { transition: none; }
+  .mobile-menu-panel, .menu-toggle-icon span { transition: none !important; }
+  .notas-skeleton-cover, .notas-skeleton-line { animation: none !important; opacity: 1 !important; }
 }
 
 /* ── Reset & base ───────────────────────────────────────────────── */
@@ -277,6 +279,104 @@ nav.scrolled .theme-toggle:hover {
   background: rgba(26,26,46,0.08);
 }
 
+/* ── Menu hambúrguer (tablet/mobile) ────────────────────────────── */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-sm);
+  color: var(--navy);
+  flex-shrink: 0;
+}
+nav.nav-dark .menu-toggle { color: var(--white); }
+nav.nav-dark.scrolled .menu-toggle { color: var(--navy); }
+html.dark-mode nav.nav-dark.scrolled .menu-toggle { color: var(--text-primary); }
+.menu-toggle:hover { background: rgba(26,26,46,0.08); }
+nav.nav-dark .menu-toggle:hover { background: rgba(255,255,255,0.1); }
+nav.nav-dark.scrolled .menu-toggle:hover { background: rgba(26,26,46,0.08); }
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+.menu-toggle-icon {
+  position: relative;
+  width: 20px;
+  height: 15px;
+  display: inline-block;
+}
+.menu-toggle-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.2s var(--ease-out), opacity 0.2s var(--ease-out), top 0.2s var(--ease-out);
+}
+.menu-toggle-icon span:nth-child(1) { top: 0; }
+.menu-toggle-icon span:nth-child(2) { top: 6.5px; }
+.menu-toggle-icon span:nth-child(3) { top: 13px; }
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(1) { top: 6.5px; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(3) { top: 6.5px; transform: rotate(-45deg); }
+
+.mobile-menu-panel {
+  position: fixed;
+  inset: var(--nav-height) 0 0 0;
+  z-index: 199;
+  background: var(--bg-primary);
+  padding: 1.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out), visibility 0.2s;
+}
+.mobile-menu-panel.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+}
+.mobile-menu-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu-links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.65rem 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: color 0.2s;
+}
+.mobile-menu-links a:hover { color: var(--green-dm); }
+.mobile-menu-links a[aria-current="page"] { color: var(--green-dm); }
+.mobile-menu-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.mobile-menu-controls .lang-toggle { background: var(--bg-tertiary); }
+.mobile-menu-controls .lang-btn { color: var(--text-secondary); }
+.mobile-menu-controls .lang-btn.active { background: var(--navy); color: var(--white); }
+.mobile-menu-controls .theme-toggle { color: var(--text-primary); }
+.mobile-menu-controls .theme-toggle:hover { background: var(--bg-tertiary); }
+body.menu-open { overflow: hidden; }
+
 /* ── Buttons ────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -466,6 +566,69 @@ nav.scrolled .theme-toggle:hover {
 }
 .back-link:hover { color: var(--green); }
 
+/* ── Contexto do projeto (bloco editorial nos cases) ───────────── */
+.case-context {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 2rem 4rem;
+}
+.case-context-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem 2.5rem;
+}
+.case-context-item dt {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-dm);
+  margin-bottom: 0.4rem;
+}
+.case-context-item dd {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 300;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .case-context { padding: 1.75rem 2rem; }
+  .case-context-list { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+@media (max-width: 600px) {
+  .case-context { padding: 1.5rem 1.25rem; }
+}
+
+/* ── Lista de destaques "O que mudou" ───────────────────────────── */
+.change-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.change-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.change-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-dm);
+}
+
 /* ── Desktop-note (hidden by default, shown via 1024px breakpoint) */
 .desktop-note { display: none; }
 
@@ -491,6 +654,11 @@ footer a:hover { color: var(--green-2); }
   nav { padding: 1rem 1.5rem; }
   .nav-center { display: none; }
   .sec { padding: 4rem 1.5rem; }
+  .menu-toggle { display: inline-flex; }
+}
+
+@media (min-width: 901px) {
+  .mobile-menu-panel { display: none; }
 }
 
 /* ── Responsividade global ──────────────────────────────────────── */
