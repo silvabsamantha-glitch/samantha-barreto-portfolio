@@ -103,6 +103,8 @@ def load_content(content_dir):
 
     index_json = read_json(content_dir / "index.json")
     sobre_json = read_json(content_dir / "sobre.json")
+    cases_index_json = read_json(content_dir / "cases-index.json")
+    notas_json = read_json(content_dir / "notas.json")
 
     cases = {}
     cases_dir = content_dir / "cases"
@@ -114,7 +116,13 @@ def load_content(content_dir):
     index_json = dict(index_json)
     index_json["cards"] = cases
 
-    return {"index": index_json, "sobre": sobre_json, "cases": cases}
+    return {
+        "index": index_json,
+        "sobre": sobre_json,
+        "cases": cases,
+        "casesIndex": cases_index_json,
+        "notas": notas_json,
+    }
 
 
 def resolve_path(root_obj, segments):
@@ -145,6 +153,10 @@ def resolve_field(data_field, context, case_json):
         root = context["index"]
     elif namespace == "sobre":
         root = context["sobre"]
+    elif namespace == "casesIndex":
+        root = context["casesIndex"]
+    elif namespace == "notas":
+        root = context["notas"]
     else:
         return None, None
     value = resolve_path(root, rest)
@@ -288,6 +300,7 @@ def main():
 
     targets = [root / "index.html", root / "sobre.html"]
     targets += sorted((root / "cases").glob("case-*.html"))
+    targets += [root / "cases" / "index.html", root / "notas" / "index.html"]
 
     changed = []
     all_warnings = []
