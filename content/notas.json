@@ -1,0 +1,9 @@
+{
+  "hero": {
+    "title": { "pt": "Textos sobre design, linguagem e tecnologia.", "en": "Writing about design, language, and technology." },
+    "subtitle": { "pt": "Reflexões que não cabem em case. Escritas para pensar junto, não para convencer.", "en": "Thoughts that don't fit in a case study. Written to think together, not to convince." }
+  },
+  "emptyState": {
+    "message": { "pt": "[SA: preencher] ainda não há notas publicadas por aqui. Enquanto isso, acompanhe direto no Substack.", "en": "[SA: preencher] no notes published here yet. In the meantime, follow along directly on Substack." }
+  }
+}
