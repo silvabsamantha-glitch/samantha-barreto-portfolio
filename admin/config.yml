@@ -249,3 +249,51 @@ collections:
                 widget: list
                 hint: "Exatamente 13 itens — inclua o emoji no início do texto, como nos exemplos."
                 fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+  - name: cases-index
+    label: "Página Acervo de Cases"
+    files:
+      - name: casesIndex
+        label: "Acervo de Cases (cases/index.html)"
+        file: "content/cases-index.json"
+        fields:
+          - name: hero
+            label: "Topo"
+            widget: object
+            fields:
+              - name: title
+                label: "Título (H1)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: intro
+                label: "Introdução"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+
+  - name: notas
+    label: "Página Notas"
+    files:
+      - name: notas
+        label: "Notas (notas/index.html)"
+        file: "content/notas.json"
+        fields:
+          - name: hero
+            label: "Topo"
+            widget: object
+            fields:
+              - name: title
+                label: "Título (H1)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: subtitle
+                label: "Subtítulo"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: emptyState
+            label: "Estado vazio (quando não há notas ou o feed não está configurado)"
+            widget: object
+            fields:
+              - name: message
+                label: "Mensagem"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
