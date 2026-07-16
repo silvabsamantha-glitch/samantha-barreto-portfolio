@@ -26,7 +26,11 @@
         "pt": "Gen AI",
         "en": "Gen AI"
       }
-    ]
+    ],
+    "resultChip": {
+      "pt": " ",
+      "en": " "
+    }
   },
   "page": {
     "pill": {
@@ -110,16 +114,22 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "Aurora nasceu para resolver um problema pessoal, mas acabou se tornando a maior prova da minha forma de pensar Design Conversacional. Mais do que automatizar tarefas, o projeto demonstra como pesquisa, arquitetura de informação, engenharia de prompts e experiência conversacional podem trabalhar juntas para criar sistemas realmente úteis. Ao me tornar a principal usuária da solução que projetei, transformei cada interação em uma oportunidade contínua de testar, aprender e evoluir.",
+      "en": "Aurora started as a personal solution, but it became the clearest expression of how I approach Conversational Design. More than automating tasks, the project demonstrates how research, information architecture, prompt engineering, and conversational experience can work together to build systems that are genuinely useful. By becoming the primary user of the solution I designed, every interaction became an opportunity to test, learn, and continuously improve."
     }
   }
 }
