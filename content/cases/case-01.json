@@ -38,7 +38,11 @@
           "en": "digital support"
         }
       }
-    ]
+    ],
+    "resultChip": {
+      "pt": " ",
+      "en": " "
+    }
   },
   "page": {
     "pill": {
@@ -132,16 +136,22 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Designer Conversacional",
+      "en": "Conversational Designer"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "1 Teamlead, 1 Techlead, 1 QA e 1 Designer conversacional",
+      "en": "1 Teamlead, 1 Techlead, 1 QA and 1 Conversational designer"
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "NA",
+      "en": "NA"
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "A Niara mostrou que a personalidade de um assistente virtual vai além de uma escolha estética. Quando construída a partir de pesquisa, alinhada ao contexto da empresa e aplicada de forma consistente, ela fortalece a confiança das pessoas usuárias, facilita a adoção do produto e torna cada interação mais natural. Este projeto reforçou a importância de transformar descobertas de pesquisa em decisões de design que geram valor tanto para quem utiliza o produto quanto para o negócio.",
+      "en": "Niara demonstrated that a virtual assistant's personality is much more than a visual or branding choice. When grounded in research, aligned with the company's context, and consistently applied, it strengthens user trust, encourages product adoption, and makes every interaction feel more natural. This project reinforced the importance of turning research insights into design decisions that create value for both users and the business."
     }
   }
 }
