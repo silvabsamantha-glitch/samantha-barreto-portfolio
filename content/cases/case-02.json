@@ -24,8 +24,8 @@
       }
     ],
     "resultChip": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
     }
   },
   "page": {
@@ -75,35 +75,39 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Designer Conversacional",
+      "en": "Conversational Designer"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "1 Team Lead, 1 Tech Lead, 1 PM e 2 Designer conversacional",
+      "en": "1 Team Lead, 1 Tech Lead, 1 PM and 1 Conversational designer"
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Sistema operacional onde o chatbot ficaria alocado, extremamente limitado",
+      "en": "The operating system where the chatbot was deployed had significant technical limitations."
     }
   },
   "whatChanged": {
     "summary": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Projetar um assistente do zero exigiu equilibrar estratégia, experiência e viabilidade técnica desde o primeiro dia. Mais do que responder perguntas, o desafio foi criar uma estrutura que permitisse crescimento contínuo sem perder consistência. O resultado foi uma base sólida para novas funcionalidades e um produto preparado para evoluir junto com as necessidades do negócio e das pessoas usuárias.",
+      "en": "Designing an assistant from scratch required balancing strategy, user experience, and technical feasibility from day one. More than enabling conversations, the challenge was to build a structure that could continuously evolve without losing consistency. The result was a solid foundation for future features and a product prepared to grow alongside both business and user needs."
     },
     "highlights": [
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Estruturei a arquitetura conversacional de um produto do zero.",
+        "en": "Designed the conversational architecture of a product from scratch."
       },
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Traduzi regras de negócio complexas em fluxos conversacionais claros e escaláveis.",
+        "en": "Translated complex business rules into clear and scalable conversation flows."
       },
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Defini padrões de conteúdo e tom de voz para garantir consistência desde a primeira versão.",
+        "en": "Defined content standards and tone of voice to ensure consistency from the first release."
+      },
+      {
+        "pt": "Trabalhei em colaboração com Produto, Desenvolvimento e especialistas de negócio para validar a solução.",
+        "en": "Collaborated with Product, Engineering, and business stakeholders to validate the solution."
       }
     ]
   }
