@@ -1,12 +1,6 @@
 {
   "hero": {
-    "title": {
-      "pt": "Todos os projetos",
-      "en": "All projects"
-    },
-    "intro": {
-      "pt": "Todos os projetos em que trabalhei e sigo trabalhando, pessoais e profissionais, tudo aqui.",
-      "en": "Every project I've worked on and still do, personal and professional. It's all here."
-    }
+    "title": { "pt": "[SA: preencher]", "en": "[SA: preencher]" },
+    "intro": { "pt": "[SA: preencher]", "en": "[SA: preencher]" }
   }
 }

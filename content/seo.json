@@ -1,0 +1,64 @@
+{
+  "index": {
+    "title": { "pt": "Samantha Barreto · Content Designer & Conversational AI Designer", "en": "Samantha Barreto · Content Designer & Conversational AI Designer" },
+    "metaDescription": { "pt": "Portfólio de Samantha Barreto, Content Designer, Conversational AI Designer e Designer Conversacional, especialista em IA Generativa e fintech.", "en": "Portfolio of Samantha Barreto, Content Designer, Conversational AI Designer, specializing in Generative AI and fintech." }
+  },
+  "sobre": {
+    "title": { "pt": "Sobre: Samantha Barreto · Content Designer & Conversational AI Designer", "en": "About: Samantha Barreto · Content Designer & Conversational AI Designer" },
+    "metaDescription": { "pt": "Samantha Barreto: Content Designer, Conversational AI Designer e Designer Conversacional. Diadema, SP. Apaixonada por tecnologia, escrita e gente.", "en": "Samantha Barreto: Content Designer and Conversational AI Designer. Diadema, Brazil. Passionate about technology, writing, and people." }
+  },
+  "notas": {
+    "title": { "pt": "Notas · Samantha Barreto", "en": "Notes · Samantha Barreto" },
+    "metaDescription": { "pt": "Textos autorais de Samantha Barreto sobre design, linguagem e tecnologia.", "en": "Original writing by Samantha Barreto on design, language, and technology." }
+  },
+  "casesIndex": {
+    "title": { "pt": "Todos os projetos · Samantha Barreto", "en": "All projects · Samantha Barreto" },
+    "metaDescription": { "pt": "Acervo completo dos projetos de Samantha Barreto: trabalho profissional e projetos pessoais em Content Design, Design Conversacional e IA Generativa.", "en": "Full archive of Samantha Barreto's projects: professional work and personal projects in Content Design, Conversational Design, and Generative AI." }
+  },
+  "cases": {
+    "case-01": {
+      "title": { "pt": "Case 01: Niara, a alma de um assistente · Samantha Barreto", "en": "Case 01: Niara, the soul of an assistant · Samantha Barreto" },
+      "metaDescription": { "pt": "Como desenvolvemos a personalidade de um chatbot de RH ouvindo mais de 600 colaboradores.", "en": "How we developed the personality of an HR chatbot by listening to more than 600 employees." }
+    },
+    "case-02": {
+      "title": { "pt": "Case 02: Assistente de Gerentes PF e PJ · Samantha Barreto", "en": "Case 02: Branch Manager Assistant · Samantha Barreto" },
+      "metaDescription": { "pt": "Como projetar um chatbot para gerentes de agência que precisam de resposta em segundos com o cliente na frente.", "en": "How to design a chatbot for branch managers who need an answer in seconds with the customer right in front of them." }
+    },
+    "case-03": {
+      "title": { "pt": "Case 03: Seguros, Content First do zero · Samantha Barreto", "en": "Case 03: Insurance, Content First from scratch · Samantha Barreto" },
+      "metaDescription": { "pt": "Como projetamos um assistente virtual de seguros antes de qualquer tela, com metodologia Content First.", "en": "How we designed an insurance virtual assistant before any screen, using a Content First methodology." }
+    },
+    "case-04": {
+      "title": { "pt": "Case 04: Cartão de Crédito, a pergunta que não foi respondida · Samantha Barreto", "en": "Case 04: Credit Card, the question that wasn't answered · Samantha Barreto" },
+      "metaDescription": { "pt": "Um estudo de caso sobre como um chatbot bem-intencionado falhou em responder à pergunta mais simples do cliente.", "en": "A case study on how a well-intentioned chatbot failed to answer the customer's simplest question." }
+    },
+    "case-05": {
+      "title": { "pt": "Case 05: A pergunta que o chatbot nunca respondeu · Samantha Barreto", "en": "Case 05: The question the chatbot never answered · Samantha Barreto" },
+      "metaDescription": { "pt": "Como reescrever fluxos de chatbot com hierarquia da informação gerou mais 10 pontos percentuais de CSAT em grande instituição brasileira de pagamentos.", "en": "How rewriting chatbot flows with information hierarchy generated 10 more CSAT percentage points at a leading Brazilian payments company." }
+    },
+    "case-06": {
+      "title": { "pt": "Case 06: Assistente de Voz da Marca · Samantha Barreto", "en": "Case 06: Brand Voice Assistant · Samantha Barreto" },
+      "metaDescription": { "pt": "Como criamos um copiloto com IA para garantir consistência de voz em todos os canais da Meridian.", "en": "How we built an AI copilot to ensure voice consistency across all of Meridian's channels." }
+    },
+    "case-07": {
+      "title": { "pt": "Case 07: Bot de Content First · Samantha Barreto", "en": "Case 07: Content First Bot · Samantha Barreto" },
+      "metaDescription": { "pt": "Como otimizei o processo de criação de comunicações colocando intenção antes de canal.", "en": "How I optimized the communications creation process by putting intention before channel." }
+    },
+    "case-08": {
+      "title": { "pt": "Case 08: Aurora, quando a designer virou usuária · Samantha Barreto", "en": "Case 08: Aurora, when the designer became the user · Samantha Barreto" },
+      "metaDescription": { "pt": "Como um sistema multiagente no Telegram, construído com Make, Google Sheets e a API do Claude, transformou design conversacional em engenharia de produto pessoal.", "en": "How a multi-agent system on Telegram, built with Make, Google Sheets, and the Claude API, turned conversational design into personal product engineering." }
+    },
+    "case-09": {
+      "title": { "pt": "Case 09: Este portfólio também é um projeto de conteúdo · Samantha Barreto", "en": "Case 09: This portfolio is also a content project · Samantha Barreto" },
+      "metaDescription": { "pt": "Como tratei este portfólio como um produto de content design: intenção, arquitetura, conteúdo e acessibilidade, todas as decisões documentadas.", "en": "How I treated this portfolio as a content design product: intention, architecture, content, and accessibility, every decision documented." }
+    },
+    "case-10": {
+      "title": { "pt": "Case 10: Da Niara à Aurora, desenhando para marcas e para mim · Samantha Barreto", "en": "Case 10: From Niara to Aurora, designing for brands and for myself · Samantha Barreto" },
+      "metaDescription": { "pt": "Como o método usado para desenhar a personalidade de um assistente corporativo em 2020 foi reaplicado, em 2026, na voz da minha própria assistente de IA.", "en": "How the method used to design a corporate assistant's personality in 2020 was reapplied, in 2026, to the voice of my own AI assistant." }
+    }
+  },
+  "images": {
+    "heroPhoto": { "alt": { "pt": "Samantha Barreto, Content Designer", "en": "Samantha Barreto, Content Designer" } },
+    "sobrePhoto": { "alt": { "pt": "Samantha Barreto", "en": "Samantha Barreto" } }
+  }
+}
