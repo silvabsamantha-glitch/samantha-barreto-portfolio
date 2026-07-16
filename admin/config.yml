@@ -8,7 +8,7 @@ public_folder: "/assets/images"
 
 collections:
   - name: cases
-    label: "Cases"
+    label: "Conteúdo · Cases"
     label_singular: "Case"
     folder: "content/cases"
     create: false
@@ -35,7 +35,13 @@ collections:
           - name: title
             label: "Título do card"
             widget: object
-            fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+            fields:
+              - name: pt
+                widget: string
+                pattern: ["^.{1,90}$", "Máximo de 90 caracteres — título maior quebra o layout do card"]
+              - name: en
+                widget: string
+                pattern: ["^.{1,90}$", "Máximo de 90 caracteres — título maior quebra o layout do card"]
           - name: desc
             label: "Descrição curta"
             widget: object
@@ -44,10 +50,18 @@ collections:
             label: "Tags"
             widget: list
             required: false
-            hint: "O número de tags exibidas é limitado pelos espaços já existentes no HTML deste card. Adicionar mais itens aqui do que os espaços existentes não os fará aparecer no site — avise o desenvolvedor se precisar de mais espaços."
+            hint: "O número de tags exibidas é limitado pelos espaços já existentes no HTML deste card. Adicionar mais itens aqui do que os espaços existentes não os fará aparecer no site — avise o desenvolvedor se precisar de mais espaços. Cada tag: até 30 caracteres."
             fields:
-              - { name: pt, widget: string }
-              - { name: en, widget: string }
+              - { name: pt, widget: string, pattern: ["^.{1,30}$", "Máximo de 30 caracteres — chip maior quebra o layout"] }
+              - { name: en, widget: string, pattern: ["^.{1,30}$", "Máximo de 30 caracteres — chip maior quebra o layout"] }
+          - name: resultChip
+            label: "Chip de resultado (só aparece no acervo, para cases sem métrica)"
+            widget: object
+            required: false
+            hint: "Frase curta de resultado qualitativo (ex.: Validado em campo, Lançado, Método replicado). Só é exibido para cases 02, 03 e 04 no acervo — o espaço não existe nos outros cards. Até 30 caracteres."
+            fields:
+              - { name: pt, widget: string, pattern: ["^.{1,30}$", "Máximo de 30 caracteres — chip maior quebra o layout"] }
+              - { name: en, widget: string, pattern: ["^.{1,30}$", "Máximo de 30 caracteres — chip maior quebra o layout"] }
           - name: metrics
             label: "Métricas"
             widget: list
@@ -63,6 +77,43 @@ collections:
                 widget: object
                 fields: [{ name: pt, widget: string }, { name: en, widget: string }]
 
+      - name: context
+        label: "Contexto do projeto (aparece logo abaixo do disclaimer, antes do corpo do case)"
+        widget: object
+        hint: "Três linhas curtas que explicam papel individual, composição do time e restrições reais do projeto."
+        fields:
+          - name: role
+            label: "Meu papel"
+            hint: "O que era responsabilidade direta da Samantha nesse projeto."
+            widget: object
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: team
+            label: "Time"
+            hint: "Com quem o trabalho foi feito — funções, não nomes (ex.: 1 PM, 2 devs, 1 pesquisadora)."
+            widget: object
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: constraints
+            label: "Restrições"
+            hint: "Limites reais do projeto — regulatórios, técnicos, de prazo ou de escopo."
+            widget: object
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+
+      - name: whatChanged
+        label: "O que mudou (seção de desfecho, antes de O aprendizado)"
+        widget: object
+        required: false
+        hint: "Só existe nos cases 02, 03 e 04 — o espaço na página não existe nos outros cases. Não preencher com resultado que você não defenderia em entrevista."
+        fields:
+          - name: summary
+            label: "Parágrafo de desfecho"
+            widget: object
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: highlights
+            label: "Destaques qualitativos"
+            widget: list
+            hint: "Até 3 itens — o layout da seção tem espaço para exatamente 3 destaques."
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+
       - name: page
         label: "Página do case (hero)"
         widget: object
@@ -76,6 +127,13 @@ collections:
             widget: object
             required: false
             fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+          - name: navLabel
+            label: "Nome curto (usado na navegação entre cases)"
+            hint: "Aparece no link \"Case anterior / Próximo case\" nos cases vizinhos. Até 60 caracteres — texto maior quebra a faixa de navegação."
+            widget: object
+            fields:
+              - { name: pt, widget: string, pattern: ["^.{1,60}$", "Máximo de 60 caracteres — quebra a faixa de navegação entre cases"] }
+              - { name: en, widget: string, pattern: ["^.{1,60}$", "Máximo de 60 caracteres — quebra a faixa de navegação entre cases"] }
           - name: title
             label: "Título (H1)"
             widget: object
@@ -88,10 +146,10 @@ collections:
             label: "Tags"
             widget: list
             required: false
-            hint: "O número de tags exibidas é limitado pelos espaços já existentes no HTML desta página."
+            hint: "O número de tags exibidas é limitado pelos espaços já existentes no HTML desta página. Cada tag: até 30 caracteres."
             fields:
-              - { name: pt, widget: string }
-              - { name: en, widget: string }
+              - { name: pt, widget: string, pattern: ["^.{1,30}$", "Máximo de 30 caracteres — chip maior quebra o layout"] }
+              - { name: en, widget: string, pattern: ["^.{1,30}$", "Máximo de 30 caracteres — chip maior quebra o layout"] }
           - name: disclaimer
             label: "Aviso de ficcionalização"
             widget: object
@@ -123,7 +181,7 @@ collections:
               - { name: altEn, label: "Texto alternativo (EN)", widget: string }
 
   - name: home
-    label: "Página inicial"
+    label: "Conteúdo · Página inicial"
     files:
       - name: index
         label: "Home (index.html)"
@@ -203,7 +261,7 @@ collections:
                     widget: string
 
   - name: about
-    label: "Página Sobre"
+    label: "Conteúdo · Página Sobre"
     files:
       - name: sobre
         label: "Sobre (sobre.html)"
@@ -251,7 +309,7 @@ collections:
                 fields: [{ name: pt, widget: string }, { name: en, widget: string }]
 
   - name: cases-index
-    label: "Página Acervo de Cases"
+    label: "Conteúdo · Acervo de Cases"
     files:
       - name: casesIndex
         label: "Acervo de Cases (cases/index.html)"
@@ -271,7 +329,7 @@ collections:
                 fields: [{ name: pt, widget: text }, { name: en, widget: text }]
 
   - name: notas
-    label: "Página Notas"
+    label: "Conteúdo · Notas"
     files:
       - name: notas
         label: "Notas (notas/index.html)"
@@ -289,11 +347,439 @@ collections:
                 label: "Subtítulo"
                 widget: object
                 fields: [{ name: pt, widget: text }, { name: en, widget: text }]
-          - name: emptyState
-            label: "Estado vazio (quando não há notas ou o feed não está configurado)"
+
+  - name: interface
+    label: "Interface · Textos compartilhados"
+    files:
+      - name: interface
+        label: "Interface (menu, botões, rodapé — usada em todas as páginas)"
+        file: "content/interface.json"
+        fields:
+          - name: skipLink
+            label: "Link \"Pular para o conteúdo\""
+            hint: "Primeiro elemento da página, só visível para quem navega por teclado/leitor de tela ao dar Tab. Até 60 caracteres."
+            required: true
             widget: object
             fields:
-              - name: message
-                label: "Mensagem"
+              - { name: pt, widget: string, pattern: ["^.{1,60}$", "Máximo de 60 caracteres"] }
+              - { name: en, widget: string, pattern: ["^.{1,60}$", "Máximo de 60 caracteres"] }
+
+          - name: nav
+            label: "Itens do menu principal"
+            hint: "Aparecem no menu de navegação no topo de toda página (versão desktop e dentro do menu hambúrguer no mobile). Cada item: até 20 caracteres — o menu não tem espaço para itens longos."
+            required: true
+            widget: object
+            fields:
+              - name: sobre
+                label: "Sobre"
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+                  - { name: en, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+              - name: cases
+                label: "Cases"
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+                  - { name: en, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+              - name: processo
+                label: "Processo"
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+                  - { name: en, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+              - name: notas
+                label: "Notas"
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+                  - { name: en, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+              - name: contato
+                label: "Contato"
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+                  - { name: en, widget: string, pattern: ["^.{1,20}$", "Máximo de 20 caracteres — quebra o menu"] }
+
+          - name: menu
+            label: "Botão hambúrguer (aria-label, tablet e mobile ≤900px)"
+            hint: "Texto lido por leitor de tela ao focar o botão de menu (☰) em telas pequenas. Sem ele, o botão fica sem nome para quem usa leitor de tela — por isso é obrigatório."
+            required: true
+            widget: object
+            fields:
+              - name: openLabel
+                label: "Rótulo quando o menu está fechado (\"Abrir menu\")"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: closeLabel
+                label: "Rótulo quando o menu está aberto (\"Fechar menu\")"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+          - name: caseBack
+            label: "Link \"Voltar ao início\" (topo de cada case)"
+            hint: "Aparece no alto do hero de cada case, acima do título. Até 40 caracteres."
+            required: true
+            widget: object
+            fields:
+              - { name: pt, widget: string, pattern: ["^.{1,40}$", "Máximo de 40 caracteres"] }
+              - { name: en, widget: string, pattern: ["^.{1,40}$", "Máximo de 40 caracteres"] }
+
+          - name: caseNav
+            label: "Navegação entre cases (rodapé de cada case)"
+            hint: "Rótulos de direção da faixa \"Case anterior / Próximo case\" ao final de cada case."
+            required: true
+            widget: object
+            fields:
+              - name: previous
+                label: "\"Case anterior\""
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: next
+                label: "\"Próximo case\""
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: allProjectsBefore
+                label: "\"Todos os projetos\" (quando é o case 01, voltando para o acervo)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: allProjectsAfter
+                label: "\"Todos os projetos\" (quando é o case 10, seguindo para o acervo)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: allProjectsLabel
+                label: "Nome do acervo sem seta (usado no sub-rótulo do card de destino)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+          - name: footer
+            label: "Rodapé (todas as páginas)"
+            required: true
+            widget: object
+            fields:
+              - name: copyrightMain
+                label: "Copyright (home, sobre, notas, acervo)"
+                hint: "Primeira linha do rodapé nessas 4 páginas, com cidade."
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: copyrightCase
+                label: "Copyright (páginas de case)"
+                hint: "Primeira linha do rodapé nos 10 cases, sem cidade."
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: languages
+                label: "Linha de idiomas (home, sobre, notas, acervo)"
+                hint: "Segunda linha do rodapé nessas 4 páginas."
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: allProjectsLink
+                label: "Link \"Ver todos os projetos\" (rodapé de home, sobre e notas)"
+                hint: "Terceira linha do rodapé, aponta para o acervo completo. Não aparece no rodapé do próprio acervo nem dos cases (que têm seu próprio link de volta)."
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+          - name: casesFilter
+            label: "Filtro por tema (página Acervo de Cases)"
+            hint: "Barra de filtros acima do grid de cases, na página /cases/."
+            required: true
+            widget: object
+            fields:
+              - name: srLabel
+                label: "Rótulo do grupo de filtros (só para leitor de tela)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: all
+                label: "Botão \"Todos\""
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+                  - { name: en, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+              - name: ia
+                label: "Botão \"IA Generativa\""
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+                  - { name: en, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+              - name: conversacional
+                label: "Botão \"Conversacional\""
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+                  - { name: en, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+              - name: uxWriting
+                label: "Botão \"UX Writing\""
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+                  - { name: en, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+              - name: tomDeVoz
+                label: "Botão \"Tom de Voz\""
+                widget: object
+                fields:
+                  - { name: pt, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+                  - { name: en, widget: string, pattern: ["^.{1,25}$", "Máximo de 25 caracteres — quebra a barra de filtros"] }
+              - name: statusAll
+                label: "Mensagem de status ao filtrar por \"Todos\" (só leitor de tela)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: statusIa
+                label: "Mensagem de status ao filtrar por \"IA Generativa\" (só leitor de tela)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: statusConversacional
+                label: "Mensagem de status ao filtrar por \"Conversacional\" (só leitor de tela)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: statusUxWriting
+                label: "Mensagem de status ao filtrar por \"UX Writing\" (só leitor de tela)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: statusTomDeVoz
+                label: "Mensagem de status ao filtrar por \"Tom de Voz\" (só leitor de tela)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+          - name: notasStates
+            label: "Estados da página Notas (carregando / vazio / erro)"
+            hint: "Textos exibidos enquanto os posts do Substack carregam, quando não há posts, ou quando a busca falha."
+            required: true
+            widget: object
+            fields:
+              - name: loading
+                label: "Carregando (anunciado só para leitor de tela)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: empty
+                label: "Vazio (feed sem posts ou variável de ambiente não configurada)"
                 widget: object
                 fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: error
+                label: "Erro (função fora do ar ou feed inacessível)"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: substackLinkLabel
+                label: "Texto do link para o Substack (nos estados vazio e erro)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+
+          - name: desktopNote
+            label: "Aviso \"melhor no computador\" (cases com imagem/animação interativa)"
+            hint: "Substitui imagens e animações interativas em telas pequenas, nos cases que têm esse conteúdo."
+            required: true
+            widget: object
+            fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+
+  - name: seo
+    label: "SEO · Meta tags e alt text"
+    files:
+      - name: seo
+        label: "SEO (título da aba, descrição para buscadores, alt de fotos)"
+        file: "content/seo.json"
+        fields:
+          - name: index
+            label: "Home (index.html)"
+            widget: object
+            fields:
+              - name: title
+                label: "Título da aba (meta title)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: metaDescription
+                label: "Meta description"
+                hint: "Aparece nos resultados de busca do Google. Não muda com o idioma do site — o campo em inglês fica guardado para uso futuro, caso o sistema de tradução passe a cobrir meta tags."
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: sobre
+            label: "Sobre (sobre.html)"
+            widget: object
+            fields:
+              - name: title
+                label: "Título da aba (meta title)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: metaDescription
+                label: "Meta description"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: notas
+            label: "Notas (notas/index.html)"
+            widget: object
+            fields:
+              - name: title
+                label: "Título da aba (meta title)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: metaDescription
+                label: "Meta description"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: casesIndex
+            label: "Acervo de Cases (cases/index.html)"
+            widget: object
+            fields:
+              - name: title
+                label: "Título da aba (meta title)"
+                widget: object
+                fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: metaDescription
+                label: "Meta description"
+                widget: object
+                fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: cases
+            label: "Cases individuais (10 páginas)"
+            widget: object
+            collapsed: true
+            fields:
+              - name: case-01
+                label: "Case 01"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-02
+                label: "Case 02"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-03
+                label: "Case 03"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-04
+                label: "Case 04"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-05
+                label: "Case 05"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-06
+                label: "Case 06"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-07
+                label: "Case 07"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-08
+                label: "Case 08"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-09
+                label: "Case 09"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+              - name: case-10
+                label: "Case 10"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: title
+                    label: "Título da aba (meta title)"
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+                  - name: metaDescription
+                    label: "Meta description"
+                    widget: object
+                    fields: [{ name: pt, widget: text }, { name: en, widget: text }]
+          - name: images
+            label: "Fotos reais (alt text)"
+            hint: "Alt bilíngue das duas fotografias reais do site (não se aplica a ilustrações decorativas, que têm alt vazio de propósito)."
+            widget: object
+            fields:
+              - name: heroPhoto
+                label: "Foto da home (assets/foto.jpg)"
+                widget: object
+                fields:
+                  - name: alt
+                    label: "Texto alternativo"
+                    required: true
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
+              - name: sobrePhoto
+                label: "Foto da página Sobre (assets/foto-sobre.jpg)"
+                widget: object
+                fields:
+                  - name: alt
+                    label: "Texto alternativo"
+                    required: true
+                    widget: object
+                    fields: [{ name: pt, widget: string }, { name: en, widget: string }]
