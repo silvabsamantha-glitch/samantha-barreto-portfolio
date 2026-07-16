@@ -26,7 +26,11 @@
         "pt": "Content Strategy",
         "en": "Content Strategy"
       }
-    ]
+    ],
+    "resultChip": {
+      "pt": " ",
+      "en": " "
+    }
   },
   "page": {
     "pill": {
@@ -75,16 +79,22 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Designer de conteúdo",
+      "en": "Content designer"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "Este projeto nasceu da percepção de que a qualidade de uma comunicação é definida antes da primeira palavra ser escrita. Em vez de criar mais um template, a proposta estruturou um processo que ajuda equipes a começarem pela intenção, pelo contexto e pelas necessidades das pessoas usuárias. Mais do que um assistente, o Bot de Content First busca transformar uma boa prática em um hábito compartilhado.",
+      "en": "This project was born from the belief that the quality of communication is determined before the first word is written. Rather than creating another template, it introduces a process that helps teams start with user intent, context, and real needs. More than an assistant, the Content First Bot aims to turn a best practice into a shared habit."
     }
   }
 }
