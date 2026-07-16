@@ -140,12 +140,12 @@
       "en": "Conversational Designer"
     },
     "team": {
-      "pt": "1 Teamlead, 1 Techlead, 1 QA e 1 Designer conversacional",
-      "en": "1 Teamlead, 1 Techlead, 1 QA and 1 Conversational designer"
+      "pt": "1 Team Lead, 1 Tech Lead, 1 QA e 1 Designer conversacional",
+      "en": "1 Team Lead, 1 Tech Lead, 1 QA and 1 Conversational designer"
     },
     "constraints": {
-      "pt": "NA",
-      "en": "NA"
+      "pt": " ",
+      "en": " "
     }
   },
   "whatChanged": {
