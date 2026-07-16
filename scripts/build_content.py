@@ -105,6 +105,8 @@ def load_content(content_dir):
     sobre_json = read_json(content_dir / "sobre.json")
     cases_index_json = read_json(content_dir / "cases-index.json")
     notas_json = read_json(content_dir / "notas.json")
+    interface_json = read_json(content_dir / "interface.json")
+    seo_json = read_json(content_dir / "seo.json")
 
     cases = {}
     cases_dir = content_dir / "cases"
@@ -122,6 +124,8 @@ def load_content(content_dir):
         "cases": cases,
         "casesIndex": cases_index_json,
         "notas": notas_json,
+        "interface": interface_json,
+        "seo": seo_json,
     }
 
 
@@ -157,13 +161,25 @@ def resolve_field(data_field, context, case_json):
         root = context["casesIndex"]
     elif namespace == "notas":
         root = context["notas"]
+    elif namespace == "interface":
+        root = context["interface"]
+    elif namespace == "seo":
+        root = context["seo"]
     else:
         return None, None
     value = resolve_path(root, rest)
     if value is None:
         return None, None
     kind = "text"
-    if rest[-2:] == ["links", "email"]:
+    if rest[-1] == "alt":
+        kind = "alt"
+    elif rest[-1] == "metaDescription":
+        kind = "meta"
+    elif rest[-1] == "menu" and namespace == "interface":
+        kind = "menuToggle"
+    elif rest[-1] == "casesFilter" and namespace == "interface":
+        kind = "filterStatus"
+    elif rest[-2:] == ["links", "email"]:
         kind = "mailto"
     elif "links" in rest:
         kind = "href"
@@ -221,6 +237,71 @@ def build_replacements(entry, kind, value, company):
         ):
             if key in value:
                 text, _ = patch_attr(text, attr, value[key])
+        spans.append((entry["start"], entry["starttag_end"], text))
+        return spans
+
+    if kind == "alt":
+        # Alt bilíngue de foto real (não hero image): atualiza alt (fallback pt)
+        # e data-alt-pt/data-alt-en, sem tocar em src.
+        text = SOURCE_SLICE(entry)
+        if isinstance(value, dict):
+            if "pt" in value:
+                text, _ = patch_attr(text, "alt", value["pt"])
+                text, _ = patch_attr(text, "data-alt-pt", value["pt"])
+            if "en" in value:
+                text, _ = patch_attr(text, "data-alt-en", value["en"])
+        spans.append((entry["start"], entry["starttag_end"], text))
+        return spans
+
+    if kind == "menuToggle":
+        # Botão hambúrguer: um único elemento carrega 2 pares pt/en (rótulo
+        # de abrir e de fechar) em atributos próprios, fora do padrão
+        # data-pt/data-en — por isso tem kind dedicado em vez de "text".
+        text = SOURCE_SLICE(entry)
+        if isinstance(value, dict):
+            open_label = value.get("openLabel") or {}
+            close_label = value.get("closeLabel") or {}
+            if "pt" in open_label:
+                text, _ = patch_attr(text, "data-label-pt", open_label["pt"])
+                text, _ = patch_attr(text, "aria-label", open_label["pt"])
+            if "en" in open_label:
+                text, _ = patch_attr(text, "data-label-en", open_label["en"])
+            if "pt" in close_label:
+                text, _ = patch_attr(text, "data-label-close-pt", close_label["pt"])
+            if "en" in close_label:
+                text, _ = patch_attr(text, "data-label-close-en", close_label["en"])
+        spans.append((entry["start"], entry["starttag_end"], text))
+        return spans
+
+    if kind == "filterStatus":
+        # Painel de status do filtro do acervo: assets/cases-filter.js lê
+        # estes 10 atributos (5 filtros x pt/en) diretamente do elemento,
+        # em vez de um texto fixo no próprio script — assim o CMS controla
+        # de fato o que é anunciado a cada troca de filtro.
+        text = SOURCE_SLICE(entry)
+        key_map = [
+            ("all", "statusAll"), ("ia", "statusIa"), ("conversacional", "statusConversacional"),
+            ("ux-writing", "statusUxWriting"), ("tom-de-voz", "statusTomDeVoz"),
+        ]
+        if isinstance(value, dict):
+            for data_filter, json_key in key_map:
+                pair = value.get(json_key) or {}
+                if "pt" in pair:
+                    text, _ = patch_attr(text, f"data-status-{data_filter}-pt", pair["pt"])
+                if "en" in pair:
+                    text, _ = patch_attr(text, f"data-status-{data_filter}-en", pair["en"])
+        spans.append((entry["start"], entry["starttag_end"], text))
+        return spans
+
+    if kind == "meta":
+        # <meta name="description"> não participa do applyLang() em runtime
+        # (shared.js só varre [data-pt]/[data-alt-pt]/etc.) — por isso só o
+        # valor em pt é gravado no atributo content; o valor em en fica
+        # guardado no JSON para referência futura, sem efeito em produção
+        # a menos que shared.js passe a cobrir meta tags (não é o caso hoje).
+        text = SOURCE_SLICE(entry)
+        pt_value = value["pt"] if isinstance(value, dict) else value
+        text, _ = patch_attr(text, "content", pt_value)
         spans.append((entry["start"], entry["starttag_end"], text))
         return spans
 
