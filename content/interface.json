@@ -1,0 +1,48 @@
+{
+  "skipLink": { "pt": "Pular para o conteúdo principal", "en": "Skip to main content" },
+  "nav": {
+    "sobre": { "pt": "Sobre", "en": "About" },
+    "cases": { "pt": "Cases", "en": "Work" },
+    "processo": { "pt": "Processo", "en": "Process" },
+    "notas": { "pt": "Notas", "en": "Notes" },
+    "contato": { "pt": "Contato", "en": "Contact" }
+  },
+  "menu": {
+    "openLabel": { "pt": "Abrir menu", "en": "Open menu" },
+    "closeLabel": { "pt": "Fechar menu", "en": "Close menu" }
+  },
+  "caseBack": { "pt": "← Voltar ao início", "en": "← Back to home" },
+  "caseNav": {
+    "previous": { "pt": "← Case anterior", "en": "← Previous case" },
+    "next": { "pt": "Próximo case →", "en": "Next case →" },
+    "allProjectsBefore": { "pt": "← Todos os projetos", "en": "← All projects" },
+    "allProjectsAfter": { "pt": "Todos os projetos →", "en": "All projects →" },
+    "allProjectsLabel": { "pt": "Todos os projetos", "en": "All projects" }
+  },
+  "footer": {
+    "copyrightMain": { "pt": "© 2026 Samantha Barreto · Diadema, SP", "en": "© 2026 Samantha Barreto · Diadema, SP" },
+    "copyrightCase": { "pt": "© 2026 Samantha Barreto", "en": "© 2026 Samantha Barreto" },
+    "languages": { "pt": "Inglês fluente · Espanhol intermediário", "en": "Fluent English · Intermediate Spanish" },
+    "allProjectsLink": { "pt": "Ver todos os projetos", "en": "View all projects" }
+  },
+  "casesFilter": {
+    "srLabel": { "pt": "Filtrar cases por tema", "en": "Filter cases by theme" },
+    "all": { "pt": "Todos", "en": "All" },
+    "ia": { "pt": "IA Generativa", "en": "Generative AI" },
+    "conversacional": { "pt": "Conversacional", "en": "Conversational" },
+    "uxWriting": { "pt": "UX Writing", "en": "UX Writing" },
+    "tomDeVoz": { "pt": "Tom de Voz", "en": "Tone of Voice" },
+    "statusAll": { "pt": "Mostrando todos os cases.", "en": "Showing all cases." },
+    "statusIa": { "pt": "Mostrando cases de IA Generativa.", "en": "Showing Generative AI cases." },
+    "statusConversacional": { "pt": "Mostrando cases de Conversacional.", "en": "Showing Conversational cases." },
+    "statusUxWriting": { "pt": "Mostrando cases de UX Writing.", "en": "Showing UX Writing cases." },
+    "statusTomDeVoz": { "pt": "Mostrando cases de Tom de Voz.", "en": "Showing Tone of Voice cases." }
+  },
+  "notasStates": {
+    "loading": { "pt": "Carregando notas do Substack…", "en": "Loading notes from Substack…" },
+    "empty": { "pt": "[SA: preencher] ainda não há notas publicadas por aqui. Enquanto isso, acompanhe direto no Substack.", "en": "[SA: preencher] no notes published here yet. In the meantime, follow along directly on Substack." },
+    "error": { "pt": "Não consegui carregar as notas agora. Você pode lê-las direto no Substack enquanto isso.", "en": "I couldn't load the notes right now. You can read them directly on Substack in the meantime." },
+    "substackLinkLabel": { "pt": "Ver no Substack →", "en": "View on Substack →" }
+  },
+  "desktopNote": { "pt": "Para ver a experiência completa com animações e imagens interativas, acesse pelo computador.", "en": "For the full experience with animations and interactive images, open on desktop." }
+}

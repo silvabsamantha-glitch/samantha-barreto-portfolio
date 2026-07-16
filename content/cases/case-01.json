@@ -1,33 +1,147 @@
 {
   "slug": "case-01",
   "card": {
-    "eyebrow": { "pt": "Case 01 · Personalidade & Tom de Voz", "en": "Case 01 · Personality & Tone of Voice" },
-    "company": { "pt": "grande instituição financeira nacional · 2020/2022", "en": "leading national financial institution · 2020/2022" },
-    "title": { "pt": "Quando uma mudança de tom gerou 64% mais conversas", "en": "When a change in tone led to 64% more conversations" },
-    "desc": { "pt": "+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot.", "en": "+600 employees interviewed, 40h of content testing, 24h of Design Sprint. From scratch to a personality that changed the bot's numbers." },
+    "eyebrow": {
+      "pt": "Case 01 · Personalidade & Tom de Voz",
+      "en": "Case 01 · Personality & Tone of Voice"
+    },
+    "company": {
+      "pt": "grande instituição financeira nacional · 2020/2022",
+      "en": "leading national financial institution · 2020/2022"
+    },
+    "title": {
+      "pt": "Quando uma mudança de tom gerou 64% mais conversas",
+      "en": "When a change in tone led to 64% more conversations"
+    },
+    "desc": {
+      "pt": "+600 colaboradores ouvidos, 40h de testes de conteúdo, 24h de Design Sprint. Do zero à personalidade que mudou os números do bot.",
+      "en": "+600 employees interviewed, 40h of content testing, 24h of Design Sprint. From scratch to a personality that changed the bot's numbers."
+    },
     "metrics": [
-      { "value": { "pt": "+64%", "en": "+64%" }, "label": { "pt": "conversas", "en": "conversations" } },
-      { "value": { "pt": "+25%", "en": "+25%" }, "label": { "pt": "atend. digital", "en": "digital support" } }
+      {
+        "value": {
+          "pt": "+64%",
+          "en": "+64%"
+        },
+        "label": {
+          "pt": "conversas",
+          "en": "conversations"
+        }
+      },
+      {
+        "value": {
+          "pt": "+25%",
+          "en": "+25%"
+        },
+        "label": {
+          "pt": "atend. digital",
+          "en": "digital support"
+        }
+      }
     ]
   },
   "page": {
-    "pill": { "pt": "Case 01 · Tom de Voz · Persona · UX Research", "en": "Case 01 · Voice & Tone · Persona · UX Research" },
-    "context": { "pt": "grande instituição financeira nacional · Conversational AI Designer · 2020/2022", "en": "large national financial institution · Conversational AI Designer · 2020/2022" },
-    "title": { "pt": "Niara: a alma de um assistente virtual", "en": "Niara: the soul of a virtual assistant" },
-    "subtitle": { "pt": "Como desenvolvemos a personalidade de um chatbot de RH ouvindo mais de 600 colaboradores e o que aconteceu com os números depois que a Niara ganhou vida.", "en": "How we developed the personality of an HR chatbot by listening to more than 600 employees, and what happened to the numbers after Niara came to life." },
+    "pill": {
+      "pt": "Case 01 · Tom de Voz · Persona · UX Research",
+      "en": "Case 01 · Voice & Tone · Persona · UX Research"
+    },
+    "context": {
+      "pt": "grande instituição financeira nacional · Conversational AI Designer · 2020/2022",
+      "en": "large national financial institution · Conversational AI Designer · 2020/2022"
+    },
+    "navLabel": {
+      "pt": "Niara: a alma de um assistente",
+      "en": "Niara: the soul of a virtual assistant"
+    },
+    "title": {
+      "pt": "Niara: a alma de um assistente virtual",
+      "en": "Niara: the soul of a virtual assistant"
+    },
+    "subtitle": {
+      "pt": "Como desenvolvemos a personalidade de um chatbot de RH ouvindo mais de 600 colaboradores e o que aconteceu com os números depois que a Niara ganhou vida.",
+      "en": "How we developed the personality of an HR chatbot by listening to more than 600 employees, and what happened to the numbers after Niara came to life."
+    },
     "tags": [
-      { "pt": "Tom de Voz", "en": "Voice & Tone" },
-      { "pt": "Persona", "en": "Persona" },
-      { "pt": "Design Sprint", "en": "Design Sprint" },
-      { "pt": "UX Research", "en": "UX Research" },
-      { "pt": "Território Verbal", "en": "Verbal Territory" }
+      {
+        "pt": "Tom de Voz",
+        "en": "Voice & Tone"
+      },
+      {
+        "pt": "Persona",
+        "en": "Persona"
+      },
+      {
+        "pt": "Design Sprint",
+        "en": "Design Sprint"
+      },
+      {
+        "pt": "UX Research",
+        "en": "UX Research"
+      },
+      {
+        "pt": "Território Verbal",
+        "en": "Verbal Territory"
+      }
     ],
-    "disclaimer": { "pt": "Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo de pesquisa, as metodologias aplicadas e os resultados são reais.", "en": "Some elements have been fictionalized to protect confidentiality: company name and system details. The research process, applied methodologies and results are real." },
+    "disclaimer": {
+      "pt": "Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo de pesquisa, as metodologias aplicadas e os resultados são reais.",
+      "en": "Some elements have been fictionalized to protect confidentiality: company name and system details. The research process, applied methodologies and results are real."
+    },
     "metrics": [
-      { "value": { "pt": "+64%", "en": "+64%" }, "label": { "pt": "volume de conversas", "en": "conversation volume" } },
-      { "value": { "pt": "+25%", "en": "+25%" }, "label": { "pt": "share de atendimento digital", "en": "digital service share" } },
-      { "value": { "pt": "+9pp", "en": "+9pp" }, "label": { "pt": "acurácia", "en": "accuracy" } },
-      { "value": { "pt": "−11,5pp", "en": "−11,5pp" }, "label": { "pt": "falso positivo", "en": "false positive" } }
+      {
+        "value": {
+          "pt": "+64%",
+          "en": "+64%"
+        },
+        "label": {
+          "pt": "volume de conversas",
+          "en": "conversation volume"
+        }
+      },
+      {
+        "value": {
+          "pt": "+25%",
+          "en": "+25%"
+        },
+        "label": {
+          "pt": "share de atendimento digital",
+          "en": "digital service share"
+        }
+      },
+      {
+        "value": {
+          "pt": "+9pp",
+          "en": "+9pp"
+        },
+        "label": {
+          "pt": "acurácia",
+          "en": "accuracy"
+        }
+      },
+      {
+        "value": {
+          "pt": "−11,5pp",
+          "en": "−11,5pp"
+        },
+        "label": {
+          "pt": "falso positivo",
+          "en": "false positive"
+        }
+      }
     ]
+  },
+  "context": {
+    "role": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "team": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "constraints": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    }
   }
 }

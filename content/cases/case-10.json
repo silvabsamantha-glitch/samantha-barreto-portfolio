@@ -1,33 +1,129 @@
 {
   "slug": "case-10",
   "card": {
-    "eyebrow": { "pt": "Case 10 · Tom de Voz", "en": "Case 10 · Tone of Voice" },
-    "company": { "pt": "projeto pessoal · 2026", "en": "personal project · 2026" },
-    "title": { "pt": "Da Niara à Aurora: desenhando para marcas e para mim", "en": "From Niara to Aurora: designing for brands and for myself" },
-    "desc": { "pt": "Em 2020, criei a personalidade de um assistente para 600 colaboradores. Em 2026, apliquei o mesmo método na minha própria assistente de IA, que vive em dois contextos com dois registros.", "en": "In 2020, I created an assistant's personality for 600 employees. In 2026, I applied the same method to my own AI assistant, which lives in two contexts with two registers." },
+    "eyebrow": {
+      "pt": "Case 10 · Tom de Voz",
+      "en": "Case 10 · Tone of Voice"
+    },
+    "company": {
+      "pt": "projeto pessoal · 2026",
+      "en": "personal project · 2026"
+    },
+    "title": {
+      "pt": "Da Niara à Aurora: desenhando para marcas e para mim",
+      "en": "From Niara to Aurora: designing for brands and for myself"
+    },
+    "desc": {
+      "pt": "Em 2020, criei a personalidade de um assistente para 600 colaboradores. Em 2026, apliquei o mesmo método na minha própria assistente de IA, que vive em dois contextos com dois registros.",
+      "en": "In 2020, I created an assistant's personality for 600 employees. In 2026, I applied the same method to my own AI assistant, which lives in two contexts with two registers."
+    },
     "tags": [
-      { "pt": "Tom de Voz", "en": "Tone of Voice" },
-      { "pt": "Gen AI", "en": "Gen AI" },
-      { "pt": "Projeto Pessoal", "en": "Personal Project" },
-      { "pt": "Design Conversacional", "en": "Conversational Design" }
+      {
+        "pt": "Tom de Voz",
+        "en": "Tone of Voice"
+      },
+      {
+        "pt": "Gen AI",
+        "en": "Gen AI"
+      },
+      {
+        "pt": "Projeto Pessoal",
+        "en": "Personal Project"
+      },
+      {
+        "pt": "Design Conversacional",
+        "en": "Conversational Design"
+      }
     ]
   },
   "page": {
-    "pill": { "pt": "Case 10 · Tom de Voz · IA Generativa · Projeto pessoal · 2026", "en": "Case 10 · Tone of Voice · Generative AI · Personal project · 2026" },
-    "context": { "pt": "projeto pessoal · Conversational AI Designer · 2026", "en": "personal project · Conversational AI Designer · 2026" },
-    "title": { "pt": "Da Niara à Aurora: desenhando para marcas e para mim", "en": "From Niara to Aurora: designing for brands and for myself" },
-    "subtitle": { "pt": "Em 2020, criei a personalidade de um assistente para 600 colaboradores. Em 2026, apliquei o mesmo método na minha própria assistente de IA, que vive em dois contextos com dois registros. E você pode conversar com ela agora.", "en": "In 2020, I created an assistant's personality for 600 employees. In 2026, I applied the same method to my own AI assistant, which lives in two contexts with two registers. And you can talk to her right now." },
+    "pill": {
+      "pt": "Case 10 · Tom de Voz · IA Generativa · Projeto pessoal · 2026",
+      "en": "Case 10 · Tone of Voice · Generative AI · Personal project · 2026"
+    },
+    "context": {
+      "pt": "projeto pessoal · Conversational AI Designer · 2026",
+      "en": "personal project · Conversational AI Designer · 2026"
+    },
+    "navLabel": {
+      "pt": "Da Niara à Aurora: desenhando para marcas e para mim",
+      "en": "From Niara to Aurora: designing for brands and for myself"
+    },
+    "title": {
+      "pt": "Da Niara à Aurora: desenhando para marcas e para mim",
+      "en": "From Niara to Aurora: designing for brands and for myself"
+    },
+    "subtitle": {
+      "pt": "Em 2020, criei a personalidade de um assistente para 600 colaboradores. Em 2026, apliquei o mesmo método na minha própria assistente de IA, que vive em dois contextos com dois registros. E você pode conversar com ela agora.",
+      "en": "In 2020, I created an assistant's personality for 600 employees. In 2026, I applied the same method to my own AI assistant, which lives in two contexts with two registers. And you can talk to her right now."
+    },
     "tags": [
-      { "pt": "Tom de Voz", "en": "Tone of Voice" },
-      { "pt": "Gen AI", "en": "Gen AI" },
-      { "pt": "Projeto Pessoal", "en": "Personal Project" },
-      { "pt": "Design Conversacional", "en": "Conversational Design" }
+      {
+        "pt": "Tom de Voz",
+        "en": "Tone of Voice"
+      },
+      {
+        "pt": "Gen AI",
+        "en": "Gen AI"
+      },
+      {
+        "pt": "Projeto Pessoal",
+        "en": "Personal Project"
+      },
+      {
+        "pt": "Design Conversacional",
+        "en": "Conversational Design"
+      }
     ],
-    "disclaimer": { "pt": "A Aurora é uma assistente de IA real, em uso diário. O guia de tom citado aqui (TOM-DE-VOZ-AURORA.md) é um arquivo versionado neste mesmo repositório.", "en": "Aurora is a real AI assistant, in daily use. The tone-of-voice guide referenced here (TOM-DE-VOZ-AURORA.md) is a versioned file in this same repository." },
+    "disclaimer": {
+      "pt": "A Aurora é uma assistente de IA real, em uso diário. O guia de tom citado aqui (TOM-DE-VOZ-AURORA.md) é um arquivo versionado neste mesmo repositório.",
+      "en": "Aurora is a real AI assistant, in daily use. The tone-of-voice guide referenced here (TOM-DE-VOZ-AURORA.md) is a versioned file in this same repository."
+    },
     "metrics": [
-      { "value": { "pt": "2", "en": "2" }, "label": { "pt": "registros de uma mesma persona", "en": "registers of a single persona" } },
-      { "value": { "pt": "4", "en": "4" }, "label": { "pt": "atributos de voz priorizados", "en": "prioritized voice attributes" } },
-      { "value": { "pt": "1", "en": "1" }, "label": { "pt": "guia de tom versionado no repositório", "en": "tone guide versioned in the repository" } }
+      {
+        "value": {
+          "pt": "2",
+          "en": "2"
+        },
+        "label": {
+          "pt": "registros de uma mesma persona",
+          "en": "registers of a single persona"
+        }
+      },
+      {
+        "value": {
+          "pt": "4",
+          "en": "4"
+        },
+        "label": {
+          "pt": "atributos de voz priorizados",
+          "en": "prioritized voice attributes"
+        }
+      },
+      {
+        "value": {
+          "pt": "1",
+          "en": "1"
+        },
+        "label": {
+          "pt": "guia de tom versionado no repositório",
+          "en": "tone guide versioned in the repository"
+        }
+      }
     ]
+  },
+  "context": {
+    "role": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "team": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "constraints": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    }
   }
 }

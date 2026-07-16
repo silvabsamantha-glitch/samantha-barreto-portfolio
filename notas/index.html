@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-pt="Notas · Samantha Barreto" data-en="Notes · Samantha Barreto">Notas · Samantha Barreto</title>
-<meta name="description" content="Textos autorais de Samantha Barreto sobre design, linguagem e tecnologia.">
+<title data-field="seo.notas.title" data-pt="Notas · Samantha Barreto" data-en="Notes · Samantha Barreto">Notas · Samantha Barreto</title>
+<meta name="description" data-field="seo.notas.metaDescription" content="Textos autorais de Samantha Barreto sobre design, linguagem e tecnologia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/shared.css">
@@ -167,18 +167,18 @@
 </style>
 </head>
 <body>
-<a href="#notas-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<a href="#notas-content" class="skip-link" data-field="interface.skipLink" data-pt="Pular para o conteúdo principal" data-en="Skip to main content">Pular para o conteúdo principal</a>
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha</a>
   <ul class="nav-center">
-    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
-    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
-    <li><a href="index.html" data-pt="Notas" data-en="Notes" aria-current="page">Notas</a></li>
-    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+    <li><a href="../sobre.html" data-field="interface.nav.sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-field="interface.nav.cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-field="interface.nav.processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="index.html" data-field="interface.nav.notas" data-pt="Notas" data-en="Notes" aria-current="page">Notas</a></li>
+    <li><a href="../index.html#contato" data-field="interface.nav.contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="nav-right">
-  <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Abrir menu" data-label-pt="Abrir menu" data-label-en="Open menu" data-label-close-pt="Fechar menu" data-label-close-en="Close menu">
+  <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="mobile-menu-panel" data-field="interface.menu" aria-label="Abrir menu" data-label-pt="Abrir menu" data-label-en="Open menu" data-label-close-pt="Fechar menu" data-label-close-en="Close menu">
     <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
   </button>
 
@@ -205,11 +205,11 @@
 </nav>
 <div class="mobile-menu-panel" id="mobile-menu-panel" aria-hidden="true">
   <ul class="mobile-menu-links">
-    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
-    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
-    <li><a href="index.html" data-pt="Notas" data-en="Notes" aria-current="page">Notas</a></li>
-    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+    <li><a href="../sobre.html" data-field="interface.nav.sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-field="interface.nav.cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-field="interface.nav.processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="index.html" data-field="interface.nav.notas" data-pt="Notas" data-en="Notes" aria-current="page">Notas</a></li>
+    <li><a href="../index.html#contato" data-field="interface.nav.contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="mobile-menu-controls">
     <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
@@ -232,7 +232,7 @@
 <main id="notas-content">
   <div class="notas-body">
 
-    <p class="sr-only" role="status" aria-live="polite" id="notas-loading-status" data-pt="Carregando notas do Substack…" data-en="Loading notes from Substack…">Carregando notas do Substack…</p>
+    <p class="sr-only" role="status" aria-live="polite" id="notas-loading-status" data-field="interface.notasStates.loading" data-pt="Carregando notas do Substack…" data-en="Loading notes from Substack…">Carregando notas do Substack…</p>
 
     <div class="notas-skeleton" id="notas-skeleton" aria-hidden="true">
       <div class="notas-skeleton-card"><div class="notas-skeleton-cover"></div><div class="notas-skeleton-line"></div><div class="notas-skeleton-line short"></div></div>
@@ -243,22 +243,22 @@
     <div class="notas-feed" id="notas-feed" aria-label="Notas publicadas no Substack" hidden></div>
 
     <div class="notas-state" id="notas-empty" hidden>
-      <p data-field="notas.emptyState.message" data-pt="[SA: preencher] ainda não há notas publicadas por aqui. Enquanto isso, acompanhe direto no Substack." data-en="[SA: preencher] no notes published here yet. In the meantime, follow along directly on Substack.">[SA: preencher] ainda não há notas publicadas por aqui. Enquanto isso, acompanhe direto no Substack.</p>
-      <a href="https://samanthabarreto1.substack.com" target="_blank" rel="noopener" data-pt="Ver no Substack →" data-en="View on Substack →">Ver no Substack →</a>
+      <p data-field="interface.notasStates.empty" data-pt="[SA: preencher] ainda não há notas publicadas por aqui. Enquanto isso, acompanhe direto no Substack." data-en="[SA: preencher] no notes published here yet. In the meantime, follow along directly on Substack.">[SA: preencher] ainda não há notas publicadas por aqui. Enquanto isso, acompanhe direto no Substack.</p>
+      <a href="https://samanthabarreto1.substack.com" target="_blank" rel="noopener" data-field="interface.notasStates.substackLinkLabel" data-pt="Ver no Substack →" data-en="View on Substack →">Ver no Substack →</a>
     </div>
 
     <div class="notas-state" id="notas-error" hidden>
-      <p data-pt="Não consegui carregar as notas agora. Você pode lê-las direto no Substack enquanto isso." data-en="I couldn't load the notes right now. You can read them directly on Substack in the meantime.">Não consegui carregar as notas agora. Você pode lê-las direto no Substack enquanto isso.</p>
-      <a href="https://samanthabarreto1.substack.com" target="_blank" rel="noopener" data-pt="Ver no Substack →" data-en="View on Substack →">Ver no Substack →</a>
+      <p data-field="interface.notasStates.error" data-pt="Não consegui carregar as notas agora. Você pode lê-las direto no Substack enquanto isso." data-en="I couldn't load the notes right now. You can read them directly on Substack in the meantime.">Não consegui carregar as notas agora. Você pode lê-las direto no Substack enquanto isso.</p>
+      <a href="https://samanthabarreto1.substack.com" target="_blank" rel="noopener" data-field="interface.notasStates.substackLinkLabel" data-pt="Ver no Substack →" data-en="View on Substack →">Ver no Substack →</a>
     </div>
 
   </div>
 </main>
 
 <footer>
-  <p>© 2026 Samantha Barreto · Diadema, SP</p>
-  <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
-  <p><a href="../cases/index.html" data-pt="Ver todos os projetos" data-en="View all projects">Ver todos os projetos</a></p>
+  <p data-field="interface.footer.copyrightMain">© 2026 Samantha Barreto · Diadema, SP</p>
+  <p data-field="interface.footer.languages" data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
+  <p><a href="../cases/index.html" data-field="interface.footer.allProjectsLink" data-pt="Ver todos os projetos" data-en="View all projects">Ver todos os projetos</a></p>
 </footer>
 
 <script src="../assets/theme.js"></script>

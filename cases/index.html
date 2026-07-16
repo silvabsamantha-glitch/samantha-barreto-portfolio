@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-pt="Todos os projetos · Samantha Barreto" data-en="All projects · Samantha Barreto">Todos os projetos · Samantha Barreto</title>
-<meta name="description" content="Acervo completo dos projetos de Samantha Barreto: trabalho profissional e projetos pessoais em Content Design, Design Conversacional e IA Generativa.">
+<title data-field="seo.casesIndex.title" data-pt="Todos os projetos · Samantha Barreto" data-en="All projects · Samantha Barreto">Todos os projetos · Samantha Barreto</title>
+<meta name="description" data-field="seo.casesIndex.metaDescription" content="Acervo completo dos projetos de Samantha Barreto: trabalho profissional e projetos pessoais em Content Design, Design Conversacional e IA Generativa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/shared.css">
@@ -116,18 +116,18 @@
 </style>
 </head>
 <body>
-<a href="#archive-content" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content">Pular para o conteúdo</a>
+<a href="#archive-content" class="skip-link" data-field="interface.skipLink" data-pt="Pular para o conteúdo principal" data-en="Skip to main content">Pular para o conteúdo principal</a>
 <nav id="main-nav" class="nav-dark" aria-label="Navegação principal">
   <a href="../index.html" class="nav-logo">Samantha</a>
   <ul class="nav-center">
-    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
-    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
-    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
-    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+    <li><a href="../sobre.html" data-field="interface.nav.sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-field="interface.nav.cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-field="interface.nav.processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-field="interface.nav.notas" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-field="interface.nav.contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="nav-right">
-  <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Abrir menu" data-label-pt="Abrir menu" data-label-en="Open menu" data-label-close-pt="Fechar menu" data-label-close-en="Close menu">
+  <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="mobile-menu-panel" data-field="interface.menu" aria-label="Abrir menu" data-label-pt="Abrir menu" data-label-en="Open menu" data-label-close-pt="Fechar menu" data-label-close-en="Close menu">
     <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
   </button>
 
@@ -154,11 +154,11 @@
 </nav>
 <div class="mobile-menu-panel" id="mobile-menu-panel" aria-hidden="true">
   <ul class="mobile-menu-links">
-    <li><a href="../sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
-    <li><a href="../index.html#cases" data-pt="Cases" data-en="Work">Cases</a></li>
-    <li><a href="../index.html#processo" data-pt="Processo" data-en="Process">Processo</a></li>
-    <li><a href="../notas/index.html" data-pt="Notas" data-en="Notes">Notas</a></li>
-    <li><a href="../index.html#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+    <li><a href="../sobre.html" data-field="interface.nav.sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+    <li><a href="../index.html#cases" data-field="interface.nav.cases" data-pt="Cases" data-en="Work">Cases</a></li>
+    <li><a href="../index.html#processo" data-field="interface.nav.processo" data-pt="Processo" data-en="Process">Processo</a></li>
+    <li><a href="../notas/index.html" data-field="interface.nav.notas" data-pt="Notas" data-en="Notes">Notas</a></li>
+    <li><a href="../index.html#contato" data-field="interface.nav.contato" data-pt="Contato" data-en="Contact">Contato</a></li>
   </ul>
   <div class="mobile-menu-controls">
     <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
@@ -183,13 +183,19 @@
 
     <!-- Filtro por tema (mesmo mecanismo da Aurora: #cases[data-aurora-filter]) -->
     <div class="cases-filter fade" role="group" aria-labelledby="cases-filter-label">
-      <span id="cases-filter-label" class="sr-only" data-pt="Filtrar cases por tema" data-en="Filter cases by theme">Filtrar cases por tema</span>
-      <button type="button" class="case-filter-btn active" data-filter="all" aria-pressed="true" data-pt="Todos" data-en="All">Todos</button>
-      <button type="button" class="case-filter-btn" data-filter="ia" aria-pressed="false" data-pt="IA Generativa" data-en="Generative AI">IA Generativa</button>
-      <button type="button" class="case-filter-btn" data-filter="conversacional" aria-pressed="false" data-pt="Conversacional" data-en="Conversational">Conversacional</button>
-      <button type="button" class="case-filter-btn" data-filter="ux-writing" aria-pressed="false" data-pt="UX Writing" data-en="UX Writing">UX Writing</button>
-      <button type="button" class="case-filter-btn" data-filter="tom-de-voz" aria-pressed="false" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</button>
-      <span class="sr-only" role="status" aria-live="polite" data-cases-filter-status data-pt="Mostrando todos os cases." data-en="Showing all cases.">Mostrando todos os cases.</span>
+      <span id="cases-filter-label" class="sr-only" data-field="interface.casesFilter.srLabel" data-pt="Filtrar cases por tema" data-en="Filter cases by theme">Filtrar cases por tema</span>
+      <button type="button" class="case-filter-btn active" data-filter="all" data-field="interface.casesFilter.all" aria-pressed="true" data-pt="Todos" data-en="All">Todos</button>
+      <button type="button" class="case-filter-btn" data-filter="ia" data-field="interface.casesFilter.ia" aria-pressed="false" data-pt="IA Generativa" data-en="Generative AI">IA Generativa</button>
+      <button type="button" class="case-filter-btn" data-filter="conversacional" data-field="interface.casesFilter.conversacional" aria-pressed="false" data-pt="Conversacional" data-en="Conversational">Conversacional</button>
+      <button type="button" class="case-filter-btn" data-filter="ux-writing" data-field="interface.casesFilter.uxWriting" aria-pressed="false" data-pt="UX Writing" data-en="UX Writing">UX Writing</button>
+      <button type="button" class="case-filter-btn" data-filter="tom-de-voz" data-field="interface.casesFilter.tomDeVoz" aria-pressed="false" data-pt="Tom de Voz" data-en="Tone of Voice">Tom de Voz</button>
+      <span class="sr-only" role="status" aria-live="polite" data-cases-filter-status data-field="interface.casesFilter"
+        data-status-all-pt="Mostrando todos os cases." data-status-all-en="Showing all cases."
+        data-status-ia-pt="Mostrando cases de IA Generativa." data-status-ia-en="Showing Generative AI cases."
+        data-status-conversacional-pt="Mostrando cases de Conversacional." data-status-conversacional-en="Showing Conversational cases."
+        data-status-ux-writing-pt="Mostrando cases de UX Writing." data-status-ux-writing-en="Showing UX Writing cases."
+        data-status-tom-de-voz-pt="Mostrando cases de Tom de Voz." data-status-tom-de-voz-en="Showing Tone of Voice cases."
+        data-pt="Mostrando todos os cases." data-en="Showing all cases.">Mostrando todos os cases.</span>
     </div>
 
     <div class="archive-group fade">
@@ -223,7 +229,7 @@
             <p class="case-card-desc" data-pt="O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto." data-en="Chatbot for branch managers with the customer right in front. High-pressure context changes everything in conversational design.">O cliente está na frente do gerente. Cada segundo conta. Projetei um assistente para funcionar exatamente nesse contexto.</p>
             <div class="case-card-tags">
               <span class="tag" data-pt="Conversational Design" data-en="Conversational Design">Conversational Design</span>
-              <span class="tag-blue tag" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
+              <span class="tag-blue tag" data-field="index.cards.case-02.card.resultChip" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
             </div>
           </div>
         </a>
@@ -237,7 +243,7 @@
             <div class="case-card-tags">
               <span class="tag" data-pt="Content First" data-en="Content First">Content First</span>
               <span class="tag" data-pt="Novo Bot" data-en="New Bot">Novo Bot</span>
-              <span class="tag-blue tag" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
+              <span class="tag-blue tag" data-field="index.cards.case-03.card.resultChip" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
             </div>
           </div>
         </a>
@@ -251,7 +257,7 @@
             <div class="case-card-tags">
               <span class="tag" data-pt="API" data-en="API">API</span>
               <span class="tag" data-pt="Cenários" data-en="Scenarios">Cenários</span>
-              <span class="tag-blue tag" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
+              <span class="tag-blue tag" data-field="index.cards.case-04.card.resultChip" data-pt="[SA: preencher]" data-en="[SA: preencher]">[SA: preencher]</span>
             </div>
           </div>
         </a>
@@ -354,8 +360,8 @@
 </main>
 
 <footer>
-  <p>© 2026 Samantha Barreto · Diadema, SP</p>
-  <p data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
+  <p data-field="interface.footer.copyrightMain">© 2026 Samantha Barreto · Diadema, SP</p>
+  <p data-field="interface.footer.languages" data-pt="Inglês fluente · Espanhol intermediário" data-en="Fluent English · Intermediate Spanish">Inglês fluente · Espanhol intermediário</p>
 </footer>
 
 <script src="../assets/theme.js"></script>
