@@ -34,7 +34,11 @@
         "pt": "Design Conversacional",
         "en": "Conversational Design"
       }
-    ]
+    ],
+    "resultChip": {
+      "pt": " ",
+      "en": " "
+    }
   },
   "page": {
     "pill": {
@@ -114,16 +118,22 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "A Niara me ensinou que uma personalidade conversacional nasce da estratégia, da pesquisa e da consistência. A Aurora mostrou que essa personalidade só ganha significado quando faz parte da vida de alguém. Juntas, elas representam duas perspectivas do mesmo trabalho: projetar conversas para outras pessoas e, depois, viver diariamente as conversas que projetei. Foi nesse caminho que minha forma de pensar Design Conversacional amadureceu.",
+      "en": "Niara taught me that a conversational personality is built through strategy, research, and consistency. Aurora showed me that this personality only becomes meaningful when it becomes part of someone's daily life. Together, they represent two sides of the same work: designing conversations for others and then living with the conversations I designed. Along that journey, my approach to Conversational Design matured."
     }
   }
 }
