@@ -1,27 +1,114 @@
 {
   "slug": "case-03",
   "card": {
-    "eyebrow": { "pt": "Case 03 · Content First", "en": "Case 03 · Content First" },
-    "company": { "pt": "grande instituição financeira nacional · 2020/2022", "en": "leading national financial institution · 2020/2022" },
-    "title": { "pt": "O produto ainda não existia. A conversa já.", "en": "The product didn't exist yet. The conversation did." },
-    "desc": { "pt": "Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa.", "en": "New insurance assistant designed before any screen: intention, expected outcome, enactment, and journey." },
+    "eyebrow": {
+      "pt": "Case 03 · Content First",
+      "en": "Case 03 · Content First"
+    },
+    "company": {
+      "pt": "grande instituição financeira nacional · 2020/2022",
+      "en": "leading national financial institution · 2020/2022"
+    },
+    "title": {
+      "pt": "O produto ainda não existia. A conversa já.",
+      "en": "The product didn't exist yet. The conversation did."
+    },
+    "desc": {
+      "pt": "Novo assistente de seguros. Antes de qualquer tela, definimos intenção, resultado esperado e encenamos a conversa.",
+      "en": "New insurance assistant designed before any screen: intention, expected outcome, enactment, and journey."
+    },
     "tags": [
-      { "pt": "Content First", "en": "Content First" },
-      { "pt": "Novo Bot", "en": "New Bot" }
-    ]
+      {
+        "pt": "Content First",
+        "en": "Content First"
+      },
+      {
+        "pt": "Novo Bot",
+        "en": "New Bot"
+      }
+    ],
+    "resultChip": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    }
   },
   "page": {
-    "pill": { "pt": "Case 03 · Content First · Design Conversacional", "en": "Case 03 · Content First · Conversational Design" },
-    "context": { "pt": "grande instituição financeira nacional · Conversational AI Designer · 2020/2022", "en": "large national financial institution · Conversational AI Designer · 2020/2022" },
-    "title": { "pt": "Seguros: Content First do zero", "en": "Insurance: Content First from scratch" },
-    "subtitle": { "pt": "Como projetamos um assistente virtual de seguros antes de qualquer tela, definindo intenção, resultado esperado e encenando a conversa antes de escrever uma linha de fluxo.", "en": "How we designed an insurance virtual assistant before any screen, defining intention, expected outcome, and scripting the conversation before writing a single flow line." },
+    "pill": {
+      "pt": "Case 03 · Content First · Design Conversacional",
+      "en": "Case 03 · Content First · Conversational Design"
+    },
+    "context": {
+      "pt": "grande instituição financeira nacional · Conversational AI Designer · 2020/2022",
+      "en": "large national financial institution · Conversational AI Designer · 2020/2022"
+    },
+    "navLabel": {
+      "pt": "Seguros: Content First do zero",
+      "en": "Insurance: Content First from scratch"
+    },
+    "title": {
+      "pt": "Seguros: Content First do zero",
+      "en": "Insurance: Content First from scratch"
+    },
+    "subtitle": {
+      "pt": "Como projetamos um assistente virtual de seguros antes de qualquer tela, definindo intenção, resultado esperado e encenando a conversa antes de escrever uma linha de fluxo.",
+      "en": "How we designed an insurance virtual assistant before any screen, defining intention, expected outcome, and scripting the conversation before writing a single flow line."
+    },
     "tags": [
-      { "pt": "Content First", "en": "Content First" },
-      { "pt": "Novo produto", "en": "New product" },
-      { "pt": "Design Conversacional", "en": "Conversational Design" },
-      { "pt": "Jornada", "en": "Journey" }
+      {
+        "pt": "Content First",
+        "en": "Content First"
+      },
+      {
+        "pt": "Novo produto",
+        "en": "New product"
+      },
+      {
+        "pt": "Design Conversacional",
+        "en": "Conversational Design"
+      },
+      {
+        "pt": "Jornada",
+        "en": "Journey"
+      }
     ],
-    "disclaimer": { "pt": "Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo de Content First, a metodologia e as decisões de design são reais.", "en": "Some elements have been fictionalized to protect confidentiality: company name and system details. The Content First process, methodology and design decisions are real." },
+    "disclaimer": {
+      "pt": "Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. O processo de Content First, a metodologia e as decisões de design são reais.",
+      "en": "Some elements have been fictionalized to protect confidentiality: company name and system details. The Content First process, methodology and design decisions are real."
+    },
     "metrics": []
+  },
+  "context": {
+    "role": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "team": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "constraints": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "highlights": [
+      {
+        "pt": "[SA: preencher]",
+        "en": "[SA: preencher]"
+      },
+      {
+        "pt": "[SA: preencher]",
+        "en": "[SA: preencher]"
+      },
+      {
+        "pt": "[SA: preencher]",
+        "en": "[SA: preencher]"
+      }
+    ]
   }
 }

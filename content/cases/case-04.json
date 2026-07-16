@@ -1,28 +1,118 @@
 {
   "slug": "case-04",
   "card": {
-    "eyebrow": { "pt": "Case 04 · API & Jornada", "en": "Case 04 · API & Jornada" },
-    "company": { "pt": "grande instituição financeira nacional · 2020/2022", "en": "leading national financial institution · 2020/2022" },
-    "title": { "pt": "A pergunta que o bot não respondia", "en": "The question the bot couldn't answer" },
-    "desc": { "pt": "O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API.", "en": "The customer asked when the card arrives, not what the deadline is. Three solution scenarios with and without API." },
+    "eyebrow": {
+      "pt": "Case 04 · API & Jornada",
+      "en": "Case 04 · API & Jornada"
+    },
+    "company": {
+      "pt": "grande instituição financeira nacional · 2020/2022",
+      "en": "leading national financial institution · 2020/2022"
+    },
+    "title": {
+      "pt": "A pergunta que o bot não respondia",
+      "en": "The question the bot couldn't answer"
+    },
+    "desc": {
+      "pt": "O cliente perguntava quando chega o cartão, não qual é o prazo. Três caminhos de solução, com e sem API.",
+      "en": "The customer asked when the card arrives, not what the deadline is. Three solution scenarios with and without API."
+    },
     "tags": [
-      { "pt": "API", "en": "API" },
-      { "pt": "Cenários", "en": "Scenarios" }
-    ]
+      {
+        "pt": "API",
+        "en": "API"
+      },
+      {
+        "pt": "Cenários",
+        "en": "Scenarios"
+      }
+    ],
+    "resultChip": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    }
   },
   "page": {
-    "pill": { "pt": "Case 04 · Estudo de Caso · UX Writing · API", "en": "Case 04 · Case Study · UX Writing · API" },
-    "context": { "pt": "grande instituição financeira nacional · Conversational AI Designer · 2020/2022", "en": "large national financial institution · Conversational AI Designer · 2020/2022" },
-    "title": { "pt": "Cartão de Crédito: a pergunta que não foi respondida", "en": "Credit Card: the question that wasn't answered" },
-    "subtitle": { "pt": "Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API.", "en": "An analysis of how a well-intentioned chatbot failed to answer the customer's simplest question, and three possible paths to fix it, with and without API integration." },
+    "pill": {
+      "pt": "Case 04 · Estudo de Caso · UX Writing · API",
+      "en": "Case 04 · Case Study · UX Writing · API"
+    },
+    "context": {
+      "pt": "grande instituição financeira nacional · Conversational AI Designer · 2020/2022",
+      "en": "large national financial institution · Conversational AI Designer · 2020/2022"
+    },
+    "navLabel": {
+      "pt": "Cartão de Crédito: a pergunta que não foi respondida",
+      "en": "Credit Card: the question that wasn't answered"
+    },
+    "title": {
+      "pt": "Cartão de Crédito: a pergunta que não foi respondida",
+      "en": "Credit Card: the question that wasn't answered"
+    },
+    "subtitle": {
+      "pt": "Uma análise de como um chatbot bem-intencionado falhou em responder a pergunta mais simples do cliente e três caminhos possíveis para resolver, com e sem integração de API.",
+      "en": "An analysis of how a well-intentioned chatbot failed to answer the customer's simplest question, and three possible paths to fix it, with and without API integration."
+    },
     "tags": [
-      { "pt": "Estudo de caso", "en": "Case study" },
-      { "pt": "UX Writing", "en": "UX Writing" },
-      { "pt": "Cenários", "en": "Scenarios" },
-      { "pt": "API", "en": "API" },
-      { "pt": "Jornada", "en": "Journey" }
+      {
+        "pt": "Estudo de caso",
+        "en": "Case study"
+      },
+      {
+        "pt": "UX Writing",
+        "en": "UX Writing"
+      },
+      {
+        "pt": "Cenários",
+        "en": "Scenarios"
+      },
+      {
+        "pt": "API",
+        "en": "API"
+      },
+      {
+        "pt": "Jornada",
+        "en": "Journey"
+      }
     ],
-    "disclaimer": { "pt": "Este é um estudo de caso: análise e proposta de melhoria, não uma implementação. Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. A análise e os cenários propostos são reais.", "en": "This is a case study: analysis and improvement proposal, not an implementation. Some elements have been fictionalized to protect confidentiality: company name and system details. The analysis and proposed scenarios are real." },
+    "disclaimer": {
+      "pt": "Este é um estudo de caso: análise e proposta de melhoria, não uma implementação. Elementos ficcionalizados para proteger a confidencialidade: nome da empresa e detalhes do sistema. A análise e os cenários propostos são reais.",
+      "en": "This is a case study: analysis and improvement proposal, not an implementation. Some elements have been fictionalized to protect confidentiality: company name and system details. The analysis and proposed scenarios are real."
+    },
     "metrics": []
+  },
+  "context": {
+    "role": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "team": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "constraints": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "highlights": [
+      {
+        "pt": "[SA: preencher]",
+        "en": "[SA: preencher]"
+      },
+      {
+        "pt": "[SA: preencher]",
+        "en": "[SA: preencher]"
+      },
+      {
+        "pt": "[SA: preencher]",
+        "en": "[SA: preencher]"
+      }
+    ]
   }
 }

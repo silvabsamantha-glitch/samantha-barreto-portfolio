@@ -1,27 +1,90 @@
 {
   "slug": "case-07",
   "card": {
-    "eyebrow": { "pt": "Case 07 · Framework próprio", "en": "Case 07 · Custom framework" },
-    "company": { "pt": "grande empresa financeira de investimentos nos estados unidos · 2026", "en": "leading US-based investment platform · 2026" },
-    "title": { "pt": "Começando pela intenção, não pelo canal", "en": "Starting with intent, not the channel" },
-    "desc": { "pt": "Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando.", "en": "Own initiative to optimize the process: intention before channel. Prototyped and testing." },
+    "eyebrow": {
+      "pt": "Case 07 · Framework próprio",
+      "en": "Case 07 · Custom framework"
+    },
+    "company": {
+      "pt": "grande empresa financeira de investimentos nos estados unidos · 2026",
+      "en": "leading US-based investment platform · 2026"
+    },
+    "title": {
+      "pt": "Começando pela intenção, não pelo canal",
+      "en": "Starting with intent, not the channel"
+    },
+    "desc": {
+      "pt": "Uma iniciativa minha para otimizar o processo. Intenção antes de canal. Prototipado e testando.",
+      "en": "Own initiative to optimize the process: intention before channel. Prototyped and testing."
+    },
     "tags": [
-      { "pt": "Em testes", "en": "In testing" },
-      { "pt": "Content Strategy", "en": "Content Strategy" }
+      {
+        "pt": "Em testes",
+        "en": "In testing"
+      },
+      {
+        "pt": "Content Strategy",
+        "en": "Content Strategy"
+      }
     ]
   },
   "page": {
-    "pill": { "pt": "Case 07 · IA Generativa · Content Strategy · Framework próprio", "en": "Case 07 · Generative AI · Content Strategy · Own Framework" },
-    "context": { "pt": "Meridian Investimentos · Iniciativa própria · 2026", "en": "Meridian Investimentos · Own initiative · 2026" },
-    "title": { "pt": "Bot de Content First", "en": "Content First Bot" },
-    "subtitle": { "pt": "Como otimizei o processo de criação de comunicações colocando intenção antes de canal e transformei esse raciocínio em um assistente que qualquer pessoa do time consegue usar.", "en": "How I optimized the communication creation process by putting intention before channel, and turned that reasoning into an assistant any team member can use." },
+    "pill": {
+      "pt": "Case 07 · IA Generativa · Content Strategy · Framework próprio",
+      "en": "Case 07 · Generative AI · Content Strategy · Own Framework"
+    },
+    "context": {
+      "pt": "Meridian Investimentos · Iniciativa própria · 2026",
+      "en": "Meridian Investimentos · Own initiative · 2026"
+    },
+    "navLabel": {
+      "pt": "Bot de Content First",
+      "en": "Content First Bot"
+    },
+    "title": {
+      "pt": "Bot de Content First",
+      "en": "Content First Bot"
+    },
+    "subtitle": {
+      "pt": "Como otimizei o processo de criação de comunicações colocando intenção antes de canal e transformei esse raciocínio em um assistente que qualquer pessoa do time consegue usar.",
+      "en": "How I optimized the communication creation process by putting intention before channel, and turned that reasoning into an assistant any team member can use."
+    },
     "tags": [
-      { "pt": "Content Strategy", "en": "Content Strategy" },
-      { "pt": "IA Generativa", "en": "Generative AI" },
-      { "pt": "Framework próprio", "en": "Own Framework" },
-      { "pt": "Design Conversacional", "en": "Conversational Design" }
+      {
+        "pt": "Content Strategy",
+        "en": "Content Strategy"
+      },
+      {
+        "pt": "IA Generativa",
+        "en": "Generative AI"
+      },
+      {
+        "pt": "Framework próprio",
+        "en": "Own Framework"
+      },
+      {
+        "pt": "Design Conversacional",
+        "en": "Conversational Design"
+      }
     ],
-    "disclaimer": { "pt": "Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos). O framework, o processo e a lógica de design são integralmente originais.", "en": "Fictionalized elements to protect confidentiality: company name (Meridian Investimentos). The framework, process, and design logic are entirely original." },
+    "disclaimer": {
+      "pt": "Elementos ficcionalizados para proteger a confidencialidade: nome da empresa (Meridian Investimentos). O framework, o processo e a lógica de design são integralmente originais.",
+      "en": "Fictionalized elements to protect confidentiality: company name (Meridian Investimentos). The framework, process, and design logic are entirely original."
+    },
     "metrics": []
+  },
+  "context": {
+    "role": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "team": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    },
+    "constraints": {
+      "pt": "[SA: preencher]",
+      "en": "[SA: preencher]"
+    }
   }
 }
