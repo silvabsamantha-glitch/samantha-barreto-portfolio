@@ -28,8 +28,8 @@
       }
     ],
     "resultChip": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
     }
   },
   "page": {
@@ -79,35 +79,39 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Designer conversacional",
+      "en": "Conversational designer"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "1 Team Lead, 1 Tech Lead, 1 PM, 1 QA, 1 Designer conversacional e 1 Estagiaria",
+      "en": "1 Team Lead, 1 Tech Lead, 1 PM, 1 QA, 1 Conversational designer e 1 Intern"
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
     }
   },
   "whatChanged": {
     "summary": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Mais do que desenhar uma conversa, este projeto consolidou uma abordagem Content First para o desenvolvimento de assistentes virtuais. Priorizar estratégia, arquitetura e intenção antes da interface permitiu tomar decisões mais consistentes ao longo de toda a jornada, reduzindo ambiguidades e criando uma experiência preparada para crescer de forma sustentável.",
+      "en": "More than designing conversations, this project established a Content First approach to conversational product development. Prioritizing strategy, information architecture, and user intent before the interface enabled more consistent decisions throughout the journey, reduced ambiguity, and created an experience designed to scale sustainably."
     },
     "highlights": [
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Defini uma estratégia Content First para orientar todo o projeto antes do desenho das conversas.",
+        "en": "Defined a Content First strategy to guide the project before designing conversations."
       },
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Estruturei a arquitetura de conteúdo para suportar jornadas complexas e escaláveis.",
+        "en": "Structured the content architecture to support complex and scalable user journeys."
       },
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Transformei objetivos de negócio em princípios claros de comunicação.",
+        "en": "Translated business goals into clear communication principles."
+      },
+      {
+        "pt": "Alinhei conteúdo, UX e arquitetura conversacional para garantir consistência ao longo da experiência.",
+        "en": "Aligned content, UX, and conversational architecture to ensure a consistent experience."
       }
     ]
   }
