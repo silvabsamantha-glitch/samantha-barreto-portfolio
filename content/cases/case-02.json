@@ -79,8 +79,8 @@
       "en": "Conversational Designer"
     },
     "team": {
-      "pt": "1 Team Lead, 1 Tech Lead, 1 PM e 2 Designer conversacional",
-      "en": "1 Team Lead, 1 Tech Lead, 1 PM and 1 Conversational designer"
+      "pt": "1 Team Lead, 1 Tech Lead, 1 PM, 1 QA e 2 Designer conversacional",
+      "en": "1 Team Lead, 1 Tech Lead, 1 PM, 1 QA and 1 Conversational designer"
     },
     "constraints": {
       "pt": "Sistema operacional onde o chatbot ficaria alocado, extremamente limitado",
