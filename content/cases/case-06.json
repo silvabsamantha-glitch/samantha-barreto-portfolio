@@ -26,7 +26,11 @@
         "pt": "Gen AI",
         "en": "Gen AI"
       }
-    ]
+    ],
+    "resultChip": {
+      "pt": " ",
+      "en": " "
+    }
   },
   "page": {
     "pill": {
@@ -75,16 +79,22 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Designer de conteúdo",
+      "en": "Content designer"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "2 Designer de conteúdo e 1 Design Manager",
+      "en": "2 Content Designer e 1 Design Manager"
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "Este projeto demonstra que uma voz de marca consistente não nasce apenas de um guia de escrita, mas de um sistema capaz de orientar decisões em diferentes contextos. Ao reunir princípios, exemplos e diretrizes em um único assistente, a proposta transforma conhecimento disperso em uma ferramenta prática para apoiar o time de Content Design, promovendo consistência, autonomia e escalabilidade.",
+      "en": "This project demonstrates that a consistent brand voice goes beyond a writing guide, it requires a system that supports decision-making across different contexts. By bringing together principles, examples, and guidelines into a single assistant, the solution turns scattered knowledge into a practical tool that empowers the Content Design team while promoting consistency, autonomy, and scalability."
     }
   }
 }
