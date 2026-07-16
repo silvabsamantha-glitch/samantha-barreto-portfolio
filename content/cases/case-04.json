@@ -28,8 +28,8 @@
       }
     ],
     "resultChip": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
     }
   },
   "page": {
@@ -83,35 +83,39 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Designer conversacional",
+      "en": "Conversational designer"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": " ",
+      "en": " "
     }
   },
   "whatChanged": {
     "summary": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Este estudo explorou como o Design Conversacional pode reduzir lacunas na experiência mesmo diante de limitações técnicas. A proposta demonstra que, antes de buscar novas integrações ou funcionalidades, é possível repensar a forma como a informação é organizada, contextualizada e apresentada às pessoas usuárias. O exercício reforçou a importância de equilibrar necessidades das pessoas usuárias, objetivos de negócio e restrições técnicas na construção de soluções conversacionais.",
+      "en": "This case study explored how Conversational Design can reduce experience gaps even under technical constraints. It demonstrates that, before relying on new integrations or features, it is possible to rethink how information is organized, contextualized, and presented to users. The exercise reinforced the importance of balancing user needs, business goals, and technical limitations when designing conversational solutions."
     },
     "highlights": [
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Investigação de lacunas na experiência conversacional.",
+        "en": "Identified gaps in the conversational experience."
       },
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Exploração de soluções considerando restrições técnicas reais.",
+        "en": "Explored solutions within real technical constraints."
       },
       {
-        "pt": "[SA: preencher]",
-        "en": "[SA: preencher]"
+        "pt": "Construção de cenários para diferentes contextos de uso.",
+        "en": "Designed response scenarios for different user contexts."
+      },
+      {
+        "pt": "UX Writing orientado à resolução de problemas.",
+        "en": "Applied UX Writing to support problem-solving."
       }
     ]
   }
