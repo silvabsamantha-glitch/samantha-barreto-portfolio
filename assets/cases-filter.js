@@ -12,14 +12,6 @@
   var buttons = Array.prototype.slice.call(filterBar.querySelectorAll('.case-filter-btn'));
   var statusEl = filterBar.querySelector('[data-cases-filter-status]');
 
-  var statusText = {
-    all: { pt: 'Mostrando todos os cases.', en: 'Showing all cases.' },
-    ia: { pt: 'Mostrando cases de IA Generativa.', en: 'Showing Generative AI cases.' },
-    conversacional: { pt: 'Mostrando cases de Conversacional.', en: 'Showing Conversational cases.' },
-    'ux-writing': { pt: 'Mostrando cases de UX Writing.', en: 'Showing UX Writing cases.' },
-    'tom-de-voz': { pt: 'Mostrando cases de Tom de Voz.', en: 'Showing Tone of Voice cases.' }
-  };
-
   function getLang() {
     return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'pt';
   }
@@ -32,7 +24,11 @@
       btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
     if (statusEl) {
-      var text = (statusText[current] || statusText.all)[getLang()];
+      // Texto vem de atributos data-status-{filtro}-{idioma}, editáveis
+      // pelo CMS (ver content/interface.json, campo casesFilter) — não
+      // fica hardcoded aqui, para que a edição no painel tenha efeito real.
+      var attr = 'data-status-' + current + '-' + getLang();
+      var text = statusEl.getAttribute(attr) || statusEl.getAttribute('data-status-all-' + getLang());
       statusEl.textContent = text;
     }
   }
