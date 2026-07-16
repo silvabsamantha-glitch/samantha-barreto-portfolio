@@ -26,7 +26,11 @@
         "pt": "Content Strategy",
         "en": "Content Strategy"
       }
-    ]
+    ],
+    "resultChip": {
+      "pt": " ",
+      "en": " "
+    }
   },
   "page": {
     "pill": {
@@ -98,20 +102,30 @@
           "en": "NBR ISO 24495-1, Plain Language"
         }
       }
-    ]
+    ],
+    "disclaimer": {
+      "pt": " ",
+      "en": " "
+    }
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "-",
+      "en": "-"
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "Ao longo destes projetos, procurei mostrar não apenas o que entreguei, mas como penso, investigo e tomo decisões. Este portfólio foi construído com a mesma intenção: transformar conteúdo em experiência. Se você chegou até aqui, espero que tenha conhecido um pouco do meu trabalho, e também da designer por trás dele.",
+      "en": "Throughout these projects, I aimed to show not only what I delivered, but also how I think, investigate, and make decisions. This portfolio was built with the same intention: turning content into experience. If you've made it this far, I hope you've gotten to know not only my work, but also the designer behind it."
     }
   }
 }
