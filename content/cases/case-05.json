@@ -48,7 +48,11 @@
           "en": "Retention"
         }
       }
-    ]
+    ],
+    "resultChip": {
+      "pt": " ",
+      "en": " "
+    }
   },
   "page": {
     "pill": {
@@ -128,16 +132,22 @@
   },
   "context": {
     "role": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Designer conversacional",
+      "en": "Conversational Designer"
     },
     "team": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "1 PM, 1 Tech Lead, 3 Devs e 1 QA",
+      "en": "1 PM, 1 Tech Lead, 3 Devs and 1 QA"
     },
     "constraints": {
-      "pt": "[SA: preencher]",
-      "en": "[SA: preencher]"
+      "pt": "Limitações técnicas de uso de API",
+      "en": "Technical limitations of API usage"
+    }
+  },
+  "whatChanged": {
+    "summary": {
+      "pt": "Este projeto demonstrou que pequenas mudanças de conteúdo podem gerar impactos significativos quando orientadas por dados e centradas nas necessidades das pessoas usuárias. Ao simplificar uma resposta crítica do chatbot, foi possível reduzir o esforço cognitivo, aumentar a clareza da informação e melhorar a percepção da experiência. Mais do que reescrever uma mensagem, o desafio foi identificar o verdadeiro problema da jornada e transformar conteúdo em uma ferramenta estratégica para o produto.",
+      "en": "This project demonstrated that small content changes can drive meaningful impact when guided by data and centered on user needs. By simplifying a critical chatbot response, we reduced cognitive effort, improved clarity, and enhanced the overall user experience. More than rewriting a message, the challenge was to identify the real friction point in the journey and turn content into a strategic product asset."
     }
   }
 }
