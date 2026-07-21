@@ -3,7 +3,7 @@
     "greeting": "Oi. Eu sou a Aurora, assistente deste portfólio. A Samantha me desenhou do jeito que desenha tudo: começando pela intenção. O que te traz aqui?",
     "back": "O que você gostaria de explorar agora?",
     "rootQuickReplies": [
-      { "id": "recrutando", "label": "Estou recrutando" },
+      { "id": "recrutando", "label": "Conhecer o trabalho" },
       { "id": "ia", "label": "Tenho interesse em IA" },
       { "id": "cases", "label": "Quero ver os cases" },
       { "id": "contato", "label": "Quero falar com a Samantha" },
@@ -48,7 +48,7 @@
     "greeting": "Hi. I'm Aurora, this portfolio's assistant. Samantha designed me the way she designs everything: starting with intent. What brings you here?",
     "back": "What would you like to explore now?",
     "rootQuickReplies": [
-      { "id": "recrutando", "label": "I'm recruiting" },
+      { "id": "recrutando", "label": "See the work" },
       { "id": "ia", "label": "I'm interested in AI" },
       { "id": "cases", "label": "I want to see the cases" },
       { "id": "contato", "label": "I want to talk to Samantha" },
